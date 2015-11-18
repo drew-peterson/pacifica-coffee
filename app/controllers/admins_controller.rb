@@ -1,4 +1,7 @@
 class AdminsController < ApplicationController
+  # uncomment below line for any controller that wants to be secured / require login
+  # before_filter :authorize 
+
   def new
   end
 
