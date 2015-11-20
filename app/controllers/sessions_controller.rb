@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-
+  
   def new
   
   end
@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       # Save the admin id inside the browser cookie. This is how we keep the admin 
       # logged in when they navigate around our website.
       session[:admin_id] = admin.id
-      redirect_to '/login'
+      redirect_to '/items'
     else
     # If admin's login doesn't work, send them back to the login form.
       redirect_to '/login'
