@@ -1,0 +1,13 @@
+<h1>Signup</h1>
+
+<%= form_for :admin, url: '/admins' do |f| %>
+  First Name: <%= f.text_field :first_name %>
+  Last Name: <%= f.text_field :last_name %>
+  User Name: <%= f.text_field :user_name %>
+  Password: <%= f.password_field :password %>
+  Password Confirmation: <%= f.password_field :password_confirmation %>
+  Email: <%= f.text_field :email %>
+  Phone Number: <%= f.text_field :phone_number %>
+  <%= f.submit 'Submit' %>
+<% end %>
+
