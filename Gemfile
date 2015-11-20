@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 
 
+
+# generate random seed data
+gem 'faker'
 # stripe for order checkout
 gem 'stripe'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

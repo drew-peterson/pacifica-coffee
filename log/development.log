@@ -7324,3 +7324,78 @@ Processing by ItemsController#index as HTML
   [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items"
   Rendered items/index.html.erb within layouts/application (12.0ms)
 Completed 200 OK in 153ms (Views: 68.3ms | ActiveRecord: 1.5ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (6.7ms)[0m  [1mINSERT INTO "admins" ("first_name", "last_name", "user_name", "password_digest", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Joji"], ["last_name", "Gordon"], ["user_name", "joji"], ["password_digest", "$2a$10$1C1t8692syYNeCqB1nEmYedmqsXuBl/sXb/9CNHLN5Ebc0bomMz0e"], ["phone_number", "911"], ["created_at", "2015-11-20 23:15:04.194724"], ["updated_at", "2015-11-20 23:15:04.194724"]]
+  [1m[35m (96.0ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "admins" ("first_name", "last_name", "user_name", "password_digest", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Joji"], ["last_name", "Gordon"], ["user_name", "joji"], ["password_digest", "$2a$10$i19.WDJ1UtbyxWvHBNrr7uMRQDlKTRJzg33Qw29OT84MynC0nPEa2"], ["phone_number", "911"], ["created_at", "2015-11-20 23:15:21.773629"], ["updated_at", "2015-11-20 23:15:21.773629"]]
+  [1m[35m (3.0ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "items" ("item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["item_name", "Incredible Marble Pants"], ["item_description", "Fugit atque quis asperiores et cumque perferendis."], ["quantity", 25], ["price", 78], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/4.png"], ["created_at", "2015-11-20 23:15:22.205718"], ["updated_at", "2015-11-20 23:15:22.205718"]]
+  [1m[36m (2.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "items" ("item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["item_name", "Ergonomic Wool Clock"], ["item_description", "Id sint omnis repellat voluptatibus non magni molestias."], ["quantity", 64], ["price", 106], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/4.png"], ["created_at", "2015-11-20 23:15:22.212101"], ["updated_at", "2015-11-20 23:15:22.212101"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "items" ("item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["item_name", "Lightweight Aluminum Knife"], ["item_description", "Non ducimus sint accusamus earum ipsum modi."], ["quantity", 32], ["price", 133], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/2.png"], ["created_at", "2015-11-20 23:15:22.214321"], ["updated_at", "2015-11-20 23:15:22.214321"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "items" ("item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["item_name", "Small Wool Bag"], ["item_description", "Voluptatem dolore est."], ["quantity", 63], ["price", 139], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/8.png"], ["created_at", "2015-11-20 23:15:22.216425"], ["updated_at", "2015-11-20 23:15:22.216425"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "items" ("item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["item_name", "Lightweight Cotton Table"], ["item_description", "Sunt fuga sunt architecto."], ["quantity", 91], ["price", 6], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/2.png"], ["created_at", "2015-11-20 23:15:22.218806"], ["updated_at", "2015-11-20 23:15:22.218806"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "items" ("item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["item_name", "Fantastic Rubber Coat"], ["item_description", "Ut vel numquam eos quia cum nihil qui."], ["quantity", 96], ["price", 7], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/2.png"], ["created_at", "2015-11-20 23:15:22.221015"], ["updated_at", "2015-11-20 23:15:22.221015"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "items" ("item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["item_name", "Ergonomic Marble Bottle"], ["item_description", "Sit et a sapiente ut eos."], ["quantity", 52], ["price", 109], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/3.png"], ["created_at", "2015-11-20 23:15:22.223208"], ["updated_at", "2015-11-20 23:15:22.223208"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "items" ("item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["item_name", "Fantastic Wool Plate"], ["item_description", "Qui ullam et."], ["quantity", 6], ["price", 52], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/11.png"], ["created_at", "2015-11-20 23:15:22.225368"], ["updated_at", "2015-11-20 23:15:22.225368"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "items" ("item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["item_name", "Sleek Steel Car"], ["item_description", "Ratione ipsa voluptates qui et consequatur praesentium."], ["quantity", 0], ["price", 113], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/4.png"], ["created_at", "2015-11-20 23:15:22.227243"], ["updated_at", "2015-11-20 23:15:22.227243"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "items" ("item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["item_name", "Durable Aluminum Chair"], ["item_description", "Aut aut omnis asperiores dolorem optio ducimus."], ["quantity", 43], ["price", 183], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/5.png"], ["created_at", "2015-11-20 23:15:22.228995"], ["updated_at", "2015-11-20 23:15:22.228995"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+
+
+Started GET "/items" for ::1 at 2015-11-20 15:16:07 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#index as HTML
+  [1m[35mAdmin Load (0.4ms)[0m  SELECT  "admins".* FROM "admins" WHERE "admins"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.5ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  Rendered items/index.html.erb within layouts/application (16.9ms)
+Completed 200 OK in 459ms (Views: 415.3ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/logout" for ::1 at 2015-11-20 15:16:39 -0800
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-11-20 15:16:39 -0800
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 112ms (Views: 111.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2015-11-20 15:16:44 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2/4exiMqSvcrdBnj4E0A5w2s1kbNBUsaWiBsqIyQusd1Z6tCL6AS9qzXItC9I6e+NkVtnk2NBv8a+8080Y6q1g==", "user_name"=>"joji", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[35mAdmin Load (0.4ms)[0m  SELECT  "admins".* FROM "admins" WHERE "admins"."email" IS NULL LIMIT 1
+Redirected to http://localhost:3000/items
+Completed 302 Found in 79ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/items" for ::1 at 2015-11-20 15:16:44 -0800
+Processing by ItemsController#index as HTML
+  [1m[36mAdmin Load (0.3ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 54ms (Views: 51.1ms | ActiveRecord: 0.6ms)
