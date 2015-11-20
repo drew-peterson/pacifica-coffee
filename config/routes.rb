@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get '/logout' => 'sessions#destroy'
 
   resources :charges
+  resources :items
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
