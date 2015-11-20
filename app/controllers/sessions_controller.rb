@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
       redirect_to '/items'
     else
     # If admin's login doesn't work, send them back to the login form.
-      redirect_to '/login'
+      redirect_to '/login', notice: 'Incorrect Username or Password'
     end
   end
 

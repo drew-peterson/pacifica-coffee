@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_action :check_authorization_admin
   before_action :all_items, only: [:index]
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
@@ -39,6 +40,11 @@ class ItemsController < ApplicationController
   end
 
   private
+    def check_authorization_admin
+      p current_user
+      redirect_to '/login', notice: 'Unauthorized user, Please login' unless session[:admin_id]
+    end
+
     def all_items
       @items = Item.all
     end
