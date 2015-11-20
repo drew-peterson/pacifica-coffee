@@ -1,0 +1,10 @@
+<%= form_for(@item) do |f| %>
+  Item Name: <%= f.text_field :item_name %>
+  Item Description: <%= f.text_area :item_description %>
+  Quantity: <%= f.number_field :quantity %>
+  Price: <%= f.number_field :price %>
+  SKU: <%= f.text_field :sku %>
+  Large Image: <%= f.text_field :large_image %>
+  Small Image: <%= f.text_field :small_image %>
+  <%= f.submit 'Submit' %>
+<% end %>
