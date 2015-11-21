@@ -8,6 +8,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :email
       t.string :phone_number
       t.boolean :admin, :default => false
+      t.string :cart, :default => ''
 
       t.timestamps null: false
     end
