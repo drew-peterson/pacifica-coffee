@@ -1,7 +1,7 @@
 <h1>Items in Cart</h1>
 
 <ul>
-  <% @items.each do |qty, item| %>
+  <% @items.each do |item, qty| %>
     <div class="item" style="border-bottom: 1px solid black; margin-bottom: 5px;">
       <li> <%= item.item_name %> </li>
       <li> <%= item.item_description %> </li>
@@ -11,9 +11,11 @@
         <%= form_for :user, url: '/users/cart/update' do |f| %>
           <%= hidden_field_tag('item_id', value = item.id) %>
           <%= hidden_field_tag('old_qty', value = qty) %>
-          <%= number_field_tag('qty', value = qty) %>
+          <%= number_field_tag('qty', value = qty, min: 1) %>
           <%= f.submit 'Update Quantity' %>
         <% end %>
+
+        <%= link_to 'Remove Item', users_cart_path(item_id: item.id), method: :delete %>
       </li>
     </div>
   <% end %>

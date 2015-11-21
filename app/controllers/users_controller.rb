@@ -14,9 +14,13 @@ class UsersController < ApplicationController
   end
 
   def add_to_cart
-    item_id_qty = current_user.cart + params[:item_id] + ',' + params[:item_qty] + ','
-    current_user.update(cart: item_id_qty)
-    redirect_to '/items', notice: 'Item added'
+    if current_user.cart.split(',').include?(params[:item_id])
+      redirect_to '/items', notice: 'Item already in cart'
+    else
+      item_id_qty = current_user.cart + params[:item_id] + ',' + params[:item_qty] + ','
+      current_user.update(cart: item_id_qty)
+      redirect_to '/items', notice: 'Item added'
+    end
   end
 
   def update_cart
@@ -25,10 +29,14 @@ class UsersController < ApplicationController
     old_qty = params[:old_qty]
     updated_cart = current_user.cart.sub(/#{item_id},#{old_qty},/, "#{item_id},#{qty},")
     current_user.update(cart: updated_cart)
-    redirect_to '/users/cart', notice: 'Cart sucessfully updated'
+    redirect_to '/users/cart', notice: 'Cart successfully updated'
   end
 
   def destroy_from_cart
+    item_id = params[:item_id]
+    updated_cart = current_user.cart.sub(/#{item_id},\d+,/, "")
+    current_user.update(cart: updated_cart)
+    redirect_to '/users/cart', notice: 'Item removed'
   end
 
   def cart
