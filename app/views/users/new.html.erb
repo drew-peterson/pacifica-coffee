@@ -1,6 +1,6 @@
 <h1>Signup</h1>
 
-<%= form_for :admin, url: '/admins' do |f| %>
+<%= form_for :user, url: '/users' do |f| %>
   First Name: <%= f.text_field :first_name %>
   Last Name: <%= f.text_field :last_name %>
   User Name: <%= f.text_field :user_name %>
@@ -10,4 +10,3 @@
   Phone Number: <%= f.telephone_field :phone_number %>
   <%= f.submit 'Submit' %>
 <% end %>
-
