@@ -13,7 +13,7 @@ require 'faker'
 User.create(first_name: 'Joji', last_name: 'Gordon', user_name: 'joji', password: '1234', phone_number: '911', admin: true)
 
 
-User.create(first_name: 'Daniel', last_name: 'Huang', user_name: 'Daniel', password: '1234', phone_number: '911')
+User.create(first_name: 'Daniel', last_name: 'Huang', user_name: 'daniel', password: '1234', phone_number: '911')
 
 
 10.times do |x|

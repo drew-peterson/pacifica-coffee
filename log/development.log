@@ -9539,3 +9539,196 @@ Processing by ItemsController#index as HTML
   [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items"
   Rendered items/index.html.erb within layouts/application (2.5ms)
 Completed 200 OK in 59ms (Views: 57.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/items" for ::1 at 2015-11-20 16:50:54 -0800
+Processing by ItemsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 50ms (Views: 48.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/charges.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-20 16:50:54 -0800
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-20 16:50:54 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-20 16:50:54 -0800
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-20 16:50:54 -0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-11-20 16:50:54 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-20 16:50:54 -0800
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-20 16:50:54 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-20 16:50:54 -0800
+
+
+Started GET "/assets/charges.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-20 16:50:54 -0800
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-20 16:50:54 -0800
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-20 16:50:54 -0800
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-20 16:50:54 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-11-20 16:50:54 -0800
+  [1m[36m (3.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (1.0ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateItems (20151118191227)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (15.4ms)[0m  [1mCREATE TABLE "items" ("id" serial primary key, "item_name" character varying, "item_description" text, "quantity" integer, "price" integer, "sku" character varying, "large_image" character varying, "small_image" character varying, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151118191227"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateUsers (20151120234929)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (2.9ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "first_name" character varying, "last_name" character varying, "user_name" character varying, "password_digest" character varying, "email" character varying, "phone_number" character varying, "admin" boolean DEFAULT 'f', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151120234929"]]
+  [1m[36m (1.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.4ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'items'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.9ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "user_name", "password_digest", "phone_number", "admin", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["first_name", "Joji"], ["last_name", "Gordon"], ["user_name", "joji"], ["password_digest", "$2a$10$kVzeG.c02bsqM4C0TiLVEe3OwuNNAAJtke59qv4QLisLrZgt39Uaa"], ["phone_number", "911"], ["admin", "t"], ["created_at", "2015-11-21 00:51:34.293540"], ["updated_at", "2015-11-21 00:51:34.293540"]]
+  [1m[35m (2.9ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("first_name", "last_name", "user_name", "password_digest", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["first_name", "Daniel"], ["last_name", "Huang"], ["user_name", "Daniel"], ["password_digest", "$2a$10$0WqQbnfbCWzeeP/EPBB8.u9Bae08fACyBhT1cRs1P1wb/wwoa3/ui"], ["phone_number", "911"], ["created_at", "2015-11-21 00:51:34.377048"], ["updated_at", "2015-11-21 00:51:34.377048"]]
+  [1m[36m (3.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "items" ("item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["item_name", "Sleek Concrete Coat"], ["item_description", "Temporibus alias nemo voluptas assumenda voluptatum."], ["quantity", 43], ["price", 52], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/11.png"], ["created_at", "2015-11-21 00:51:34.843595"], ["updated_at", "2015-11-21 00:51:34.843595"]]
+  [1m[35m (5.8ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "items" ("item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["item_name", "Aerodynamic Concrete Computer"], ["item_description", "Sed eius vitae eum dolorem ut dolores ipsa."], ["quantity", 11], ["price", 84], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/5.png"], ["created_at", "2015-11-21 00:51:34.853523"], ["updated_at", "2015-11-21 00:51:34.853523"]]
+  [1m[36m (4.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "items" ("item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["item_name", "Enormous Concrete Coat"], ["item_description", "Aut veniam aut rerum sed ipsa qui libero."], ["quantity", 50], ["price", 178], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/9.png"], ["created_at", "2015-11-21 00:51:34.861048"], ["updated_at", "2015-11-21 00:51:34.861048"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "items" ("item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["item_name", "Gorgeous Rubber Shoes"], ["item_description", "Nesciunt et eaque facilis incidunt consequatur."], ["quantity", 48], ["price", 66], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/13.png"], ["created_at", "2015-11-21 00:51:34.863536"], ["updated_at", "2015-11-21 00:51:34.863536"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "items" ("item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["item_name", "Rustic Copper Chair"], ["item_description", "Non accusamus qui."], ["quantity", 94], ["price", 137], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/2.png"], ["created_at", "2015-11-21 00:51:34.865920"], ["updated_at", "2015-11-21 00:51:34.865920"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "items" ("item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["item_name", "Ergonomic Copper Shirt"], ["item_description", "Veritatis quo quis optio suscipit est autem nesciunt."], ["quantity", 37], ["price", 53], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/3.png"], ["created_at", "2015-11-21 00:51:34.868461"], ["updated_at", "2015-11-21 00:51:34.868461"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "items" ("item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["item_name", "Gorgeous Granite Computer"], ["item_description", "Vitae vero perferendis alias autem sunt sit deserunt."], ["quantity", 14], ["price", 84], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/2.png"], ["created_at", "2015-11-21 00:51:34.870939"], ["updated_at", "2015-11-21 00:51:34.870939"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "items" ("item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["item_name", "Incredible Aluminum Table"], ["item_description", "Molestias eveniet sunt."], ["quantity", 97], ["price", 57], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/13.png"], ["created_at", "2015-11-21 00:51:34.873335"], ["updated_at", "2015-11-21 00:51:34.873335"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "items" ("item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["item_name", "Aerodynamic Aluminum Coat"], ["item_description", "Animi exercitationem rerum est."], ["quantity", 45], ["price", 81], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/9.png"], ["created_at", "2015-11-21 00:51:34.875369"], ["updated_at", "2015-11-21 00:51:34.875369"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "items" ("item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["item_name", "Heavy Duty Aluminum Watch"], ["item_description", "Aspernatur nihil omnis culpa consequatur harum aut aut."], ["quantity", 14], ["price", 13], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/4.png"], ["created_at", "2015-11-21 00:51:34.877249"], ["updated_at", "2015-11-21 00:51:34.877249"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/logout" for ::1 at 2015-11-20 16:51:41 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 11ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-11-20 16:51:41 -0800
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 388ms (Views: 387.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2015-11-20 16:51:45 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rA6ryVaCozMvMH5R7P8STkyn/BHuubxzCaHk5oblMiWkioDE9PZyQFV1CmKPwkSaAdxT28zHuASepVwWcV3vng==", "user_name"=>"joji", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."user_name" = $1 LIMIT 1  [["user_name", "joji"]]
+Redirected to http://localhost:3000/items
+Completed 302 Found in 158ms (ActiveRecord: 4.0ms)
+
+
+Started GET "/items" for ::1 at 2015-11-20 16:51:45 -0800
+Processing by ItemsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.7ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 65ms (Views: 58.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/logout" for ::1 at 2015-11-20 16:51:47 -0800
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-11-20 16:51:47 -0800
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 48ms (Views: 47.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2015-11-20 16:51:51 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LeQYbt/d5J9w2uLJCrpKBKUAasy535mAat7ou1Fj1oElYDNjfak17AqflvpphxzQ6HvFBpuhnff92lBLptsLOg==", "user_name"=>"daniel", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."user_name" = $1 LIMIT 1[0m  [["user_name", "daniel"]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for ::1 at 2015-11-20 16:51:51 -0800
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 70ms (Views: 68.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2015-11-20 16:51:57 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eRpv3ZGI+pxbRaDstpZ9jQwxIYPr+xcFOSFA54g/yeVxnkTQM/wr7yEA1N/VqytZQUqOScmFE3KuJfgXf4cUXg==", "user_name"=>"Daniel", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."user_name" = $1 LIMIT 1  [["user_name", "Daniel"]]
+Redirected to http://localhost:3000/items
+Completed 302 Found in 76ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/items" for ::1 at 2015-11-20 16:51:57 -0800
+Processing by ItemsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 133ms (Views: 130.6ms | ActiveRecord: 0.6ms)

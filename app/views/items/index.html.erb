@@ -4,12 +4,14 @@
   <% @items.each do |item| %>
     <li>
       <%= item.item_name %>
-      <%= link_to 'Update', edit_item_path(item) %>
-      <%= link_to 'Delete', 
-        item,
-        method: :delete,
-        data: { confirm: 'Are you sure?' }
-      %>
+      <% if current_user.admin %>
+        <%= link_to 'Update', edit_item_path(item) %>
+        <%= link_to 'Delete', 
+          item,
+          method: :delete,
+          data: { confirm: 'Are you sure?' }
+        %>
+      <% end %>
     </li>
   <% end %>
 </ul>
