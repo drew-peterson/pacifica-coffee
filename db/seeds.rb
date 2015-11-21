@@ -10,7 +10,11 @@ require 'faker'
 
 
 
-Admin.create(first_name: 'Joji', last_name: 'Gordon', user_name: 'joji', password: '1234', phone_number: '911')
+User.create(first_name: 'Joji', last_name: 'Gordon', user_name: 'joji', password: '1234', phone_number: '911', admin: true)
+
+
+User.create(first_name: 'Daniel', last_name: 'Huang', user_name: 'Daniel', password: '1234', phone_number: '911')
+
 
 10.times do |x|
   Item.create(
@@ -22,3 +26,4 @@ Admin.create(first_name: 'Joji', last_name: 'Gordon', user_name: 'joji', passwor
     large_image: Faker::Company.logo, 
     )
 end
+
