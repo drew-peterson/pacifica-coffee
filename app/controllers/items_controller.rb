@@ -1,7 +1,11 @@
 class ItemsController < ApplicationController
   before_action :authorize
-  before_action :all_items, only: [:index]
+  before_action :all_items, only: [:index, :admin]
   before_action :set_item, only: [:show, :edit, :update, :destroy]
+
+
+  def admin
+  end
 
   def new
     @item = Item.new

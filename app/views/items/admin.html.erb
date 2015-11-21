@@ -1,0 +1,20 @@
+<h1>List of all items</h1>
+<h3>Admin Edition</h3>
+
+<ul>
+  <% @items.each do |item| %>
+    <li>
+      <%= item.item_name %>
+      <% if current_user.admin %>
+        <%= link_to 'Update', edit_item_path(item) %>
+        <%= link_to 'Delete',
+          item,
+          method: :delete,
+          data: { confirm: 'Are you sure?' }
+        %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'Add Item', new_item_path %>
