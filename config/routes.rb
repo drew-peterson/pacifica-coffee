@@ -6,18 +6,24 @@ Rails.application.routes.draw do
 
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
+  get '/users/cart' => 'users#cart'
+  post '/users/cart/update' => 'users#update_cart'
+  delete '/users/cart' => 'users#destroy_from_cart'
+  post '/users/cart' => 'users#add_to_cart'
+
+
 
   root 'sessions#index'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
-  get '/logout' => 'sessions#destroy'
-
+  get '/logout' => 'sessions#destroy'  
 
   resources :charges
   resources :items
 
-  get '/admin' => 'items#admin'
+
   # Custom admin view...
+  get '/admin' => 'items#admin'
 
 
   # Example of regular route:

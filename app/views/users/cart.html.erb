@@ -1,0 +1,20 @@
+<h1>Items in Cart</h1>
+
+<ul>
+  <% @items.each do |qty, item| %>
+    <div class="item" style="border-bottom: 1px solid black; margin-bottom: 5px;">
+      <li> <%= item.item_name %> </li>
+      <li> <%= item.item_description %> </li>
+      <li> $<%= item.price %>.00 </li>
+
+      <li>
+        <%= form_for :user, url: '/users/cart/update' do |f| %>
+          <%= hidden_field_tag('item_id', value = item.id) %>
+          <%= hidden_field_tag('old_qty', value = qty) %>
+          <%= number_field_tag('qty', value = qty) %>
+          <%= f.submit 'Update Quantity' %>
+        <% end %>
+      </li>
+    </div>
+  <% end %>
+</ul>
