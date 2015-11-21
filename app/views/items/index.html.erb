@@ -6,6 +6,14 @@
       <li> <%= item.item_name %> </li>
       <li> <%= item.item_description %> </li>
       <li> $<%= item.price %>.00 </li>
+      <li>
+        <%= form_for :user, url: '/users/cart' do |f| %>
+          <%= hidden_field_tag('item_id', value = item.id) %>
+          <%= number_field_tag('item_qty', value = 1) %>
+          <%= f.submit 'Add to Cart' %>
+        <% end %>
+      </li>
+      
     </div>
   <% end %>
 </ul>
