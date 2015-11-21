@@ -17,7 +17,7 @@ class ItemsController < ApplicationController
 
   def update
     if @item.update(item_params)
-      redirect_to '/items'
+      redirect_to '/admin'
     else
       render 'edit'
     end
@@ -25,7 +25,7 @@ class ItemsController < ApplicationController
 
   def destroy
     @item.destroy
-    redirect_to '/items'
+    redirect_to '/admin'
   end
 
   def create

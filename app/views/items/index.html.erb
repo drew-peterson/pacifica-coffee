@@ -2,12 +2,10 @@
 
 <ul>
   <% @items.each do |item| %>
-    <li>
-      <%= item.item_name %>
-      <%= item.item_name %>
-      <%= item.item_name %>
-    </li>
+    <div class="item" style="border-bottom: 1px solid black; margin-bottom: 5px;">
+      <li> <%= item.item_name %> </li>
+      <li> <%= item.item_description %> </li>
+      <li> $<%= item.price %>.00 </li>
+    </div>
   <% end %>
 </ul>
-
-<%= link_to 'Add Item', new_item_path %>
