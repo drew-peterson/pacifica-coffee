@@ -5,8 +5,9 @@ module UsersHelper
       if index.even?
         @item_object = Item.find(num.to_i)
       else
-        @items[num] = @item_object
+        @items[@item_object] = num
       end
     end
   end
 end
+
