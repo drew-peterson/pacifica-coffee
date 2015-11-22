@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action:find_items, only: [:cart, :checkout]
+
   include UsersHelper
   def new
   end
@@ -40,7 +42,9 @@ class UsersController < ApplicationController
   end
 
   def cart
-    find_items
+  end
+
+  def checkout
   end
 
   private
