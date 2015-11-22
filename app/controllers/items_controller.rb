@@ -1,8 +1,9 @@
+SALT = 42154
+
 class ItemsController < ApplicationController
   before_action :authorize
   before_action :all_items, only: [:index, :admin]
   before_action :set_item, only: [:show, :edit, :update, :destroy]
-
 
   def admin
   end
@@ -31,6 +32,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
+      @item.update(id: (@item.id + SALT))
       redirect_to '/items'
     else
       render 'new'
