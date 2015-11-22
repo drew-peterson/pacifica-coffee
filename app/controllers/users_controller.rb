@@ -16,15 +16,18 @@ class UsersController < ApplicationController
   end
 
   def add_to_cart
+    # check if the item is already in cart
     if current_user.cart.split(',').include?(params[:item_id])
       redirect_to '/items', notice: 'Item already in cart'
     else
+    # Add item.id & desired quantity to user.cart string
       item_id_qty = current_user.cart + params[:item_id] + ',' + params[:item_qty] + ','
       current_user.update(cart: item_id_qty)
       redirect_to '/items', notice: 'Item added'
     end
   end
 
+  # look for item quantity by searching with item.id then update quantity under user.cart
   def update_cart
     item_id = params[:item_id]
     qty = params[:qty]
@@ -33,7 +36,8 @@ class UsersController < ApplicationController
     current_user.update(cart: updated_cart)
     redirect_to '/users/cart', notice: 'Cart successfully updated'
   end
-
+  
+  # look for item quantity by searching with item.id then remove item.id and quantity under user.cart
   def destroy_from_cart
     item_id = params[:item_id]
     updated_cart = current_user.cart.sub(/#{item_id},\d+,/, "")

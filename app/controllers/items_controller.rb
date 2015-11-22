@@ -32,6 +32,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
+      # add randomness to item.id
       @item.update(id: (@item.id + SALT))
       redirect_to '/items'
     else
