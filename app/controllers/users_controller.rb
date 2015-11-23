@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action:find_items, only: [:cart, :checkout]
+  before_action :find_items, :cart_total, only: [:cart]
 
   include UsersHelper
   def new
@@ -48,7 +48,16 @@ class UsersController < ApplicationController
   def cart
   end
 
-  def checkout
+  def order_history
+    @orders = Order.where(user_id: current_user.id)
+  end
+
+  def single_order_history
+      p '' * 80
+        p params
+      p '' * 80
+
+    @order = Order.find(params[:id])
   end
 
   private

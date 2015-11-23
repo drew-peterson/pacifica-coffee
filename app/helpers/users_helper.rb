@@ -10,5 +10,14 @@ module UsersHelper
       end
     end
   end
+
+  def cart_total
+    find_items
+    prices = []
+    @items.each do |item, qty|
+      prices << item.price * qty.to_i
+    end
+    @cart_total = prices.inject(:+)
+  end
 end
 

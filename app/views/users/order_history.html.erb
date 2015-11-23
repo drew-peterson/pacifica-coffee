@@ -1,0 +1,13 @@
+<h1>Order History</h1>
+
+<ul>
+  <% @orders.each do |order| %>
+    <div class="item" style="border-bottom: 1px solid black; margin-bottom: 5px;">
+      <%= link_to "Order No.#{order.id}", "/users/order_history/#{order.id}" %>
+      <li> Order Date: <%=  Date.parse("#{order.created_at}") %> </li>
+
+    </div>
+  <% end %>
+</ul>
+
+
