@@ -32363,3 +32363,180 @@ Processing by UsersController#cart as HTML
   [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 49538]]
   Rendered users/cart.html.erb within layouts/application (3.8ms)
 Completed 200 OK in 91ms (Views: 68.2ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/users/order_history/1" for ::1 at 2015-11-23 14:06:12 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#single_order_history as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mOrder Load (0.5ms)[0m  SELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered users/single_order_history.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+Completed 200 OK in 506ms (Views: 471.9ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/users/order_history" for ::1 at 2015-11-23 14:07:12 -0800
+Processing by UsersController#order_history as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mOrder Load (0.3ms)[0m  [1mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered users/order_history.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 95ms (Views: 76.6ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-23 14:07:13 -0800
+
+
+Started GET "/assets/charges.self-2e02d0769d29a400acd78217ea71979cb4de0389f72288da1fc0a41ac3919514.css?body=1" for ::1 at 2015-11-23 14:07:13 -0800
+
+
+Started GET "/assets/orders.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-23 14:07:13 -0800
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-23 14:07:13 -0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-11-23 14:07:13 -0800
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-23 14:07:13 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-23 14:07:13 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-23 14:07:13 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-23 14:07:13 -0800
+
+
+Started GET "/assets/charges.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-23 14:07:13 -0800
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-23 14:07:13 -0800
+
+
+Started GET "/assets/orders.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-23 14:07:13 -0800
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-23 14:07:13 -0800
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-23 14:07:13 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-11-23 14:07:13 -0800
+
+
+Started GET "/users/cart" for ::1 at 2015-11-23 14:11:19 -0800
+Processing by UsersController#cart as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 41364]]
+  [1m[35mItem Load (0.4ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 41675]]
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 58067]]
+  [1m[35mItem Load (0.4ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 49538]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 41364]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 41675]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 58067]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 49538]]
+  Rendered users/cart.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 95ms (Views: 60.9ms | ActiveRecord: 4.4ms)
+
+
+Started DELETE "/users/cart?item_id=58067" for ::1 at 2015-11-23 14:11:21 -0800
+Processing by UsersController#destroy_from_cart as HTML
+  Parameters: {"authenticity_token"=>"yfOICkt/M643QSB2kz35QgDn61KlOJN74NF+ND5T2T/Bd6MH6Qvi3U0EVEXwAK+WTZxEmIdGlwx31cbEyesEhA==", "item_id"=>"58067"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "cart" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["cart", "41364,1,41675,1,49538,2,"], ["updated_at", "2015-11-23 22:11:21.767149"], ["id", 2]]
+  [1m[35m (97.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/users/cart
+Completed 302 Found in 106ms (ActiveRecord: 97.8ms)
+
+
+Started GET "/users/cart" for ::1 at 2015-11-23 14:11:21 -0800
+Processing by UsersController#cart as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mItem Load (0.3ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 41364]]
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 41675]]
+  [1m[35mItem Load (0.2ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 49538]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 41364]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 41675]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 49538]]
+  Rendered users/cart.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 141ms (Views: 135.6ms | ActiveRecord: 1.1ms)
+
+
+Started DELETE "/users/cart?item_id=41675" for ::1 at 2015-11-23 14:11:22 -0800
+Processing by UsersController#destroy_from_cart as HTML
+  Parameters: {"authenticity_token"=>"Xc9iTRn3HzGIF4x+/IoBlu7IRLhB+5QeEXwsPpxTF9NVS0lAu4POQvJS+E2ft1dCo7PrcmOFkGmGeJTOa+vKaA==", "item_id"=>"41675"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "cart" = $1, "updated_at" = $2 WHERE "users"."id" = $3  [["cart", "41364,1,49538,2,"], ["updated_at", "2015-11-23 22:11:22.867053"], ["id", 2]]
+  [1m[36m (1.8ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users/cart
+Completed 302 Found in 7ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/users/cart" for ::1 at 2015-11-23 14:11:22 -0800
+Processing by UsersController#cart as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 41364]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 49538]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 41364]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 49538]]
+  Rendered users/cart.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 72ms (Views: 69.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/users/cart/update" for ::1 at 2015-11-23 14:11:25 -0800
+Processing by UsersController#update_cart as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uTrup6tbdT92L5SkJQvSt7cn69pa5rOYFmb4GPoiy7GxvsWqCS+kTAxq4JdGNoRj+lxEEHiYt++BYkDoDZoWCg==", "item_id"=>"41364", "old_qty"=>"1", "qty"=>"10", "commit"=>"Update Quantity"}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (1.0ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "cart" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["cart", "41364,10,49538,2,"], ["updated_at", "2015-11-23 22:11:25.979050"], ["id", 2]]
+  [1m[35m (1.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/users/cart
+Completed 302 Found in 8ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/users/cart" for ::1 at 2015-11-23 14:11:25 -0800
+Processing by UsersController#cart as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 41364]]
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 49538]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 41364]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 49538]]
+  Rendered users/cart.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 60ms (Views: 57.0ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/charges" for ::1 at 2015-11-23 14:11:32 -0800
+Processing by ChargesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KegGNUet2Uwm7HgpKmC9Dk98eG8xQBtMKEkmNU7/O2khbC045dkIP1ypDBpJXevaAgfXpRM+Hzu/TZ7FuUfm0g==", "stripeToken"=>"tok_17ASWzIK1z2yyYldJvlroNmq", "stripeTokenType"=>"card", "stripeEmail"=>"wqeqwe@asdas.com"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 41364]]
+  [1m[35mItem Load (0.2ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 49538]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "orders" ("item_ids_quantities", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["item_ids_quantities", "41364,10,49538,2,"], ["user_id", 2], ["created_at", "2015-11-23 22:11:33.938167"], ["updated_at", "2015-11-23 22:11:33.938167"]]
+  [1m[36m (3.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "cart" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["cart", ""], ["updated_at", "2015-11-23 22:11:33.945215"], ["id", 2]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  Rendered charges/create.html.erb within layouts/charges (0.6ms)
+Completed 200 OK in 1204ms (Views: 3.8ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/items" for ::1 at 2015-11-23 14:11:37 -0800
+Processing by ItemsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mItem Load (0.6ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 64ms (Views: 61.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/cart" for ::1 at 2015-11-23 14:11:40 -0800
+Processing by UsersController#cart as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered users/cart.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 63ms (Views: 61.3ms | ActiveRecord: 0.2ms)

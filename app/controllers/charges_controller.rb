@@ -22,7 +22,16 @@ class ChargesController < ApplicationController
       :currency    => 'usd'
     )
 
-    Order.create(item_ids_quantities: current_user.cart, user_id: current_user.id)
+    # create an order history
+    @order = Order.new(item_ids_quantities: current_user.cart, user_id: current_user.id)
+    
+    # clear cart upon order history creation
+    if @order.save
+      current_user.update(cart: '')
+    else
+      # nothing happens for now
+    end
+
 
   rescue Stripe::CardError => e
     flash[:error] = e.message
