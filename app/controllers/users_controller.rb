@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_action :find_items, :cart_total, only: [:cart]
+  before_action :authorize, only: :add_to_cart
+  before_action :find_items, :cart_total, only: :cart
 
   include UsersHelper
   def new
@@ -50,13 +51,14 @@ class UsersController < ApplicationController
 
   def order_history
     @orders = Order.where(user_id: current_user.id)
+    @order_totals = []
+    @orders.each do |order|
+      cart_total(order.item_ids_quantities)
+      @order_totals << @cart_total
+    end
   end
 
   def single_order_history
-      p '' * 80
-        p params
-      p '' * 80
-
     @order = Order.find(params[:id])
   end
 

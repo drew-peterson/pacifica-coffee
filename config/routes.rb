@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get '/users/order_history' => 'users#order_history'
   get '/users/order_history/:id' => 'users#single_order_history'
 
-  root 'sessions#index'
+  root 'items#index'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'  

@@ -12,4 +12,8 @@ class ApplicationController < ActionController::Base
     redirect_to '/login', notice: 'Unauthorized user, Please login' unless current_user
   end
 
+  def admin_access
+    redirect_to '/items', notice: 'Unauthorized user, Admin only' unless current_user.admin
+  end
+
 end
