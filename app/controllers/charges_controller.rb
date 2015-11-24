@@ -1,3 +1,5 @@
+require_relative '../mailers/order_confirmation_email'
+
 class ChargesController < ApplicationController
 
   include UsersHelper
@@ -32,6 +34,8 @@ class ChargesController < ApplicationController
       # nothing happens for now
     end
 
+    @email = customer[:email]
+    send_order_conformation
 
   rescue Stripe::CardError => e
     flash[:error] = e.message

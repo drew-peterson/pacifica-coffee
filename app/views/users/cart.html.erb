@@ -22,21 +22,25 @@
   <% end %>
 </ul>
 
-<%= form_tag charges_path do %>
-  <article>
-    <% if flash[:error].present? %>
-      <div id="error_explanation">
-        <p><%= flash[:error] %></p>
-      </div>
-    <% end %>
-    <label class="amount">
-      <span>Total: <%= @cart_total %>.00</span>
-    </label>
-  </article>
+<% if current_user && current_user.cart != '' %>
+  <%= form_tag charges_path do %>
+    <article>
+      <% if flash[:error].present? %>
+        <div id="error_explanation">
+          <p><%= flash[:error] %></p>
+        </div>
+      <% end %>
+      <label class="amount">
+        <span>Total: <%= @cart_total %>.00</span>
+      </label>
+    </article>
 
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="A month's subscription"
-          data-amount="<%= @cart_total %>00"
-          data-locale="auto"></script>
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+            data-description="A month's subscription"
+            data-amount="<%= @cart_total %>00"
+            data-locale="auto"></script>
+  <% end %>
+<% else %>
+  <h4>Your Shopping Cart is Empty</h4>
 <% end %>
