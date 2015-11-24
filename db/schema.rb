@@ -32,8 +32,12 @@ ActiveRecord::Schema.define(version: 20151121183924) do
   create_table "orders", force: :cascade do |t|
     t.string   "item_ids_quantities"
     t.integer  "user_id"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.boolean  "shipped",             default: false
+    t.boolean  "requested_return",    default: false
+    t.boolean  "return_received",     default: false
+    t.boolean  "refunded",            default: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
   end
 
   create_table "users", force: :cascade do |t|
