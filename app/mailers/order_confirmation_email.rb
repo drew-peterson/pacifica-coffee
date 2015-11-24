@@ -4,7 +4,7 @@ def send_order_conformation
  a = 'variable'
 message = <<EOF
 From: Joji <FROM@gmail.com>
-To: YOU <TO@gmail.com>
+To: Happy Customer <#{@email}>
 Subject: Order Confirmation
 Dear #{@email}
 Thank you for your order with Pacifica Coffee.

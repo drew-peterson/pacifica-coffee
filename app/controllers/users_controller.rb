@@ -60,6 +60,7 @@ class UsersController < ApplicationController
 
   def single_order_history
     @order = Order.find(params[:id])
+    find_items(@order.item_ids_quantities)
   end
 
   private
