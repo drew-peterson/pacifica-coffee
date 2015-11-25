@@ -1,0 +1,87 @@
+// Mix In
+@mixin debug {
+  border: 1px solid red;
+}
+
+* {
+  color: black;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  // border: 1px solid red;
+}
+
+
+// Mobile
+.main-header, .main-nav {
+  display: flex;
+  flex-direction: column;
+
+  // is there a flex property for this
+  text-align: center;
+}
+
+.main-header {
+}
+
+.main-nav {
+  list-style-type: none;
+
+  li {
+    a {
+      text-decoration: none;
+      display: block;
+      padding: .5rem;
+
+      &:hover {
+        background: black;
+        color: white;
+      }
+    }
+  }
+}
+
+
+
+
+// Media-query
+
+// Tablet Layout
+@media ( min-width: 769px ) {
+  .main-header,
+  .main-nav {
+    display: flex;
+  }
+
+  .main-header {
+    // center virtically
+    align-items: center;
+
+  }
+
+  .main-nav {
+    flex-direction: row;
+   }
+}
+
+// Desktop
+@media ( min-width: 1025px ) {
+  .main-header,
+  .main-nav {
+    flex-direction: row;
+    display: flex;
+  }
+
+  .main-header {
+    justify-content: space-between;
+  }
+
+ .main-nav {
+    @include debug;
+
+    li {
+      @include debug;
+    }
+ }
+
+} // end of media 1025
