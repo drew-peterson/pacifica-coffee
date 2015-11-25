@@ -45,18 +45,24 @@
 
 // Tablet Layout
 @media ( min-width: 769px ) {
+  // equal height and width columns using flexbox codePen
   .items-container {
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
 
     .item-card {
       width: 32%;
+      margin: 1%;
       display: flex;
       flex-direction: column;
 
+      &:nth-of-type(3n) {
+        margin-right: 0;
+      }
 
-      margin-bottom: 1.5%;
+      &:nth-of-type(3n+1) {
+        margin-left: 0;
+      }
     }
   } // end of container
 
@@ -64,11 +70,25 @@
 
 // Desktop
 @media ( min-width: 1025px ) {
-  .items-container {
+ .items-container {
 
     .item-card {
-      width: 24%;
-      margin-bottom: 1.5%;
+      width: 23.5%;
+      margin: 1%;
+
+      &:nth-of-type(4n) {
+        margin-right: 0;
+      }
+
+      &:nth-of-type(4n + 1) {
+        margin-left: 0;
+      }
+
+     // add margin that is removed above
+      &:nth-of-type(3n) {
+        margin-right: 2%;
+      }
+
     }
   } // end of container
 } // end of media 1025
