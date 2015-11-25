@@ -1,14 +1,16 @@
-<ul>
+<ul class="items-container">
   <% @items.each do |item| %>
-    <div class="item" style="border-bottom: 1px solid black; margin-bottom: 5px;">
-      <li> <%= item.item_name %> </li>
+    <div class="item-card">
+      <h4> <%= item.item_name %> </h4>
       <li> <%= item.item_description %> </li>
       <li> $<%= item.price %>.00 </li>
       <li>
         <%= form_for :user, url: '/users/cart' do |f| %>
+
           <%= hidden_field_tag('item_id', value = item.id) %>
-          <%= number_field_tag('item_qty', value = 1) %>
-          <%= f.submit 'Add to Cart' %>
+          <%= number_field_tag('item_qty', value = 1) %><br>
+          <%= f.submit 'Add to Cart', class:"btn-add-to-cart" %>
+
         <% end %>
       </li>
 

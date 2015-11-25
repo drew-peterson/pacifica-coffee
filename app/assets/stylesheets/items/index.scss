@@ -1,0 +1,59 @@
+@import 'mixins' ;
+
+.items-container {
+  display: flex;
+  flex-direction: column;
+
+  .item-card {
+    text-align: center;
+
+  }
+
+}
+
+// Media-query
+
+// Tablet Layout
+@media ( min-width: 769px ) {
+  .items-container {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .item-card {
+    display: flex;
+    flex-direction: column;
+    background: LightGray;
+    width: 32%;
+    margin-bottom: 1%;
+    text-align: center;
+    li:last-child {
+      @include debug;
+      margin-top: auto;
+
+    }
+
+    .btn-add-to-cart {
+      margin-top: 2rem;
+      background: black;
+      color: white;
+      padding: .5rem 1rem;
+      border: none;
+
+      &:hover {
+        color: yellow;
+      }
+
+    }
+
+  } // end card
+
+}
+
+}
+
+// Desktop
+@media ( min-width: 1025px ) {
+
+
+} // end of media 1025

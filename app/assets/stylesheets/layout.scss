@@ -1,7 +1,5 @@
 // Mix In
-@mixin debug {
-  border: 1px solid red;
-}
+@import 'mixins' ;
 
 * {
   color: black;
@@ -9,6 +7,12 @@
   padding: 0;
   box-sizing: border-box;
   // border: 1px solid red;
+}
+
+ul,
+a {
+  list-style-type: none;
+  text-decoration: none;
 }
 
 
