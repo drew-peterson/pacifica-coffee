@@ -1,14 +1,13 @@
 <h1>Items in Cart</h1>
 
-<%= link_to 'Checkout',users_checkout_path %>
-
+<% prices = [] %>
 <ul>
   <% @items.each do |item, qty| %>
     <div class="item" style="border-bottom: 1px solid black; margin-bottom: 5px;">
       <li> <%= item.item_name %> </li>
       <li> <%= item.item_description %> </li>
       <li> $<%= item.price %>.00 </li>
-
+            <% prices << item.price * qty.to_i %>
       <li>
         <%= form_for :user, url: '/users/cart/update' do |f| %>
           <%= hidden_field_tag('item_id', value = item.id) %>
@@ -22,3 +21,26 @@
     </div>
   <% end %>
 </ul>
+
+<% if current_user && current_user.cart != '' %>
+  <%= form_tag charges_path do %>
+    <article>
+      <% if flash[:error].present? %>
+        <div id="error_explanation">
+          <p><%= flash[:error] %></p>
+        </div>
+      <% end %>
+      <label class="amount">
+        <span>Total: <%= @cart_total %>.00</span>
+      </label>
+    </article>
+
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+            data-description="Test Charge"
+            data-amount="<%= @cart_total %>00"
+            data-locale="auto"></script>
+  <% end %>
+<% else %>
+  <h4>Your Shopping Cart is Empty</h4>
+<% end %>

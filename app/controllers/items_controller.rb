@@ -1,7 +1,7 @@
 SALT = 42154
 
 class ItemsController < ApplicationController
-  before_action :authorize
+  before_action :admin_access, only: :admin
   before_action :all_items, only: [:index, :admin]
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
@@ -32,6 +32,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
+      # add randomness to item.id
       @item.update(id: (@item.id + SALT))
       redirect_to '/items'
     else

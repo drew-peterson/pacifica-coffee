@@ -4,17 +4,17 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
 
+  root 'items#index'
+
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
   get '/users/cart' => 'users#cart'
   post '/users/cart/update' => 'users#update_cart'
   delete '/users/cart' => 'users#destroy_from_cart'
   post '/users/cart' => 'users#add_to_cart'
-  get '/users/checkout' => 'users#checkout'
+  get '/users/order_history' => 'users#order_history'
+  get '/users/order_history/:id' => 'users#single_order_history'
 
-
-
-  root 'sessions#index'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'  
