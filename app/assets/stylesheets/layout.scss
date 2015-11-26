@@ -26,6 +26,8 @@ a {
 }
 
 .main-header {
+  height: 4rem;
+  box-shadow: 0 8px 6px -6px black;
 }
 
 .main-nav {
@@ -42,6 +44,20 @@ a {
         color: white;
       }
     }
+  }
+}
+
+.error-notice {
+  @include debug;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  p {
+    // forward makes the animation keep elements on hidden
+    animation: fadein 5s forwards;
+    font-size: 1.5rem;
   }
 }
 

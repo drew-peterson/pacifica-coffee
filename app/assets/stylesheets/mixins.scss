@@ -5,3 +5,19 @@
 @mixin main-btn {
 
 }
+
+@keyframes fadein {
+  0%, 100% {
+    opacity: 0;
+    -webkit-transform: scale(0.5);
+    }
+  30%, 90% {
+    opacity: 1;
+    -webkit-transform: scale(1.0);
+  }
+
+
+}
+
+//Animation
+
