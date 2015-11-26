@@ -1,3 +1,8 @@
+// Colors
+
+$wet-gray: #34495e;
+
+
 @mixin debug {
   border: 1px solid red;
 }
@@ -15,11 +20,14 @@
   }
 }
 
-@mixin main-btn($bg) {
+// button
+
+@mixin main-btn($bg, $padding) {
   background: $bg;
+  padding: ($padding / 2) $padding;
   &:hover {
     background:darken($bg,8%);
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
   }
   &:active {
     background:darken($bg,25%);

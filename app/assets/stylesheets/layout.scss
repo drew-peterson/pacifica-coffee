@@ -9,6 +9,7 @@
   // border: 1px solid red;
 }
 
+
 ul,
 a {
   list-style-type: none;
@@ -27,16 +28,27 @@ a {
 
 .main-header {
 
+  .nav-wrap {
+    display: flex;
+    flex-direction: column;
+    padding: 0 2%;
+  }
+
   box-shadow: 0 8px 6px -6px black;
 
    .mobile-menu-btn {
+    @include main-btn($wet-gray, 20px);
+    color: white;
     border: none;
-    padding: 5px;
+    margin: 15px 0;
+    // position button on far left
+    margin-right: auto;
   }
 }
 
 .main-nav {
   list-style-type: none;
+
 
   li {
     a {

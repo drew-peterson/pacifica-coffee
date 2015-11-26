@@ -21,10 +21,12 @@ Navigation
    <%= link_to('/') do %>
    <h3> Pacifica Coffee </h3>
   <% end %>
-    <p>Signed in as <%= current_user.user_name %> </p>
-  <div class="nav-wrap">
+
+    <button id='mobile-menu-btn' class='mobile-menu-btn'> menu </button>
+
     <ul class="main-nav" id="main-nav">
     <% if current_user %>
+      <li>Hello <%= current_user.user_name %></li>
       <li>
       <%= link_to "Logout", '/logout' %> </li>
       <li>
@@ -51,7 +53,6 @@ Navigation
         </li>
       <% end %>
     </ul>
-  </div>
 
 </header>
 
