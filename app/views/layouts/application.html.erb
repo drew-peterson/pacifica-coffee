@@ -17,18 +17,16 @@
 Navigation
  -->
 
- <header class="main-header">
+ <header class="main-header" id="main-header">
    <%= link_to('/') do %>
    <h3> Pacifica Coffee </h3>
   <% end %>
     <p>Signed in as <%= current_user.user_name %> </p>
-  <ul class="main-nav">
-
-  <% if current_user %>
-
-    <li>
+  <div class="nav-wrap">
+    <ul class="main-nav" id="main-nav">
+    <% if current_user %>
+      <li>
       <%= link_to "Logout", '/logout' %> </li>
-
       <li>
         <%= link_to 'Cart', '/users/cart' %>
       </li>
@@ -43,17 +41,18 @@ Navigation
         <li>
           <%= link_to 'user view', '/items' %>
         </li>
-    <% end %>
-  <% else %>
-    <li>
-      <%= link_to 'Login', '/login' %>
-    </li>
-    <li>
-      <%= link_to 'Signup', '/signup' %>
-    </li>
-  <% end %>
+      <% end %>
+      <% else %>
+          <li>
+          <%= link_to 'Login', '/login' %>
+        </li>
+        <li>
+          <%= link_to 'Signup', '/signup' %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
 
-  </ul>
 </header>
 
 <div class="error-notice">
