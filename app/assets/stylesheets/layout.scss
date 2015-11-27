@@ -9,6 +9,11 @@
   // border: 1px solid red;
 }
 
+body {
+  padding: 0 1rem;
+  background: darken(#ecf0f1, 10%);
+}
+
 
 ul,
 a {
@@ -18,18 +23,16 @@ a {
 
 
 // Mobile
+
 .main-header, .main-nav {
   display: flex;
   flex-direction: column;
-  align-items: center;
 
   // is there a flex property for this
   text-align: center;
 }
 
 .main-header {
-
-  box-shadow: 0 8px 6px -6px black;
 
    .mobile-menu-btn {
     @include main-btn($wet-gray, 20px);
@@ -44,7 +47,8 @@ a {
 
 .main-nav {
   list-style-type: none;
-  // hide by default
+  background: $light-gray;
+  // hide nav links on mobile
   display: none;
 
 
@@ -53,9 +57,10 @@ a {
       text-decoration: none;
       display: block;
       padding: .5rem;
+      transition: all ease-in-out 0.75s;
 
       &:hover {
-        background: black;
+        background: darken( white, 50%);
         color: white;
       }
     }
@@ -100,6 +105,10 @@ a {
 
   .main-nav {
     flex-direction: row;
+
+    li a {
+      min-width: 110px;
+    }
    }
 }
 
