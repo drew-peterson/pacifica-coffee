@@ -25,7 +25,9 @@ Navigation
 
     <ul class="main-nav" id="main-nav">
     <% if current_user %>
-      <li>Hello <%= current_user.user_name %></li>
+      <li>
+        <a href="#"> Hello <%= current_user.user_name %> </a>
+      </li>
       <li>
         <%= link_to 'Cart', '/users/cart' %>
       </li>
@@ -59,8 +61,9 @@ Navigation
   <p><%= notice %></p>
 </div>
 
-
-<%= yield %>
+<main>
+  <%= yield %>
+</main>
 
 </body>
 </html>

@@ -2,18 +2,17 @@
 @import 'mixins' ;
 
 * {
-  color: black;
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
-  // border: 1px solid red;
+  color: black;
 }
 
 body {
-  padding: 0 1rem;
   background: darken(#ecf0f1, 10%);
 }
 
+main {
+  padding: 0 1rem ;
+}
 
 ul,
 a {
@@ -46,10 +45,10 @@ a {
 }
 
 .main-nav {
-  list-style-type: none;
-  background: $light-gray;
   // hide nav links on mobile
   display: none;
+
+  list-style-type: none;
 
 
   li {
@@ -68,18 +67,25 @@ a {
 }
 
 .error-notice {
-  height: 3rem;
   display: flex;
-  align-items: center;
   justify-content: center;
+  position: absolute;
+  align-items: center;
   margin-bottom: -1%;
+  width: 100%;
+  margin-left: -1rem;
+  text-align: center;
 
   p {
     // forward makes the animation keep elements on hidden
-    animation: fadein 5s forwards;
+    width: 100%;
+    background: lighten(green, 30%);
+    color: $wet-gray;
+    animation: fadein 2s forwards;
     font-size: 1.2rem;
   }
 }
+
 
 
 
@@ -96,6 +102,8 @@ a {
   .main-header {
     // center virtically
     align-items: center;
+    height: 8vh;
+
 
    .mobile-menu-btn {
       display: none;
@@ -110,6 +118,8 @@ a {
       min-width: 110px;
     }
    }
+
+
 }
 
 // Desktop
