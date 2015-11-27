@@ -8,10 +8,13 @@
 
 body {
   background: darken(#ecf0f1, 10%);
+  display: flex;
+  flex-direction: column;
 }
 
 main {
   padding: 0 1rem ;
+  margin-top: 4rem;
 }
 
 ul,
@@ -32,8 +35,12 @@ a {
 }
 
 .main-header {
+  position: fixed;
+  width: 100%;
+  background: darken(#ecf0f1, 10%);
 
    .mobile-menu-btn {
+
     @include main-btn($wet-gray, 20px);
     display: block;
     color: white;
@@ -45,6 +52,7 @@ a {
 }
 
 .main-nav {
+
   // hide nav links on mobile
   display: none;
 
@@ -102,7 +110,7 @@ a {
   .main-header {
     // center virtically
     align-items: center;
-    height: 8vh;
+    height: 4rem;
 
 
    .mobile-menu-btn {
