@@ -35,38 +35,38 @@ a {
 }
 
 .main-header {
+  padding: 2% 0;
   width: 100%;
   position: fixed;
   background: white;
 
   .btn-wrap {
+
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     h3 {
       font-size: 1.6rem;
     }
-    div {
-      display: flex;
 
-     .mobile-menu-btn,
-     .mobile-filter-btn {
-        @include main-btn($wet-gray, 20px);
-        color: white;
-        border: none;
-        margin: 15px 0;
-        // position button on far left
-      }
-
-      .mobile-menu-btn {
-        margin-right: 2.5%;
-        margin-left: auto;
-
-      }
-      .mobile-filter-btn {
-        margin-left: 2.5%;
-        margin-right: auto;
-      }
+   .mobile-menu-btn,
+   .mobile-filter-btn {
+      @include main-btn($wet-gray, 20px);
+      color: white;
+      border: none;
+      // position button on far left
     }
+
+    .mobile-menu-btn {
+      margin-right: 2.5%;
+      margin-left: auto;
+
+    }
+    .mobile-filter-btn {
+      margin-left: 2.5%;
+      margin-right: auto;
+    }
+
   }
 }
 
@@ -97,7 +97,6 @@ a {
   justify-content: center;
   position: absolute;
   align-items: center;
-  margin-bottom: -1%;
   width: 100%;
   text-align: center;
 

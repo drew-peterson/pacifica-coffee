@@ -19,14 +19,15 @@ Navigation
  <header class="main-header" id="main-header">
 
   <div class="btn-wrap">
+    <button id='mobile-filter-btn' class='mobile-filter-btn'> Filter </button>
+
     <%= link_to('/') do %>
       <h3> Pacifica Coffee </h3>
     <% end %>
-    <div>
-        <button id='mobile-filter-btn' class='mobile-filter-btn'> Filter </button>
-        <button id='mobile-menu-btn' class='mobile-menu-btn'> menu </button>
-      </div>
+
+      <button id='mobile-menu-btn' class='mobile-menu-btn'> menu </button>
     </div>
+
     <ul class="main-nav" id="main-nav">
     <% if current_user %>
       <li>
