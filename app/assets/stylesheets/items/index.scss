@@ -6,8 +6,8 @@
 
   .item-card {
     text-align: center;
-    background: #ecf0f1;
-
+    padding: 1% 2%;
+    background: $light-gray;
     margin-bottom: 2%;
 
 
@@ -70,25 +70,5 @@
 
 // Desktop
 @media ( min-width: 1025px ) {
- .items-container {
 
-    .item-card {
-      width: 23.5%;
-      margin: 1%;
-
-      &:nth-of-type(4n) {
-        margin-right: 0;
-      }
-
-      &:nth-of-type(4n + 1) {
-        margin-left: 0;
-      }
-
-     // add margin that is removed above
-      &:nth-of-type(3n) {
-        margin-right: 2%;
-      }
-
-    }
-  } // end of container
 } // end of media 1025
