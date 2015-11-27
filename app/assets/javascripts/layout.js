@@ -68,6 +68,11 @@ $(function(){
     $('#main-nav').slideToggle()
 
   })
+
+  $(document).on('click', '#mobile-filter-btn', function(){
+  $('.filter').slideToggle()
+
+})
 }) // end of ready
 
 

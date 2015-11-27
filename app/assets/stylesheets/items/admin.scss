@@ -1,0 +1,59 @@
+@import 'mixins';
+
+main {
+
+  flex-direction: column;
+}
+
+// Mobile View
+
+.admin-container {
+  background: $light-gray;
+  margin-bottom: 1rem;
+
+  .admin-items {
+    display: flex;
+    align-items: center;
+    .a-item {
+      flex: 1;
+    }
+    .admin-item-img {
+      div {
+        height: 70px;
+      }
+    }
+    .admin-item {
+      flex: 2;
+
+      li {
+        padding: .5rem;
+      }
+    }
+  } // end of items
+
+}
+  .admin-btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a {
+      display: block;
+      @include main-btn($wet-gray, 1.4rem);
+      color: white;
+      padding: .5rem 3rem ;
+      margin: .5rem;
+    }
+  }
+
+
+// Media-query
+
+// Tablet Layout
+@media ( min-width: 769px ) {
+
+}
+
+// Desktop
+@media ( min-width: 1025px ) {
+
+} // end of media 1025
