@@ -7,14 +7,15 @@
 }
 
 body {
-  background: darken(#ecf0f1, 10%);
   display: flex;
   flex-direction: column;
 }
 
 main {
-  padding: 0 1rem ;
-  margin-top: 4rem;
+  margin: auto;
+  // padding: 0 1rem ;
+  width: 95%;
+  margin-top: 5rem;
 }
 
 ul,
@@ -29,25 +30,32 @@ a {
 .main-header, .main-nav {
   display: flex;
   flex-direction: column;
-
   // is there a flex property for this
   text-align: center;
 }
 
 .main-header {
-  position: fixed;
   width: 100%;
-  background: darken(#ecf0f1, 10%);
+  position: fixed;
+  background: white;
+
+  h3 {
+    position: absolute;
+    width: 100%;
+    top: 2vh;
+    font-size: 1.6rem;
+  }
 
    .mobile-menu-btn {
 
-    @include main-btn($wet-gray, 20px);
-    display: block;
-    color: white;
-    border: none;
-    margin: 15px 0;
-    // position button on far left
-    margin-right: auto;
+      @include main-btn($wet-gray, 20px);
+      display: block;
+      color: white;
+      border: none;
+      margin: 15px 0;
+      // position button on far left
+      margin-left: auto;
+      margin-right: 2.5%;
   }
 }
 
@@ -55,20 +63,19 @@ a {
 
   // hide nav links on mobile
   display: none;
-
   list-style-type: none;
 
 
   li {
     a {
+      color: darken( $light-gray, 50%);
       text-decoration: none;
       display: block;
       padding: .5rem;
-      transition: all ease-in-out 0.75s;
+      transition: all ease-in-out 0.35s;
 
       &:hover {
-        background: darken( white, 50%);
-        color: white;
+        color: darken( $light-gray, 90%);
       }
     }
   }
@@ -81,7 +88,6 @@ a {
   align-items: center;
   margin-bottom: -1%;
   width: 100%;
-  margin-left: -1rem;
   text-align: center;
 
   p {
@@ -110,7 +116,11 @@ a {
   .main-header {
     // center virtically
     align-items: center;
-    height: 4rem;
+    min-height: 4rem;
+
+    h3 {
+      position: initial;
+    }
 
 
    .mobile-menu-btn {
@@ -140,6 +150,10 @@ a {
 
   .main-header {
     justify-content: space-between;
+
+    h3 {
+      margin-left: 20px;
+    }
   }
 
  .main-nav {
