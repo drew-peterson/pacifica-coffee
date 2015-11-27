@@ -21,6 +21,7 @@ a {
 .main-header, .main-nav {
   display: flex;
   flex-direction: column;
+  align-items: center;
 
   // is there a flex property for this
   text-align: center;
@@ -28,16 +29,11 @@ a {
 
 .main-header {
 
-  .nav-wrap {
-    display: flex;
-    flex-direction: column;
-    padding: 0 2%;
-  }
-
   box-shadow: 0 8px 6px -6px black;
 
    .mobile-menu-btn {
     @include main-btn($wet-gray, 20px);
+    display: block;
     color: white;
     border: none;
     margin: 15px 0;
@@ -48,6 +44,8 @@ a {
 
 .main-nav {
   list-style-type: none;
+  // hide by default
+  display: none;
 
 
   li {
@@ -93,6 +91,10 @@ a {
   .main-header {
     // center virtically
     align-items: center;
+
+   .mobile-menu-btn {
+      display: none;
+   }
 
   }
 

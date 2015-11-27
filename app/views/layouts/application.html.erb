@@ -27,9 +27,7 @@ Navigation
     <ul class="main-nav" id="main-nav">
     <% if current_user %>
       <li>Hello <%= current_user.user_name %></li>
-      <li>
-      <%= link_to "Logout", '/logout' %> </li>
-      <li>
+
         <%= link_to 'Cart', '/users/cart' %>
       </li>
       <li>
@@ -52,6 +50,9 @@ Navigation
           <%= link_to 'Signup', '/signup' %>
         </li>
       <% end %>
+      <li>
+        <%= link_to "Logout", '/logout' %> </li>
+      <li>
     </ul>
 
 </header>
