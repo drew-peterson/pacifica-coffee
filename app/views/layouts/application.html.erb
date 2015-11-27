@@ -17,12 +17,16 @@
 Navigation
  -->
  <header class="main-header" id="main-header">
-   <%= link_to('/') do %>
-   <h3> Pacifica Coffee </h3>
-  <% end %>
 
-    <button id='mobile-menu-btn' class='mobile-menu-btn'> menu </button>
-
+  <div class="btn-wrap">
+    <%= link_to('/') do %>
+      <h3> Pacifica Coffee </h3>
+    <% end %>
+    <div>
+        <button id='mobile-filter-btn' class='mobile-filter-btn'> Filter </button>
+        <button id='mobile-menu-btn' class='mobile-menu-btn'> menu </button>
+      </div>
+    </div>
     <ul class="main-nav" id="main-nav">
     <% if current_user %>
       <li>

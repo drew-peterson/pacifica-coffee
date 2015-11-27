@@ -39,23 +39,34 @@ a {
   position: fixed;
   background: white;
 
-  h3 {
-    position: absolute;
-    width: 100%;
-    top: 2vh;
-    font-size: 1.6rem;
-  }
+  .btn-wrap {
+    display: flex;
+    flex-direction: column;
+    h3 {
+      font-size: 1.6rem;
+    }
+    div {
+      display: flex;
 
-   .mobile-menu-btn {
+     .mobile-menu-btn,
+     .mobile-filter-btn {
+        @include main-btn($wet-gray, 20px);
+        color: white;
+        border: none;
+        margin: 15px 0;
+        // position button on far left
+      }
 
-      @include main-btn($wet-gray, 20px);
-      display: block;
-      color: white;
-      border: none;
-      margin: 15px 0;
-      // position button on far left
-      margin-left: auto;
-      margin-right: 2.5%;
+      .mobile-menu-btn {
+        margin-right: 2.5%;
+        margin-left: auto;
+
+      }
+      .mobile-filter-btn {
+        margin-left: 2.5%;
+        margin-right: auto;
+      }
+    }
   }
 }
 
@@ -108,6 +119,10 @@ a {
 
 // Tablet Layout
 @media ( min-width: 769px ) {
+
+  .filter {
+    display: block;
+  }
   .main-header,
   .main-nav {
     display: flex;
@@ -123,7 +138,8 @@ a {
     }
 
 
-   .mobile-menu-btn {
+   .mobile-menu-btn,
+   .mobile-filter-btn {
       display: none;
    }
 

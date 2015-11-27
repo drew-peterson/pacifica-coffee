@@ -1,5 +1,9 @@
 @import 'mixins' ;
 
+.filter {
+  display: none;
+}
+
 .items-container {
   display: flex;
   flex-direction: column;
