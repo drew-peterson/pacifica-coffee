@@ -52,14 +52,28 @@
   }
 
   aside {
-    width: 100%;
+    width: 80%;
     text-align: center;
 
     h4 {
+      margin: auto;
+      width: 80%;
       font-size: 1.3rem;
+      padding-bottom: .5rem;
+      border-bottom: 1px solid $wet-gray;
     }
     div {
+      margin: auto;
+      width: 70%;
       margin-top: 1rem;
+
+      h3 {
+        margin: .5rem 0;
+      }
+      ul {
+        text-align: left;
+        font-size: 1.2rem;
+      }
     }
   }
   .items-container {
