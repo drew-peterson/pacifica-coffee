@@ -1,38 +1,51 @@
 
+<section class="admin-wrapper">
 
-<!-- Filter Navigation -->
-<aside>
-  <%= render "navigation/filter_nav" %>
-</aside>
+  <%= link_to 'Add Item', new_item_path, class: 'admin--add-item-btn' %>
 
-<%= link_to 'Add Item', new_item_path %>
+  <div class="admin-info-container">
 
-<div class="admin-wrap">
-  <% @items.each do |item| %>
-    <div class="admin-container">
+  <!-- Filter Navigation -->
+    <aside>
+      <%= render "navigation/filter_nav" %>
+    </aside>
 
-      <div class="admin-items">
-        <div class="admin-item-img a-item">
-          <div style="background: red;">img
+
+    <ul class="admin-container">
+      <% @items.each do |item| %>
+
+      <div class="admin-card">
+        <!-- content div -->
+        <!-- row 1 -->
+        <div class="admin-items">
+            <div style="background: red;">
+              img
+            </div>
+
+            <div class="admin-item">
+              <li><%= item.item_name %> </li>
+              <li><%= item.item_description %> </li>
+              <li> $<%= item.price %>.00 </li>
+            </div>
         </div>
-      </div>
-        <ul class="admin-item a-item">
-          <li><%= item.item_name %> </li>
-          <li><%= item.item_description %> </li>
-          <li> $<%= item.price %>.00 </li>
-        </ul>
+        <!-- end -->
+
+        <!-- Btn div -->
+        <!-- row 2 -->
+        <% if current_user.admin %>
+          <div class="admin-btns">
+            <%= link_to 'Update', edit_item_path(item) %>
+            <%= link_to 'Delete',
+              item,
+              method: :delete,
+              data: { confirm: 'Are you sure?' }
+            %>
+          </div>
+        <% end %>
+        <!-- end -->
       </div>
 
-    <% if current_user.admin %>
-      <div class="admin-btns">
-        <%= link_to 'Update', edit_item_path(item) %>
-        <%= link_to 'Delete',
-          item,
-          method: :delete,
-          data: { confirm: 'Are you sure?' }
-        %>
-      </div>
-    <% end %>
-    </div>
-  <% end %>
-</div>
+      <% end %>
+    </ul>
+  </div>
+</section>

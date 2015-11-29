@@ -1,6 +1,5 @@
 @import 'mixins' ;
 
-
 .filter {
   display: none;
 }
@@ -51,10 +50,8 @@
 // Tablet Layout
 @media ( min-width: 769px ) {
   // equal height and width columns using flexbox codePen
-
   main {
     display: flex;
-
   }
 
   aside,
