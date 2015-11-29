@@ -27,7 +27,7 @@
       .admin-card {
         margin-bottom: 1rem;
         background: $light-gray;
-        padding: .3rem;
+        padding: .6rem;
 
         .admin-items {
           display: flex;
@@ -81,19 +81,22 @@
 
 // Tablet Layout
 @media ( min-width: 769px ) {
+
 .admin-wrapper {
-  display: flex;
-  flex-direction: column;
+  width: 100%;
 
   .admin--add-item-btn {
-    text-align: center;
-    @include main-btn(lighten($wet-gray, 20%), 20px);
-    color: white;
-    margin: -1.5rem 0 1rem 0;
-
+    margin: 0 0 1rem auto;
+    width: 20%;
   }
 
   .admin-info-container {
+    display: flex;
+
+    aside,
+    .admin-container{
+      flex: 1;
+    }
     // col 1
     aside {
 
@@ -102,53 +105,29 @@
 
     // col 2
     .admin-container {
+      flex: 4;
       .admin-card {
-        margin-bottom: 1rem;
-        background: $light-gray;
-        padding: .3rem;
 
         .admin-items {
-          display: flex;
+
           div {
-            flex: 1;
+
           }
           .admin-item {
-            flex: 3;
-            padding-left: 15px;
+
             li {
-              padding: 5px 0;
-
-              &:first-child {
-                font-weight: bold;
-
-              }
 
             }
           }
 
         }
-      .admin-btns {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        padding: 0.75rem;
-
-        // update and delete buttons
-        a {
-          @include main-btn($wet-gray, 20px);
-          color: white;
-          &:last-child {
-            margin-left: 10%;
-          }
+        .admin-btns {
 
         }
-      }
-
       } // card end
-
     }
     //end
+  }
   }
 } // end of Tablet
 

@@ -36,7 +36,6 @@ a {
 }
 
 .main-header {
-  @include debug;
   width: 100%;
   position: fixed;
   background: white;
