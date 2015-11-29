@@ -1,13 +1,10 @@
 @import 'mixins';
 
-main {
-
-  flex-direction: column;
-}
 
 // Mobile View
 
 .admin-container {
+  padding: .5rem;
   background: $light-gray;
   margin-bottom: 1rem;
 
@@ -19,7 +16,7 @@ main {
     }
     .admin-item-img {
       div {
-        height: 70px;
+        height: 200px;
       }
     }
     .admin-item {
@@ -50,8 +47,19 @@ main {
 
 // Tablet Layout
 @media ( min-width: 769px ) {
+  .filter {
+    // @include debug;
+  }
 
-}
+  a {
+    // @include debug;
+  }
+
+  .admin-wrap {
+    // @include debug;
+  }
+
+} // end of Tablet
 
 // Desktop
 @media ( min-width: 1025px ) {

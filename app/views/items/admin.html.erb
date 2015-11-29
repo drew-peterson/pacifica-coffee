@@ -1,8 +1,11 @@
 
-<%= link_to 'Add Item', new_item_path %>
 
 <!-- Filter Navigation -->
-<%= render "navigation/filter_nav" %>
+<aside>
+  <%= render "navigation/filter_nav" %>
+</aside>
+
+<%= link_to 'Add Item', new_item_path %>
 
 <div class="admin-wrap">
   <% @items.each do |item| %>

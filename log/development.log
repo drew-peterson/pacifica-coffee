@@ -38154,3 +38154,894 @@ Processing by ItemsController#index as HTML
   Rendered items/index.html.erb within layouts/application (3.9ms)
   [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
 Completed 200 OK in 28ms (Views: 26.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/items" for ::1 at 2015-11-29 07:21:56 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (26.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.3ms)
+  [1m[35mItem Load (18.1ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (42.8ms)
+  [1m[36mUser Load (24.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered navigation/_main_nav.html.erb (48.4ms)
+Completed 200 OK in 969ms (Views: 906.0ms | ActiveRecord: 52.7ms)
+
+
+Started GET "/assets/items/admin.self-c7ad8f3a5dfd5495b370f8e19dc83da675e9d8d1821844111169433e7caf7425.css?body=1" for ::1 at 2015-11-29 07:21:58 -0800
+
+
+Started GET "/assets/items/index.self-383b0dcf094dd6ffd8f942668c66aacbf4cf4937939abc55624dcd8739f7f116.css?body=1" for ::1 at 2015-11-29 07:21:58 -0800
+
+
+Started GET "/assets/layout.self-ab9234590b98a873d735b7516c54b87be7152fc34a57101569acb240593d4fd6.css?body=1" for ::1 at 2015-11-29 07:21:58 -0800
+
+
+Started GET "/assets/mixins.self-8a8dd6fded1bb043f6b91fb70c8a2439f0899b8213b413b7e6abe3900d0a4b09.css?body=1" for ::1 at 2015-11-29 07:21:58 -0800
+
+
+Started GET "/assets/reset.self-ae3ef30a36acd68699e107126b5d3bd30681a1c562689b29a559656c1b183fe4.css?body=1" for ::1 at 2015-11-29 07:21:58 -0800
+
+
+Started GET "/assets/application.self-c4991312985bccd133f1f21ab2f6a5d0129a8416a91037313b14f05d7d2e7dde.css?body=1" for ::1 at 2015-11-29 07:21:58 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-29 07:21:58 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-29 07:21:58 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-29 07:21:58 -0800
+
+
+Started GET "/assets/layout.self-0e07e6573959a70187d2f4410f90fd5458584de6f490f6bd1304c2c9de13b6f5.js?body=1" for ::1 at 2015-11-29 07:21:58 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-11-29 07:21:58 -0800
+
+
+Started GET "/items" for ::1 at 2015-11-29 07:23:58 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.0ms)
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (4.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered navigation/_main_nav.html.erb (1.1ms)
+Completed 200 OK in 153ms (Views: 151.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/items/admin.self-c7ad8f3a5dfd5495b370f8e19dc83da675e9d8d1821844111169433e7caf7425.css?body=1" for ::1 at 2015-11-29 07:23:59 -0800
+
+
+Started GET "/assets/items/index.self-383b0dcf094dd6ffd8f942668c66aacbf4cf4937939abc55624dcd8739f7f116.css?body=1" for ::1 at 2015-11-29 07:23:59 -0800
+
+
+Started GET "/assets/layout.self-db177c993889621f52d20fd665a1e211b09c1302c1082b5e2ef84147032067ec.css?body=1" for ::1 at 2015-11-29 07:23:59 -0800
+
+
+Started GET "/assets/mixins.self-8a8dd6fded1bb043f6b91fb70c8a2439f0899b8213b413b7e6abe3900d0a4b09.css?body=1" for ::1 at 2015-11-29 07:23:59 -0800
+
+
+Started GET "/assets/reset.self-ae3ef30a36acd68699e107126b5d3bd30681a1c562689b29a559656c1b183fe4.css?body=1" for ::1 at 2015-11-29 07:23:59 -0800
+
+
+Started GET "/assets/application.self-c4991312985bccd133f1f21ab2f6a5d0129a8416a91037313b14f05d7d2e7dde.css?body=1" for ::1 at 2015-11-29 07:23:59 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-29 07:23:59 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-29 07:23:59 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-29 07:23:59 -0800
+
+
+Started GET "/assets/layout.self-0e07e6573959a70187d2f4410f90fd5458584de6f490f6bd1304c2c9de13b6f5.js?body=1" for ::1 at 2015-11-29 07:23:59 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-11-29 07:23:59 -0800
+
+
+Started GET "/admin" for ::1 at 2015-11-29 07:24:05 -0800
+Processing by ItemsController#admin as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered navigation/_filter_nav.html.erb (0.3ms)
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  Rendered items/admin.html.erb within layouts/application (6.5ms)
+  Rendered navigation/_main_nav.html.erb (0.8ms)
+Completed 200 OK in 102ms (Views: 100.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/items" for ::1 at 2015-11-29 07:24:18 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.0ms)
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (7.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered navigation/_main_nav.html.erb (1.8ms)
+Completed 200 OK in 42ms (Views: 40.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/items" for ::1 at 2015-11-29 07:24:39 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.0ms)
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (3.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered navigation/_main_nav.html.erb (1.1ms)
+Completed 200 OK in 142ms (Views: 140.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/items/admin.self-c7ad8f3a5dfd5495b370f8e19dc83da675e9d8d1821844111169433e7caf7425.css?body=1" for ::1 at 2015-11-29 07:24:39 -0800
+
+
+Started GET "/assets/items/index.self-383b0dcf094dd6ffd8f942668c66aacbf4cf4937939abc55624dcd8739f7f116.css?body=1" for ::1 at 2015-11-29 07:24:39 -0800
+
+
+Started GET "/assets/layout.self-344243d3354690672c5fd9786c77dbbc825c8009d727b65515a39ef9f84a7bd5.css?body=1" for ::1 at 2015-11-29 07:24:39 -0800
+
+
+Started GET "/assets/mixins.self-8a8dd6fded1bb043f6b91fb70c8a2439f0899b8213b413b7e6abe3900d0a4b09.css?body=1" for ::1 at 2015-11-29 07:24:39 -0800
+
+
+Started GET "/assets/application.self-c4991312985bccd133f1f21ab2f6a5d0129a8416a91037313b14f05d7d2e7dde.css?body=1" for ::1 at 2015-11-29 07:24:39 -0800
+
+
+Started GET "/assets/reset.self-ae3ef30a36acd68699e107126b5d3bd30681a1c562689b29a559656c1b183fe4.css?body=1" for ::1 at 2015-11-29 07:24:39 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-29 07:24:39 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-29 07:24:39 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-29 07:24:39 -0800
+
+
+Started GET "/assets/layout.self-0e07e6573959a70187d2f4410f90fd5458584de6f490f6bd1304c2c9de13b6f5.js?body=1" for ::1 at 2015-11-29 07:24:39 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-11-29 07:24:39 -0800
+
+
+Started GET "/items" for ::1 at 2015-11-29 07:25:00 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.0ms)
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (3.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered navigation/_main_nav.html.erb (1.7ms)
+Completed 200 OK in 188ms (Views: 187.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/items/index.self-383b0dcf094dd6ffd8f942668c66aacbf4cf4937939abc55624dcd8739f7f116.css?body=1" for ::1 at 2015-11-29 07:25:00 -0800
+
+
+Started GET "/assets/items/admin.self-c7ad8f3a5dfd5495b370f8e19dc83da675e9d8d1821844111169433e7caf7425.css?body=1" for ::1 at 2015-11-29 07:25:00 -0800
+
+
+Started GET "/assets/mixins.self-8a8dd6fded1bb043f6b91fb70c8a2439f0899b8213b413b7e6abe3900d0a4b09.css?body=1" for ::1 at 2015-11-29 07:25:00 -0800
+
+
+Started GET "/assets/application.self-c4991312985bccd133f1f21ab2f6a5d0129a8416a91037313b14f05d7d2e7dde.css?body=1" for ::1 at 2015-11-29 07:25:00 -0800
+
+
+Started GET "/assets/reset.self-ae3ef30a36acd68699e107126b5d3bd30681a1c562689b29a559656c1b183fe4.css?body=1" for ::1 at 2015-11-29 07:25:00 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-29 07:25:00 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-29 07:25:00 -0800
+
+
+Started GET "/assets/layout.self-2cb8575fe867b03b59170b161ee8d6fa2b96197e5ea0247da30aa6117a104743.css?body=1" for ::1 at 2015-11-29 07:25:00 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-29 07:25:00 -0800
+
+
+Started GET "/assets/layout.self-0e07e6573959a70187d2f4410f90fd5458584de6f490f6bd1304c2c9de13b6f5.js?body=1" for ::1 at 2015-11-29 07:25:00 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-11-29 07:25:00 -0800
+
+
+Started GET "/items" for ::1 at 2015-11-29 07:26:36 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.0ms)
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (3.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered navigation/_main_nav.html.erb (1.5ms)
+Completed 200 OK in 139ms (Views: 138.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/items/admin.self-c7ad8f3a5dfd5495b370f8e19dc83da675e9d8d1821844111169433e7caf7425.css?body=1" for ::1 at 2015-11-29 07:26:37 -0800
+
+
+Started GET "/assets/items/index.self-0df5f2976118a01d9bbdcfc31fa9d9b4ab2cb8ecd9dbc5cf816a5a0c5576d5b9.css?body=1" for ::1 at 2015-11-29 07:26:37 -0800
+
+
+Started GET "/assets/layout.self-2cb8575fe867b03b59170b161ee8d6fa2b96197e5ea0247da30aa6117a104743.css?body=1" for ::1 at 2015-11-29 07:26:37 -0800
+
+
+Started GET "/assets/mixins.self-8a8dd6fded1bb043f6b91fb70c8a2439f0899b8213b413b7e6abe3900d0a4b09.css?body=1" for ::1 at 2015-11-29 07:26:37 -0800
+
+
+Started GET "/assets/reset.self-ae3ef30a36acd68699e107126b5d3bd30681a1c562689b29a559656c1b183fe4.css?body=1" for ::1 at 2015-11-29 07:26:37 -0800
+
+
+Started GET "/assets/application.self-c4991312985bccd133f1f21ab2f6a5d0129a8416a91037313b14f05d7d2e7dde.css?body=1" for ::1 at 2015-11-29 07:26:37 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-29 07:26:37 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-29 07:26:37 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-29 07:26:37 -0800
+
+
+Started GET "/assets/layout.self-0e07e6573959a70187d2f4410f90fd5458584de6f490f6bd1304c2c9de13b6f5.js?body=1" for ::1 at 2015-11-29 07:26:37 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-11-29 07:26:37 -0800
+
+
+Started GET "/items" for ::1 at 2015-11-29 07:29:11 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.1ms)
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (4.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered navigation/_main_nav.html.erb (1.2ms)
+Completed 200 OK in 144ms (Views: 142.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/items/admin.self-c7ad8f3a5dfd5495b370f8e19dc83da675e9d8d1821844111169433e7caf7425.css?body=1" for ::1 at 2015-11-29 07:29:11 -0800
+
+
+Started GET "/assets/items/index.self-1916cae40bf21ab5560b25ad1cb002bdd12b58afc975de8de2b44b4be4475f18.css?body=1" for ::1 at 2015-11-29 07:29:11 -0800
+
+
+Started GET "/assets/layout.self-2cb8575fe867b03b59170b161ee8d6fa2b96197e5ea0247da30aa6117a104743.css?body=1" for ::1 at 2015-11-29 07:29:11 -0800
+
+
+Started GET "/assets/mixins.self-8a8dd6fded1bb043f6b91fb70c8a2439f0899b8213b413b7e6abe3900d0a4b09.css?body=1" for ::1 at 2015-11-29 07:29:11 -0800
+
+
+Started GET "/assets/reset.self-ae3ef30a36acd68699e107126b5d3bd30681a1c562689b29a559656c1b183fe4.css?body=1" for ::1 at 2015-11-29 07:29:11 -0800
+
+
+Started GET "/assets/application.self-c4991312985bccd133f1f21ab2f6a5d0129a8416a91037313b14f05d7d2e7dde.css?body=1" for ::1 at 2015-11-29 07:29:11 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-29 07:29:11 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-29 07:29:11 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-29 07:29:11 -0800
+
+
+Started GET "/assets/layout.self-0e07e6573959a70187d2f4410f90fd5458584de6f490f6bd1304c2c9de13b6f5.js?body=1" for ::1 at 2015-11-29 07:29:11 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-11-29 07:29:11 -0800
+
+
+Started GET "/items" for ::1 at 2015-11-29 07:29:40 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.0ms)
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (3.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered navigation/_main_nav.html.erb (1.9ms)
+Completed 200 OK in 142ms (Views: 140.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/items/admin.self-c7ad8f3a5dfd5495b370f8e19dc83da675e9d8d1821844111169433e7caf7425.css?body=1" for ::1 at 2015-11-29 07:29:40 -0800
+
+
+Started GET "/assets/layout.self-2cb8575fe867b03b59170b161ee8d6fa2b96197e5ea0247da30aa6117a104743.css?body=1" for ::1 at 2015-11-29 07:29:40 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-29 07:29:40 -0800
+
+
+Started GET "/assets/items/index.self-a2447aae9c32cb3443c823963cecccc1cbebac1f41a3861080fe88e56d50f258.css?body=1" for ::1 at 2015-11-29 07:29:40 -0800
+
+
+Started GET "/assets/reset.self-ae3ef30a36acd68699e107126b5d3bd30681a1c562689b29a559656c1b183fe4.css?body=1" for ::1 at 2015-11-29 07:29:40 -0800
+
+
+Started GET "/assets/mixins.self-8a8dd6fded1bb043f6b91fb70c8a2439f0899b8213b413b7e6abe3900d0a4b09.css?body=1" for ::1 at 2015-11-29 07:29:40 -0800
+
+
+Started GET "/assets/application.self-c4991312985bccd133f1f21ab2f6a5d0129a8416a91037313b14f05d7d2e7dde.css?body=1" for ::1 at 2015-11-29 07:29:40 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-29 07:29:40 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-29 07:29:40 -0800
+
+
+Started GET "/assets/layout.self-0e07e6573959a70187d2f4410f90fd5458584de6f490f6bd1304c2c9de13b6f5.js?body=1" for ::1 at 2015-11-29 07:29:40 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-11-29 07:29:40 -0800
+
+
+Started GET "/items" for ::1 at 2015-11-29 07:29:52 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.0ms)
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (4.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered navigation/_main_nav.html.erb (2.0ms)
+Completed 200 OK in 139ms (Views: 137.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/items/admin.self-c7ad8f3a5dfd5495b370f8e19dc83da675e9d8d1821844111169433e7caf7425.css?body=1" for ::1 at 2015-11-29 07:29:53 -0800
+
+
+Started GET "/assets/items/index.self-feb8668a2201f2d5b04821e3f620a551fc1f2faa67d3d0975ba498a266a36adb.css?body=1" for ::1 at 2015-11-29 07:29:53 -0800
+
+
+Started GET "/assets/layout.self-2cb8575fe867b03b59170b161ee8d6fa2b96197e5ea0247da30aa6117a104743.css?body=1" for ::1 at 2015-11-29 07:29:53 -0800
+
+
+Started GET "/assets/mixins.self-8a8dd6fded1bb043f6b91fb70c8a2439f0899b8213b413b7e6abe3900d0a4b09.css?body=1" for ::1 at 2015-11-29 07:29:53 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-29 07:29:53 -0800
+
+
+Started GET "/assets/application.self-c4991312985bccd133f1f21ab2f6a5d0129a8416a91037313b14f05d7d2e7dde.css?body=1" for ::1 at 2015-11-29 07:29:53 -0800
+
+
+Started GET "/assets/reset.self-ae3ef30a36acd68699e107126b5d3bd30681a1c562689b29a559656c1b183fe4.css?body=1" for ::1 at 2015-11-29 07:29:53 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-29 07:29:53 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-29 07:29:53 -0800
+
+
+Started GET "/assets/layout.self-0e07e6573959a70187d2f4410f90fd5458584de6f490f6bd1304c2c9de13b6f5.js?body=1" for ::1 at 2015-11-29 07:29:53 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-11-29 07:29:53 -0800
+
+
+Started GET "/items" for ::1 at 2015-11-29 07:30:08 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.0ms)
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (4.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered navigation/_main_nav.html.erb (1.6ms)
+Completed 200 OK in 138ms (Views: 136.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/items/admin.self-c7ad8f3a5dfd5495b370f8e19dc83da675e9d8d1821844111169433e7caf7425.css?body=1" for ::1 at 2015-11-29 07:30:09 -0800
+
+
+Started GET "/assets/items/index.self-6a4a8db287acdc76f07f5022fe3752832db08f913c4ce0ddfed5d03ac1b7ee10.css?body=1" for ::1 at 2015-11-29 07:30:09 -0800
+
+
+Started GET "/assets/layout.self-2cb8575fe867b03b59170b161ee8d6fa2b96197e5ea0247da30aa6117a104743.css?body=1" for ::1 at 2015-11-29 07:30:09 -0800
+
+
+Started GET "/assets/mixins.self-8a8dd6fded1bb043f6b91fb70c8a2439f0899b8213b413b7e6abe3900d0a4b09.css?body=1" for ::1 at 2015-11-29 07:30:09 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-29 07:30:09 -0800
+
+
+Started GET "/assets/application.self-c4991312985bccd133f1f21ab2f6a5d0129a8416a91037313b14f05d7d2e7dde.css?body=1" for ::1 at 2015-11-29 07:30:09 -0800
+
+
+Started GET "/assets/reset.self-ae3ef30a36acd68699e107126b5d3bd30681a1c562689b29a559656c1b183fe4.css?body=1" for ::1 at 2015-11-29 07:30:09 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-29 07:30:09 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-29 07:30:09 -0800
+
+
+Started GET "/assets/layout.self-0e07e6573959a70187d2f4410f90fd5458584de6f490f6bd1304c2c9de13b6f5.js?body=1" for ::1 at 2015-11-29 07:30:09 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-11-29 07:30:09 -0800
+
+
+Started GET "/items" for ::1 at 2015-11-29 07:30:19 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.0ms)
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (4.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered navigation/_main_nav.html.erb (0.9ms)
+Completed 200 OK in 38ms (Views: 36.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/items/admin.self-c7ad8f3a5dfd5495b370f8e19dc83da675e9d8d1821844111169433e7caf7425.css?body=1" for ::1 at 2015-11-29 07:30:19 -0800
+
+
+Started GET "/assets/items/index.self-a2447aae9c32cb3443c823963cecccc1cbebac1f41a3861080fe88e56d50f258.css?body=1" for ::1 at 2015-11-29 07:30:19 -0800
+
+
+Started GET "/assets/layout.self-2cb8575fe867b03b59170b161ee8d6fa2b96197e5ea0247da30aa6117a104743.css?body=1" for ::1 at 2015-11-29 07:30:19 -0800
+
+
+Started GET "/assets/mixins.self-8a8dd6fded1bb043f6b91fb70c8a2439f0899b8213b413b7e6abe3900d0a4b09.css?body=1" for ::1 at 2015-11-29 07:30:19 -0800
+
+
+Started GET "/assets/application.self-c4991312985bccd133f1f21ab2f6a5d0129a8416a91037313b14f05d7d2e7dde.css?body=1" for ::1 at 2015-11-29 07:30:19 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-29 07:30:19 -0800
+
+
+Started GET "/assets/reset.self-ae3ef30a36acd68699e107126b5d3bd30681a1c562689b29a559656c1b183fe4.css?body=1" for ::1 at 2015-11-29 07:30:19 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-29 07:30:19 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-29 07:30:19 -0800
+
+
+Started GET "/assets/layout.self-0e07e6573959a70187d2f4410f90fd5458584de6f490f6bd1304c2c9de13b6f5.js?body=1" for ::1 at 2015-11-29 07:30:19 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-11-29 07:30:19 -0800
+
+
+Started GET "/items" for ::1 at 2015-11-29 07:30:40 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.0ms)
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (3.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered navigation/_main_nav.html.erb (1.6ms)
+Completed 200 OK in 136ms (Views: 134.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/items/admin.self-c7ad8f3a5dfd5495b370f8e19dc83da675e9d8d1821844111169433e7caf7425.css?body=1" for ::1 at 2015-11-29 07:30:40 -0800
+
+
+Started GET "/assets/items/index.self-2cd90185e7f9a49bbb3d1e73eae906243d8965a6d87b4051520107a7f2f50714.css?body=1" for ::1 at 2015-11-29 07:30:40 -0800
+
+
+Started GET "/assets/layout.self-2cb8575fe867b03b59170b161ee8d6fa2b96197e5ea0247da30aa6117a104743.css?body=1" for ::1 at 2015-11-29 07:30:40 -0800
+
+
+Started GET "/assets/mixins.self-8a8dd6fded1bb043f6b91fb70c8a2439f0899b8213b413b7e6abe3900d0a4b09.css?body=1" for ::1 at 2015-11-29 07:30:40 -0800
+
+
+Started GET "/assets/reset.self-ae3ef30a36acd68699e107126b5d3bd30681a1c562689b29a559656c1b183fe4.css?body=1" for ::1 at 2015-11-29 07:30:40 -0800
+
+
+Started GET "/assets/application.self-c4991312985bccd133f1f21ab2f6a5d0129a8416a91037313b14f05d7d2e7dde.css?body=1" for ::1 at 2015-11-29 07:30:40 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-29 07:30:40 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-29 07:30:40 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-29 07:30:40 -0800
+
+
+Started GET "/assets/layout.self-0e07e6573959a70187d2f4410f90fd5458584de6f490f6bd1304c2c9de13b6f5.js?body=1" for ::1 at 2015-11-29 07:30:40 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-11-29 07:30:40 -0800
+
+
+Started GET "/items" for ::1 at 2015-11-29 07:30:52 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.0ms)
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (4.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered navigation/_main_nav.html.erb (1.5ms)
+Completed 200 OK in 134ms (Views: 133.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/items/admin.self-c7ad8f3a5dfd5495b370f8e19dc83da675e9d8d1821844111169433e7caf7425.css?body=1" for ::1 at 2015-11-29 07:30:53 -0800
+
+
+Started GET "/assets/items/index.self-4846f9024cea1ee208c013be32063e47467d56c889f4c56f930775895d433bb6.css?body=1" for ::1 at 2015-11-29 07:30:53 -0800
+
+
+Started GET "/assets/layout.self-2cb8575fe867b03b59170b161ee8d6fa2b96197e5ea0247da30aa6117a104743.css?body=1" for ::1 at 2015-11-29 07:30:53 -0800
+
+
+Started GET "/assets/mixins.self-8a8dd6fded1bb043f6b91fb70c8a2439f0899b8213b413b7e6abe3900d0a4b09.css?body=1" for ::1 at 2015-11-29 07:30:53 -0800
+
+
+Started GET "/assets/reset.self-ae3ef30a36acd68699e107126b5d3bd30681a1c562689b29a559656c1b183fe4.css?body=1" for ::1 at 2015-11-29 07:30:53 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-29 07:30:53 -0800
+
+
+Started GET "/assets/application.self-c4991312985bccd133f1f21ab2f6a5d0129a8416a91037313b14f05d7d2e7dde.css?body=1" for ::1 at 2015-11-29 07:30:53 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-29 07:30:53 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-29 07:30:53 -0800
+
+
+Started GET "/assets/layout.self-0e07e6573959a70187d2f4410f90fd5458584de6f490f6bd1304c2c9de13b6f5.js?body=1" for ::1 at 2015-11-29 07:30:53 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-11-29 07:30:53 -0800
+
+
+Started GET "/items" for ::1 at 2015-11-29 07:31:40 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.0ms)
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (3.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered navigation/_main_nav.html.erb (2.0ms)
+Completed 200 OK in 148ms (Views: 146.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/items/admin.self-c7ad8f3a5dfd5495b370f8e19dc83da675e9d8d1821844111169433e7caf7425.css?body=1" for ::1 at 2015-11-29 07:31:40 -0800
+
+
+Started GET "/assets/items/index.self-9e3a35e2558d95ef728b0d779978878b3e6fafc9d6640c413de9bb6e7b851e33.css?body=1" for ::1 at 2015-11-29 07:31:40 -0800
+
+
+Started GET "/assets/layout.self-2cb8575fe867b03b59170b161ee8d6fa2b96197e5ea0247da30aa6117a104743.css?body=1" for ::1 at 2015-11-29 07:31:41 -0800
+
+
+Started GET "/assets/mixins.self-8a8dd6fded1bb043f6b91fb70c8a2439f0899b8213b413b7e6abe3900d0a4b09.css?body=1" for ::1 at 2015-11-29 07:31:41 -0800
+
+
+Started GET "/assets/application.self-c4991312985bccd133f1f21ab2f6a5d0129a8416a91037313b14f05d7d2e7dde.css?body=1" for ::1 at 2015-11-29 07:31:41 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-29 07:31:41 -0800
+
+
+Started GET "/assets/reset.self-ae3ef30a36acd68699e107126b5d3bd30681a1c562689b29a559656c1b183fe4.css?body=1" for ::1 at 2015-11-29 07:31:41 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-29 07:31:41 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-29 07:31:41 -0800
+
+
+Started GET "/assets/layout.self-0e07e6573959a70187d2f4410f90fd5458584de6f490f6bd1304c2c9de13b6f5.js?body=1" for ::1 at 2015-11-29 07:31:41 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-11-29 07:31:41 -0800
+
+
+Started GET "/items" for ::1 at 2015-11-29 07:31:54 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.0ms)
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (3.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered navigation/_main_nav.html.erb (1.7ms)
+Completed 200 OK in 147ms (Views: 145.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/items/admin.self-c7ad8f3a5dfd5495b370f8e19dc83da675e9d8d1821844111169433e7caf7425.css?body=1" for ::1 at 2015-11-29 07:31:54 -0800
+
+
+Started GET "/assets/layout.self-2cb8575fe867b03b59170b161ee8d6fa2b96197e5ea0247da30aa6117a104743.css?body=1" for ::1 at 2015-11-29 07:31:54 -0800
+
+
+Started GET "/assets/items/index.self-9536b4e3ff23bf5f4ffcb88da449de886484201ddf70d1221daf1785ffca3105.css?body=1" for ::1 at 2015-11-29 07:31:54 -0800
+
+
+Started GET "/assets/mixins.self-8a8dd6fded1bb043f6b91fb70c8a2439f0899b8213b413b7e6abe3900d0a4b09.css?body=1" for ::1 at 2015-11-29 07:31:54 -0800
+
+
+Started GET "/assets/reset.self-ae3ef30a36acd68699e107126b5d3bd30681a1c562689b29a559656c1b183fe4.css?body=1" for ::1 at 2015-11-29 07:31:54 -0800
+
+
+Started GET "/assets/application.self-c4991312985bccd133f1f21ab2f6a5d0129a8416a91037313b14f05d7d2e7dde.css?body=1" for ::1 at 2015-11-29 07:31:54 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-29 07:31:54 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-11-29 07:31:54 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-29 07:31:54 -0800
+
+
+Started GET "/assets/layout.self-0e07e6573959a70187d2f4410f90fd5458584de6f490f6bd1304c2c9de13b6f5.js?body=1" for ::1 at 2015-11-29 07:31:54 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-29 07:31:54 -0800
+
+
+Started GET "/items" for ::1 at 2015-11-29 07:32:08 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.0ms)
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (3.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered navigation/_main_nav.html.erb (2.2ms)
+Completed 200 OK in 142ms (Views: 141.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/items/admin.self-c7ad8f3a5dfd5495b370f8e19dc83da675e9d8d1821844111169433e7caf7425.css?body=1" for ::1 at 2015-11-29 07:32:08 -0800
+
+
+Started GET "/assets/items/index.self-9c2ac7b55de1078c19b91dad3e4828f91bdc4652ebdc77c8b0bc41a3ef3fd03b.css?body=1" for ::1 at 2015-11-29 07:32:08 -0800
+
+
+Started GET "/assets/layout.self-2cb8575fe867b03b59170b161ee8d6fa2b96197e5ea0247da30aa6117a104743.css?body=1" for ::1 at 2015-11-29 07:32:08 -0800
+
+
+Started GET "/assets/mixins.self-8a8dd6fded1bb043f6b91fb70c8a2439f0899b8213b413b7e6abe3900d0a4b09.css?body=1" for ::1 at 2015-11-29 07:32:08 -0800
+
+
+Started GET "/assets/reset.self-ae3ef30a36acd68699e107126b5d3bd30681a1c562689b29a559656c1b183fe4.css?body=1" for ::1 at 2015-11-29 07:32:08 -0800
+
+
+Started GET "/assets/application.self-c4991312985bccd133f1f21ab2f6a5d0129a8416a91037313b14f05d7d2e7dde.css?body=1" for ::1 at 2015-11-29 07:32:08 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-29 07:32:08 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-29 07:32:08 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-29 07:32:08 -0800
+
+
+Started GET "/assets/layout.self-0e07e6573959a70187d2f4410f90fd5458584de6f490f6bd1304c2c9de13b6f5.js?body=1" for ::1 at 2015-11-29 07:32:08 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-11-29 07:32:08 -0800
+
+
+Started GET "/items" for ::1 at 2015-11-29 07:32:19 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.0ms)
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (4.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered navigation/_main_nav.html.erb (1.2ms)
+Completed 200 OK in 137ms (Views: 135.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/items/admin.self-c7ad8f3a5dfd5495b370f8e19dc83da675e9d8d1821844111169433e7caf7425.css?body=1" for ::1 at 2015-11-29 07:32:20 -0800
+
+
+Started GET "/assets/items/index.self-9f47d678b5dd7e8800cb68bea97b16326eae40a9aab641e45b83f9d5a539e82b.css?body=1" for ::1 at 2015-11-29 07:32:20 -0800
+
+
+Started GET "/assets/reset.self-ae3ef30a36acd68699e107126b5d3bd30681a1c562689b29a559656c1b183fe4.css?body=1" for ::1 at 2015-11-29 07:32:20 -0800
+
+
+Started GET "/assets/layout.self-2cb8575fe867b03b59170b161ee8d6fa2b96197e5ea0247da30aa6117a104743.css?body=1" for ::1 at 2015-11-29 07:32:20 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-29 07:32:20 -0800
+
+
+Started GET "/assets/application.self-c4991312985bccd133f1f21ab2f6a5d0129a8416a91037313b14f05d7d2e7dde.css?body=1" for ::1 at 2015-11-29 07:32:20 -0800
+
+
+Started GET "/assets/mixins.self-8a8dd6fded1bb043f6b91fb70c8a2439f0899b8213b413b7e6abe3900d0a4b09.css?body=1" for ::1 at 2015-11-29 07:32:20 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-29 07:32:20 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-29 07:32:20 -0800
+
+
+Started GET "/assets/layout.self-0e07e6573959a70187d2f4410f90fd5458584de6f490f6bd1304c2c9de13b6f5.js?body=1" for ::1 at 2015-11-29 07:32:20 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-11-29 07:32:20 -0800
+
+
+Started GET "/items" for ::1 at 2015-11-29 07:32:28 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.0ms)
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (3.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered navigation/_main_nav.html.erb (1.8ms)
+Completed 200 OK in 137ms (Views: 135.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/items/admin.self-c7ad8f3a5dfd5495b370f8e19dc83da675e9d8d1821844111169433e7caf7425.css?body=1" for ::1 at 2015-11-29 07:32:28 -0800
+
+
+Started GET "/assets/items/index.self-db8ecaf7251b2b79e2d1c4ab44bbe9d859ec892973a9d0857b6efa7d458efb9b.css?body=1" for ::1 at 2015-11-29 07:32:28 -0800
+
+
+Started GET "/assets/mixins.self-8a8dd6fded1bb043f6b91fb70c8a2439f0899b8213b413b7e6abe3900d0a4b09.css?body=1" for ::1 at 2015-11-29 07:32:28 -0800
+
+
+Started GET "/assets/reset.self-ae3ef30a36acd68699e107126b5d3bd30681a1c562689b29a559656c1b183fe4.css?body=1" for ::1 at 2015-11-29 07:32:28 -0800
+
+
+Started GET "/assets/application.self-c4991312985bccd133f1f21ab2f6a5d0129a8416a91037313b14f05d7d2e7dde.css?body=1" for ::1 at 2015-11-29 07:32:28 -0800
+
+
+Started GET "/assets/layout.self-2cb8575fe867b03b59170b161ee8d6fa2b96197e5ea0247da30aa6117a104743.css?body=1" for ::1 at 2015-11-29 07:32:28 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-29 07:32:28 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-29 07:32:29 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-29 07:32:29 -0800
+
+
+Started GET "/assets/layout.self-0e07e6573959a70187d2f4410f90fd5458584de6f490f6bd1304c2c9de13b6f5.js?body=1" for ::1 at 2015-11-29 07:32:29 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-11-29 07:32:29 -0800
+
+
+Started GET "/items" for ::1 at 2015-11-29 07:32:47 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.0ms)
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (3.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered navigation/_main_nav.html.erb (1.0ms)
+Completed 200 OK in 33ms (Views: 32.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/items/admin.self-c7ad8f3a5dfd5495b370f8e19dc83da675e9d8d1821844111169433e7caf7425.css?body=1" for ::1 at 2015-11-29 07:32:47 -0800
+
+
+Started GET "/assets/items/index.self-db8ecaf7251b2b79e2d1c4ab44bbe9d859ec892973a9d0857b6efa7d458efb9b.css?body=1" for ::1 at 2015-11-29 07:32:47 -0800
+
+
+Started GET "/assets/layout.self-2cb8575fe867b03b59170b161ee8d6fa2b96197e5ea0247da30aa6117a104743.css?body=1" for ::1 at 2015-11-29 07:32:47 -0800
+
+
+Started GET "/assets/mixins.self-8a8dd6fded1bb043f6b91fb70c8a2439f0899b8213b413b7e6abe3900d0a4b09.css?body=1" for ::1 at 2015-11-29 07:32:47 -0800
+
+
+Started GET "/assets/reset.self-ae3ef30a36acd68699e107126b5d3bd30681a1c562689b29a559656c1b183fe4.css?body=1" for ::1 at 2015-11-29 07:32:47 -0800
+
+
+Started GET "/assets/application.self-c4991312985bccd133f1f21ab2f6a5d0129a8416a91037313b14f05d7d2e7dde.css?body=1" for ::1 at 2015-11-29 07:32:47 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-29 07:32:47 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-29 07:32:47 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-29 07:32:47 -0800
+
+
+Started GET "/assets/layout.self-0e07e6573959a70187d2f4410f90fd5458584de6f490f6bd1304c2c9de13b6f5.js?body=1" for ::1 at 2015-11-29 07:32:47 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-11-29 07:32:47 -0800
+
+
+Started GET "/items" for ::1 at 2015-11-29 07:32:48 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.0ms)
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (3.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered navigation/_main_nav.html.erb (1.2ms)
+Completed 200 OK in 73ms (Views: 72.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/items/admin.self-c7ad8f3a5dfd5495b370f8e19dc83da675e9d8d1821844111169433e7caf7425.css?body=1" for ::1 at 2015-11-29 07:32:48 -0800
+
+
+Started GET "/assets/layout.self-2cb8575fe867b03b59170b161ee8d6fa2b96197e5ea0247da30aa6117a104743.css?body=1" for ::1 at 2015-11-29 07:32:48 -0800
+
+
+Started GET "/assets/reset.self-ae3ef30a36acd68699e107126b5d3bd30681a1c562689b29a559656c1b183fe4.css?body=1" for ::1 at 2015-11-29 07:32:48 -0800
+
+
+Started GET "/assets/items/index.self-db8ecaf7251b2b79e2d1c4ab44bbe9d859ec892973a9d0857b6efa7d458efb9b.css?body=1" for ::1 at 2015-11-29 07:32:48 -0800
+
+
+Started GET "/assets/mixins.self-8a8dd6fded1bb043f6b91fb70c8a2439f0899b8213b413b7e6abe3900d0a4b09.css?body=1" for ::1 at 2015-11-29 07:32:48 -0800
+
+
+Started GET "/assets/application.self-c4991312985bccd133f1f21ab2f6a5d0129a8416a91037313b14f05d7d2e7dde.css?body=1" for ::1 at 2015-11-29 07:32:48 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-29 07:32:48 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-29 07:32:48 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-29 07:32:48 -0800
+
+
+Started GET "/assets/layout.self-0e07e6573959a70187d2f4410f90fd5458584de6f490f6bd1304c2c9de13b6f5.js?body=1" for ::1 at 2015-11-29 07:32:48 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-11-29 07:32:48 -0800
+
+
+Started GET "/items" for ::1 at 2015-11-29 07:33:30 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.0ms)
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (3.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered navigation/_main_nav.html.erb (2.1ms)
+Completed 200 OK in 166ms (Views: 165.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/items/index.self-db8ecaf7251b2b79e2d1c4ab44bbe9d859ec892973a9d0857b6efa7d458efb9b.css?body=1" for ::1 at 2015-11-29 07:33:30 -0800
+
+
+Started GET "/assets/items/admin.self-95cd92164fd53145fd5e03cf6de6faa9085501ed4acc6992cb9353a518a40b82.css?body=1" for ::1 at 2015-11-29 07:33:30 -0800
+
+
+Started GET "/assets/mixins.self-8a8dd6fded1bb043f6b91fb70c8a2439f0899b8213b413b7e6abe3900d0a4b09.css?body=1" for ::1 at 2015-11-29 07:33:30 -0800
+
+
+Started GET "/assets/layout.self-7418d277fba7d1f010d52f47df3c0f50df211b65173e2d8068642f1b6c1dbc2b.css?body=1" for ::1 at 2015-11-29 07:33:30 -0800
+
+
+Started GET "/assets/reset.self-ae3ef30a36acd68699e107126b5d3bd30681a1c562689b29a559656c1b183fe4.css?body=1" for ::1 at 2015-11-29 07:33:30 -0800
+
+
+Started GET "/assets/application.self-c4991312985bccd133f1f21ab2f6a5d0129a8416a91037313b14f05d7d2e7dde.css?body=1" for ::1 at 2015-11-29 07:33:30 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-29 07:33:30 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-29 07:33:30 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-29 07:33:30 -0800
+
+
+Started GET "/assets/layout.self-0e07e6573959a70187d2f4410f90fd5458584de6f490f6bd1304c2c9de13b6f5.js?body=1" for ::1 at 2015-11-29 07:33:30 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-11-29 07:33:30 -0800
+
+
+Started GET "/admin" for ::1 at 2015-11-29 07:33:57 -0800
+Processing by ItemsController#admin as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered navigation/_filter_nav.html.erb (0.0ms)
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  Rendered items/admin.html.erb within layouts/application (3.7ms)
+  Rendered navigation/_main_nav.html.erb (0.3ms)
+Completed 200 OK in 42ms (Views: 40.4ms | ActiveRecord: 0.4ms)

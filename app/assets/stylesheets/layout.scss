@@ -35,7 +35,6 @@ a {
 }
 
 .main-header {
-  padding: 2% 0;
   width: 100%;
   position: fixed;
   background: white;
@@ -54,11 +53,11 @@ a {
       @include main-btn($wet-gray, 20px);
       color: white;
       border: none;
-      // position button on far left
     }
 
     .mobile-menu-btn {
       margin-right: 2.5%;
+      // position button on far left
       margin-left: auto;
 
     }
