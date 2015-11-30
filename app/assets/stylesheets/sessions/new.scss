@@ -1,6 +1,9 @@
 
 @import 'mixins';
-.sessions-login {
+
+
+// @media ( min-width: 769px ) {
+  .sessions-login {
 
 
   display: flex;
@@ -43,3 +46,5 @@
     }
   }
 }
+
+//  }

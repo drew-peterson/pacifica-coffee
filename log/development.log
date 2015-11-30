@@ -53402,3 +53402,284 @@ Processing by SessionsController#new as HTML
   Rendered sessions/new.html.erb within layouts/application (0.3ms)
   Rendered navigation/_main_nav.html.erb (0.8ms)
 Completed 200 OK in 43ms (Views: 42.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2015-11-29 10:09:10 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Jz6Bl+zEVAdCxbmwU/d5jWheHxQNVxDO5Gk/0ivZNTXF11UYWbqLLT3RdngRAgzqTZi6v+3Oc+164Lr61xGHnA==", "user_name"=>"joji", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."user_name" = $1 LIMIT 1  [["user_name", "joji"]]
+Redirected to http://localhost:3000/items
+Completed 302 Found in 72ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/items" for ::1 at 2015-11-29 10:09:11 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.0ms)
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  Rendered items/index.html.erb within layouts/application (3.9ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered navigation/_main_nav.html.erb (1.0ms)
+Completed 200 OK in 51ms (Views: 49.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/logout" for ::1 at 2015-11-29 10:09:15 -0800
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-11-29 10:09:15 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.1ms)
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  Rendered items/index.html.erb within layouts/application (4.8ms)
+  Rendered navigation/_main_nav.html.erb (0.4ms)
+Completed 200 OK in 46ms (Views: 45.0ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users/cart" for ::1 at 2015-11-29 10:09:18 -0800
+Processing by UsersController#add_to_cart as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"d0HhUxRN8rF+VdMYdB6/18ZOk1CJvKlM03BkNwt1yC2VqDXcoTMtmwFBHNA268qw44g2+2klym9N+eEf9716hA==", "item_id"=>"18942", "item_qty"=>"1", "commit"=>"Add to Cart"}
+Redirected to http://localhost:3000/login
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-11-29 10:09:18 -0800
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.3ms)
+  Rendered navigation/_main_nav.html.erb (0.2ms)
+Completed 200 OK in 41ms (Views: 40.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-11-29 10:10:40 -0800
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.2ms)
+  Rendered navigation/_main_nav.html.erb (0.2ms)
+Completed 200 OK in 217ms (Views: 217.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/items/admin.self-e7a321e81902c5befefb7ec6eec471bacd5ca11cd47567299d05c047869ac02b.css?body=1" for ::1 at 2015-11-29 10:10:41 -0800
+
+
+Started GET "/assets/items/index.self-a1674d38ac02ec216978e9b27b9a1f68bc606400773c0771ebf519368f35797d.css?body=1" for ::1 at 2015-11-29 10:10:41 -0800
+
+
+Started GET "/assets/layout.self-35f5b7093c2a538a299df7ad62d43593177266f0b1d7c97d4fa0b9356bf03c71.css?body=1" for ::1 at 2015-11-29 10:10:41 -0800
+
+
+Started GET "/assets/application.self-c4991312985bccd133f1f21ab2f6a5d0129a8416a91037313b14f05d7d2e7dde.css?body=1" for ::1 at 2015-11-29 10:10:41 -0800
+
+
+Started GET "/assets/mixins.self-8a8dd6fded1bb043f6b91fb70c8a2439f0899b8213b413b7e6abe3900d0a4b09.css?body=1" for ::1 at 2015-11-29 10:10:41 -0800
+
+
+Started GET "/assets/reset.self-ae3ef30a36acd68699e107126b5d3bd30681a1c562689b29a559656c1b183fe4.css?body=1" for ::1 at 2015-11-29 10:10:41 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-29 10:10:41 -0800
+
+
+Started GET "/assets/sessions/new.self-52324116a0052b181c185f59923806b2fff0258294c529d4e8d5b476f6b6f655.css?body=1" for ::1 at 2015-11-29 10:10:41 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-29 10:10:41 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-29 10:10:41 -0800
+
+
+Started GET "/assets/layout.self-0e07e6573959a70187d2f4410f90fd5458584de6f490f6bd1304c2c9de13b6f5.js?body=1" for ::1 at 2015-11-29 10:10:41 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-11-29 10:10:41 -0800
+
+
+Started GET "/login" for ::1 at 2015-11-29 10:10:55 -0800
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.2ms)
+  Rendered navigation/_main_nav.html.erb (0.2ms)
+Completed 200 OK in 151ms (Views: 150.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/items/admin.self-e7a321e81902c5befefb7ec6eec471bacd5ca11cd47567299d05c047869ac02b.css?body=1" for ::1 at 2015-11-29 10:10:56 -0800
+
+
+Started GET "/assets/layout.self-35f5b7093c2a538a299df7ad62d43593177266f0b1d7c97d4fa0b9356bf03c71.css?body=1" for ::1 at 2015-11-29 10:10:56 -0800
+
+
+Started GET "/assets/reset.self-ae3ef30a36acd68699e107126b5d3bd30681a1c562689b29a559656c1b183fe4.css?body=1" for ::1 at 2015-11-29 10:10:56 -0800
+
+
+Started GET "/assets/mixins.self-8a8dd6fded1bb043f6b91fb70c8a2439f0899b8213b413b7e6abe3900d0a4b09.css?body=1" for ::1 at 2015-11-29 10:10:56 -0800
+
+
+Started GET "/assets/sessions/new.self-f606c06cfc18e7ac090fb7b28d8046e4c57eaa8b0f12654e913bd524e5cb372a.css?body=1" for ::1 at 2015-11-29 10:10:56 -0800
+
+
+Started GET "/assets/items/index.self-a1674d38ac02ec216978e9b27b9a1f68bc606400773c0771ebf519368f35797d.css?body=1" for ::1 at 2015-11-29 10:10:56 -0800
+
+
+Started GET "/assets/application.self-c4991312985bccd133f1f21ab2f6a5d0129a8416a91037313b14f05d7d2e7dde.css?body=1" for ::1 at 2015-11-29 10:10:56 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-29 10:10:56 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-29 10:10:56 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-29 10:10:56 -0800
+
+
+Started GET "/assets/layout.self-0e07e6573959a70187d2f4410f90fd5458584de6f490f6bd1304c2c9de13b6f5.js?body=1" for ::1 at 2015-11-29 10:10:56 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-11-29 10:10:56 -0800
+
+
+Started GET "/login" for ::1 at 2015-11-29 10:11:31 -0800
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.3ms)
+  Rendered navigation/_main_nav.html.erb (0.2ms)
+Completed 200 OK in 142ms (Views: 141.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/items/admin.self-e7a321e81902c5befefb7ec6eec471bacd5ca11cd47567299d05c047869ac02b.css?body=1" for ::1 at 2015-11-29 10:11:31 -0800
+
+
+Started GET "/assets/items/index.self-a1674d38ac02ec216978e9b27b9a1f68bc606400773c0771ebf519368f35797d.css?body=1" for ::1 at 2015-11-29 10:11:31 -0800
+
+
+Started GET "/assets/layout.self-35f5b7093c2a538a299df7ad62d43593177266f0b1d7c97d4fa0b9356bf03c71.css?body=1" for ::1 at 2015-11-29 10:11:31 -0800
+
+
+Started GET "/assets/mixins.self-8a8dd6fded1bb043f6b91fb70c8a2439f0899b8213b413b7e6abe3900d0a4b09.css?body=1" for ::1 at 2015-11-29 10:11:31 -0800
+
+
+Started GET "/assets/reset.self-ae3ef30a36acd68699e107126b5d3bd30681a1c562689b29a559656c1b183fe4.css?body=1" for ::1 at 2015-11-29 10:11:31 -0800
+
+
+Started GET "/assets/sessions/new.self-2ab7e1ba24fb025ca16f03f6e3a7ad808b0ca403e039dff8fe94da44d53fcfac.css?body=1" for ::1 at 2015-11-29 10:11:31 -0800
+
+
+Started GET "/assets/application.self-c4991312985bccd133f1f21ab2f6a5d0129a8416a91037313b14f05d7d2e7dde.css?body=1" for ::1 at 2015-11-29 10:11:31 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-29 10:11:31 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-29 10:11:31 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-29 10:11:31 -0800
+
+
+Started GET "/assets/layout.self-0e07e6573959a70187d2f4410f90fd5458584de6f490f6bd1304c2c9de13b6f5.js?body=1" for ::1 at 2015-11-29 10:11:31 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-11-29 10:11:31 -0800
+
+
+Started GET "/login" for ::1 at 2015-11-29 10:11:46 -0800
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+  Rendered navigation/_main_nav.html.erb (0.2ms)
+Completed 200 OK in 107ms (Views: 106.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2015-11-29 10:11:49 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (1.7ms)
+  Rendered navigation/_main_nav.html.erb (0.2ms)
+Completed 200 OK in 40ms (Views: 38.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logout" for ::1 at 2015-11-29 10:11:52 -0800
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-11-29 10:11:52 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.0ms)
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (4.5ms)
+  Rendered navigation/_main_nav.html.erb (0.1ms)
+Completed 200 OK in 43ms (Views: 42.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users/cart" for ::1 at 2015-11-29 10:11:57 -0800
+Processing by UsersController#add_to_cart as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XsuERkCo/ut6SvccKIZoxSukLVBA6QAfdx0ropRlHTG8IlDJ9dYhwQVeONRqcx2iDmKI+6BwYzzplK6KaK2vmA==", "item_id"=>"63626", "item_qty"=>"1", "commit"=>"Add to Cart"}
+Redirected to http://localhost:3000/login
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-11-29 10:11:57 -0800
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.4ms)
+  Rendered navigation/_main_nav.html.erb (0.1ms)
+Completed 200 OK in 30ms (Views: 30.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-11-29 18:59:37 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.0ms)
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  Rendered items/index.html.erb within layouts/application (64.6ms)
+  Rendered navigation/_main_nav.html.erb (0.2ms)
+Completed 200 OK in 192ms (Views: 191.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/users/cart" for ::1 at 2015-11-29 18:59:53 -0800
+Processing by UsersController#add_to_cart as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5I2jihWLREI2hOjJl5ST43EsvmxTvgDS17YUWf3+lskGZHcFoPWbaEmQJwHVYeaEVOobx7MnY/FJP5FxATYkYA==", "item_id"=>"63626", "item_qty"=>"1", "commit"=>"Add to Cart"}
+Redirected to http://localhost:3000/login
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-11-29 18:59:53 -0800
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.3ms)
+  Rendered navigation/_main_nav.html.erb (0.2ms)
+Completed 200 OK in 31ms (Views: 30.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-11-29 19:00:19 -0800
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.2ms)
+  Rendered navigation/_main_nav.html.erb (0.1ms)
+Completed 200 OK in 30ms (Views: 29.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2015-11-29 19:00:20 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.6ms)
+  Rendered navigation/_main_nav.html.erb (0.1ms)
+Completed 200 OK in 33ms (Views: 32.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logout" for ::1 at 2015-11-29 19:00:22 -0800
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-11-29 19:00:22 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.0ms)
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (3.8ms)
+  Rendered navigation/_main_nav.html.erb (0.2ms)
+Completed 200 OK in 53ms (Views: 52.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for ::1 at 2015-11-29 19:00:24 -0800
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.2ms)
+  Rendered navigation/_main_nav.html.erb (0.2ms)
+Completed 200 OK in 115ms (Views: 115.0ms | ActiveRecord: 0.0ms)
