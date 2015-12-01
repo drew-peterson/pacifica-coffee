@@ -1,4 +1,5 @@
 require 'faker'
+require 'csv'
 
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake dbseed:  (or created alongside the db with db:setup).
@@ -12,19 +13,16 @@ require 'faker'
 
 User.create(first_name: 'Joji', last_name: 'Gordon', user_name: 'joji', password: '1234', phone_number: '911', admin: true)
 
-
 User.create(first_name: 'Daniel', last_name: 'Huang', user_name: 'daniel', password: '1234', phone_number: '911')
 
-
-10.times do |x|
+CSV.foreach('db/seed.csv', :headers => true) do |obj|
   Item.create(
     id: rand(10000..99999),
-    item_name: Faker::Commerce.product_name, 
-    item_description: Faker::Lorem.sentence(3), 
+    item_name: obj['name'], 
+    item_description: obj['description'], 
     quantity: rand(99), 
-    price: rand(213), 
+    price: rand(8..16), 
     sku: 'BAH6281', 
     large_image: Faker::Company.logo, 
     )
 end
-
