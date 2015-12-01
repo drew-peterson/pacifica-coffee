@@ -53683,3 +53683,68 @@ Processing by SessionsController#new as HTML
   Rendered sessions/new.html.erb within layouts/application (0.2ms)
   Rendered navigation/_main_nav.html.erb (0.2ms)
 Completed 200 OK in 115ms (Views: 115.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for ::1 at 2015-12-01 10:54:55 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.3ms)
+  [1m[35mItem Load (0.5ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (17.1ms)
+  Rendered navigation/_main_nav.html.erb (1.3ms)
+Completed 200 OK in 430ms (Views: 417.4ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/assets/sessions/new.self-2ab7e1ba24fb025ca16f03f6e3a7ad808b0ca403e039dff8fe94da44d53fcfac.css?body=1" for ::1 at 2015-12-01 10:54:56 -0800
+
+
+Started GET "/logout" for ::1 at 2015-12-01 10:55:09 -0800
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-12-01 10:55:09 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.3ms)
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  Rendered items/index.html.erb within layouts/application (7.0ms)
+  Rendered navigation/_main_nav.html.erb (0.7ms)
+Completed 200 OK in 44ms (Views: 43.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/logout" for ::1 at 2015-12-01 10:55:18 -0800
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-12-01 10:55:18 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.1ms)
+  [1m[35mItem Load (0.4ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (4.6ms)
+  Rendered navigation/_main_nav.html.erb (0.2ms)
+Completed 200 OK in 106ms (Views: 104.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/logout" for ::1 at 2015-12-01 10:55:20 -0800
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-12-01 10:55:20 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.0ms)
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  Rendered items/index.html.erb within layouts/application (4.2ms)
+  Rendered navigation/_main_nav.html.erb (0.1ms)
+Completed 200 OK in 50ms (Views: 48.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for ::1 at 2015-12-01 10:55:22 -0800
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+  Rendered navigation/_main_nav.html.erb (0.2ms)
+Completed 200 OK in 34ms (Views: 32.9ms | ActiveRecord: 0.0ms)

@@ -19,12 +19,16 @@ User.create(first_name: 'Daniel', last_name: 'Huang', user_name: 'daniel', passw
 10.times do |x|
   Item.create(
     id: rand(10000..99999),
-    item_name: Faker::Commerce.product_name, 
-    item_description: Faker::Lorem.sentence(3), 
-    quantity: rand(99), 
-    price: rand(213), 
-    sku: 'BAH6281', 
-    large_image: Faker::Company.logo, 
+    item_name: Faker::Commerce.product_name,
+    item_description: Faker::Lorem.sentence(3),
+    quantity: rand(99),
+    price: rand(213),
+    sku: 'BAH6281',
+    large_image: Faker::Company.logo,
     )
 end
+
+
+
+
 
