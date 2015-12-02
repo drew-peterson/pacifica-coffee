@@ -1,14 +1,13 @@
 // Mix In
 @import 'mixins' ;
 
-* {
-  box-sizing: border-box;
-  color: black;
-}
 
+
+
+// Mobile
 body {
-  display: flex;
-  flex-direction: column;
+  @include display(flex);
+  @include flex-direction(column);
 }
 
 // NEED TO CLEAR the FIXED HEADER SOMEHOW...
@@ -19,18 +18,9 @@ main {
   margin-top: 4.5rem;
 }
 
-ul,
-a {
-  list-style-type: none;
-  text-decoration: none;
-}
-
-
-// Mobile
-
 .main-header, .main-nav {
-  display: flex;
-  flex-direction: column;
+  @include display(flex);
+  @include flex-direction(column);
   // is there a flex property for this
   text-align: center;
 }
@@ -41,10 +31,10 @@ a {
   background: white;
 
   .btn-wrap {
+    @include display(flex);
+    @include justify-content(space-between);
+    @include align-items(center);
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     h3 {
       font-size: 1.6rem;
     }
@@ -74,8 +64,6 @@ a {
 
   // hide nav links on mobile
   display: none;
-  list-style-type: none;
-
 
   li {
     a {
@@ -93,10 +81,11 @@ a {
 }
 
 .error-notice {
-  display: flex;
-  justify-content: center;
+  @include display(flex);
+  @include justify-content(center);
+  @include align-items(center);
+
   position: absolute;
-  align-items: center;
   width: 100%;
   text-align: center;
 
@@ -124,12 +113,11 @@ a {
   }
   .main-header,
   .main-nav {
-    display: flex;
+    @include display(flex);
   }
 
   .main-header {
-    // center virtically
-    align-items: center;
+    @include align-items(center);
     min-height: 4rem;
 
     h3 {
@@ -145,7 +133,7 @@ a {
   }
 
   .main-nav {
-    flex-direction: row;
+    @include flex-direction(row);
 
     li a {
       min-width: 110px;
@@ -159,13 +147,12 @@ a {
 @media ( min-width: 1025px ) {
   .main-header,
   .main-nav {
-    flex-direction: row;
-    display: flex;
+    @include flex-direction(row);
+    @include display(flex);
   }
 
   .main-header {
-    justify-content: space-between;
-
+    @include justify-content(space-between);
     h3 {
       margin-left: 20px;
     }
