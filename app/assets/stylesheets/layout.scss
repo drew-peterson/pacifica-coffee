@@ -32,8 +32,9 @@ main {
 
   .btn-wrap {
     @include display(flex);
-    justify-content: space-between;
-    align-items: center;
+    @include justify-content(space-between);
+    @include align-items(center);
+
     h3 {
       font-size: 1.6rem;
     }
@@ -63,8 +64,6 @@ main {
 
   // hide nav links on mobile
   display: none;
-  list-style-type: none;
-
 
   li {
     a {
@@ -82,10 +81,11 @@ main {
 }
 
 .error-notice {
-  display: flex;
-  justify-content: center;
+  @include display(flex);
+  @include justify-content(center);
+  @include align-items(center);
+
   position: absolute;
-  align-items: center;
   width: 100%;
   text-align: center;
 
@@ -113,12 +113,11 @@ main {
   }
   .main-header,
   .main-nav {
-    display: flex;
+    @include display(flex);
   }
 
   .main-header {
-    // center virtically
-    align-items: center;
+    @include align-items(center);
     min-height: 4rem;
 
     h3 {
@@ -134,7 +133,7 @@ main {
   }
 
   .main-nav {
-    flex-direction: row;
+    @include flex-direction(row);
 
     li a {
       min-width: 110px;
@@ -148,13 +147,12 @@ main {
 @media ( min-width: 1025px ) {
   .main-header,
   .main-nav {
-    flex-direction: row;
-    display: flex;
+    @include flex-direction(row);
+    @include display(flex);
   }
 
   .main-header {
-    justify-content: space-between;
-
+    @include justify-content(space-between);
     h3 {
       margin-left: 20px;
     }

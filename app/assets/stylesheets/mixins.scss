@@ -75,6 +75,25 @@ $prefixes: ('webkit', 'ms', 'moz', 'o');
     flex-direction: $value;
 }
 
+//justify-content
+@mixin justify-content($value){
+  @each $prefix in $prefixes {
+    #{'-' + $prefix + '-' + justify-content}: #{'-' + $prefix + '-' + $value};
+  }
+    // no vendor display
+    justify-content: $value;
+}
+
+//align-items
+@mixin align-items($value){
+  @each $prefix in $prefixes {
+    #{'-' + $prefix + '-' + align-items}: $value;
+  }
+    // no vendor display
+    align-items: $value;
+}
+
+
 
 
 
