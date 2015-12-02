@@ -53960,3 +53960,149 @@ Started GET "/assets/application.self-c4991312985bccd133f1f21ab2f6a5d0129a8416a9
 
 
 Started GET "/assets/layout.self-0e07e6573959a70187d2f4410f90fd5458584de6f490f6bd1304c2c9de13b6f5.js?body=1" for ::1 at 2015-12-01 15:16:34 -0800
+
+
+Started GET "/" for ::1 at 2015-12-02 10:15:00 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (2.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.4ms)
+  [1m[35mItem Load (25.1ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (59.9ms)
+  Rendered navigation/_main_nav.html.erb (0.9ms)
+Completed 200 OK in 553ms (Views: 504.8ms | ActiveRecord: 33.5ms)
+
+
+Started GET "/assets/items/admin.self-62fd75d57b3faa80fed355b86cbe2fd156adc81372d8e0e40df90f6bae8d8fbc.css?body=1" for ::1 at 2015-12-02 10:15:01 -0800
+
+
+Started GET "/assets/items/index.self-d26d38aad3dbfbfe3d1d6a851b2322358731959dcd8a17c78e8a5fc6c5659987.css?body=1" for ::1 at 2015-12-02 10:15:01 -0800
+
+
+Started GET "/assets/layout.self-0f616213383ae45d98d92c3686622b1062774960c479145c00218a8452fb49ef.css?body=1" for ::1 at 2015-12-02 10:15:01 -0800
+
+
+Started GET "/assets/mixins.self-8a8dd6fded1bb043f6b91fb70c8a2439f0899b8213b413b7e6abe3900d0a4b09.css?body=1" for ::1 at 2015-12-02 10:15:01 -0800
+
+
+Started GET "/assets/reset.self-ae3ef30a36acd68699e107126b5d3bd30681a1c562689b29a559656c1b183fe4.css?body=1" for ::1 at 2015-12-02 10:15:01 -0800
+
+
+Started GET "/assets/sessions/new.self-5cbcda0846bf0eaf5b17695cac9c9c95e6fcbb19213f68621095ec31579385d7.css?body=1" for ::1 at 2015-12-02 10:15:01 -0800
+
+
+Started GET "/assets/application.self-c4991312985bccd133f1f21ab2f6a5d0129a8416a91037313b14f05d7d2e7dde.css?body=1" for ::1 at 2015-12-02 10:15:01 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-02 10:15:02 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-02 10:15:02 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-02 10:15:02 -0800
+
+
+Started GET "/assets/layout.self-540851b6e43c3260779d2ac247d48587c2a10b0c0843f827b11213eac2b774c8.js?body=1" for ::1 at 2015-12-02 10:15:02 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-02 10:15:02 -0800
+
+
+Started GET "/login" for ::1 at 2015-12-02 10:15:03 -0800
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+  Rendered navigation/_main_nav.html.erb (1.4ms)
+Completed 200 OK in 125ms (Views: 123.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2015-12-02 10:15:05 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HUdiGrvlB322pZC4czaYvd3wmFTvH5r6fo0kUgqvJjIVw0kXGZHWDszg5IsQC85pkIs3ns1hno3piZyi/Rf7iQ==", "user_name"=>"daniel", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mUser Load (29.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."user_name" = $1 LIMIT 1[0m  [["user_name", "daniel"]]
+Redirected to http://localhost:3000/items
+Completed 302 Found in 134ms (ActiveRecord: 30.5ms)
+
+
+Started GET "/items" for ::1 at 2015-12-02 10:15:05 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.1ms)
+  [1m[35mItem Load (0.5ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (9.1ms)
+  [1m[36mUser Load (1.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered navigation/_main_nav.html.erb (3.7ms)
+Completed 200 OK in 71ms (Views: 67.7ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/users/cart" for ::1 at 2015-12-02 10:15:06 -0800
+Processing by UsersController#add_to_cart as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IdYBUg6G5ydkvsnybGNsGz7c8StU1iXywEkKQXZfKy0pUipfrPI2VB77vcEPXjrPc6de4XaoIYVXTbKxgef2lg==", "item_id"=>"54799", "item_qty"=>"1", "commit"=>"Add to Cart"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (18.2ms)[0m  UPDATE "users" SET "cart" = $1, "updated_at" = $2 WHERE "users"."id" = $3  [["cart", "54799,1,"], ["updated_at", "2015-12-02 18:15:06.642831"], ["id", 2]]
+  [1m[36m (4.8ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/items
+Completed 302 Found in 31ms (ActiveRecord: 23.5ms)
+
+
+Started GET "/items" for ::1 at 2015-12-02 10:15:06 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.0ms)
+  [1m[35mItem Load (0.4ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (7.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered navigation/_main_nav.html.erb (1.2ms)
+Completed 200 OK in 116ms (Views: 114.8ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/users/cart" for ::1 at 2015-12-02 10:15:08 -0800
+Processing by UsersController#add_to_cart as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iD8p6WAvcfjtX+ZHLBMQq8TzcGAMG0jHYV2LeIB9n3iAuwLkwlugi5caknRPLkZ/iYjfqi5lTLD2WTOId8VCww==", "item_id"=>"54799", "item_qty"=>"1", "commit"=>"Add to Cart"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+Redirected to http://localhost:3000/items
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/items" for ::1 at 2015-12-02 10:15:08 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.0ms)
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  Rendered items/index.html.erb within layouts/application (7.4ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered navigation/_main_nav.html.erb (1.0ms)
+Completed 200 OK in 54ms (Views: 52.3ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/users/cart" for ::1 at 2015-12-02 10:15:11 -0800
+Processing by UsersController#add_to_cart as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yfoTjYiVmq3NJrJE3X5FJj6fCylGNreHQ0Jv9Iq0IwrBfjiAKuFL3rdjxne+QxPyc+Sk42RIs/DURtcEfQz+sQ==", "item_id"=>"54799", "item_qty"=>"1", "commit"=>"Add to Cart"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+Redirected to http://localhost:3000/items
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/items" for ::1 at 2015-12-02 10:15:11 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.0ms)
+  [1m[35mItem Load (0.5ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (7.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered navigation/_main_nav.html.erb (0.9ms)
+Completed 200 OK in 51ms (Views: 49.9ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/users/cart" for ::1 at 2015-12-02 10:15:14 -0800
+Processing by UsersController#add_to_cart as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HuysBR/Xqg2rmC93B97eI60z+ZGdDntRRkYq1tLSBXoWaIcIvaN7ftHdW0Rk44j34EhWW79wfybRQpImJWrYwQ==", "item_id"=>"54799", "item_qty"=>"1", "commit"=>"Add to Cart"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+Redirected to http://localhost:3000/items
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/items" for ::1 at 2015-12-02 10:15:14 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.0ms)
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  Rendered items/index.html.erb within layouts/application (7.4ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered navigation/_main_nav.html.erb (1.3ms)
+Completed 200 OK in 116ms (Views: 114.9ms | ActiveRecord: 0.6ms)
