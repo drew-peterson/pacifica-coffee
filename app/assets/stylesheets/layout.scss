@@ -1,9 +1,6 @@
 // Mix In
 @import 'mixins' ;
 
-
-
-
 // Mobile
 body {
   @include display(flex);
