@@ -1,0 +1,90 @@
+* {
+  box-sizing: border-box;
+  color: black;
+}
+
+// Colors
+
+$wet-gray: #34495e;
+$light-gray: #ecf0f1;
+
+
+@mixin debug {
+  border: 1px solid red;
+}
+
+//Animation
+@keyframes fadein {
+  0%, 100% {
+    opacity: 0;
+    -webkit-transform: scale(0.5);
+    }
+  20%, 90% {
+    opacity: 1;
+    -webkit-transform: scale(1.0);
+  }
+}
+
+// button
+
+@mixin main-btn($bg, $padding) {
+  background: $bg;
+  padding: ($padding / 2) $padding;
+  &:hover {
+    background:darken($bg,8%);
+    transition: all 0.5s ease;
+  }
+  &:active {
+    background:darken($bg,25%);
+  }
+}
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// **********************
+//Vendor Prefix for flexbox
+
+$prefixes: ('webkit', 'ms', 'moz', 'o');
+
+// Display
+
+@mixin display($value){
+  @each $prefix in $prefixes {
+    display: #{'-' + $prefix + '-' + $value}
+  }
+    // no vendor display
+    display: $value;
+}
+
+//flex direction
+@mixin flex-direction($value){
+  @each $prefix in $prefixes {
+    #{'-' + $prefix + '-' + flex-direction}: $value;
+  }
+    // no vendor display
+    flex-direction: $value;
+}
+
+//justify-content
+@mixin justify-content($value){
+  @each $prefix in $prefixes {
+    #{'-' + $prefix + '-' + justify-content}: #{'-' + $prefix + '-' + $value};
+  }
+    // no vendor display
+    justify-content: $value;
+}
+
+//align-items
+@mixin align-items($value){
+  @each $prefix in $prefixes {
+    #{'-' + $prefix + '-' + align-items}: $value;
+  }
+    // no vendor display
+    align-items: $value;
+}

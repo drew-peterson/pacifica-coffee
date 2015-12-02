@@ -1,0 +1,51 @@
+
+<section class="admin-wrapper">
+
+  <%= link_to 'Add Item', new_item_path, class: 'admin--add-item-btn' %>
+
+  <div class="admin-info-container">
+
+  <!-- Filter Navigation -->
+    <aside>
+      <%= render "navigation/filter_nav" %>
+    </aside>
+
+
+    <ul class="admin-container">
+      <% @items.each do |item| %>
+
+      <div class="admin-card">
+        <!-- content div -->
+        <!-- row 1 -->
+        <div class="admin-items">
+            <div style="background: red;">
+              img
+            </div>
+
+            <div class="admin-item">
+              <li><%= item.item_name %> </li>
+              <li><%= item.item_description %> </li>
+              <li> $<%= item.price %>.00 </li>
+            </div>
+        </div>
+        <!-- end -->
+
+        <!-- Btn div -->
+        <!-- row 2 -->
+        <% if current_user.admin %>
+          <div class="admin-btns">
+            <%= link_to 'Update', edit_item_path(item) %>
+            <%= link_to 'Delete',
+              item,
+              method: :delete,
+              data: { confirm: 'Are you sure?' }
+            %>
+          </div>
+        <% end %>
+        <!-- end -->
+      </div>
+
+      <% end %>
+    </ul>
+  </div>
+</section>
