@@ -70,9 +70,9 @@ $(function(){
   })
 
   $(document).on('click', '#mobile-filter-btn', function(){
-  $('.filter').slideToggle()
+    $('.filter').slideToggle()
 
-})
+  })
 }) // end of ready
 
 
