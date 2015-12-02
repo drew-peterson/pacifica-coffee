@@ -1,3 +1,11 @@
+* {
+  box-sizing: border-box;
+  color: black;
+}
+
+
+
+
 // Colors
 
 $wet-gray: #34495e;
@@ -42,5 +50,32 @@ $light-gray: #ecf0f1;
     clear: both;
   }
 }
+
+// **********************
+//Vendor Prefix for flexbox
+
+$prefixes: ('webkit', 'ms', 'moz', 'o');
+
+// Display
+
+@mixin display($value){
+  @each $prefix in $prefixes {
+    display: #{'-' + $prefix + '-' + $value}
+  }
+    // no vendor display
+    display: $value;
+}
+
+//flex direction
+@mixin flex-direction($value){
+  @each $prefix in $prefixes {
+    #{'-' + $prefix + '-' + flex-direction}: $value;
+  }
+    // no vendor display
+    flex-direction: $value;
+}
+
+
+
 
 

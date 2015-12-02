@@ -27,3 +27,6 @@ CSV.foreach('db/seed.csv', :headers => true) do |obj|
     )
 end
 
+# Testing key
+# PUBLISHABLE_KEY=sk_test_dLVNZ2c2HOfN6Ff5dcV1NbcF SECRET_KEY=pk_test_uksl51zPIOATT1torKitrzfN rails s
+

@@ -1,14 +1,13 @@
 // Mix In
 @import 'mixins' ;
 
-* {
-  box-sizing: border-box;
-  color: black;
-}
 
+
+
+// Mobile
 body {
-  display: flex;
-  flex-direction: column;
+  @include display(flex);
+  @include flex-direction(column);
 }
 
 // NEED TO CLEAR the FIXED HEADER SOMEHOW...
@@ -19,18 +18,9 @@ main {
   margin-top: 4.5rem;
 }
 
-ul,
-a {
-  list-style-type: none;
-  text-decoration: none;
-}
-
-
-// Mobile
-
 .main-header, .main-nav {
-  display: flex;
-  flex-direction: column;
+  @include display(flex);
+  @include flex-direction(column);
   // is there a flex property for this
   text-align: center;
 }
@@ -41,8 +31,7 @@ a {
   background: white;
 
   .btn-wrap {
-
-    display: flex;
+    @include display(flex);
     justify-content: space-between;
     align-items: center;
     h3 {

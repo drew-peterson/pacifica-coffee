@@ -54028,3 +54028,1276 @@ Started GET "/assets/application.self-c4991312985bccd133f1f21ab2f6a5d0129a8416a9
 
 Started GET "/assets/layout.self-0e07e6573959a70187d2f4410f90fd5458584de6f490f6bd1304c2c9de13b6f5.js?body=1" for ::1 at 2015-12-01 15:16:34 -0800
 >>>>>>> 82f8e95d4b863c2e8c6b941898ce8c78f812d77f
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (3.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'items'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.8ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'orders'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.7ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (28.1ms)[0m  INSERT INTO "users" ("first_name", "last_name", "user_name", "password_digest", "phone_number", "admin", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["first_name", "Joji"], ["last_name", "Gordon"], ["user_name", "joji"], ["password_digest", "$2a$10$/X5htyo01jdjFuSvx0if1OuLWlgwSGCPgJwNgdwCqGnrausSMgAh2"], ["phone_number", "911"], ["admin", "t"], ["created_at", "2015-12-01 23:25:58.292325"], ["updated_at", "2015-12-01 23:25:58.292325"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "user_name", "password_digest", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Daniel"], ["last_name", "Huang"], ["user_name", "daniel"], ["password_digest", "$2a$10$.mYnKt91iofxkz0x.6KT1u7aM9soQpu53YgZMzhLbDFvUexjpPZwG"], ["phone_number", "911"], ["created_at", "2015-12-01 23:25:58.408677"], ["updated_at", "2015-12-01 23:25:58.408677"]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["id", 12850], ["item_name", "Labor of Love"], ["item_description", "My labor of love is putting together the great coffees from non marguis origins at a great price. It's my thanks to use those that labor to keep everything going."], ["quantity", 61], ["price", 16], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/10.png"], ["created_at", "2015-12-01 23:25:58.421730"], ["updated_at", "2015-12-01 23:25:58.421730"]]
+  [1m[36m (6.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["id", 94052], ["item_name", "Peru"], ["item_description", "Peru is a delicious, subtle coffee. It's perfect for a morning brew. Its mild flavor means you can brew it very strong to bring out it subtle nature. Note hte sweetness and brigthness of the cup."], ["quantity", 42], ["price", 9], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/2.png"], ["created_at", "2015-12-01 23:25:58.430882"], ["updated_at", "2015-12-01 23:25:58.430882"]]
+  [1m[35m (5.0ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["id", 93298], ["item_name", "Espresso"], ["item_description", "It's risky making coffee so full flavored thats is intended to be very concentrated. This espressco is crema laced bliss. So full flavored that it is excellent as a brewed coffee as well."], ["quantity", 88], ["price", 10], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/8.png"], ["created_at", "2015-12-01 23:25:58.438129"], ["updated_at", "2015-12-01 23:25:58.438129"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["id", 84790], ["item_name", "Timor"], ["item_description", "Bright and Lovely, Timor is a great coffee. this rare and exotic coffee is warm and familar and the best at being so. Drink it all day long. Some parts of the year we cannot get this coffee, its is from a small crop. It is so loved by customers that it is one of our signature coffees just the same."], ["quantity", 43], ["price", 14], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/7.png"], ["created_at", "2015-12-01 23:25:58.440277"], ["updated_at", "2015-12-01 23:25:58.440277"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["id", 30121], ["item_name", "Costa Rica"], ["item_description", "Costa Rican coffee is bright and fresh tasting with a medium body. There is a subtle flavor, like the scent of a tropical breeze, that gives it a unique flavor."], ["quantity", 70], ["price", 11], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/9.png"], ["created_at", "2015-12-01 23:25:58.442543"], ["updated_at", "2015-12-01 23:25:58.442543"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["id", 28989], ["item_name", "Black Rocks Mountain Clouds"], ["item_description", "This classic dark/light blend takes the best flavors from coffees that roast dark and coffees that roast well light. It is sweet with some toastliness and a medium body. In Sweden, where they drink more coffee per person than anywhere; these dark/light blends are very popular."], ["quantity", 14], ["price", 11], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/1.png"], ["created_at", "2015-12-01 23:25:58.444493"], ["updated_at", "2015-12-01 23:25:58.444493"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["id", 66619], ["item_name", "New Guinea"], ["item_description", "This is a medium to full bodied coffee with a distinct roasted nut flavor."], ["quantity", 69], ["price", 8], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/11.png"], ["created_at", "2015-12-01 23:25:58.446225"], ["updated_at", "2015-12-01 23:25:58.446225"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["id", 89128], ["item_name", "Mexican"], ["item_description", "We put a slightly darker roast on this coffee to bring out its fantastic aroma. It has a medium to full body and very clean finish."], ["quantity", 60], ["price", 14], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/3.png"], ["created_at", "2015-12-01 23:25:58.448235"], ["updated_at", "2015-12-01 23:25:58.448235"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["id", 69318], ["item_name", "Decaf Harmony"], ["item_description", "This Swiss Water Process coffee is made from new crop coffees as they become available from all over the world. It's full flavor make some wonder if it's really decaf. It is!"], ["quantity", 18], ["price", 11], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/1.png"], ["created_at", "2015-12-01 23:25:58.449857"], ["updated_at", "2015-12-01 23:25:58.449857"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["id", 18292], ["item_name", "River Mud"], ["item_description", "What if we didn't hold anything back and blended all our thick dark strong coffees? It would sit in the cup like River Mud. The coffee flavor would be full and rich and fresh because it's Pacifica Coffee. The blend enjoys almost a cult following in some circles."], ["quantity", 58], ["price", 16], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/4.png"], ["created_at", "2015-12-01 23:25:58.451676"], ["updated_at", "2015-12-01 23:25:58.451676"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["id", 75559], ["item_name", "Sumatra"], ["item_description", "The king of full bodied coffees come from Sumatra. Ours is roasted dark to bring out it's earthiness and to compliment the full body. It's a simple description, but there is more to this coffee. We have sold more of it in every one of our 20 years in business than any other variety."], ["quantity", 91], ["price", 16], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/12.png"], ["created_at", "2015-12-01 23:25:58.453778"], ["updated_at", "2015-12-01 23:25:58.453778"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["id", 91724], ["item_name", "Bolivia"], ["item_description", "Bright tropical blooms and complex aromas grace this fantastic coffee roasted at a full city roast. A very flavorful and approachable coffee."], ["quantity", 25], ["price", 8], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/6.png"], ["created_at", "2015-12-01 23:25:58.455669"], ["updated_at", "2015-12-01 23:25:58.455669"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["id", 61908], ["item_name", "Ethiopia"], ["item_description", "\"From the botanical origin of coffee comes this fully flavored African coffee. It is floral and has wine like tones. A great coffee experience unlike any other."], ["quantity", 92], ["price", 14], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/3.png"], ["created_at", "2015-12-01 23:25:58.457852"], ["updated_at", "2015-12-01 23:25:58.457852"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["id", 76536], ["item_name", "French Roast"], ["item_description", "French Roast is our darkest roast coffee. Our version is smooth and not ,overly heavy. It has a fine roasty, toasty flavor, just as your would expect."], ["quantity", 44], ["price", 10], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/5.png"], ["created_at", "2015-12-01 23:25:58.459869"], ["updated_at", "2015-12-01 23:25:58.459869"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["id", 49531], ["item_name", "Komodo"], ["item_description", "Komodo is our blend from the home of the dragon. Three different roasts ,of three different coffees produces this earthy coffee with a lot of body and a subtle nut like tone. All three coffees come from the Indonesian Islands."], ["quantity", 75], ["price", 14], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/5.png"], ["created_at", "2015-12-01 23:25:58.461477"], ["updated_at", "2015-12-01 23:25:58.461477"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["id", 15722], ["item_name", "Guatemala"], ["item_description", "This classic Central American coffee has subtle sweet floral tones in its, well balanced cup."], ["quantity", 30], ["price", 14], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/7.png"], ["created_at", "2015-12-01 23:25:58.463857"], ["updated_at", "2015-12-01 23:25:58.463857"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["id", 27076], ["item_name", "Uganda"], ["item_description", "Uganda has a unique subtle fruit aroma with cup flavor of fresh coffee cherries. It is medium bodied and very smooth"], ["quantity", 98], ["price", 11], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/12.png"], ["created_at", "2015-12-01 23:25:58.465780"], ["updated_at", "2015-12-01 23:25:58.465780"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["id", 47854], ["item_name", "Sicilian"], ["item_description", "This dark Italian style coffee was developed for a first class Italian restaurant. It was such a success, we now offer it to you. The coffee is dark roasted with a fruity aroma and a subtle wine like aftertaste."], ["quantity", 50], ["price", 13], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/12.png"], ["created_at", "2015-12-01 23:25:58.467492"], ["updated_at", "2015-12-01 23:25:58.467492"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["id", 74616], ["item_name", "Bali Blue Moon"], ["item_description", "A delicious full bodies coffee with a dark roast. A hint of sweetness and chocolate tones grace this rare coffee."], ["quantity", 66], ["price", 16], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/10.png"], ["created_at", "2015-12-01 23:25:58.469201"], ["updated_at", "2015-12-01 23:25:58.469201"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["id", 59702], ["item_name", "Colombia"], ["item_description", "We look for a bright cup with a touch of sweetness for our Colombian coffee. Either way, it is always one of our greatest coffees."], ["quantity", 75], ["price", 13], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/11.png"], ["created_at", "2015-12-01 23:25:58.471047"], ["updated_at", "2015-12-01 23:25:58.471047"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["id", 95567], ["item_name", "Tanzania"], ["item_description", "A very full flavor with a wine like finish. Tanzania has a medium to, dark roast to bring out all of its amazing profile."], ["quantity", 97], ["price", 10], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/3.png"], ["created_at", "2015-12-01 23:25:58.473290"], ["updated_at", "2015-12-01 23:25:58.473290"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[36m (4.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (1.8ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateItems (20151118191227)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (25.3ms)[0m  [1mCREATE TABLE "items" ("id" serial primary key, "item_name" character varying, "item_description" text, "quantity" integer, "price" integer, "sku" character varying, "large_image" character varying, "small_image" character varying, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151118191227"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to CreateUsers (20151120234929)
+  [1m[35m (5.7ms)[0m  BEGIN
+  [1m[36m (22.2ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "first_name" character varying, "last_name" character varying, "user_name" character varying, "password_digest" character varying, "email" character varying, "phone_number" character varying, "admin" boolean DEFAULT 'f', "cart" character varying DEFAULT '', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (2.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151120234929"]]
+  [1m[36m (1.2ms)[0m  [1mCOMMIT[0m
+Migrating to CreateOrders (20151121183924)
+  [1m[35m (6.6ms)[0m  BEGIN
+  [1m[36m (14.4ms)[0m  [1mCREATE TABLE "orders" ("id" serial primary key, "item_ids_quantities" character varying, "user_id" integer, "shipped" boolean DEFAULT 'f', "requested_return" boolean DEFAULT 'f', "return_received" boolean DEFAULT 'f', "refunded" boolean DEFAULT 'f', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151121183924"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'items'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.6ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'orders'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("first_name", "last_name", "user_name", "password_digest", "phone_number", "admin", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["first_name", "Joji"], ["last_name", "Gordon"], ["user_name", "joji"], ["password_digest", "$2a$10$8pp9Gn.QaWSZ.2/UKImIv.fj5wph.kmTgVioirGNxS6MKbaSND4v."], ["phone_number", "911"], ["admin", "t"], ["created_at", "2015-12-01 23:26:21.398938"], ["updated_at", "2015-12-01 23:26:21.398938"]]
+  [1m[36m (1.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "user_name", "password_digest", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Daniel"], ["last_name", "Huang"], ["user_name", "daniel"], ["password_digest", "$2a$10$XnM2LkUJRz1Ra95B6xcJvuVIIAuolO.NOSqUZO4R7w8nRN/p/QdEK"], ["phone_number", "911"], ["created_at", "2015-12-01 23:26:21.471596"], ["updated_at", "2015-12-01 23:26:21.471596"]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["id", 57887], ["item_name", "Labor of Love"], ["item_description", "My labor of love is putting together the great coffees from non marguis origins at a great price. It's my thanks to use those that labor to keep everything going."], ["quantity", 63], ["price", 12], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/11.png"], ["created_at", "2015-12-01 23:26:21.484277"], ["updated_at", "2015-12-01 23:26:21.484277"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["id", 39008], ["item_name", "Peru"], ["item_description", "Peru is a delicious, subtle coffee. It's perfect for a morning brew. Its mild flavor means you can brew it very strong to bring out it subtle nature. Note hte sweetness and brigthness of the cup."], ["quantity", 14], ["price", 10], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/1.png"], ["created_at", "2015-12-01 23:26:21.486593"], ["updated_at", "2015-12-01 23:26:21.486593"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["id", 83326], ["item_name", "Espresso"], ["item_description", "It's risky making coffee so full flavored thats is intended to be very concentrated. This espressco is crema laced bliss. So full flavored that it is excellent as a brewed coffee as well."], ["quantity", 70], ["price", 10], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/12.png"], ["created_at", "2015-12-01 23:26:21.488365"], ["updated_at", "2015-12-01 23:26:21.488365"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["id", 13771], ["item_name", "Timor"], ["item_description", "Bright and Lovely, Timor is a great coffee. this rare and exotic coffee is warm and familar and the best at being so. Drink it all day long. Some parts of the year we cannot get this coffee, its is from a small crop. It is so loved by customers that it is one of our signature coffees just the same."], ["quantity", 39], ["price", 9], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/6.png"], ["created_at", "2015-12-01 23:26:21.490104"], ["updated_at", "2015-12-01 23:26:21.490104"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["id", 57888], ["item_name", "Costa Rica"], ["item_description", "Costa Rican coffee is bright and fresh tasting with a medium body. There is a subtle flavor, like the scent of a tropical breeze, that gives it a unique flavor."], ["quantity", 46], ["price", 15], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/13.png"], ["created_at", "2015-12-01 23:26:21.491760"], ["updated_at", "2015-12-01 23:26:21.491760"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["id", 33518], ["item_name", "Black Rocks Mountain Clouds"], ["item_description", "This classic dark/light blend takes the best flavors from coffees that roast dark and coffees that roast well light. It is sweet with some toastliness and a medium body. In Sweden, where they drink more coffee per person than anywhere; these dark/light blends are very popular."], ["quantity", 31], ["price", 10], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/1.png"], ["created_at", "2015-12-01 23:26:21.493573"], ["updated_at", "2015-12-01 23:26:21.493573"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["id", 40166], ["item_name", "New Guinea"], ["item_description", "This is a medium to full bodied coffee with a distinct roasted nut flavor."], ["quantity", 14], ["price", 8], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/1.png"], ["created_at", "2015-12-01 23:26:21.495432"], ["updated_at", "2015-12-01 23:26:21.495432"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["id", 94835], ["item_name", "Mexican"], ["item_description", "We put a slightly darker roast on this coffee to bring out its fantastic aroma. It has a medium to full body and very clean finish."], ["quantity", 86], ["price", 10], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/3.png"], ["created_at", "2015-12-01 23:26:21.497072"], ["updated_at", "2015-12-01 23:26:21.497072"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["id", 40925], ["item_name", "Decaf Harmony"], ["item_description", "This Swiss Water Process coffee is made from new crop coffees as they become available from all over the world. It's full flavor make some wonder if it's really decaf. It is!"], ["quantity", 31], ["price", 11], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/4.png"], ["created_at", "2015-12-01 23:26:21.498666"], ["updated_at", "2015-12-01 23:26:21.498666"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["id", 33596], ["item_name", "River Mud"], ["item_description", "What if we didn't hold anything back and blended all our thick dark strong coffees? It would sit in the cup like River Mud. The coffee flavor would be full and rich and fresh because it's Pacifica Coffee. The blend enjoys almost a cult following in some circles."], ["quantity", 20], ["price", 10], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/9.png"], ["created_at", "2015-12-01 23:26:21.500527"], ["updated_at", "2015-12-01 23:26:21.500527"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["id", 80351], ["item_name", "Sumatra"], ["item_description", "The king of full bodied coffees come from Sumatra. Ours is roasted dark to bring out it's earthiness and to compliment the full body. It's a simple description, but there is more to this coffee. We have sold more of it in every one of our 20 years in business than any other variety."], ["quantity", 16], ["price", 13], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/8.png"], ["created_at", "2015-12-01 23:26:21.502146"], ["updated_at", "2015-12-01 23:26:21.502146"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["id", 98317], ["item_name", "Bolivia"], ["item_description", "Bright tropical blooms and complex aromas grace this fantastic coffee roasted at a full city roast. A very flavorful and approachable coffee."], ["quantity", 53], ["price", 13], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/1.png"], ["created_at", "2015-12-01 23:26:21.503997"], ["updated_at", "2015-12-01 23:26:21.503997"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["id", 71032], ["item_name", "Ethiopia"], ["item_description", "\"From the botanical origin of coffee comes this fully flavored African coffee. It is floral and has wine like tones. A great coffee experience unlike any other."], ["quantity", 0], ["price", 9], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/4.png"], ["created_at", "2015-12-01 23:26:21.505904"], ["updated_at", "2015-12-01 23:26:21.505904"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["id", 77805], ["item_name", "French Roast"], ["item_description", "French Roast is our darkest roast coffee. Our version is smooth and not ,overly heavy. It has a fine roasty, toasty flavor, just as your would expect."], ["quantity", 61], ["price", 13], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/4.png"], ["created_at", "2015-12-01 23:26:21.507602"], ["updated_at", "2015-12-01 23:26:21.507602"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["id", 91493], ["item_name", "Komodo"], ["item_description", "Komodo is our blend from the home of the dragon. Three different roasts ,of three different coffees produces this earthy coffee with a lot of body and a subtle nut like tone. All three coffees come from the Indonesian Islands."], ["quantity", 73], ["price", 14], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/11.png"], ["created_at", "2015-12-01 23:26:21.509122"], ["updated_at", "2015-12-01 23:26:21.509122"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["id", 11481], ["item_name", "Guatemala"], ["item_description", "This classic Central American coffee has subtle sweet floral tones in its, well balanced cup."], ["quantity", 93], ["price", 11], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/13.png"], ["created_at", "2015-12-01 23:26:21.510870"], ["updated_at", "2015-12-01 23:26:21.510870"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["id", 23740], ["item_name", "Uganda"], ["item_description", "Uganda has a unique subtle fruit aroma with cup flavor of fresh coffee cherries. It is medium bodied and very smooth"], ["quantity", 4], ["price", 15], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/13.png"], ["created_at", "2015-12-01 23:26:21.512772"], ["updated_at", "2015-12-01 23:26:21.512772"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["id", 58624], ["item_name", "Sicilian"], ["item_description", "This dark Italian style coffee was developed for a first class Italian restaurant. It was such a success, we now offer it to you. The coffee is dark roasted with a fruity aroma and a subtle wine like aftertaste."], ["quantity", 49], ["price", 16], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/10.png"], ["created_at", "2015-12-01 23:26:21.514573"], ["updated_at", "2015-12-01 23:26:21.514573"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["id", 80253], ["item_name", "Bali Blue Moon"], ["item_description", "A delicious full bodies coffee with a dark roast. A hint of sweetness and chocolate tones grace this rare coffee."], ["quantity", 47], ["price", 8], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/2.png"], ["created_at", "2015-12-01 23:26:21.516434"], ["updated_at", "2015-12-01 23:26:21.516434"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["id", 14686], ["item_name", "Colombia"], ["item_description", "We look for a bright cup with a touch of sweetness for our Colombian coffee. Either way, it is always one of our greatest coffees."], ["quantity", 49], ["price", 9], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/2.png"], ["created_at", "2015-12-01 23:26:21.518432"], ["updated_at", "2015-12-01 23:26:21.518432"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["id", 70170], ["item_name", "Tanzania"], ["item_description", "A very full flavor with a wine like finish. Tanzania has a medium to, dark roast to bring out all of its amazing profile."], ["quantity", 52], ["price", 13], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/8.png"], ["created_at", "2015-12-01 23:26:21.520223"], ["updated_at", "2015-12-01 23:26:21.520223"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/items" for ::1 at 2015-12-01 15:46:05 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (1.1ms)
+  [1m[35mItem Load (1.0ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (25.8ms)
+  Rendered navigation/_main_nav.html.erb (1.0ms)
+Completed 200 OK in 786ms (Views: 772.0ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/login" for ::1 at 2015-12-01 15:46:17 -0800
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+  Rendered navigation/_main_nav.html.erb (1.2ms)
+Completed 200 OK in 51ms (Views: 50.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2015-12-01 15:46:19 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0fffyHccFtnqD30IMHkEGBQ8DB4x+AtkjuYJ+WwHay8zHgtHwmLJ85UbssByjHF/MfqptdFhaEcQb4zRkM/Zhg==", "user_name"=>"joji", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."user_name" = $1 LIMIT 1[0m  [["user_name", "joji"]]
+Redirected to http://localhost:3000/items
+Completed 302 Found in 94ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/items" for ::1 at 2015-12-01 15:46:19 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.0ms)
+  [1m[35mItem Load (0.5ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (9.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered navigation/_main_nav.html.erb (3.3ms)
+Completed 200 OK in 61ms (Views: 59.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/admin" for ::1 at 2015-12-01 15:46:22 -0800
+Processing by ItemsController#admin as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered navigation/_filter_nav.html.erb (0.2ms)
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  Rendered items/admin.html.erb within layouts/application (6.8ms)
+  Rendered navigation/_main_nav.html.erb (0.3ms)
+Completed 200 OK in 53ms (Views: 51.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/items/new" for ::1 at 2015-12-01 15:46:24 -0800
+Processing by ItemsController#new as HTML
+  Rendered items/_form.html.erb (84.2ms)
+  Rendered items/new.html.erb within layouts/application (86.9ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered navigation/_main_nav.html.erb (1.6ms)
+Completed 200 OK in 203ms (Views: 201.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/items" for ::1 at 2015-12-01 15:46:50 -0800
+Processing by ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6yUTkWY5S929sWYLydxP23u1mQJDazbgbUV/g4wfPSMJzMce00eU98KlqcOLKTq8XnM8qaPyVcPzzPqrcNePig==", "item"=>{"item_name"=>"Drew LIVE", "item_description"=>"This is a test LIVE", "quantity"=>"5", "price"=>"01", "sku"=>"", "large_image"=>"", "small_image"=>""}, "commit"=>"Submit"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "items" ("item_name", "item_description", "quantity", "price", "sku", "large_image", "small_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["item_name", "Drew LIVE"], ["item_description", "This is a test LIVE"], ["quantity", 5], ["price", 1], ["sku", ""], ["large_image", ""], ["small_image", ""], ["created_at", "2015-12-01 23:46:50.404949"], ["updated_at", "2015-12-01 23:46:50.404949"]]
+  [1m[36m (6.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "items" SET "id" = $1, "updated_at" = $2 WHERE "items"."id" = $3[0m  [["id", 42155], ["updated_at", "2015-12-01 23:46:50.414195"], ["id", 1]]
+  [1m[35m (5.0ms)[0m  COMMIT
+Redirected to http://localhost:3000/items
+Completed 302 Found in 18ms (ActiveRecord: 12.2ms)
+
+
+Started GET "/items" for ::1 at 2015-12-01 15:46:50 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.0ms)
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  Rendered items/index.html.erb within layouts/application (7.4ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered navigation/_main_nav.html.erb (1.1ms)
+Completed 200 OK in 42ms (Views: 40.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/admin" for ::1 at 2015-12-01 15:46:58 -0800
+Processing by ItemsController#admin as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered navigation/_filter_nav.html.erb (0.0ms)
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/admin.html.erb within layouts/application (5.4ms)
+  Rendered navigation/_main_nav.html.erb (0.2ms)
+Completed 200 OK in 94ms (Views: 92.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/items/42155/edit" for ::1 at 2015-12-01 15:47:01 -0800
+Processing by ItemsController#edit as HTML
+  Parameters: {"id"=>"42155"}
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 42155]]
+  Rendered items/_form.html.erb (2.7ms)
+  Rendered items/edit.html.erb within layouts/application (5.3ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered navigation/_main_nav.html.erb (1.7ms)
+Completed 200 OK in 131ms (Views: 127.6ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/items/42155" for ::1 at 2015-12-01 15:47:17 -0800
+Processing by ItemsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cgpuMHwGmxOAZce4iowO8YtsSThS3bxf3P8sKw2Y2aCQ47q/yXhEOf9xCHDIeXuWrqrsk7JE33xCdqkD8VBrCQ==", "item"=>{"item_name"=>"Drew LIVE", "item_description"=>"This is a test LIVE", "quantity"=>"5", "price"=>"01", "sku"=>"", "large_image"=>"", "small_image"=>""}, "commit"=>"Submit", "id"=>"42155"}
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 42155]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/admin" for ::1 at 2015-12-01 15:47:17 -0800
+Processing by ItemsController#admin as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered navigation/_filter_nav.html.erb (0.1ms)
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  Rendered items/admin.html.erb within layouts/application (6.6ms)
+  Rendered navigation/_main_nav.html.erb (0.7ms)
+Completed 200 OK in 50ms (Views: 48.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/items" for ::1 at 2015-12-01 15:47:32 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.1ms)
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (8.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered navigation/_main_nav.html.erb (1.0ms)
+Completed 200 OK in 50ms (Views: 48.4ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/users/cart" for ::1 at 2015-12-01 15:47:39 -0800
+Processing by UsersController#add_to_cart as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TZVFxFFTcgzddDe15UwRs/L/acjdBofcTQzpt1yPhN2vfJFL5C2tJqJg+H2nuWTU1znMYz2f5P/ThWyfoEc2dA==", "item_id"=>"42155", "item_qty"=>"1", "commit"=>"Add to Cart"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "cart" = $1, "updated_at" = $2 WHERE "users"."id" = $3  [["cart", "42155,1,"], ["updated_at", "2015-12-01 23:47:39.066137"], ["id", 1]]
+  [1m[36m (6.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/items
+Completed 302 Found in 11ms (ActiveRecord: 6.7ms)
+
+
+Started GET "/items" for ::1 at 2015-12-01 15:47:39 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.0ms)
+  [1m[35mItem Load (0.4ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (8.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered navigation/_main_nav.html.erb (1.5ms)
+Completed 200 OK in 172ms (Views: 170.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/cart" for ::1 at 2015-12-01 15:47:42 -0800
+Processing by UsersController#cart as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 42155]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 42155]]
+  Rendered users/cart.html.erb within layouts/application (1.9ms)
+  Rendered navigation/_main_nav.html.erb (0.2ms)
+Completed 200 OK in 45ms (Views: 41.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/charges" for ::1 at 2015-12-01 15:48:56 -0800
+Processing by ChargesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"x1y7hplB80HjUQ5groDUgSMYS+Sys3yWb7yFq/JlRlAltW8JLD8sa5xFwajsdaHmBt7uT1IqH7XxNQCDDq30+Q==", "stripeToken"=>"tok_17DNrdC7KtOpeljmOo3TMp02", "stripeTokenType"=>"card", "stripeEmail"=>"peteand07@gmail.com"}
+  [1m[36mUser Load (1.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.9ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 42155]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.9ms)[0m  INSERT INTO "orders" ("item_ids_quantities", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["item_ids_quantities", "42155,1,"], ["user_id", 1], ["created_at", "2015-12-01 23:48:59.067849"], ["updated_at", "2015-12-01 23:48:59.067849"]]
+  [1m[36m (6.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "cart" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["cart", ""], ["updated_at", "2015-12-01 23:48:59.078664"], ["id", 1]]
+  [1m[35m (5.1ms)[0m  COMMIT
+  Rendered charges/create.html.erb within layouts/application (0.7ms)
+  Rendered navigation/_main_nav.html.erb (0.2ms)
+Completed 200 OK in 4784ms (Views: 38.2ms | ActiveRecord: 17.6ms)
+
+
+Started GET "/items" for ::1 at 2015-12-02 09:07:19 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.3ms)
+  [1m[35mItem Load (0.6ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (21.1ms)
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered navigation/_main_nav.html.erb (19.3ms)
+Completed 200 OK in 641ms (Views: 626.6ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/assets/layout.self-762c861c3ca8d9f272a0d2744c509c1313cc6e6285a1df608a0d12532301e935.css?body=1" for ::1 at 2015-12-02 09:07:21 -0800
+
+
+Started GET "/assets/layout.self-540851b6e43c3260779d2ac247d48587c2a10b0c0843f827b11213eac2b774c8.js?body=1" for ::1 at 2015-12-02 09:07:21 -0800
+
+
+Started GET "/items" for ::1 at 2015-12-02 09:07:47 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.0ms)
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (6.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered navigation/_main_nav.html.erb (1.5ms)
+Completed 200 OK in 91ms (Views: 89.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/items/index.self-a1674d38ac02ec216978e9b27b9a1f68bc606400773c0771ebf519368f35797d.css?body=1" for ::1 at 2015-12-02 09:07:47 -0800
+
+
+Started GET "/assets/items/admin.self-e7a321e81902c5befefb7ec6eec471bacd5ca11cd47567299d05c047869ac02b.css?body=1" for ::1 at 2015-12-02 09:07:47 -0800
+
+
+Started GET "/assets/mixins.self-8a8dd6fded1bb043f6b91fb70c8a2439f0899b8213b413b7e6abe3900d0a4b09.css?body=1" for ::1 at 2015-12-02 09:07:47 -0800
+
+
+Started GET "/assets/reset.self-ae3ef30a36acd68699e107126b5d3bd30681a1c562689b29a559656c1b183fe4.css?body=1" for ::1 at 2015-12-02 09:07:47 -0800
+
+
+Started GET "/assets/layout.self-762c861c3ca8d9f272a0d2744c509c1313cc6e6285a1df608a0d12532301e935.css?body=1" for ::1 at 2015-12-02 09:07:47 -0800
+
+
+Started GET "/assets/sessions/new.self-2ab7e1ba24fb025ca16f03f6e3a7ad808b0ca403e039dff8fe94da44d53fcfac.css?body=1" for ::1 at 2015-12-02 09:07:47 -0800
+
+
+Started GET "/assets/application.self-c4991312985bccd133f1f21ab2f6a5d0129a8416a91037313b14f05d7d2e7dde.css?body=1" for ::1 at 2015-12-02 09:07:47 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-02 09:07:47 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-02 09:07:47 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-02 09:07:47 -0800
+
+
+Started GET "/assets/layout.self-540851b6e43c3260779d2ac247d48587c2a10b0c0843f827b11213eac2b774c8.js?body=1" for ::1 at 2015-12-02 09:07:47 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-02 09:07:47 -0800
+
+
+Started GET "/items" for ::1 at 2015-12-02 09:07:48 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.0ms)
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (5.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered navigation/_main_nav.html.erb (1.4ms)
+Completed 200 OK in 44ms (Views: 42.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/items/admin.self-e7a321e81902c5befefb7ec6eec471bacd5ca11cd47567299d05c047869ac02b.css?body=1" for ::1 at 2015-12-02 09:07:48 -0800
+
+
+Started GET "/assets/items/index.self-a1674d38ac02ec216978e9b27b9a1f68bc606400773c0771ebf519368f35797d.css?body=1" for ::1 at 2015-12-02 09:07:48 -0800
+
+
+Started GET "/assets/application.self-c4991312985bccd133f1f21ab2f6a5d0129a8416a91037313b14f05d7d2e7dde.css?body=1" for ::1 at 2015-12-02 09:07:48 -0800
+
+
+Started GET "/assets/reset.self-ae3ef30a36acd68699e107126b5d3bd30681a1c562689b29a559656c1b183fe4.css?body=1" for ::1 at 2015-12-02 09:07:48 -0800
+
+
+Started GET "/assets/sessions/new.self-2ab7e1ba24fb025ca16f03f6e3a7ad808b0ca403e039dff8fe94da44d53fcfac.css?body=1" for ::1 at 2015-12-02 09:07:48 -0800
+
+
+Started GET "/assets/mixins.self-8a8dd6fded1bb043f6b91fb70c8a2439f0899b8213b413b7e6abe3900d0a4b09.css?body=1" for ::1 at 2015-12-02 09:07:48 -0800
+
+
+Started GET "/assets/layout.self-762c861c3ca8d9f272a0d2744c509c1313cc6e6285a1df608a0d12532301e935.css?body=1" for ::1 at 2015-12-02 09:07:48 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-02 09:07:48 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-02 09:07:48 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-02 09:07:48 -0800
+
+
+Started GET "/assets/layout.self-540851b6e43c3260779d2ac247d48587c2a10b0c0843f827b11213eac2b774c8.js?body=1" for ::1 at 2015-12-02 09:07:48 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-02 09:07:48 -0800
+
+
+Started GET "/items" for ::1 at 2015-12-02 09:09:11 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.2ms)
+  [1m[35mItem Load (0.4ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (19.8ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered navigation/_main_nav.html.erb (25.8ms)
+Completed 200 OK in 373ms (Views: 359.4ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/assets/items/index.self-a1674d38ac02ec216978e9b27b9a1f68bc606400773c0771ebf519368f35797d.css?body=1" for ::1 at 2015-12-02 09:09:12 -0800
+
+
+Started GET "/assets/items/admin.self-e7a321e81902c5befefb7ec6eec471bacd5ca11cd47567299d05c047869ac02b.css?body=1" for ::1 at 2015-12-02 09:09:12 -0800
+
+
+Started GET "/assets/layout.self-35f5b7093c2a538a299df7ad62d43593177266f0b1d7c97d4fa0b9356bf03c71.css?body=1" for ::1 at 2015-12-02 09:09:12 -0800
+
+
+Started GET "/assets/mixins.self-8a8dd6fded1bb043f6b91fb70c8a2439f0899b8213b413b7e6abe3900d0a4b09.css?body=1" for ::1 at 2015-12-02 09:09:12 -0800
+
+
+Started GET "/assets/reset.self-ae3ef30a36acd68699e107126b5d3bd30681a1c562689b29a559656c1b183fe4.css?body=1" for ::1 at 2015-12-02 09:09:12 -0800
+
+
+Started GET "/assets/sessions/new.self-2ab7e1ba24fb025ca16f03f6e3a7ad808b0ca403e039dff8fe94da44d53fcfac.css?body=1" for ::1 at 2015-12-02 09:09:12 -0800
+
+
+Started GET "/assets/application.self-c4991312985bccd133f1f21ab2f6a5d0129a8416a91037313b14f05d7d2e7dde.css?body=1" for ::1 at 2015-12-02 09:09:12 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-02 09:09:12 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-02 09:09:12 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-02 09:09:12 -0800
+
+
+Started GET "/assets/layout.self-540851b6e43c3260779d2ac247d48587c2a10b0c0843f827b11213eac2b774c8.js?body=1" for ::1 at 2015-12-02 09:09:12 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-02 09:09:12 -0800
+
+
+Started GET "/items" for ::1 at 2015-12-02 09:10:36 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.3ms)
+  [1m[35mItem Load (0.8ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (17.9ms)
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered navigation/_main_nav.html.erb (30.5ms)
+Completed 200 OK in 461ms (Views: 445.7ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/assets/items/admin.self-e7a321e81902c5befefb7ec6eec471bacd5ca11cd47567299d05c047869ac02b.css?body=1" for ::1 at 2015-12-02 09:10:37 -0800
+
+
+Started GET "/assets/items/index.self-a1674d38ac02ec216978e9b27b9a1f68bc606400773c0771ebf519368f35797d.css?body=1" for ::1 at 2015-12-02 09:10:37 -0800
+
+
+Started GET "/assets/layout.self-f1a875251cd21cee14847f7b2ebb4249e8b24260b447dad1653b596ed2271f72.css?body=1" for ::1 at 2015-12-02 09:10:37 -0800
+
+
+Started GET "/assets/reset.self-ae3ef30a36acd68699e107126b5d3bd30681a1c562689b29a559656c1b183fe4.css?body=1" for ::1 at 2015-12-02 09:10:37 -0800
+
+
+Started GET "/assets/sessions/new.self-2ab7e1ba24fb025ca16f03f6e3a7ad808b0ca403e039dff8fe94da44d53fcfac.css?body=1" for ::1 at 2015-12-02 09:10:37 -0800
+
+
+Started GET "/assets/application.self-c4991312985bccd133f1f21ab2f6a5d0129a8416a91037313b14f05d7d2e7dde.css?body=1" for ::1 at 2015-12-02 09:10:37 -0800
+
+
+Started GET "/assets/mixins.self-8a8dd6fded1bb043f6b91fb70c8a2439f0899b8213b413b7e6abe3900d0a4b09.css?body=1" for ::1 at 2015-12-02 09:10:37 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-02 09:10:37 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-02 09:10:37 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-02 09:10:37 -0800
+
+
+Started GET "/assets/layout.self-540851b6e43c3260779d2ac247d48587c2a10b0c0843f827b11213eac2b774c8.js?body=1" for ::1 at 2015-12-02 09:10:37 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-02 09:10:37 -0800
+
+
+Started GET "/items" for ::1 at 2015-12-02 09:11:30 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.0ms)
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (6.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered navigation/_main_nav.html.erb (1.6ms)
+Completed 200 OK in 342ms (Views: 340.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/items/admin.self-8de02939b4cd6032bda33dd9ea46e93cf6426e40a8592aa372e431f9b9f76102.css?body=1" for ::1 at 2015-12-02 09:11:31 -0800
+
+
+Started GET "/assets/items/index.self-86b3b4439c6918b02d3dffa82a9f3135c481d3f27a0d13c7f42c178eb1b08c72.css?body=1" for ::1 at 2015-12-02 09:11:31 -0800
+
+
+Started GET "/assets/layout.self-0b0ced59b137a5329c47f9b6e27d706357e2dd0255d5a1750c2800d6ff87b3c4.css?body=1" for ::1 at 2015-12-02 09:11:31 -0800
+
+
+Started GET "/assets/mixins.self-47e1e10495df02105bb22c2f1b4700b3db016ae47b366719c996b13349c161c2.css?body=1" for ::1 at 2015-12-02 09:11:31 -0800
+
+
+Started GET "/assets/reset.self-ae3ef30a36acd68699e107126b5d3bd30681a1c562689b29a559656c1b183fe4.css?body=1" for ::1 at 2015-12-02 09:11:31 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-02 09:11:31 -0800
+
+
+Started GET "/assets/application.self-c4991312985bccd133f1f21ab2f6a5d0129a8416a91037313b14f05d7d2e7dde.css?body=1" for ::1 at 2015-12-02 09:11:31 -0800
+
+
+Started GET "/assets/sessions/new.self-905a125776daf0600920325453ad009ce95ca10bc3677229b02524be1a10ba9f.css?body=1" for ::1 at 2015-12-02 09:11:31 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-02 09:11:31 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-02 09:11:31 -0800
+
+
+Started GET "/assets/layout.self-540851b6e43c3260779d2ac247d48587c2a10b0c0843f827b11213eac2b774c8.js?body=1" for ::1 at 2015-12-02 09:11:31 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-02 09:11:31 -0800
+
+
+Started GET "/items" for ::1 at 2015-12-02 09:22:04 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.0ms)
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (6.6ms)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (Invalid CSS after "... $prefix + '-'}": expected "}", was ": $value;"):
+    4: <html>
+    5: <head>
+    6:   <title>PacificaCoffee</title>
+    7:   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    8:   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    9:   <%= csrf_meta_tags %>
+   10: 
+  app/assets/stylesheets/mixins.scss:61
+  app/assets/stylesheets/items/admin.scss:1
+  app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__4169217346135909844_70257686072140'
+
+
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.9ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (28.1ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (17.3ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (39.6ms)
+
+
+Started GET "/items" for ::1 at 2015-12-02 09:31:07 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.1ms)
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  Rendered items/index.html.erb within layouts/application (6.7ms)
+Completed 500 Internal Server Error in 83ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (Invalid CSS after "    }": expected selector or at-rule, was "}"):
+    4: <html>
+    5: <head>
+    6:   <title>PacificaCoffee</title>
+    7:   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    8:   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    9:   <%= csrf_meta_tags %>
+   10: 
+  app/assets/stylesheets/mixins.scss:63
+  app/assets/stylesheets/items/admin.scss:1
+  app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__4169217346135909844_70257686072140'
+
+
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.0ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (23.5ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (14.5ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (29.3ms)
+
+
+Started GET "/items" for ::1 at 2015-12-02 09:31:36 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.0ms)
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (6.5ms)
+Completed 500 Internal Server Error in 85ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (Invalid CSS after "... $prefix + '-'}": expected "}", was ": $value;"):
+    4: <html>
+    5: <head>
+    6:   <title>PacificaCoffee</title>
+    7:   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    8:   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    9:   <%= csrf_meta_tags %>
+   10: 
+  app/assets/stylesheets/mixins.scss:69
+  app/assets/stylesheets/items/admin.scss:1
+  app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__4169217346135909844_70257686072140'
+
+
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.1ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (46.7ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (67.2ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (69.3ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (84.9ms)
+
+
+Started GET "/items" for ::1 at 2015-12-02 09:32:00 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.0ms)
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  Rendered items/index.html.erb within layouts/application (6.3ms)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (Invalid CSS after "... $prefix + '-'}": expected "}", was ": $value;"):
+    4: <html>
+    5: <head>
+    6:   <title>PacificaCoffee</title>
+    7:   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    8:   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    9:   <%= csrf_meta_tags %>
+   10: 
+  app/assets/stylesheets/mixins.scss:69
+  app/assets/stylesheets/items/admin.scss:1
+  app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__4169217346135909844_70257686072140'
+
+
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.5ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (25.4ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (13.2ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (29.1ms)
+
+
+Started GET "/items" for ::1 at 2015-12-02 09:33:15 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.0ms)
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (6.3ms)
+Completed 500 Internal Server Error in 84ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (Invalid CSS after "... $prefix + '-'}": expected "}", was ": $value;"):
+    4: <html>
+    5: <head>
+    6:   <title>PacificaCoffee</title>
+    7:   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    8:   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    9:   <%= csrf_meta_tags %>
+   10: 
+  app/assets/stylesheets/mixins.scss:69
+  app/assets/stylesheets/items/admin.scss:1
+  app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__4169217346135909844_70257686072140'
+
+
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.4ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (23.0ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (13.2ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (27.6ms)
+
+
+Started GET "/items" for ::1 at 2015-12-02 09:35:00 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.0ms)
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  Rendered items/index.html.erb within layouts/application (6.3ms)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (Invalid CSS after "... $prefix + '-'}": expected "}", was ": $value;"):
+    4: <html>
+    5: <head>
+    6:   <title>PacificaCoffee</title>
+    7:   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    8:   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    9:   <%= csrf_meta_tags %>
+   10: 
+  app/assets/stylesheets/mixins.scss:69
+  app/assets/stylesheets/items/admin.scss:1
+  app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__4169217346135909844_70257686072140'
+
+
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (59.9ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (74.5ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (12.4ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (27.8ms)
+
+
+Started GET "/items" for ::1 at 2015-12-02 09:37:21 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.0ms)
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (6.8ms)
+Completed 500 Internal Server Error in 82ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (Invalid CSS after "... $prefix + '-'}": expected "}", was ": $value;"):
+    4: <html>
+    5: <head>
+    6:   <title>PacificaCoffee</title>
+    7:   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    8:   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    9:   <%= csrf_meta_tags %>
+   10: 
+  app/assets/stylesheets/mixins.scss:72
+  app/assets/stylesheets/items/admin.scss:1
+  app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__4169217346135909844_70257686072140'
+
+
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.6ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (22.1ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (13.2ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (28.2ms)
+
+
+Started GET "/items" for ::1 at 2015-12-02 09:37:22 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.0ms)
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  Rendered items/index.html.erb within layouts/application (5.8ms)
+Completed 500 Internal Server Error in 75ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (Invalid CSS after "... $prefix + '-'}": expected "}", was ": $value;"):
+    4: <html>
+    5: <head>
+    6:   <title>PacificaCoffee</title>
+    7:   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    8:   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    9:   <%= csrf_meta_tags %>
+   10: 
+  app/assets/stylesheets/mixins.scss:72
+  app/assets/stylesheets/items/admin.scss:1
+  app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__4169217346135909844_70257686072140'
+
+
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.6ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (21.4ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (13.3ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (27.8ms)
+
+
+Started GET "/items" for ::1 at 2015-12-02 09:37:42 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.1ms)
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (6.6ms)
+Completed 500 Internal Server Error in 208ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (Undefined variable: "$property".):
+    4: <html>
+    5: <head>
+    6:   <title>PacificaCoffee</title>
+    7:   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    8:   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    9:   <%= csrf_meta_tags %>
+   10: 
+  app/assets/stylesheets/mixins.scss:63:in `disp'
+  app/assets/stylesheets/layout.scss:9
+  app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__4169217346135909844_70257686072140'
+
+
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.2ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (22.1ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (13.4ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (85.7ms)
+
+
+Started GET "/items" for ::1 at 2015-12-02 09:37:58 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.0ms)
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  Rendered items/index.html.erb within layouts/application (6.1ms)
+Completed 500 Internal Server Error in 143ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (Undefined variable: "$property".):
+    4: <html>
+    5: <head>
+    6:   <title>PacificaCoffee</title>
+    7:   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    8:   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    9:   <%= csrf_meta_tags %>
+   10: 
+  app/assets/stylesheets/mixins.scss:63:in `disp'
+  app/assets/stylesheets/layout.scss:9
+  app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__4169217346135909844_70257686072140'
+
+
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.3ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (60.3ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (80.7ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (13.4ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (27.8ms)
+
+
+Started GET "/items" for ::1 at 2015-12-02 09:40:02 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.1ms)
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (6.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered navigation/_main_nav.html.erb (1.7ms)
+Completed 200 OK in 355ms (Views: 353.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/items/admin.self-8de02939b4cd6032bda33dd9ea46e93cf6426e40a8592aa372e431f9b9f76102.css?body=1" for ::1 at 2015-12-02 09:40:02 -0800
+
+
+Started GET "/assets/items/index.self-86b3b4439c6918b02d3dffa82a9f3135c481d3f27a0d13c7f42c178eb1b08c72.css?body=1" for ::1 at 2015-12-02 09:40:02 -0800
+
+
+Started GET "/assets/layout.self-ab77973be721418c1c105770ef353ff15f5b190ccdd9682ea8ce1e7086d870a9.css?body=1" for ::1 at 2015-12-02 09:40:02 -0800
+
+
+Started GET "/assets/application.self-c4991312985bccd133f1f21ab2f6a5d0129a8416a91037313b14f05d7d2e7dde.css?body=1" for ::1 at 2015-12-02 09:40:02 -0800
+
+
+Started GET "/assets/mixins.self-47e1e10495df02105bb22c2f1b4700b3db016ae47b366719c996b13349c161c2.css?body=1" for ::1 at 2015-12-02 09:40:02 -0800
+
+
+Started GET "/assets/reset.self-ae3ef30a36acd68699e107126b5d3bd30681a1c562689b29a559656c1b183fe4.css?body=1" for ::1 at 2015-12-02 09:40:02 -0800
+
+
+Started GET "/assets/sessions/new.self-905a125776daf0600920325453ad009ce95ca10bc3677229b02524be1a10ba9f.css?body=1" for ::1 at 2015-12-02 09:40:02 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-02 09:40:02 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-02 09:40:02 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-02 09:40:02 -0800
+
+
+Started GET "/assets/layout.self-540851b6e43c3260779d2ac247d48587c2a10b0c0843f827b11213eac2b774c8.js?body=1" for ::1 at 2015-12-02 09:40:02 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-02 09:40:02 -0800
+
+
+Started GET "/items" for ::1 at 2015-12-02 09:40:44 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.0ms)
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (6.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered navigation/_main_nav.html.erb (1.8ms)
+Completed 200 OK in 382ms (Views: 381.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/items/index.self-86b3b4439c6918b02d3dffa82a9f3135c481d3f27a0d13c7f42c178eb1b08c72.css?body=1" for ::1 at 2015-12-02 09:40:44 -0800
+
+
+Started GET "/assets/layout.self-ab77973be721418c1c105770ef353ff15f5b190ccdd9682ea8ce1e7086d870a9.css?body=1" for ::1 at 2015-12-02 09:40:44 -0800
+
+
+Started GET "/assets/mixins.self-47e1e10495df02105bb22c2f1b4700b3db016ae47b366719c996b13349c161c2.css?body=1" for ::1 at 2015-12-02 09:40:44 -0800
+
+
+Started GET "/assets/sessions/new.self-905a125776daf0600920325453ad009ce95ca10bc3677229b02524be1a10ba9f.css?body=1" for ::1 at 2015-12-02 09:40:44 -0800
+
+
+Started GET "/assets/reset.self-ae3ef30a36acd68699e107126b5d3bd30681a1c562689b29a559656c1b183fe4.css?body=1" for ::1 at 2015-12-02 09:40:44 -0800
+
+
+Started GET "/assets/application.self-c4991312985bccd133f1f21ab2f6a5d0129a8416a91037313b14f05d7d2e7dde.css?body=1" for ::1 at 2015-12-02 09:40:44 -0800
+
+
+Started GET "/assets/items/admin.self-8de02939b4cd6032bda33dd9ea46e93cf6426e40a8592aa372e431f9b9f76102.css?body=1" for ::1 at 2015-12-02 09:40:44 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-02 09:40:44 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-02 09:40:44 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-02 09:40:44 -0800
+
+
+Started GET "/assets/layout.self-540851b6e43c3260779d2ac247d48587c2a10b0c0843f827b11213eac2b774c8.js?body=1" for ::1 at 2015-12-02 09:40:44 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-02 09:40:44 -0800
+
+
+Started GET "/items" for ::1 at 2015-12-02 09:40:45 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.0ms)
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (5.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered navigation/_main_nav.html.erb (2.3ms)
+Completed 200 OK in 92ms (Views: 91.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/items/index.self-86b3b4439c6918b02d3dffa82a9f3135c481d3f27a0d13c7f42c178eb1b08c72.css?body=1" for ::1 at 2015-12-02 09:40:45 -0800
+
+
+Started GET "/assets/items/admin.self-8de02939b4cd6032bda33dd9ea46e93cf6426e40a8592aa372e431f9b9f76102.css?body=1" for ::1 at 2015-12-02 09:40:45 -0800
+
+
+Started GET "/assets/mixins.self-47e1e10495df02105bb22c2f1b4700b3db016ae47b366719c996b13349c161c2.css?body=1" for ::1 at 2015-12-02 09:40:45 -0800
+
+
+Started GET "/assets/reset.self-ae3ef30a36acd68699e107126b5d3bd30681a1c562689b29a559656c1b183fe4.css?body=1" for ::1 at 2015-12-02 09:40:45 -0800
+
+
+Started GET "/assets/sessions/new.self-905a125776daf0600920325453ad009ce95ca10bc3677229b02524be1a10ba9f.css?body=1" for ::1 at 2015-12-02 09:40:45 -0800
+
+
+Started GET "/assets/layout.self-ab77973be721418c1c105770ef353ff15f5b190ccdd9682ea8ce1e7086d870a9.css?body=1" for ::1 at 2015-12-02 09:40:45 -0800
+
+
+Started GET "/assets/application.self-c4991312985bccd133f1f21ab2f6a5d0129a8416a91037313b14f05d7d2e7dde.css?body=1" for ::1 at 2015-12-02 09:40:45 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-02 09:40:45 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-02 09:40:45 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-02 09:40:45 -0800
+
+
+Started GET "/assets/layout.self-540851b6e43c3260779d2ac247d48587c2a10b0c0843f827b11213eac2b774c8.js?body=1" for ::1 at 2015-12-02 09:40:45 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-02 09:40:45 -0800
+
+
+Started GET "/items" for ::1 at 2015-12-02 09:43:14 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.0ms)
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (5.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered navigation/_main_nav.html.erb (1.1ms)
+Completed 200 OK in 370ms (Views: 369.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/items/admin.self-8de02939b4cd6032bda33dd9ea46e93cf6426e40a8592aa372e431f9b9f76102.css?body=1" for ::1 at 2015-12-02 09:43:15 -0800
+
+
+Started GET "/assets/items/index.self-86b3b4439c6918b02d3dffa82a9f3135c481d3f27a0d13c7f42c178eb1b08c72.css?body=1" for ::1 at 2015-12-02 09:43:15 -0800
+
+
+Started GET "/assets/layout.self-c324f3d3731f62f7ba81cd764dcce564100bf016ff9f32cd3fcc9b863c13a70e.css?body=1" for ::1 at 2015-12-02 09:43:15 -0800
+
+
+Started GET "/assets/mixins.self-47e1e10495df02105bb22c2f1b4700b3db016ae47b366719c996b13349c161c2.css?body=1" for ::1 at 2015-12-02 09:43:15 -0800
+
+
+Started GET "/assets/reset.self-ae3ef30a36acd68699e107126b5d3bd30681a1c562689b29a559656c1b183fe4.css?body=1" for ::1 at 2015-12-02 09:43:15 -0800
+
+
+Started GET "/assets/sessions/new.self-905a125776daf0600920325453ad009ce95ca10bc3677229b02524be1a10ba9f.css?body=1" for ::1 at 2015-12-02 09:43:15 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-02 09:43:15 -0800
+
+
+Started GET "/assets/application.self-c4991312985bccd133f1f21ab2f6a5d0129a8416a91037313b14f05d7d2e7dde.css?body=1" for ::1 at 2015-12-02 09:43:15 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-02 09:43:15 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-02 09:43:15 -0800
+
+
+Started GET "/assets/layout.self-540851b6e43c3260779d2ac247d48587c2a10b0c0843f827b11213eac2b774c8.js?body=1" for ::1 at 2015-12-02 09:43:15 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-02 09:43:15 -0800
+
+
+Started GET "/items" for ::1 at 2015-12-02 09:43:16 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.0ms)
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (5.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered navigation/_main_nav.html.erb (0.8ms)
+Completed 200 OK in 36ms (Views: 34.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/items/admin.self-8de02939b4cd6032bda33dd9ea46e93cf6426e40a8592aa372e431f9b9f76102.css?body=1" for ::1 at 2015-12-02 09:43:16 -0800
+
+
+Started GET "/assets/items/index.self-86b3b4439c6918b02d3dffa82a9f3135c481d3f27a0d13c7f42c178eb1b08c72.css?body=1" for ::1 at 2015-12-02 09:43:16 -0800
+
+
+Started GET "/assets/mixins.self-47e1e10495df02105bb22c2f1b4700b3db016ae47b366719c996b13349c161c2.css?body=1" for ::1 at 2015-12-02 09:43:16 -0800
+
+
+Started GET "/assets/layout.self-c324f3d3731f62f7ba81cd764dcce564100bf016ff9f32cd3fcc9b863c13a70e.css?body=1" for ::1 at 2015-12-02 09:43:16 -0800
+
+
+Started GET "/assets/reset.self-ae3ef30a36acd68699e107126b5d3bd30681a1c562689b29a559656c1b183fe4.css?body=1" for ::1 at 2015-12-02 09:43:16 -0800
+
+
+Started GET "/assets/sessions/new.self-905a125776daf0600920325453ad009ce95ca10bc3677229b02524be1a10ba9f.css?body=1" for ::1 at 2015-12-02 09:43:16 -0800
+
+
+Started GET "/assets/application.self-c4991312985bccd133f1f21ab2f6a5d0129a8416a91037313b14f05d7d2e7dde.css?body=1" for ::1 at 2015-12-02 09:43:16 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-02 09:43:16 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-02 09:43:16 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-02 09:43:16 -0800
+
+
+Started GET "/assets/layout.self-540851b6e43c3260779d2ac247d48587c2a10b0c0843f827b11213eac2b774c8.js?body=1" for ::1 at 2015-12-02 09:43:16 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-02 09:43:16 -0800
+
+
+Started GET "/items" for ::1 at 2015-12-02 09:44:27 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.0ms)
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (6.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered navigation/_main_nav.html.erb (1.6ms)
+Completed 200 OK in 377ms (Views: 375.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/items/index.self-86b3b4439c6918b02d3dffa82a9f3135c481d3f27a0d13c7f42c178eb1b08c72.css?body=1" for ::1 at 2015-12-02 09:44:28 -0800
+
+
+Started GET "/assets/items/admin.self-8de02939b4cd6032bda33dd9ea46e93cf6426e40a8592aa372e431f9b9f76102.css?body=1" for ::1 at 2015-12-02 09:44:28 -0800
+
+
+Started GET "/assets/layout.self-d74ad38f38795d9a03399045aea6bc55d6561f975a49fc32a8626fb069d8036a.css?body=1" for ::1 at 2015-12-02 09:44:28 -0800
+
+
+Started GET "/assets/reset.self-ae3ef30a36acd68699e107126b5d3bd30681a1c562689b29a559656c1b183fe4.css?body=1" for ::1 at 2015-12-02 09:44:28 -0800
+
+
+Started GET "/assets/mixins.self-47e1e10495df02105bb22c2f1b4700b3db016ae47b366719c996b13349c161c2.css?body=1" for ::1 at 2015-12-02 09:44:28 -0800
+
+
+Started GET "/assets/sessions/new.self-905a125776daf0600920325453ad009ce95ca10bc3677229b02524be1a10ba9f.css?body=1" for ::1 at 2015-12-02 09:44:28 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-02 09:44:28 -0800
+
+
+Started GET "/assets/application.self-c4991312985bccd133f1f21ab2f6a5d0129a8416a91037313b14f05d7d2e7dde.css?body=1" for ::1 at 2015-12-02 09:44:28 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-02 09:44:28 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-02 09:44:28 -0800
+
+
+Started GET "/assets/layout.self-540851b6e43c3260779d2ac247d48587c2a10b0c0843f827b11213eac2b774c8.js?body=1" for ::1 at 2015-12-02 09:44:28 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-02 09:44:28 -0800
