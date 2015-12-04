@@ -1,17 +1,71 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'mixins';
 
-#splash-bg-img {
-  // background-image: url(../../public/images/splash.jpg) no-repeat center center fixed;
-  // -webkit-background-size: cover;
-  // -moz-background-size: cover;
-  // -o-background-size: cover;
-  // background-size: cover;
-    margin: 0 -2.5%;
-   
-  img {
-    width: 100%;
+.welcome-container{
+  display: flex;
+  flex-direction: column;
+
+}
+
+.hero-img {
+  display: flex;
+  justify-content: center;
+  margin: 0 -2.5%;
+  // Top image trick w/ linear-graident opacity..
+  background:  linear-gradient(
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.4)
+    ), url('splashTest.jpg') no-repeat center center;
+  background-size: cover;
+  background-color: $light-gray;
+  height: 560px;
+
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    // column mode the axis change to align items center is for horizontal alignment
+    align-items: center;
+    justify-content: space-between;
+
+    margin: auto;
+    height: 50%;
+    text-align: center;
+    padding: 1rem;
+
+    h3,
+    p {
+      color: white;
+    }
+
+    h3 {
+      font-size: 3rem;
+      @include tablet {
+        font-size: 5rem;
+      }
+    }
+
+    p {
+      font-size: 1.7rem;
+      @include tablet {
+        font-size: 2rem;
+      }
+    }
+
+    a {
+      @include main-btn($wet-gray, 30px);
+      font-size: 1.5rem;
+      color: white;
+    }
+
 
   }
+
 }
+
+
+
+
+
+
