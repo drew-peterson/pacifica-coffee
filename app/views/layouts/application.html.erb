@@ -1,0 +1,35 @@
+<!-- app/views/layout/application.html.erb -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PacificaCoffee</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+
+  <!-- mobile view -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<!--
+Navigation
+ -->
+<header class="main-header" id="main-header">
+
+  <!-- Main Nav -->
+  <%= render "navigation/main_nav" unless @disable_nav %>
+
+</header>
+
+<div class="error-notice">
+  <p><%= notice %></p>
+</div>
+
+<main>
+  <%= yield %>
+</main>
+
+</body>
+</html>
