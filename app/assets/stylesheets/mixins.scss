@@ -25,6 +25,17 @@ $light-gray: #ecf0f1;
   }
 }
 
+
+
+@keyframes scale-up {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+    }
+
 // button
 
 @mixin main-btn($bg, $padding) {
