@@ -10,6 +10,9 @@
 </div>
 
 <ul class="main-nav" id="main-nav">
+
+  <li><%= link_to 'Shop', '/items' %></li>
+
   <% if current_user %>
     
     <li><a href="#"> Hello <%= current_user.user_name %> </a></li>
