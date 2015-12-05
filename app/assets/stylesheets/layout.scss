@@ -1,10 +1,21 @@
 // Mix In
 @import 'mixins' ;
+@import url(https://fonts.googleapis.com/css?family=NTR);
+
+* {
+  box-sizing: border-box;
+  // and on line 36
+  font-family: 'NTR', sans-serif;
+  color: black;
+}
+
 
 // Mobile
 body {
   @include display(flex);
   @include flex-direction(column);
+
+  min-height: 100vh;
 }
 
 // NEED TO CLEAR the FIXED HEADER SOMEHOW...
@@ -13,6 +24,7 @@ main {
   width: 95%;
   // to clear fixed header need better way
   margin-top: 4.5rem;
+
 }
 
 .main-header, .main-nav {
@@ -20,6 +32,7 @@ main {
   @include flex-direction(column);
   // is there a flex property for this
   text-align: center;
+  font-family: 'NTR', sans-serif;
 }
 
 .main-header {
@@ -93,6 +106,15 @@ main {
     color: $wet-gray;
     animation: fadein 2s forwards;
     font-size: 1.2rem;
+  }
+}
+
+.main-footer {
+  font-family: 'NTR', sans-serif;
+  text-align: center;
+  padding: 0.5rem;
+  .footer-inner p {
+    padding: .3rem;
   }
 }
 
