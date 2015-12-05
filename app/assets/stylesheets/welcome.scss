@@ -83,8 +83,10 @@
     background-color: $light-gray;
     background: url('https://upload.wikimedia.org/wikipedia/commons/4/46/Vietnam_coffee_beans_VOA.jpg') no-repeat center center;
     background-size: cover;
-    width: 100%;
+
+    width: 200px;
     height: 200px;
+    border-radius: 50%;
 
     // about-content-img
     @include tablet {
