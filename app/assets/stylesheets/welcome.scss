@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import 'mixins';
 
+
 .welcome-container{
   @include display(flex);
   @include flex-direction(column);
@@ -130,6 +131,7 @@
     @include flex-direction(row);
   }
 }
+
 
 
 
