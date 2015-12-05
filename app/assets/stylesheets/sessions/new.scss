@@ -1,5 +1,6 @@
 @import 'mixins';
 
+// google auto fill input field
 input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0px 1000px $light-gray inset;
   -webkit-text-fill-color: darken($light-gray, 50%) !important;
@@ -7,9 +8,14 @@ input:-webkit-autofill {
 
 .mobile-header {
   position: absolute;
-  top: 1.5rem;
+  top: 0;
   left: 0;
+  padding: 1.5rem;
   width: 100%;
+
+  h3 {
+
+  }
 
   a {
     text-align: center;
@@ -24,6 +30,7 @@ input:-webkit-autofill {
   margin: 0 auto;
   margin-top: 3rem;
   text-align: center;
+
 
   form {
     @include display(flex);
@@ -59,9 +66,23 @@ input:-webkit-autofill {
     p {
       font-size: 1.5rem;
     }
-
   }
 
+  .login-signup {
+    margin: auto;
+    font-size: 1.5rem;
+    color: black;
+    margin-top: .3rem;
+    padding: 1rem;
+    border-radius: 5px;
+    width: 80%;
+    transition: .3s ease-in;
+    &:hover {
+      color: white;
+      background-color: $emerald;
+    }
+  }
+// session-login
 // tablet view
   @media (min-width: 769px) {
     width: 50%;
