@@ -15,7 +15,6 @@
 body {
   @include display(flex);
   @include flex-direction(column);
-
   min-height: 100vh;
 }
 
@@ -78,14 +77,16 @@ main {
 
   li {
     a {
-      color: darken( $light-gray, 50%);
+      color: darken( $light-gray, 30%);
       text-decoration: none;
       display: block;
       padding: .5rem;
       transition: all ease-in-out 0.35s;
 
+
       &:hover {
         color: darken( $light-gray, 90%);
+        transform: scale(1.2)
       }
     }
   }
@@ -120,69 +121,48 @@ main {
 }
 
 
-
-
-
-// Media-query
-
 // Tablet Layout
 @media ( min-width: 769px ) {
 
-  .filter {
-    display: block;
-  }
   .main-header,
+  .nav-container,
+  // nav links
   .main-nav {
     @include display(flex);
   }
 
   .main-header {
-    @include align-items(center);
+    // this must be column form so this is center items vertically
+    @include justify-content(center);
     min-height: 4rem;
 
-    h3 {
-      position: initial;
+    .nav-container {
+      @include justify-content(space-between);
+      width: 95%;
+      margin: 0 auto;
     }
 
+    .main-nav {
+      @include flex-direction(row);
 
-   .mobile-menu-btn,
-   .mobile-filter-btn {
-      display: none;
-   }
+      li a {
+        min-width: 95px;
+        flex: 1
+      }
+     }
 
+      // hide mobile icons/btn in tablet + view
+     .mobile-menu-btn,
+     .mobile-filter-btn {
+        display: none;
+     }
+
+     h3 {
+     }
   }
-
-  .main-nav {
-    @include flex-direction(row);
-
-    li a {
-      min-width: 110px;
-    }
-   }
-
-
 }
 
 // Desktop
 @media ( min-width: 1025px ) {
-  .main-header,
-  .main-nav {
-    @include flex-direction(row);
-    @include display(flex);
-  }
-
-  .main-header {
-    @include justify-content(space-between);
-    h3 {
-      margin-left: 20px;
-    }
-  }
-
- .main-nav {
-
-    li {
-
-    }
- }
 
 } // end of media 1025
