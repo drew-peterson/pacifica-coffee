@@ -22,6 +22,9 @@
   background-size: cover;
   background-color: $light-gray;
   height: 580px;
+  // using vh works also however 100% is the entire vh
+  // so you have to subtract the header..
+  // height: 85vh;
 
 
   .hero-text {
