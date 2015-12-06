@@ -16,6 +16,10 @@
     border-radius: 15px;
   }
 
+  @include desktop {
+    width: 60%;
+  }
+
 
   form,
   .signup-col {
@@ -23,15 +27,19 @@
     @include flex-direction(column);
     @include align-items(center);
     width: 100%;
+
   }
 
   form {
 
     .signup-col {
+      font-size: 1.5rem;
 
-      font-size: 1.2rem;
+      p {
+        color: lighten($wet-gray, 20%);
+      }
       input {
-        font-size: 1rem;
+        font-size: 1.3rem;
         text-align: center;
         width: 80%;
         margin-bottom: .5rem;
