@@ -4,12 +4,13 @@ class UsersController < ApplicationController
 
   include UsersHelper
   def new
+   @disable_nav = true;
   end
 
   def create
     user = User.new(user_params)
     if user.save
-      session[:user_id] = user.id    
+      session[:user_id] = user.id
       redirect_to '/'
     else
       redirect_to '/signup'
@@ -37,7 +38,7 @@ class UsersController < ApplicationController
     current_user.update(cart: updated_cart)
     redirect_to '/users/cart', notice: 'Cart successfully updated'
   end
-  
+
   # look for item quantity by searching with item.id then remove item.id and quantity under user.cart
   def destroy_from_cart
     item_id = params[:item_id]
