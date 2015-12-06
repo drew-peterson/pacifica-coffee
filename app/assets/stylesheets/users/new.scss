@@ -6,8 +6,15 @@
   @include display(flex);
   @include flex-direction(column);
   @include align-items(center);
-
   margin: 0 auto;
+
+  @include tablet {
+    width: 80%;
+    background: lighten($light-gray, 5%);
+    border: 2px solid $light-gray;
+    padding: 1.5rem 0 .6rem 0;
+    border-radius: 15px;
+  }
 
 
   form,
@@ -21,6 +28,7 @@
   form {
 
     .signup-col {
+
       font-size: 1.2rem;
       input {
         font-size: 1rem;
@@ -28,10 +36,14 @@
         width: 80%;
         margin-bottom: .5rem;
       }
-    }
+    } //end input
+
     .signup-col-2,
     .signup-col-3 {
       background: $light-gray;
+      @include tablet {
+        background: none;
+      }
     }
 
     .signup-col-2 {
@@ -54,9 +66,6 @@
       background-color: darken($light-gray, 50%);
     }
   }
-  //form
-  @include tablet {
-  }
 
   .signup-login {
     width: 80%;
@@ -69,19 +78,6 @@
       color: white;
       background-color: $emerald;
     }
-  }
-}
+  } // end of form
+} // end of container
 
-  // .login-signup {
-  //   font-size: 1.5rem;
-  //   color: black;
-  //   margin-top: .3rem;
-  //   padding: 1rem;
-  //   border-radius: 5px;
-  //   width: 80%;
-  //   transition: .3s ease-in;
-  //   &:hover {
-  //     color: white;
-  //     background-color: $emerald;
-  //   }
-  // }
