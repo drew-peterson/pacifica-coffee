@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :authorize, only: :add_to_cart
-  before_action :find_items, :cart_total, only: :cart
+  before_action :find_items, :cart_total, only: [:cart, :checkout]
 
   include UsersHelper
   def new
@@ -62,6 +62,13 @@ class UsersController < ApplicationController
   def single_order_history
     @order = Order.find(params[:id])
     find_items(@order.item_ids_quantities)
+  end
+
+  def checkout
+  end
+
+  def save_address
+    
   end
 
   private

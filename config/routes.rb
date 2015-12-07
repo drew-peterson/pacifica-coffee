@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
   get '/users/cart' => 'users#cart'
+  get '/users/cart/checkout' => 'users#checkout'
+  post '/users/cart/checkout' => 'users#save_address'
   post '/users/cart/update' => 'users#update_cart'
   delete '/users/cart' => 'users#destroy_from_cart'
   post '/users/cart' => 'users#add_to_cart'

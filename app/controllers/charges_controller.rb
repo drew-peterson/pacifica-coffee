@@ -34,6 +34,7 @@ class ChargesController < ApplicationController
       # nothing happens for now
     end
 
+    # send confirmation email
     @email = customer[:email]
     send_order_conformation
 
