@@ -1,0 +1,22 @@
+@import 'mixins';
+
+.cart-container {
+  @include display(flex);
+  @include flex-direction(column);
+
+  @include tablet {
+    @include flex-direction(row);
+  }
+} // end of cart-container
+
+.cart-col {
+  flex: 1;
+  @include debug;
+}
+
+.cart-items {
+  order: 1;
+  @include tablet {
+    order: 0;
+  }
+}
