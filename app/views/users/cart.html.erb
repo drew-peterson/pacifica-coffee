@@ -1,46 +1,76 @@
-<h1>Items in Cart</h1>
 
-<% prices = [] %>
-<ul>
-  <% @items.each do |item, qty| %>
-    <div class="item" style="border-bottom: 1px solid black; margin-bottom: 5px;">
-      <li> <%= item.item_name %> </li>
-      <li> <%= item.item_description %> </li>
-      <li> $<%= item.price %>.00 </li>
-            <% prices << item.price * qty.to_i %>
-      <li>
-        <%= form_for :user, url: '/users/cart/update' do |f| %>
-          <%= hidden_field_tag('item_id', value = item.id) %>
-          <%= hidden_field_tag('old_qty', value = qty) %>
-          <%= number_field_tag('qty', value = qty, min: 1) %>
-          <%= f.submit 'Update Quantity' %>
-        <% end %>
 
-        <%= link_to 'Remove Item', users_cart_path(item_id: item.id), method: :delete %>
-      </li>
-    </div>
-  <% end %>
-</ul>
+<section class="cart-container">
 
-<% if current_user && current_user.cart != '' %>
-  <%= form_tag charges_path do %>
-    <article>
-      <% if flash[:error].present? %>
-        <div id="error_explanation">
-          <p><%= flash[:error] %></p>
+  <!-- Col 1
+  #########################-->
+
+  <!-- Cart Items -->
+  <div class="cart-col cart-items">
+    <h1>Items in Cart</h1>
+     <% prices = [] %>
+    <ul>
+      <% @items.each do |item, qty| %>
+        <div class="item" style="border-bottom: 1px solid black; margin-bottom: 5px;">
+          <li> <%= item.item_name %> </li>
+          <li> <%= item.item_description %> </li>
+          <li> $<%= item.price %>.00 </li>
+                <% prices << item.price * qty.to_i %>
+          <li>
+            <%= form_for :user, url: '/users/cart/update' do |f| %>
+              <%= hidden_field_tag('item_id', value = item.id) %>
+              <%= hidden_field_tag('old_qty', value = qty) %>
+              <%= number_field_tag('qty', value = qty, min: 1) %>
+              <%= f.submit 'Update Quantity' %>
+            <% end %>
+
+            <%= link_to 'Remove Item', users_cart_path(item_id: item.id), method: :delete %>
+          </li>
         </div>
       <% end %>
-      <label class="amount">
-        <span>Total: <%= @cart_total %>.00</span>
-      </label>
-    </article>
+    </ul>
+  </div>
 
-    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-            data-description="Test Charge"
-            data-amount="<%= @cart_total %>00"
-            data-locale="auto"></script>
-  <% end %>
-<% else %>
-  <h4>Your Shopping Cart is Empty</h4>
-<% end %>
+  <!-- Col 2
+  #########################-->
+
+  <!-- Cart Addresses -->
+  <div class="cart-col cart-details">
+
+    <!-- Total and Pay container  -->
+    <div class="cart-details-total">
+      <h3> Order Summary </h3>
+      <% if current_user && current_user.cart != '' %>
+        <%= form_tag charges_path do %>
+          <article>
+            <% if flash[:error].present? %>
+              <div id="error_explanation">
+                <p><%= flash[:error] %></p>
+              </div>
+            <% end %>
+            <label class="amount">
+              <span>Total: <%= @cart_total %>.00</span>
+            </label>
+          </article>
+
+          <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                  data-description="Test Charge"
+                  data-amount="<%= @cart_total %>00"
+                  data-locale="auto"></script>
+        <% end %>
+      <% else %>
+        <h4>Your Shopping Cart is Empty</h4>
+      <% end %>
+    </div>
+
+    <!-- Address Container -->
+    <div class="cart-details-total">
+      <h3> Address Info Here</h3>
+    </div>
+
+  </div>
+
+
+
+</section>
