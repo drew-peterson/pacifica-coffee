@@ -24,7 +24,8 @@ main {
   width: 95%;
   // to clear fixed header need better way
   margin-top: 10vh;
-  // @include tablet { margin-top: 4.5rem; };
+
+  @include tablet { margin-top: 11vh;};
 
 }
 
