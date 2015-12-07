@@ -1,3 +1,5 @@
+// javascript cannot use undeclared variables
+"use strict";
 // var pacifica = {};
 // pacifica.mobile = true;
 // pacifica.test = "Drew Peterson"
@@ -71,8 +73,16 @@ $(function(){
 
   $(document).on('click', '#mobile-filter-btn', function(){
     $('.filter').slideToggle();
-
   })
+
+  // **********************
+  //Hamburger Jquery
+  // **********************
+
+  $(document).on('click', '.c-hamburger', function(e){
+    $(this).toggleClass('is-active');
+  })
+
 }) // end of ready
 
 

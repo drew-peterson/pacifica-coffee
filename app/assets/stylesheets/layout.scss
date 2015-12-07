@@ -23,7 +23,9 @@ main {
   margin: auto;
   width: 95%;
   // to clear fixed header need better way
-  margin-top: 4.5rem;
+  margin-top: 10vh;
+
+  @include tablet { margin-top: 11vh;};
 
 }
 
@@ -49,17 +51,9 @@ main {
       font-size: 1.6rem;
     }
 
-   .mobile-menu-btn,
-   .mobile-filter-btn {
-      @include main-btn($wet-gray, 20px);
-      color: white;
-      border: none;
-    }
-
     .mobile-menu-btn {
       margin-right: 2.5%;
-      // position button on far left
-      margin-left: auto;
+      margin-left: auto; // keeps pacifica header in center...
 
     }
     .mobile-filter-btn {
