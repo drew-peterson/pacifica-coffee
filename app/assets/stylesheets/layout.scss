@@ -49,23 +49,15 @@ main {
       font-size: 1.6rem;
     }
 
-   // .mobile-menu-btn,
-   // .mobile-filter-btn {
-   //    @include main-btn($wet-gray, 20px);
-   //    color: white;
-   //    border: none;
-   //  }
+    .mobile-menu-btn {
+      margin-right: 2.5%;
+      margin-left: auto; // keeps pacifica header in center...
 
-   //  .mobile-menu-btn {
-   //    margin-right: 2.5%;
-   //    // position button on far left
-   //    margin-left: auto;
-
-   //  }
-   //  .mobile-filter-btn {
-   //    margin-left: 2.5%;
-   //    margin-right: auto;
-   //  }
+    }
+    .mobile-filter-btn {
+      margin-left: 2.5%;
+      margin-right: auto;
+    }
 
   }
 }

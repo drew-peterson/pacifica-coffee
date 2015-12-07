@@ -12,18 +12,9 @@ $button-transistion-duration: 0.3s;     // The transition duration
 .c-hamburger {
   display: block;
   position: relative;
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
   width: $button-width;
   height: $button-height;
-  font-size: 0;
-  text-indent: -9999px;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  box-shadow: none;
-  border-radius: none;
+  font-size: 0; // for screen readers, text is there but not visible to human
   border: none;
   cursor: pointer;
   transition: background $button-transistion-duration;
@@ -31,16 +22,17 @@ $button-transistion-duration: 0.3s;     // The transition duration
 }
 
 .c-hamburger:focus {
-  outline: none;
+  outline: none; // gets ride of my stupied blue box
 }
+
 
 .c-hamburger span {
   display: block;
   position: absolute;
-  top: ($button-height / 2) - ($bar-thickness / 2);
-  left: $button-pad;
+  top: ($button-height / 2) - ($bar-thickness / 2); // sets the middle bar in the middle of the box
+  left: $button-pad; // you need both of these for the bar to show
   right: $button-pad;
-  height: $bar-thickness;
+  height: $bar-thickness; // thickness of middle bar
   background: $wet-gray;
 }
 
@@ -70,9 +62,6 @@ $button-transistion-duration: 0.3s;     // The transition duration
  * down to center and transform into an "x".
  */
 
-.c-hamburger--htx span {
-  transition: background 0s $button-transistion-duration;
-}
 
 .c-hamburger--htx span::before,
 .c-hamburger--htx span::after {
@@ -90,9 +79,8 @@ $button-transistion-duration: 0.3s;     // The transition duration
 
 /* active state, i.e. menu open */
 
-
 .c-hamburger--htx.is-active span {
-  background: none;
+  background: none; // do not show the middle bar when in x form
 }
 
 .c-hamburger--htx.is-active span::before {
