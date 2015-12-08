@@ -18,10 +18,16 @@ $primary-color: $light-gray;
 // NTR
 @import url(https://fonts.googleapis.com/css?family=NTR);
 
-// Text
+// Font-size
 
 $base__font-size : 16px;
 $base__line      : 24px;
+
+$font--sm  : 14px ;
+$font--med : 25px;
+$font--lg  : 36px ;
+
+
 
 // border radius
 $bd-radius: 0.4em;

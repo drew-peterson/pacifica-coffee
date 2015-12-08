@@ -86,13 +86,20 @@
 
     width: 200px;
     height: 200px;
+
+
+    -webkit-border-radius: 50%;
     border-radius: 50%;
+
 
     // about-content-img
     @include tablet {
       height: 300px;
       max-width: 300px;
+
+      -webkit-border-radius: 50%;
       border-radius: 50%;
+
 
     }
   }

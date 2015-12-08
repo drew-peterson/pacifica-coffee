@@ -33,29 +33,38 @@
 
             <!-- col 1 -->
             <!-- image -->
-            <div class="cart-image">
+            <div class="cart-item-image cart-item-col">
               <span>Product image</span>
             </div>
 
             <!-- col 2 -->
             <!-- Name -->
-            <div class="cart-item-name">
+            <div class="cart-item-name cart-item-col">
               <li> <%= item.item_name %> </li>
             </div>
 
             <!-- col 3 -->
             <!-- details -->
-            <div class="cart-item-details">
-              <li> $<%= item.price %>.00 </li>
+            <div class="cart-item-details cart-item-col">
+
+              <li> $<%= item.price %>.00
                     <% prices << item.price * qty.to_i %>
+              </li>
+
               <li>
                 <%= form_for :user, url: '/users/cart/update' do |f| %>
                   <%= hidden_field_tag('item_id', value = item.id) %>
                   <%= hidden_field_tag('old_qty', value = qty) %>
+
+                  <!-- Used fields -->
                   <%= number_field_tag('qty', value = qty, min: 1) %>
+              </li>
+
+              <li>
                   <%= f.submit 'Update Quantity' %>
                 <% end %>
               </li>
+
             </div>
             <!-- End of cart-item-wrapper -->
           </div>
