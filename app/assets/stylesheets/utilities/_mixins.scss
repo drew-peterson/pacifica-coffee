@@ -1,10 +1,6 @@
 // include other files...
 
-// Colors
 
-$wet-gray: #34495e;
-$light-gray: #ecf0f1;
-$emerald: #2ecc71;
 
 
 @mixin debug {
@@ -22,31 +18,6 @@ $emerald: #2ecc71;
     -webkit-transform: scale(1.0);
   }
 }
-
-
-
-@keyframes scale-up {
-  from {
-    transform: scale(0);
-  }
-  to {
-    transform: scale(1);
-  }
-    }
-
-
-@keyframes border-scale {
-  0%,
-  100% {
-    transform: scale(0)
-  }
-  50% {
-    transform: scale(1)
-  }
-}
-
-
-// button
 
 @mixin main-btn($bg, $padding) {
   background: $bg;

@@ -1,11 +1,10 @@
-@import 'mixins';
+@import 'master';
 
 .cart-container {
   @include display(flex);
   @include flex-direction(column);
 
   @include tablet {
-    @include flex-direction(row);
   }
 } // end of cart-container
 
@@ -14,9 +13,6 @@
   @include debug;
 }
 
-.cart-items {
-  order: 1;
-  @include tablet {
-    order: 0;
-  }
+.cart-address-selection {
+  background: $light-gray;
 }

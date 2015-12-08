@@ -1,7 +1,4 @@
-// Place all the styles related to the welcome controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-@import 'mixins';
+@import 'master';
 
 
 .welcome-container{
@@ -18,7 +15,7 @@
   background:  linear-gradient(
       rgba(0, 0, 0, 0.4),
       rgba(0, 0, 0, 0.4)
-    ), url('splash.jpg') no-repeat center center;
+    ), url('../splash.jpg') no-repeat center center;
   background-size: cover;
   background-color: $light-gray;
   height: 580px;
