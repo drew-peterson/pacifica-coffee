@@ -9,7 +9,7 @@
 } // end of cart-container
 
 .cart-col {
-  flex: 1;
+  @include flex(1);
   @include debug;
 }
 

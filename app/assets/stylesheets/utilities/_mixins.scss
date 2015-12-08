@@ -63,6 +63,15 @@ $prefixes: ('webkit', 'ms', 'moz', 'o');
     align-items: $value;
 }
 
+// flex
+@mixin flex($value){
+  @each $prefix in $prefixes {
+    #{'-' + $prefix + '-' + flex}: $value;
+  }
+    flex: $value;
+}
+
+
 
 // ***********************
 // Media Query mixin

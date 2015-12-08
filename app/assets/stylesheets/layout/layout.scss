@@ -57,7 +57,7 @@
     padding: .5rem;
     transition: all ease-in-out 0.35s;
     @include tablet {
-      flex: 1;
+      @include flex(1);
       min-width: 75px;
     }
 

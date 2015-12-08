@@ -71,7 +71,7 @@
 .about-content {
   // same size rows...
   .about-col {
-    flex: 1;
+    @include flex(1);
   }
 
   @include display(flex);

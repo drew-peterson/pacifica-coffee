@@ -71,7 +71,7 @@
 
   aside,
   .items-container {
-    flex: 1;
+    @include flex(1);
   }
 
   aside {

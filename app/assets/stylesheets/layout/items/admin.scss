@@ -32,7 +32,7 @@
         .admin-items {
           display: flex;
           div {
-            flex: 1;
+            @include flex(1);
           }
           .admin-item {
             flex: 3;
@@ -95,7 +95,7 @@
 
     aside,
     .admin-container{
-      flex: 1;
+      @include flex(1);
     }
     // col 1
     aside {
