@@ -5,14 +5,45 @@
   @include flex-direction(column);
 
   @include tablet {
+
   }
 } // end of cart-container
 
-.cart-col {
-  @include flex(1);
-  @include debug;
-}
+
+// ******************
+// Address Column
+// ******************
 
 .cart-address-selection {
-  background: $light-gray;
+  margin-bottom: $sp--med;
+  padding: $sp--med;
+  border: 1px solid $emerald;
+
 }
+
+// ******************
+// items Column
+// ******************
+
+.cart-col {
+  @include flex(1);
+}
+
+.cart-item {
+  @include display(flex);
+  @include flex-direction(column);
+
+  background: $primary-color;
+  border-bottom: rem(5px) solid darken($primary-color, 10%);
+  margin-bottom: $sp--med;
+  -webkit-border-radius: $bd-radius;
+  border-radius: $bd-radius;
+  padding: $sp--lg;
+
+  @include tablet {
+
+  }
+}
+
+
+
