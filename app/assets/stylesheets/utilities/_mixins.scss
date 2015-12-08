@@ -16,6 +16,7 @@
   &:active {
     background:darken($bg,25%);
   }
+  @content;
 }
 
 @mixin clearfix {

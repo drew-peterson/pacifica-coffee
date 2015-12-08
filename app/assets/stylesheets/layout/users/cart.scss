@@ -101,13 +101,14 @@
   width: 100%;
   margin: 0 auto;
   text-align: center;
+  padding: 10px;
 
-  @include main-btn($light-gray);
   &:hover {
-    transition: font-size 0.5s ease;
-    -webkit-transform: scale(1.2);
-  }
+    transition: .5s ease;
+    color: red;
 
+
+  }
 
   }
 
