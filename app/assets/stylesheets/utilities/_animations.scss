@@ -21,8 +21,9 @@
   }
 }
 
-// fade in -- not really...
-@keyframes fadein {
+// Error message nav bar
+
+@keyframes errorFade {
   0%, 100% {
     opacity: 0;
     -webkit-transform: scale(0.5);

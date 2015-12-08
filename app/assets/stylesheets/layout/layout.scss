@@ -1,6 +1,4 @@
-// Mix In
 @import 'master';
-
 
 .main-header, .main-nav {
   @include display(flex);
@@ -15,47 +13,63 @@
   position: fixed;
   background: white;
 
-  .btn-wrap {
+  @include tablet {
     @include display(flex);
-    @include justify-content(space-between);
-    @include align-items(center);
+    @include justify-content(center);
+    min-height: 4rem;
+  }
+}
 
-    h3 {
-      font-size: 1.6rem;
+.btn-wrap {
+  @include display(flex);
+  @include justify-content(space-between);
+  @include align-items(center);
+
+  h3 {
+    font-size: 1.6rem;
+  }
+
+  .mobile-menu-btn {
+    margin-right: 2.5%;
+    margin-left: auto; // keeps pacifica header in center...
+
+    @include tablet {
+      display: none;
     }
+  }
+  .mobile-filter-btn {
+    margin-left: 2.5%;
+    margin-right: auto;
 
-    .mobile-menu-btn {
-      margin-right: 2.5%;
-      margin-left: auto; // keeps pacifica header in center...
-
+    @include tablet {
+      display: none;
     }
-    .mobile-filter-btn {
-      margin-left: 2.5%;
-      margin-right: auto;
-    }
-
   }
 }
 
 .main-nav {
-
-  // hide nav links on mobile
   display: none;
 
-  li {
-    a {
-      color: darken( $light-gray, 30%);
-      text-decoration: none;
-      display: block;
-      padding: .5rem;
-      transition: all ease-in-out 0.35s;
-
-
-      &:hover {
-        color: darken( $light-gray, 90%);
-        transform: scale(1.2)
-      }
+  a {
+    color: darken( $light-gray, 30%);
+    text-decoration: none;
+    display: block;
+    padding: .5rem;
+    transition: all ease-in-out 0.35s;
+    @include tablet {
+      flex: 1;
+      min-width: 75px;
     }
+
+    &:hover {
+      color: darken( $light-gray, 90%);
+      transform: scale(1.2)
+    }
+  }
+
+  @include tablet{
+    @include display(flex);
+    @include flex-direction(row);
   }
 }
 
@@ -73,7 +87,7 @@
     width: 100%;
     background: lighten(green, 30%);
     color: $wet-gray;
-    animation: fadein 2s forwards;
+    animation: errorFade 2s forwards;
     font-size: 1.2rem;
   }
 }
@@ -87,53 +101,12 @@
   }
 }
 
-
 // Tablet Layout
-@media ( min-width: 769px ) {
-
-  .main-header,
-  .nav-container,
-  // nav links
-  .main-nav {
+@include tablet {
+  .nav-container {
     @include display(flex);
-  }
-
-  .main-header {
-    // this must be column form so this is center items vertically
-    @include justify-content(center);
-    min-height: 4rem;
-
-    .nav-container {
-      @include justify-content(space-between);
-      width: 95%;
-      margin: 0 auto;
-    }
-
-    .main-nav {
-      @include flex-direction(row);
-
-      li a {
-        min-width: 75px;
-        flex: 1
-      }
-     }
-
-      // hide mobile icons/btn in tablet + view
-     .mobile-menu-btn,
-     .mobile-filter-btn {
-        display: none;
-     }
-
-     h3 {
-     }
+    @include justify-content(space-between);
+    width: 95%;
+    margin: 0 auto;
   }
 }
-
-// Desktop
-@media ( min-width: 1025px ) {
-
-  .main-nav li a {
-    min-width: 110px;
-  }
-
-} // end of media 1025
