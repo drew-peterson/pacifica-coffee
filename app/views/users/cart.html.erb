@@ -2,7 +2,22 @@
 
 <section class="cart-container">
 
-  <!-- Col 1
+     <!-- Col 1
+  #########################-->
+
+  <!-- Cart Addresses -->
+  <div class="cart-col cart-address">
+    <div class="cart-address-selection">
+      <h3> Address Info Here</h3>
+      <ul>
+        <li>Address 1</li>
+        <li>Address 2</li>
+        <li>Address 3</li>
+      </ul>
+    </div>
+</div>
+
+  <!-- Col 2
   #########################-->
 
   <!-- Cart Items -->
@@ -11,7 +26,7 @@
      <% prices = [] %>
     <ul>
       <% @items.each do |item, qty| %>
-        <div class="item" style="border-bottom: 1px solid black; margin-bottom: 5px;">
+        <div class="cart-item">
           <li> <%= item.item_name %> </li>
           <li> <%= item.item_description %> </li>
           <li> $<%= item.price %>.00 </li>
@@ -25,6 +40,7 @@
             <% end %>
 
             <%= link_to 'Remove Item', users_cart_path(item_id: item.id), method: :delete %>
+
           </li>
         </div>
       <% end %>
@@ -32,10 +48,10 @@
     </ul>
   </div>
 
-  <!-- Col 2
+  <!-- Col 3
   #########################-->
 
-  <!-- Cart Addresses -->
+  <!-- Cart payment details -->
   <div class="cart-col cart-details">
 
     <!-- Total and Pay container  -->
@@ -54,20 +70,19 @@
             </label>
           </article>
 
-<%= link_to 'Proceed to Checkout', users_cart_checkout_path %>
+            <%= link_to 'Proceed to Checkout', users_cart_checkout_path %>
 
         <% end %>
+
       <% else %>
         <h4>Your Shopping Cart is Empty</h4>
       <% end %>
     </div>
 
     <!-- Address Container -->
-    <div class="cart-details-total">
-      <h3> Address Info Here</h3>
-    </div>
 
   </div>
+
 
 
 
