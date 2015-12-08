@@ -1,23 +1,10 @@
-// include other files...
-
-
-
+// **********************
+// Debugging
 
 @mixin debug {
   border: 1px solid red;
 }
 
-//Animation
-@keyframes fadein {
-  0%, 100% {
-    opacity: 0;
-    -webkit-transform: scale(0.5);
-    }
-  20%, 90% {
-    opacity: 1;
-    -webkit-transform: scale(1.0);
-  }
-}
 
 @mixin main-btn($bg, $padding) {
   background: $bg;
@@ -45,12 +32,10 @@
 $prefixes: ('webkit', 'ms', 'moz', 'o');
 
 // Display
-
 @mixin display($value){
   @each $prefix in $prefixes {
     display: #{'-' + $prefix + '-' + $value}
   }
-    // no vendor display
     display: $value;
 }
 
@@ -59,7 +44,6 @@ $prefixes: ('webkit', 'ms', 'moz', 'o');
   @each $prefix in $prefixes {
     #{'-' + $prefix + '-' + flex-direction}: $value;
   }
-    // no vendor display
     flex-direction: $value;
 }
 
@@ -68,7 +52,6 @@ $prefixes: ('webkit', 'ms', 'moz', 'o');
   @each $prefix in $prefixes {
     #{'-' + $prefix + '-' + justify-content}: #{'-' + $prefix + '-' + $value};
   }
-    // no vendor display
     justify-content: $value;
 }
 
@@ -77,7 +60,6 @@ $prefixes: ('webkit', 'ms', 'moz', 'o');
   @each $prefix in $prefixes {
     #{'-' + $prefix + '-' + align-items}: $value;
   }
-    // no vendor display
     align-items: $value;
 }
 

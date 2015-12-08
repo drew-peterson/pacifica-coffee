@@ -1,33 +1,6 @@
 // Mix In
 @import 'master';
-@import url(https://fonts.googleapis.com/css?family=NTR);
 
-* {
-  box-sizing: border-box;
-  // and on line 36
-  font-family: 'NTR', sans-serif;
-  color: black;
-
-}
-
-
-// Mobile
-body {
-  @include display(flex);
-  @include flex-direction(column);
-  min-height: 100vh;
-}
-
-// NEED TO CLEAR the FIXED HEADER SOMEHOW...
-main {
-  margin: auto;
-  width: 95%;
-  // to clear fixed header need better way
-  margin-top: 4rem;
-
-  @include tablet { margin-top: 4.5rem;};
-
-}
 
 .main-header, .main-nav {
   @include display(flex);

@@ -1,10 +1,23 @@
-
+//**************************
 // Colors
-// Colors
 
-$wet-gray: #34495e;
-$light-gray: #ecf0f1;
-$emerald: #2ecc71;
+$wet-gray   : #34495e;
+$light-gray : #ecf0f1;
+$emerald    : #2ecc71;
 
+//**************************
+// Primary colors Colors
 
+$primary-color: $light-gray;
+// $secondary-color: ;
+
+//**************************
 // Font family
+
+// NTR
+@import url(https://fonts.googleapis.com/css?family=NTR);
+
+// Text
+
+$base__font-size : 16px;
+$base__line      : 24px;
