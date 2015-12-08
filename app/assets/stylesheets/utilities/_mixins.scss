@@ -6,7 +6,7 @@
 }
 
 
-@mixin main-btn($bg, $padding) {
+@mixin main-btn($bg, $padding: 20px) {
   background: $bg;
   padding: ($padding / 2) $padding;
   &:hover {

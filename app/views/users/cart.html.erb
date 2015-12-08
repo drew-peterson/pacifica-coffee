@@ -60,8 +60,8 @@
                   <%= number_field_tag('qty', value = qty, min: 1) %>
               </li>
 
-              <li>
-                  <%= f.submit 'Update Quantity' %>
+              <li class="cart-item-update-btn">
+                  <%= f.submit 'Update' %>
                 <% end %>
               </li>
 
@@ -70,9 +70,9 @@
           </div>
 
           <!-- remove item -->
-          <div class="cart-item-remove">
-            <%= link_to 'Remove Item', users_cart_path(item_id: item.id), method: :delete %>
-          </div>
+
+            <%= link_to 'Remove Item', users_cart_path(item_id: item.id), method: :delete, class: 'cart-item-remove--btn' %>
+
         </div>
       <% end %>
 
