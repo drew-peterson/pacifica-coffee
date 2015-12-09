@@ -1,11 +1,6 @@
 @import 'master';
 
-// google auto fill input field
-input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0px 1000px $light-gray inset;
-  -webkit-text-fill-color: darken($light-gray, 50%) !important;
-}
-
+// Mobile header for login and signup only...
 .mobile-header {
   position: absolute;
   top: 0;
@@ -13,16 +8,14 @@ input:-webkit-autofill {
   padding: 1.5rem;
   width: 100%;
 
-  h3 {
-
-  }
-
   a {
     text-align: center;
     font-size: 2rem;
     text-decoration: none;
   }
 }
+
+
 
 .sessions-login {
   @include display(flex);
@@ -35,6 +28,10 @@ input:-webkit-autofill {
   form {
     @include display(flex);
     @include flex-direction(column);
+
+    p {
+      font-size: 1.5rem;
+    }
 
     input {
       text-align: center;
@@ -63,9 +60,7 @@ input:-webkit-autofill {
       }
     }
 
-    p {
-      font-size: 1.5rem;
-    }
+
   }
 
   .login-signup {
