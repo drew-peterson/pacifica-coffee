@@ -1,6 +1,7 @@
 require_relative '../mailers/order_confirmation_email'
 
 class ChargesController < ApplicationController
+  before_action :find_items, :cart_total, only: :new
 
   include UsersHelper
 

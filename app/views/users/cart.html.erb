@@ -2,21 +2,21 @@
 
 <section class="cart-container">
 
-<aside class= "tablet-view cart-col">
-  <!-- Col 1
-  #########################-->
-  <!-- Cart Addresses -->
-  <div class="cart-address">
-    <div class="cart-address-selection">
-      <h3>Ship to:</h3>
-      <!-- See http://www.w3schools.com/tags/att_select_form.asp -->
-      <select name="checkout-address" form="#">
-        <option value="value1" selected>Address 1</option>
-        <option value="value1">Address 2</option>
-        <option value="value1">Address 3</option>
-      </select>
-    </div>
-</div>
+  <aside class= "tablet-view cart-col">
+    <!-- Col 1
+    #########################-->
+    <!-- Cart Addresses -->
+    <div class="cart-address">
+      <div class="cart-address-selection">
+        <h3>Ship to:</h3>
+        <!-- See http://www.w3schools.com/tags/att_select_form.asp -->
+        <select name="checkout-address" form="#">
+          <option value="value1" selected>Address 1</option>
+          <option value="value1">Address 2</option>
+          <option value="value1">Address 3</option>
+        </select>
+      </div>
+  </div>
 
   <!-- Col 2
   #########################-->
@@ -77,50 +77,46 @@
 
       </ul>
     </div>
-<!-- address item end -->
-</div>
-
-</aside>
-  <!-- Col 3
-  #########################-->
-
-  <!-- Cart payment details -->
-  <div class="cart-col cart-details">
-
-    <!-- Total and Pay container  -->
-    <div class="cart-details-total">
-      <h3> Order Summary </h3>
-      <% if current_user && current_user.cart != '' %>
-        <%= form_tag charges_path do %>
-          <article>
-            <% if flash[:error].present? %>
-              <div id="error_explanation">
-                <p><%= flash[:error] %></p>
-              </div>
-            <% end %>
-            <label class="amount">
-              <span>Total:</span>
-              <span>$<%= @cart_total %>.00</span>
-            </label>
-          </article>
-
-        <% end %>
-
-      <% else %>
-        <h4>Your Shopping Cart is Empty</h4>
-      <% end %>
-    </div>
-
-    <!-- Address Container -->
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-    data-description="Pacifica Coffee"
-    data-amount="<%= @cart_total %>00"
-    data-locale="auto">
-  </script>
-  <%= link_to 'Proceed to Checkout', users_cart_checkout_path %>
-
+  <!-- address item end -->
   </div>
 
+  </aside>
+    <!-- Col 3
+    #########################-->
 
+    <!-- Cart payment details -->
+    <div class="cart-col cart-details">
+
+      <!-- Total and Pay container  -->
+      <div class="cart-details-total">
+        <h3> Order Summary </h3>
+        <% if current_user && current_user.cart != '' %>
+          <%= form_tag charges_path do %>
+            <article>
+              <% if flash[:error].present? %>
+                <div id="error_explanation">
+                  <p><%= flash[:error] %></p>
+                </div>
+              <% end %>
+              <label class="amount">
+                <span>Total:</span>
+                <span>$<%= @cart_total %>.00</span>
+              </label>
+            </article>
+
+          <% end %>
+
+        <% else %>
+          <h4>Your Shopping Cart is Empty</h4>
+        <% end %>
+      </div>
+
+      <!-- Address Container -->
+   
+    <button><%= link_to 'Proceed to Checkout', new_charge_path %></button>
+    <div>
+      <h4>This page has drop down menu for choosing shipping & billing addresses from saved addresses</h4>
+      <h4>Alternatively, user can fill out their addresses on a form and click save or carry through the address info to the next page </h4>
+    </div>
+  </div>
 </section>
