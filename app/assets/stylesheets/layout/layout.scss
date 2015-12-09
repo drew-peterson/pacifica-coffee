@@ -11,7 +11,7 @@
 .main-header {
   width: 100%;
   position: fixed;
-  background: white;
+  background-color: #fff;
 
   @include tablet {
     @include display(flex);
@@ -22,25 +22,18 @@
 
 .btn-wrap {
   @include display(flex);
-  @include justify-content(space-between);
   @include align-items(center);
+  @include justify-content(space-between);
+  width: 95%;
+  margin: 0 auto;
 
   h3 {
     font-size: 1.6rem;
   }
 
   .mobile-menu-btn {
-    margin-right: 2.5%;
-    margin-left: auto; // keeps pacifica header in center...
-
-    @include tablet {
-      display: none;
-    }
-  }
-  .mobile-filter-btn {
-    margin-left: 2.5%;
-    margin-right: auto;
-
+    margin-right: -10px; // acount for hambuger padding
+    // Hide mobile btn in tablet
     @include tablet {
       display: none;
     }
