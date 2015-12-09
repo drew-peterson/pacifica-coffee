@@ -1,5 +1,17 @@
 @import 'master';
 
+// Tablet view stuff
+.cart-col {
+  @include tablet {
+    flex: 1;
+  }
+}
+
+.tablet-view {
+  flex: 2;
+  margin-right: $sp--lg;
+}
+
 .cart-container {
 
   @include display(flex);
@@ -9,15 +21,10 @@
   background: white;
 
   @include tablet {
-    width: 70%;
-    padding: $sp--lg;
-    margin-top: $sp--lg;
+    @include flex-direction(row);
   }
-  @include desktop {
-    width: 60%;
-  }
-} // end of cart-container
 
+} // end of cart-container
 
 // ******************
 // Address Column
@@ -36,9 +43,6 @@
 // items Column
 // ******************
 
-.cart-col {
-  @include flex(1);
-}
 
 .cart-item {
   // @include debug;
@@ -125,6 +129,9 @@
 // total payment details
 .cart-details {
   margin-top: $sp--med;
+  @include tablet {
+    margin: 0;
+  }
 }
 
 .cart-details-total {

@@ -2,10 +2,11 @@
 
 <section class="cart-container">
 
+<aside class= "tablet-view cart-col">
   <!-- Col 1
   #########################-->
   <!-- Cart Addresses -->
-  <div class="cart-col cart-address">
+  <div class="cart-address">
     <div class="cart-address-selection">
       <h3>Ship to:</h3>
       <!-- See http://www.w3schools.com/tags/att_select_form.asp -->
@@ -21,7 +22,7 @@
   #########################-->
 
   <!-- Cart Items -->
-  <div class="cart-col cart-items" id="cart-item">
+  <div class="cart-items" id="cart-item">
      <% prices = [] %>
     <ul>
       <% @items.each do |item, qty| %>
@@ -79,6 +80,7 @@
 <!-- address item end -->
 </div>
 
+</aside>
   <!-- Col 3
   #########################-->
 
@@ -116,9 +118,9 @@
     data-amount="<%= @cart_total %>00"
     data-locale="auto">
   </script>
+  <%= link_to 'Proceed to Checkout', users_cart_checkout_path %>
 
   </div>
-  <%= link_to 'Proceed to Checkout', users_cart_checkout_path %>
 
 
 </section>
