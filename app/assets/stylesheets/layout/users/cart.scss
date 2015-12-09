@@ -9,7 +9,6 @@
   background: white;
 
   @include tablet {
-    // modal styles
     width: 70%;
     padding: $sp--lg;
     margin-top: $sp--lg;
@@ -147,6 +146,7 @@
   line-height: 60px;
   background: none;
   background-color: none;
+  width: 100%;
 
   transition: all .3s ease-in;
   span {

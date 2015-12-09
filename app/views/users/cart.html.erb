@@ -2,9 +2,8 @@
 
 <section class="cart-container">
 
-     <!-- Col 1
+  <!-- Col 1
   #########################-->
-
   <!-- Cart Addresses -->
   <div class="cart-col cart-address">
     <div class="cart-address-selection">
@@ -66,18 +65,19 @@
               </li>
 
             </div>
-            <!-- End of cart-item-wrapper -->
           </div>
 
-          <!-- remove item -->
+            <!-- remove item -->
 
-            <%= link_to 'Remove Item', users_cart_path(item_id: item.id), method: :delete, class: 'cart-item-remove--btn' %>
+              <%= link_to 'Remove Item', users_cart_path(item_id: item.id), method: :delete, class: 'cart-item-remove--btn' %>
 
-        </div>
-      <% end %>
+          </div>
+        <% end %>
 
-    </ul>
-  </div>
+      </ul>
+    </div>
+<!-- address item end -->
+</div>
 
   <!-- Col 3
   #########################-->
@@ -110,15 +110,15 @@
     </div>
 
     <!-- Address Container -->
-
-  </div>
-
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
     data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
     data-description="Pacifica Coffee"
     data-amount="<%= @cart_total %>00"
     data-locale="auto">
   </script>
+
+  </div>
   <%= link_to 'Proceed to Checkout', users_cart_checkout_path %>
+
 
 </section>
