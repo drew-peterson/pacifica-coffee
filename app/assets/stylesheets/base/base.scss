@@ -13,6 +13,8 @@ body {
   @include display(flex);
   @include flex-direction(column);
   min-height: 100vh;
+
+  -webkit-font-smoothing: antialiased;
 }
 
 // NEED TO CLEAR the FIXED HEADER SOMEHOW...

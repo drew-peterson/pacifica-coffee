@@ -3,9 +3,11 @@
 .cart-container {
   @include display(flex);
   @include flex-direction(column);
+  margin: 0 auto;
+  width: 100%;
 
   @include tablet {
-
+    width: 50%;
   }
 } // end of cart-container
 
@@ -19,6 +21,8 @@
   padding: $sp--med;
   border: 1px solid $emerald;
 
+  @include tablet {
+  }
 }
 
 // ******************
@@ -130,6 +134,16 @@
 
 .stripe-button-el {
   margin-top: $sp--lg;
+  background-image: none;
+  min-height: 60px;
+  line-height: 60px;
+  background: none;
+  background-color: none;
+  span {
+    background: none;
+    background-image: none;
+    background-color: none;
+  }
 }
 
 
