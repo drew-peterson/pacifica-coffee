@@ -1,0 +1,22 @@
+@import 'master';
+
+.main-notice-container {
+  @include debug;
+  @include display(flex);
+  @include align-items(center);
+
+  position: absolute;
+
+  width: 100%;
+  text-align: center;
+  p {
+    padding: $sp--lg;
+    width: 100%;
+    color: white;
+    // forward keeps last state of animation until refresh
+    animation: errorFade 3s forwards;
+    font-size: 1.5rem;
+  }
+  .error-msg { background: $error-red; }
+  .alert-msg { background: $alert-green; }
+}

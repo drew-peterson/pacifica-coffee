@@ -66,24 +66,6 @@
   }
 }
 
-.error-notice {
-  @include display(flex);
-  @include justify-content(center);
-  @include align-items(center);
-
-  position: absolute;
-  width: 100%;
-  text-align: center;
-
-  p {
-    // forward makes the animation keep elements on hidden
-    width: 100%;
-    background: lighten(green, 30%);
-    color: $wet-gray;
-    animation: errorFade 2s forwards;
-    font-size: 1.2rem;
-  }
-}
 
 .main-footer {
   font-family: 'NTR', sans-serif;

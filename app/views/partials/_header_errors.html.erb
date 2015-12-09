@@ -1,0 +1,23 @@
+<div class="main-notice-container">
+
+  <!-- user controller add to chart -->
+  <% if flash[:already_in_cart] %>
+    <p class="error-msg"><%= flash[:already_in_cart]%></p>
+
+  <!-- user controller add to chart -->
+  <% elsif flash[:item_added] %>
+    <p class="alert-msg"><%= flash[:item_added] %> </p>
+
+  <!-- user controller update_cart -->
+  <% elsif flash[:cart_update_success] %>
+    <p class="alert-msg"><%= flash[:cart_update_success] %> </p>
+
+    <!-- user controller update_cart -->
+  <% elsif flash[:cart_item_removed] %>
+    <p class="alert-msg"><%= flash[:cart_item_removed] %> </p>
+
+
+  <% else %>
+  <!-- do nothing... -->
+  <% end %>
+</div>
