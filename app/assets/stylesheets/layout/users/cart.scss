@@ -10,10 +10,12 @@
 
   @include tablet {
     // modal styles
-    // @include modal();
-    width: 60%;
+    width: 70%;
     padding: $sp--lg;
     margin-top: $sp--lg;
+  }
+  @include desktop {
+    width: 60%;
   }
 } // end of cart-container
 
@@ -145,6 +147,8 @@
   line-height: 60px;
   background: none;
   background-color: none;
+
+  transition: all .3s ease-in;
   span {
     background: none;
     background-image: none;

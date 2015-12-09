@@ -53,14 +53,16 @@
 // **********************
 // Modal
 
-@mixin modal($opacity: 0.2){
+@mixin modal($width, $opacity: 0.2){
 
   -webkit-box-shadow: 0 0 2em rgba(0,0,0,0.5);
   -webkit-border-radius: 0.4rem;
 
   position: absolute;
   top: 0;
-  // need to manually cetner div
+  left: 50%;
+  margin-left: -( $width / 2 ) * 100% ;
+
 
   &::after {
     content: "";
