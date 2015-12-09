@@ -106,11 +106,32 @@
   &:hover {
     transition: .5s ease;
     color: red;
-
-
   }
+}
 
+
+// #######################
+// total payment details
+.cart-details {
+  margin-top: $sp--med;
+}
+
+.cart-details-total {
+  h3 {
+    font-size: $font--med;
+    margin-bottom: $sp--med;
   }
+  .amount {
+    @include display(flex);
+    @include justify-content(space-between);
+    font-size: $font--msm;
+  }
+}
+
+.stripe-button-el {
+  margin-top: $sp--lg;
+}
+
 
 
 

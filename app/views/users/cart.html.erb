@@ -97,11 +97,10 @@
               </div>
             <% end %>
             <label class="amount">
-              <span>Total: <%= @cart_total %>.00</span>
+              <span>Total:</span>
+              <span>$<%= @cart_total %>.00</span>
             </label>
           </article>
-
-            <%= link_to 'Proceed to Checkout', users_cart_checkout_path %>
 
         <% end %>
 
@@ -116,9 +115,10 @@
 
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
     data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-    data-description="Test Charge"
+    data-description="Pacifica Coffee"
     data-amount="<%= @cart_total %>00"
     data-locale="auto">
   </script>
+  <%= link_to 'Proceed to Checkout', users_cart_checkout_path %>
 
 </section>
