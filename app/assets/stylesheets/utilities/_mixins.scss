@@ -93,7 +93,7 @@
   }
 
   p {
-    font-size: $font-med;
+    font-size: $font--med;
   }
 
    input {
@@ -106,21 +106,28 @@
     border: none;
     border-radius: 5px;
     padding: 0.5rem;
-    font-size: $font-msm;
+    font-size: $font--msm;
     color: darken($light-gray, 50%);
 
-    // button
-    &:last-child {
-      font-size: 1.5rem;
-      color: white;
-      margin-top: 1.5rem;
-      padding: .3rem;
-      background-color: darken($light-gray, 50%);
-      transition: .3s ease-in;
-      &:hover {
-        background-color: darken($light-gray, 70%);
-      }
     }
+  // submit button
+  .form-submit-btn {
+    font-size: 1.5rem;
+    color: white;
+    margin-top: 1.5rem;
+    padding: .3rem;
+    background-color: darken($light-gray, 50%);
+    transition: .3s ease-in;
+    &:hover {
+      background-color: darken($light-gray, 70%);
+    }
+  }
+
+  @include tablet {
+    width: 70%;
+  }
+  @include desktop {
+    width: 50%;
   }
 };
 

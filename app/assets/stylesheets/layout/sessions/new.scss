@@ -15,75 +15,24 @@
   }
 }
 
-
-
 .sessions-login {
-  @include display(flex);
-  @include flex-direction(column);
-  margin: 0 auto;
+  @include form-style;
   margin-top: 3rem;
-  text-align: center;
+}
 
-
-  form {
-    @include display(flex);
-    @include flex-direction(column);
-
-    p {
-      font-size: 1.5rem;
-    }
-
-    input {
-      text-align: center;
-      width: 80%;
-      margin: auto;
-      margin-top: 0.25rem;
-      margin-bottom: 0.5rem;
-      background-color: $light-gray;
-      border: none;
-      border-radius: 5px;
-      padding: 0.5rem;
-      font-size: 1rem;
-      color: darken($light-gray, 50%);
-
-      // button
-      &:last-child {
-        font-size: 1.5rem;
-        color: white;
-        margin-top: 1.5rem;
-        padding: .3rem;
-        background-color: darken($light-gray, 50%);
-        transition: .3s ease-in;
-        &:hover {
-          background-color: darken($light-gray, 70%);
-        }
-      }
-    }
-
-
-  }
-
-  .login-signup {
-    margin: auto;
-    font-size: 1.5rem;
-    color: black;
-    margin-top: .3rem;
-    padding: 1rem;
-    border-radius: 5px;
-    width: 80%;
-    transition: .3s ease-in;
-    &:hover {
-      color: white;
-      background-color: $emerald;
-    }
-  }
-// session-login
-// tablet view
-  @media (min-width: 769px) {
-    width: 50%;
-  }
-
-// desktop view
-  @media (min-width: 1025px) {
+.login-signup {
+  margin: auto;
+  font-size: 1.5rem;
+  color: black;
+  margin-top: .3rem;
+  padding: 1rem;
+  border-radius: 5px;
+  width: 80%;
+  transition: .3s ease-in;
+  &:hover {
+    color: white;
+    background-color: $emerald;
   }
 }
+
+
