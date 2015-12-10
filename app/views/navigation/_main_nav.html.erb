@@ -22,7 +22,7 @@
     <% if current_user %>
       <!-- link for dropdown profile -->
       <li>
-        <a href="#"> Hello <%= current_user.user_name %> </a>
+        <%= link_to "Hello #{current_user.user_name}", '#', id: 'profileNavBtn' %>
       </li>
 
       <li><%= link_to 'Cart', '/users/cart', data: { no_turbolink: true } %></li>

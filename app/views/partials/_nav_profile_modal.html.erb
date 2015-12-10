@@ -1,19 +1,32 @@
 
 <section class="nav-profile-modal" id="navProfileModal">
-
-  <!-- Profile -->
-  <div class="col">
-    <h3>Profile</h3>
+  <!-- nav bar w/ X -->
+  <div class="nav-top-wrapper">
+    <div class="modal-top-nav">
+      <h3><%= current_user.user_name %>'s Profile</h3>
+      <button class="close-btn" id="close-btn">
+        <span>Close</span>
+      </button>
+    </div>
   </div>
 
-  <!-- Order History -->
-  <div class="col">
-    <h3>Order History</h3>
-  </div>
+  <div class="nav-profile-modal-container">
+    <!-- Logout -->
 
-  <!-- Logout -->
-  <div class="col">
-    <%= link_to 'logout' %>
-  </div>
+    <div class="col">
+      <%= link_to 'logout' %>
+    </div>
 
+    <!-- Profile -->
+    <div class="col">
+      <h3>Profile</h3>
+    </div>
+
+    <!-- Order History -->
+    <div class="col">
+      <h3>Order History</h3>
+    </div>
+
+
+  </div>
 </section>

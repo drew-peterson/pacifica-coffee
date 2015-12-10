@@ -42,7 +42,7 @@ $button-transistion-duration: 0.3s;     // The transition duration
   left: $button-pad; // you need both of these for the bar to show
   right: $button-pad;
   height: $bar-thickness; // thickness of middle bar
-  background: $wet-gray;
+  background: $text-gray;
 }
 
 .c-hamburger span::before,
@@ -52,7 +52,7 @@ $button-transistion-duration: 0.3s;     // The transition duration
   left: 0;
   width: 100%;
   height: $bar-thickness;
-  background-color: $wet-gray;
+  background-color: $text-gray;
   content: "";
 }
 
