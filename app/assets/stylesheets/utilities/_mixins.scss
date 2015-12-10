@@ -32,12 +32,12 @@
   @content;
 }
 
-@mixin btn-large($bg) {
+@mixin btn--large($bg) {
   background: $bg;
-  padding: 16px 0;
-  height: 56px;
+  padding: $sp--xs 0;
   letter-spacing: 0.02em;
-  font-size: 1rem;
+  font-size: $font--msm;
+  color: white;
   width: 100%;
 
   &:hover {

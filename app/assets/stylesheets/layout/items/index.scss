@@ -44,15 +44,7 @@
     }
 
     .btn-add-to-cart {
-      margin-top: 2rem;
-      background: black;
-      color: white;
-      padding: .5rem 1rem;
-      border: none;
-
-      &:hover {
-        color: yellow;
-      }
+      @include btn--large($google-blue);
 
     }
 
