@@ -1,0 +1,8 @@
+@import 'master';
+
+.nav-profile-modal {
+  display: none; // hide by default
+
+  @include modal();
+
+}
