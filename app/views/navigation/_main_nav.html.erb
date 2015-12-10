@@ -20,8 +20,11 @@
     <li><%= link_to 'Shop', '/items' %></li>
 
     <% if current_user %>
+      <!-- link for dropdown profile -->
+      <li>
+        <a href="#"> Hello <%= current_user.user_name %> </a>
+      </li>
 
-      <li><a href="#"> Hello <%= current_user.user_name %> </a></li>
       <li><%= link_to 'Cart', '/users/cart', data: { no_turbolink: true } %></li>
       <li><%= link_to 'Order History', '/users/order_history' %></li>
 
@@ -41,3 +44,8 @@
     <li><%= link_to "Logout", '/logout' %> </li>
   </ul>
 </section>
+
+<!-- append modal when profile button clicked...  -->
+<div class="profile-modal-tag" id="profile-modal-anchor">
+  <%= render 'partials/nav_profile_modal' %>
+</div>
