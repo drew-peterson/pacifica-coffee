@@ -11,9 +11,13 @@
         <h3>Ship to:</h3>
         <!-- See http://www.w3schools.com/tags/att_select_form.asp -->
         <select name="checkout-address" form="#">
-          <option value="value1" selected>Address 1</option>
-          <option value="value1">Address 2</option>
-          <option value="value1">Address 3</option>
+          <% if @addresses.empty? %>
+            <option value="value1">No Saved Address</option>
+          <% else %>
+            <% @addresses.each do |address| %>
+              <option value="value1"><%= address.nickname %> - <%= "#{address.address} #{address.city} #{address.state} #{address.zip} " %> </option>
+            <% end %>
+          <% end %>
         </select>
       </div>
   </div>
@@ -112,7 +116,10 @@
       </div>
 
       <!-- Address Container -->
-   
+   <div>
+     <%= render 'addresses/form' %>
+   </div>
+
     <button><%= link_to 'Proceed to Checkout', new_charge_path %></button>
     <div>
       <h4>This page has drop down menu for choosing shipping & billing addresses from saved addresses</h4>
