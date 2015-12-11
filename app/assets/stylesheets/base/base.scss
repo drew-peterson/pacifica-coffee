@@ -13,6 +13,8 @@ body {
   @include display(flex);
   @include flex-direction(column);
   min-height: 100vh;
+
+  -webkit-font-smoothing: antialiased;
 }
 
 // NEED TO CLEAR the FIXED HEADER SOMEHOW...
@@ -24,4 +26,10 @@ main {
 
   @include tablet { margin-top: 4.5rem;};
 
+}
+
+// google auto fill reset
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px $light-gray inset;
+  -webkit-text-fill-color: darken($light-gray, 50%) !important;
 }

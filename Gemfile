@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
 
+#heroku asset pipeline -- drew
+gem 'rails_12factor', group: :production
 
 # generate random seed data
 gem 'faker'

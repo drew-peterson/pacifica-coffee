@@ -27,6 +27,10 @@ CSV.foreach('db/seed.csv', :headers => true) do |obj|
     )
 end
 
+Address.create(nickname: "Joji's Palace", address: '123 456th st', city: 'El Cerrito', state: 'CA', zip: 94999, user_id: 1)
+Address.create(nickname: "Joji's Loft", address: '654 321st st', city: 'Manhattan', state: 'NY', zip: 99997, user_id: 1)
+Address.create(nickname: "Joji's Mansion", address: '789 123rd ave', city: 'Beverly Hills', state: 'CA', zip: 99999, user_id: 1)
+
 # Testing key
 # PUBLISHABLE_KEY=sk_test_dLVNZ2c2HOfN6Ff5dcV1NbcF SECRET_KEY=pk_test_uksl51zPIOATT1torKitrzfN rails s
 

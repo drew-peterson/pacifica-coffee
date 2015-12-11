@@ -2,9 +2,17 @@
 //**************************
 // Colors
 
-$wet-gray   : #34495e;
-$light-gray : #ecf0f1;
-$emerald    : #2ecc71;
+$wet-gray     : #34495e;
+$light-gray   : #ecf0f1;
+$gray         : #eee;
+$emerald      : #2ecc71;
+$google-blue  : #4285f4;
+$off-white    : #fafafa;
+$text-gray    : #848484;
+
+$alert-green : #00c853;
+$error-red    : #e52727;
+
 
 //**************************
 // Primary colors Colors
@@ -23,14 +31,14 @@ $primary-color: $light-gray;
 $base__font-size : 16px;
 $base__line      : 24px;
 
-$font--sm  : 14px ;
+$font--sm  : 14px;
+$font--msm : 20px;
 $font--med : 25px;
 $font--lg  : 36px ;
-
-
+$font--xl  : 50px ;
 
 // border radius
-$bd-radius: 0.4em;
+$bd-radius: 0.4rem;
 
 // spacing
 $sp--sm  : 0.2rem;

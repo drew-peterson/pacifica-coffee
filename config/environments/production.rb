@@ -29,6 +29,7 @@ Rails.application.configure do
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
+  # Drew change this to true for heroku images??
   config.assets.compile = false
 
   # Asset digests allow you to set far-future HTTP expiration dates on all assets,
