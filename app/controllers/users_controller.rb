@@ -55,6 +55,7 @@ class UsersController < ApplicationController
   end
 
   def cart
+    @addresses = Address.where(user_id: current_user.id)
   end
 
   def order_history
@@ -72,10 +73,6 @@ class UsersController < ApplicationController
   end
 
   def checkout
-  end
-
-  def save_address
-
   end
 
   private
