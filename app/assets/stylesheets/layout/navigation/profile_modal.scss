@@ -1,8 +1,5 @@
 @import 'master';
 
-
-
-
 .nav-profile-modal {
   @include modal();
   display: none; // hide by default
@@ -16,6 +13,9 @@
 
 
   .col {
+    @include display(flex);
+    @include flex-direction(column);
+
     border: 1px solid $light-gray;
     width: 95%;
     background: $el-gray;
@@ -51,6 +51,29 @@
       box-shadow: 0 0 1em rgba(0,0,0,0.2);
     }
   }
+
+  .logout-col {
+
+  }
+
+.profile-col {
+  @include justify-content(center);
+   background: linear-gradient(
+    rgba(255,255,255, 0.3),
+    rgba(255,255,255, 0.3)
+    ),url('https://media.licdn.com/media/AAEAAQAAAAAAAAY8AAAAJGEzNzY0Yzg5LTNiMzItNGE0ZS05MzFlLWU1MmY1MDhlMmEzYQ.jpg') no-repeat center center;
+    background-size: cover;
+
+    h3 {
+      color: white;
+      font-size: $font--lg;
+    }
+  &:hover {
+    background: url('https://media.licdn.com/media/AAEAAQAAAAAAAAY8AAAAJGEzNzY0Yzg5LTNiMzItNGE0ZS05MzFlLWU1MmY1MDhlMmEzYQ.jpg') no-repeat center center;
+    background-size: cover;
+  }
+
+  }
 }
 
 
@@ -73,9 +96,7 @@
   }
 }
 
-.logout-col {
 
-}
 
 
 

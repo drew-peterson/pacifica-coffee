@@ -18,7 +18,7 @@
   <ul class="main-nav" id="main-nav">
 
     <% if current_user %>
-      <li><%= link_to "Profile", '#', id: 'profileNavBtn' %></li>
+      <li><%= link_to "#{current_user.user_name}", '#', id: 'profileNavBtn' %></li>
     <% end %>
 
     <li><%= link_to 'Shop', '/items' %></li>

@@ -10,11 +10,11 @@ $(function(){
     var profileModal = $('#navProfileModal')
 
     // hide nav menu and reset dropdown
-    $(navbar).slideToggle();
+    $(navbar).fadeOut();
     $('.nav-container').fadeOut();
 
     // reset hamburger button
-    $(hambugerBtn).toggleClass('is-active');
+    $(hambugerBtn).removeClass('is-active');
 
     // Show Modal
 
@@ -30,10 +30,12 @@ $(function(){
 
       // fade in hidden navigations
       $('.nav-container').fadeIn();
-      $(navbar).fadeIn();
 
+      // show the navbar when tablet and above;
+      if ($(window).width() > 769) {
+        $(navbar).fadeIn();
+      }
     })
-
   })
 
 }) // end of ready function

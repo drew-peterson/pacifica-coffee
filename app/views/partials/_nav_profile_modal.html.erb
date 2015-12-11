@@ -3,7 +3,7 @@
   <!-- nav bar w/ X -->
   <div class="nav-top-wrapper">
     <div class="modal-top-nav">
-      <h3><%= current_user.user_name %>'s Profile</h3>
+      <h3> Hello <%= current_user.user_name %> </h3>
       <button class="close-btn" id="close-btn">
         <span>Close</span>
       </button>
@@ -20,13 +20,12 @@
     <!-- Profile -->
     <div class="profile-col col">
       <h3>Profile</h3>
-      https://media.licdn.com/media/AAEAAQAAAAAAAAY8AAAAJGEzNzY0Yzg5LTNiMzItNGE0ZS05MzFlLWU1MmY1MDhlMmEzYQ.jpg
     </div>
 
     <!-- Order History -->
     <div class=" hisotry-col col">
       <h3>Order History</h3>
-
+      <p> Idea is to show the last Order here...</p>
       <li><%= link_to 'Order History', '/users/order_history' %></li>
     </div>
 
