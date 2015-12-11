@@ -1,15 +1,18 @@
 @import 'master';
 
+
+
+
 .nav-profile-modal {
-  // display: none; // hide by default
   @include modal();
+  display: none; // hide by default
+
 }
 
 .nav-profile-modal-container {
   @include display(flex);
   @include flex-direction(column);
   @include align-items(center);
-
 
 
   .col {
@@ -46,12 +49,9 @@
     &:hover {
       -webkit-box-shadow: 0 0 1em rgba(0,0,0,0.2);
       box-shadow: 0 0 1em rgba(0,0,0,0.2);
-
     }
   }
 }
-
-
 
 
 .nav-top-wrapper {
@@ -71,6 +71,9 @@
     font-size: $font--med;
     color: $text-gray;
   }
+}
+
+.logout-col {
 
 }
 

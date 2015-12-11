@@ -2,38 +2,36 @@
 
 $(function(){
 
-
   $(document).on('click', '#profileNavBtn', function(e){
 
-    e.preventDefault()
-
     // Variables
-
     var hambugerBtn = $('#mobile-menu-btn')
-    var navbar = $('.main-nav')
+    var navbar = $('#main-nav')
     var profileModal = $('#navProfileModal')
 
-    // scroll up navigation
-    $(navbar).fadeOut();
+    // hide nav menu and reset dropdown
+    $(navbar).slideToggle();
+    $('.nav-container').fadeOut();
 
     // reset hamburger button
     $(hambugerBtn).toggleClass('is-active');
 
-    // hide menu
-    $('.nav-container').fadeOut();
-
     // Show Modal
-    $(profileModal).slideToggle();
+
+    $(profileModal).fadeIn()
+    $(profileModal).addClass('slide-left');
 
     //bind click event to close
     $('#main-header').one('click', '#close-btn', function(){
 
       // hide modal
-      $(profileModal).slideToggle();
+      $(profileModal).removeClass('slide-left');
+      $(profileModal).fadeOut()
 
       // fade in hidden navigations
-      $(navbar).fadeIn();
       $('.nav-container').fadeIn();
+      $(navbar).fadeIn();
+
     })
 
   })

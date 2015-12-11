@@ -13,18 +13,21 @@
   <div class="nav-profile-modal-container">
     <!-- Logout -->
 
-    <div class="col">
-      <%= link_to 'logout' %>
+    <div class="logout-col col">
+      <%= link_to 'logout', '/logout'%>
     </div>
 
     <!-- Profile -->
-    <div class="col">
+    <div class="profile-col col">
       <h3>Profile</h3>
+      https://media.licdn.com/media/AAEAAQAAAAAAAAY8AAAAJGEzNzY0Yzg5LTNiMzItNGE0ZS05MzFlLWU1MmY1MDhlMmEzYQ.jpg
     </div>
 
     <!-- Order History -->
-    <div class="col">
+    <div class=" hisotry-col col">
       <h3>Order History</h3>
+
+      <li><%= link_to 'Order History', '/users/order_history' %></li>
     </div>
 
 

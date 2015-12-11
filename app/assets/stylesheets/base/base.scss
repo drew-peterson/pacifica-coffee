@@ -33,3 +33,13 @@ input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0px 1000px $light-gray inset;
   -webkit-text-fill-color: darken($light-gray, 50%) !important;
 }
+
+.slide-left {
+  animation: slide-left;
+  animation-duration: 0.5s;
+}
+
+.slide-right {
+  animation: slide-right;
+  animation-duration: 1s;
+}
