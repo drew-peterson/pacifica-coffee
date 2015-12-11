@@ -1,0 +1,34 @@
+
+<section class="nav-profile-modal" id="navProfileModal">
+  <!-- nav bar w/ X -->
+  <div class="nav-top-wrapper">
+    <div class="modal-top-nav">
+      <h3> Hello <%= current_user.user_name %> </h3>
+      <button class="close-btn" id="close-btn">
+        <span>Close</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="nav-profile-modal-container">
+    <!-- Logout -->
+
+    <div class="logout-col col">
+      <%= link_to 'logout', '/logout'%>
+    </div>
+
+    <!-- Profile -->
+    <div class="profile-col col">
+      <h3>Profile</h3>
+    </div>
+
+    <!-- Order History -->
+    <div class=" hisotry-col col">
+      <h3>Order History</h3>
+      <p> Idea is to show the last Order here...</p>
+      <li><%= link_to 'Order History', '/users/order_history' %></li>
+    </div>
+
+
+  </div>
+</section>

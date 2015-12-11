@@ -17,17 +17,21 @@
   <!-- Inner Container B -->
   <ul class="main-nav" id="main-nav">
 
+    <% if current_user %>
+      <li><%= link_to "#{current_user.user_name}", '#', id: 'profileNavBtn' %></li>
+    <% end %>
+
     <li><%= link_to 'Shop', '/items' %></li>
 
     <% if current_user %>
+      <!-- link for dropdown profile -->
 
-      <li><a href="#"> Hello <%= current_user.user_name %> </a></li>
       <li><%= link_to 'Cart', '/users/cart', data: { no_turbolink: true } %></li>
-      <li><%= link_to 'Order History', '/users/order_history' %></li>
+
 
       <% if current_user.admin %>
 
-        <li><%= link_to 'admin view', '/admin' %></li>
+        <li><%= link_to 'admin', '/admin' %></li>
 
       <% end %>
 
@@ -38,6 +42,12 @@
 
     <% end %>
 
-    <li><%= link_to "Logout", '/logout' %> </li>
   </ul>
 </section>
+
+<!-- append modal when profile button clicked...  -->
+<div class="profile-modal-tag" id="profile-modal-anchor">
+  <% if current_user %>
+    <%= render 'partials/nav_profile_modal' %>
+  <% end %>
+</div>

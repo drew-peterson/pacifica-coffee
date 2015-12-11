@@ -10,16 +10,41 @@
   }
     }
 
+// ####################
+// Side right
+// ####################
 
-@keyframes border-scale {
-  0%,
-  100% {
-    transform: scale(0)
+@keyframes slide-left {
+  0% {
+    -webkit-transform: translateX(100%);
   }
   50% {
-    transform: scale(1)
+    -webkit-transform: translateX(-10%);
+  }
+  100% {
+    -webkit-transform: translateX(0%);
+
   }
 }
+
+
+// ####################
+// Side Left
+// ####################
+@keyframes slide-right {
+  0% {
+    -webkit-transform: translateX(0%);
+  }
+  50% {
+    -webkit-transform: translateX(-10%);
+  }
+  100% {
+    -webkit-transform: translateX(100%);
+    display: none;
+  }
+}
+
+
 
 // Error message nav bar
 
@@ -34,6 +59,15 @@
   }
   100% {
     visibility: hidden;
+  }
+}
+
+@keyframes modal-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 

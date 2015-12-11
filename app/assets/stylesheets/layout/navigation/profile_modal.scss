@@ -1,0 +1,102 @@
+@import 'master';
+
+.nav-profile-modal {
+  @include modal();
+  display: none; // hide by default
+
+}
+
+.nav-profile-modal-container {
+  @include display(flex);
+  @include flex-direction(column);
+  @include align-items(center);
+
+
+  .col {
+    @include display(flex);
+    @include flex-direction(column);
+
+    border: 1px solid $light-gray;
+    width: 95%;
+    background: $el-gray;
+    height: 20vh;
+    margin: 10px 0;
+    transition: background-color 0.5s,box-shadow 0.5s;
+    color: $text-gray;
+
+    &:first-child {
+      line-height: 5vh;
+      margin-top: 20px;
+      background: white;
+      height: 5vh;
+
+      a {
+        display: block;
+        width: 100%;
+        color: $text-gray;
+        transition: color 0.5s;
+
+        &:hover {
+          color: white;
+        }
+      }
+      &:hover {
+        background-color: $error-red;
+        border: none;
+      }
+    }
+
+    &:hover {
+      -webkit-box-shadow: 0 0 1em rgba(0,0,0,0.2);
+      box-shadow: 0 0 1em rgba(0,0,0,0.2);
+    }
+  }
+
+  .logout-col {
+
+  }
+
+.profile-col {
+  @include justify-content(center);
+   background: linear-gradient(
+    rgba(255,255,255, 0.3),
+    rgba(255,255,255, 0.3)
+    ),url('https://media.licdn.com/media/AAEAAQAAAAAAAAY8AAAAJGEzNzY0Yzg5LTNiMzItNGE0ZS05MzFlLWU1MmY1MDhlMmEzYQ.jpg') no-repeat center center;
+    background-size: cover;
+
+    h3 {
+      color: white;
+      font-size: $font--lg;
+    }
+  &:hover {
+    background: url('https://media.licdn.com/media/AAEAAQAAAAAAAAY8AAAAJGEzNzY0Yzg5LTNiMzItNGE0ZS05MzFlLWU1MmY1MDhlMmEzYQ.jpg') no-repeat center center;
+    background-size: cover;
+  }
+
+  }
+}
+
+
+.nav-top-wrapper {
+  background: $gray;
+  box-shadow: 0 2px 10px 0 rgba(0,0,0,0.16);
+}
+
+.modal-top-nav {
+  @include display(flex);
+  @include justify-content(space-between);
+  @include align-items(center);
+
+  width: 95%;
+  margin: 0 auto;
+
+  h3 {
+    font-size: $font--med;
+    color: $text-gray;
+  }
+}
+
+
+
+
+

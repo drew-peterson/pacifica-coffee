@@ -68,7 +68,6 @@ $(function(){
   // hide show mobile menu
   $(document).on('click', '#mobile-menu-btn', function(){
     $('#main-nav').slideToggle();
-
   })
 
   $(document).on('click', '#mobile-filter-btn', function(){
