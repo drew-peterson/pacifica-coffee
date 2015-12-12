@@ -76,12 +76,18 @@ class UsersController < ApplicationController
     order = Order.last
     find_items(order.item_ids_quantities)
 
+    prices = []
+    @items.each do |item, qty|
+      prices << item.price * qty.to_i
+    end
+
+    @total = "$#{ prices.inject(:+) }.00"
+    @date = Date.parse("#{order.created_at}")
+
     @html = view_context.render 'partials/profile_history_last', locals: @items
 
     respond_to do |format|
-
-      format.json  { render :json => {html: @html} } # don't do msg.to_json
-
+      format.json  { render :json => {html: @html, date: @date, total: @total} } # don't do msg.to_json
     end
   end
 

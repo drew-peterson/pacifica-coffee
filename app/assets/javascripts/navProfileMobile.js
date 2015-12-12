@@ -26,7 +26,14 @@ $(function(){
       url: '/users/last_order'
     }).done(function(data){
       // add last order to html
-      debugger
+      var html = data.html
+      var date = data.date
+      var total = data.total
+
+      $('.profile-history-container').append(html)
+
+      $('#profileHistoryDetails .date').text(date)
+      $('#profileHistoryDetails .total').text(total)
 
     })
 
