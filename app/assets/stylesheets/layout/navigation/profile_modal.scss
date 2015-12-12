@@ -2,7 +2,7 @@
 
 .nav-profile-modal {
   @include modal();
-  display: none; // hide by default
+  // display: none; // hide by default
 }
 
 // Navigation
@@ -95,6 +95,44 @@
     // can also set px height width
   }
 
+  }
+}
+
+// Last Order card
+
+.profile-history-container {
+  @include display(flex);
+  @include flex-direction(column);
+  width: 95%;
+  margin: 0 auto;
+  overflow: auto;
+
+  position: relative;
+
+  font-size: $font;
+
+  .history-details {
+    @include display(flex);
+    @include justify-content(space-between);
+    @include align-items(center);
+
+    position: fixed;
+    width: auto;
+    background: $google-blue;
+    height: rem(30px);
+  }
+
+  .history-content {
+    @include debug;
+    margin-top: rem(10px);
+
+
+    li {
+      @include display(flex);
+      @include justify-content(space-between);
+
+      padding: $sp--msm;
+    }
   }
 }
 

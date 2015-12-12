@@ -66,11 +66,11 @@
 $(function(){
 
   // hide show mobile menu
-  $(document).on('click', '#mobile-menu-btn', function(){
+  $("#main-header").on('click', '#mobile-menu-btn', function(){
     $('#main-nav').slideToggle();
   })
 
-  $(document).on('click', '#mobile-filter-btn', function(){
+  $("#main-header").on('click', '#mobile-filter-btn', function(){
     $('.filter').slideToggle();
   })
 
@@ -78,7 +78,7 @@ $(function(){
   //Hamburger Jquery
   // **********************
 
-  $(document).on('click', '.c-hamburger', function(e){
+  $("#main-header").on('click', '.c-hamburger', function(e){
     $(this).toggleClass('is-active');
   })
 

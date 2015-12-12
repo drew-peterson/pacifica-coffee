@@ -8,10 +8,6 @@ $(function(){
    var hambugerBtn = $('#mobile-menu-btn')
    var navbar = $('#main-nav')
    var profileModal = $("#navProfileModal")
-
-  console.log("ready!")
-  console.log(profileModal)
-
   // functions
   var closeModal = function(){
     // hide modal
@@ -23,15 +19,14 @@ $(function(){
   }
 
 
-  $(document).on('click', '#profileNavBtn', function(e){
+  $('#main-header').on('click', '#profileNavBtn', function(e){
 
     // get last order
     $.ajax({
-      datatype: 'json',
       url: '/users/last_order'
     }).done(function(data){
-      console.log("hello from done")
-      console.log(data)
+      // add last order to html
+
     })
 
     // hide nav menu and reset dropdown
@@ -42,11 +37,11 @@ $(function(){
     $(hambugerBtn).removeClass('is-active');
 
     // Show Modal
-    $("#navProfileModal").fadeIn()
-    $("#navProfileModal").addClass('slide-left');
+    $(profileModal).fadeIn()
+    $(profileModal).addClass('slide-left');
 
     //bind click event to close
-    $(document).one('click', '#close-btn', function(){
+    $("#profile-modal-anchor").one('click', '#close-btn', function(){
 
       closeModal();
 
@@ -59,7 +54,7 @@ $(function(){
     // Order history click
   $('#navProfileModal').on('click', '.history-col', function(e){
     // redirect to order history
-    $.get('/users/order_history')
+    window.location.href = '/users/order_history'
     // close modal
     closeModal()
   })

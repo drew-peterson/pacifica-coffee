@@ -73,18 +73,12 @@ class UsersController < ApplicationController
   end
 
   def last_order
-    @order = "lost order test"
+    order = Order.last
 
     respond_to do |format|
-      msg = { :status => "ok", :message => "Success!", :html => "<b>...</b>" }
-      format.json  { render :json => msg } # don't do msg.to_json
-  end
-
-    # puts "X" * 80
-    # print "order"
-    # puts @order
-    # print "item"
-    # puts "X" * 80
+      order = { :status => "ok", :order => order, :html => "<b>...</b>" } # you can add more keys values here w/ something: 'more things...'
+      format.json  { render :json => order } # don't do msg.to_json
+    end
   end
 
   def checkout
