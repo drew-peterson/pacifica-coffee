@@ -72,6 +72,21 @@ class UsersController < ApplicationController
     find_items(@order.item_ids_quantities)
   end
 
+  def last_order
+    @order = "lost order test"
+
+    respond_to do |format|
+      msg = { :status => "ok", :message => "Success!", :html => "<b>...</b>" }
+      format.json  { render :json => msg } # don't do msg.to_json
+  end
+
+    # puts "X" * 80
+    # print "order"
+    # puts @order
+    # print "item"
+    # puts "X" * 80
+  end
+
   def checkout
   end
 

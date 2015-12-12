@@ -3,12 +3,16 @@
 
 
 $(function(){
-  // Variables
-  var hambugerBtn = $('#mobile-menu-btn')
-  var navbar = $('#main-nav')
-  var profileModal = $('#navProfileModal')
 
-// functions
+  // Variables
+   var hambugerBtn = $('#mobile-menu-btn')
+   var navbar = $('#main-nav')
+   var profileModal = $("#navProfileModal")
+
+  console.log("ready!")
+  console.log(profileModal)
+
+  // functions
   var closeModal = function(){
     // hide modal
     $(profileModal).removeClass('slide-left');
@@ -21,6 +25,15 @@ $(function(){
 
   $(document).on('click', '#profileNavBtn', function(e){
 
+    // get last order
+    $.ajax({
+      datatype: 'json',
+      url: '/users/last_order'
+    }).done(function(data){
+      console.log("hello from done")
+      console.log(data)
+    })
+
     // hide nav menu and reset dropdown
     $(navbar).fadeOut();
     $('.nav-container').fadeOut();
@@ -29,11 +42,11 @@ $(function(){
     $(hambugerBtn).removeClass('is-active');
 
     // Show Modal
-    $(profileModal).fadeIn()
-    $(profileModal).addClass('slide-left');
+    $("#navProfileModal").fadeIn()
+    $("#navProfileModal").addClass('slide-left');
 
     //bind click event to close
-    $('#main-header').one('click', '#close-btn', function(){
+    $(document).one('click', '#close-btn', function(){
 
       closeModal();
 
