@@ -84,7 +84,8 @@ class UsersController < ApplicationController
     @total = "$#{ prices.inject(:+) }.00"
     @date = Date.parse("#{order.created_at}")
 
-    @html = view_context.render 'partials/profile_history_last', locals: @items
+    # multiple locals have to use {items: @items} in html just @items
+    @html = view_context.render 'partials/profile_history_last', locals: {items: @items, date: @date , total: @total}
 
     respond_to do |format|
       format.json  { render :json => {html: @html, date: @date, total: @total} } # don't do msg.to_json

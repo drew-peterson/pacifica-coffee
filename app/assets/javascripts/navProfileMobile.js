@@ -27,13 +27,9 @@ $(function(){
     }).done(function(data){
       // add last order to html
       var html = data.html
-      var date = data.date
-      var total = data.total
 
+      // append partial to container
       $('.profile-history-container').append(html)
-
-      $('#profileHistoryDetails .date').text(date)
-      $('#profileHistoryDetails .total').text(total)
 
     })
 
