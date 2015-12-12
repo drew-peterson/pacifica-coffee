@@ -96,6 +96,10 @@
   }
 
   }
+
+  .history-col {
+    overflow: auto;
+  }
 }
 
 // Last Order card
@@ -105,9 +109,6 @@
   @include flex-direction(column);
   width: 95%;
   margin: 0 auto;
-  overflow: auto;
-
-  position: relative;
 
   font-size: $font;
 
@@ -116,22 +117,19 @@
     @include justify-content(space-between);
     @include align-items(center);
 
-    position: fixed;
-    width: auto;
-    background: $google-blue;
-    height: rem(30px);
+    padding: $sp--sm 0;
   }
 
   .history-content {
-    @include debug;
     margin-top: rem(10px);
+    background-color: $off-white;
 
 
     li {
       @include display(flex);
       @include justify-content(space-between);
 
-      padding: $sp--msm;
+      padding: $sp--sm;
     }
   }
 }
