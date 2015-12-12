@@ -2,7 +2,7 @@
 
 .nav-profile-modal {
   @include modal();
-  // display: none; // hide by default
+  display: none; // hide by default
 }
 
 // Navigation

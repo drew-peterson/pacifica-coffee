@@ -74,10 +74,15 @@ class UsersController < ApplicationController
 
   def last_order
     order = Order.last
+    find_items(order.item_ids_quantities)
+
+      @html = view_context.render 'partials/profile_history_last'
+
 
     respond_to do |format|
-      order = { :status => "ok", :order => order, :html => "<b>...</b>" } # you can add more keys values here w/ something: 'more things...'
-      format.json  { render :json => order } # don't do msg.to_json
+
+      format.json  { render :json => {html: @html} } # don't do msg.to_json
+
     end
   end
 

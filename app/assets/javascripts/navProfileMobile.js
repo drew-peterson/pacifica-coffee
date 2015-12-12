@@ -26,6 +26,7 @@ $(function(){
       url: '/users/last_order'
     }).done(function(data){
       // add last order to html
+      debugger
 
     })
 
