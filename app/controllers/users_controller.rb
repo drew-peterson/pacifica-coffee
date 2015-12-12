@@ -76,8 +76,7 @@ class UsersController < ApplicationController
     order = Order.last
     find_items(order.item_ids_quantities)
 
-      @html = view_context.render 'partials/profile_history_last'
-
+    @html = view_context.render 'partials/profile_history_last', locals: @items
 
     respond_to do |format|
 

@@ -4,14 +4,18 @@
     <h3>Order History</h3>
   </span>
   <div class="history-details">
-    <span>test</span>
-    <span>$money</span>
+    <span> date </span>
+    <span> $</span>
 
   </div>
 
   <!-- content -->
   <ul class="history-content">
-      <li>
-        <span>Test</span>
-      </li>
+    <% @items.each do |item, qty| %>
+        <li>
+          <span> <%= item.item_name%> </span>
+          <span> $<%= item.price %>.00 </span>
+        </li>
+    <% end %>
   </ul>
+
