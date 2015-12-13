@@ -120,7 +120,7 @@
      <%= render 'addresses/form' %>
    </div>
 
-    <button><%= link_to 'Proceed to Checkout', new_charge_path %></button>
+    <button><%= link_to 'Proceed to Checkout', new_charge_path, data: { no_turbolink: true} %></button>
     <div>
       <h4>This page has drop down menu for choosing shipping & billing addresses from saved addresses</h4>
       <h4>Alternatively, user can fill out their addresses on a form and click save or carry through the address info to the next page </h4>
