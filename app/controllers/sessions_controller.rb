@@ -1,9 +1,10 @@
 class SessionsController < ApplicationController
   
   def new
-  
+    @disable_nav = true
   end
 
+  # create new login session
   def create
     user = User.find_by(user_name: params[:user_name])
     # If the user exists AND the password entered is correct.

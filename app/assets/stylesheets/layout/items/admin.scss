@@ -1,0 +1,137 @@
+@import 'master';
+
+// Mobile View
+//main is displayed as flex row...
+
+.admin-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  .admin--add-item-btn {
+    text-align: center;
+    @include main-btn(lighten($wet-gray, 20%), 20px);
+    color: white;
+    margin-bottom: 1rem ;
+
+  }
+
+  .admin-info-container {
+    // col 1
+    aside {
+
+    }
+    // end
+
+    // col 2
+    .admin-container {
+      .admin-card {
+        margin-bottom: 1rem;
+        background: $light-gray;
+        padding: .6rem;
+
+        .admin-items {
+          display: flex;
+          div {
+            @include flex(1);
+          }
+          .admin-item {
+            flex: 3;
+            padding-left: 15px;
+            li {
+              padding: 5px 0;
+
+              &:first-child {
+                font-weight: bold;
+
+              }
+
+            }
+          }
+
+        }
+      .admin-btns {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        padding: 0.75rem;
+
+        // update and delete buttons
+        a {
+          @include main-btn($wet-gray, 20px);
+          color: white;
+          &:last-child {
+            margin-left: 10%;
+          }
+
+        }
+      }
+
+      } // card end
+
+    }
+    //end
+  }
+}
+
+
+
+
+// Media-query
+
+// Tablet Layout
+@media ( min-width: 769px ) {
+
+.admin-wrapper {
+  width: 100%;
+
+  .admin--add-item-btn {
+    margin: 0 0 1rem auto;
+    width: 20%;
+  }
+
+  .admin-info-container {
+    display: flex;
+
+    aside,
+    .admin-container{
+      @include flex(1);
+    }
+    // col 1
+    aside {
+
+    }
+    // end
+
+    // col 2
+    .admin-container {
+      flex: 4;
+      .admin-card {
+
+        .admin-items {
+
+          div {
+
+          }
+          .admin-item {
+
+            li {
+
+            }
+          }
+
+        }
+        .admin-btns {
+
+        }
+      } // card end
+    }
+    //end
+  }
+  }
+} // end of Tablet
+
+// Desktop
+@media ( min-width: 1025px ) {
+
+} // end of media 1025

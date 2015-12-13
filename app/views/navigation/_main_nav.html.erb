@@ -1,43 +1,53 @@
+<section class="nav-container">
 
+  <!-- Inner container A -->
   <div class="btn-wrap">
-    <button id='mobile-filter-btn' class='mobile-filter-btn'> Filter </button>
 
     <%= link_to('/') do %>
       <h3> Pacifica Coffee </h3>
     <% end %>
 
-      <button id='mobile-menu-btn' class='mobile-menu-btn'> menu </button>
-    </div>
+    <!-- hambuger menu mobile only -->
+    <button id='mobile-menu-btn' class='mobile-menu-btn c-hamburger c-hamburger--htx'>
+     <span>menu</span>
+   </button>
 
-    <ul class="main-nav" id="main-nav">
+  </div>
+
+  <!-- Inner Container B -->
+  <ul class="main-nav" id="main-nav">
+
     <% if current_user %>
-      <li>
-        <a href="#"> Hello <%= current_user.user_name %> </a>
-      </li>
-      <li>
-        <%= link_to 'Cart', '/users/cart' %>
-      </li>
-      <li>
-        <%= link_to 'Order History', '/users/order_history' %>
-      </li>
+      <li><%= link_to "#{current_user.user_name}", '#', id: 'profileNavBtn' %></li>
+    <% end %>
+
+    <li><%= link_to 'Shop', '/items' %></li>
+
+    <% if current_user %>
+      <!-- link for dropdown profile -->
+
+      <li><%= link_to 'Cart', '/users/cart', data: { no_turbolink: true } %></li>
+
 
       <% if current_user.admin %>
 
-        <li>
-          <%= link_to 'admin view', '/admin' %></li>
-        <li>
-          <%= link_to 'user view', '/items' %>
-        </li>
+        <li><%= link_to 'admin', '/admin' %></li>
+
       <% end %>
-      <% else %>
-          <li>
-          <%= link_to 'Login', '/login' %>
-        </li>
-        <li>
-          <%= link_to 'Signup', '/signup' %>
-        </li>
-      <% end %>
-      <li>
-        <%= link_to "Logout", '/logout' %> </li>
-      <li>
-    </ul>
+
+    <% else %>
+
+      <li><%= link_to 'Login', '/login' %></li>
+      <li><%= link_to 'Signup', '/signup' %></li>
+
+    <% end %>
+
+  </ul>
+</section>
+
+<!-- append modal when profile button clicked...  -->
+<div class="profile-modal-tag" id="profile-modal-anchor">
+  <% if current_user %>
+    <%= render 'partials/nav_profile_modal' %>
+  <% end %>
+</div>

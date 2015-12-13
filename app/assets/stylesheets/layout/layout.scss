@@ -1,0 +1,87 @@
+@import 'master';
+
+.main-header, .main-nav {
+  @include display(flex);
+  @include flex-direction(column);
+  // is there a flex property for this
+  text-align: center;
+  font-family: 'NTR', sans-serif;
+}
+
+.main-header {
+  width: 100%;
+  position: fixed;
+  background-color: #fff;
+
+  @include tablet {
+    @include display(flex);
+    @include justify-content(center);
+    min-height: 4rem;
+  }
+}
+
+.btn-wrap {
+  @include display(flex);
+  @include align-items(center);
+  @include justify-content(space-between);
+  width: 95%;
+  margin: 0 auto;
+
+  h3 {
+    font-size: 1.6rem;
+  }
+
+  .mobile-menu-btn {
+    margin-right: -10px; // acount for hambuger padding
+    // Hide mobile btn in tablet
+    @include tablet {
+      display: none;
+    }
+  }
+}
+
+.main-nav {
+  display: none;
+
+  a {
+    color: darken( $light-gray, 30%);
+    text-decoration: none;
+    display: block;
+    padding: .5rem;
+    transition: all ease-in-out 0.35s;
+    @include tablet {
+      @include flex(1);
+      min-width: 75px;
+    }
+
+    &:hover {
+      color: darken( $light-gray, 90%);
+      transform: scale(1.2)
+    }
+  }
+
+  @include tablet{
+    @include display(flex);
+    @include flex-direction(row);
+  }
+}
+
+
+.main-footer {
+  font-family: 'NTR', sans-serif;
+  text-align: center;
+  padding: 0.5rem;
+  .footer-inner p {
+    padding: .3rem;
+  }
+}
+
+// Tablet Layout
+@include tablet {
+  .nav-container {
+    @include display(flex);
+    @include justify-content(space-between);
+    width: 95%;
+    margin: 0 auto;
+  }
+}

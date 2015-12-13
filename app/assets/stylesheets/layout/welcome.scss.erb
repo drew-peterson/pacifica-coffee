@@ -1,0 +1,147 @@
+@import 'master';
+
+
+.welcome-container{
+  @include display(flex);
+  @include flex-direction(column);
+
+}
+
+.hero-img {
+  @include display(flex);
+  @include justify-content(center);
+  margin: 0 -2.5%;
+  // Top image trick w/ linear-graident opacity..
+  background:  linear-gradient(
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.4)
+    ), url(<%= asset_path('splash.jpg') %>) no-repeat center center;
+  background-size: cover;
+  background-color: $light-gray;
+  height: 600px;
+  height: calc(90vh - 30px); //subtract the header height and margins
+
+
+
+  .hero-text {
+    @include display(flex);
+    @include flex-direction(column);
+    // column mode the axis change to align items center is for horizontal alignment
+    @include align-items(center);
+    @include justify-content(space-between);
+
+    margin: auto;
+    height: 50%;
+    text-align: center;
+    padding: 1rem;
+
+    // animation
+    animation-name: scale-up;
+    animation-duration: 1s;
+
+    h3,
+    p {
+      color: white;
+    }
+    h3 {
+      font-size: 3rem;
+      @include tablet {
+        font-size: 5rem;
+      }
+    }
+    p {
+      font-size: 1.7rem;
+      @include tablet {
+        font-size: 2rem;
+      }
+    }
+    a {
+      @include main-btn($wet-gray, 30px);
+      font-size: 1.5rem;
+      color: white;
+    }
+  }
+}
+
+.about {
+  margin: 3rem auto;
+}
+
+.about-content {
+  // same size rows...
+  .about-col {
+    @include flex(1);
+  }
+
+  @include display(flex);
+  @include flex-direction(column);
+  @include align-items(center);
+
+  font-size: 1.5rem;
+  .about-content-img {
+    background-color: $light-gray;
+    background: url('https://upload.wikimedia.org/wikipedia/commons/4/46/Vietnam_coffee_beans_VOA.jpg') no-repeat center center;
+    background-size: cover;
+
+    width: 200px;
+    height: 200px;
+
+
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+
+
+    // about-content-img
+    @include tablet {
+      height: 300px;
+      max-width: 300px;
+
+      -webkit-border-radius: 50%;
+      border-radius: 50%;
+
+
+    }
+  }
+
+  .about-content-text {
+    text-align: center;
+    margin-top: 1rem;
+
+
+    h4 {
+      text-align: center;
+      margin-bottom: 1rem;
+
+      @include tablet {
+        font-size: 1.7rem;
+        margin-top: 0;
+        text-align: left;
+      }
+    }
+
+    p {
+      font-size: 1.2rem;
+      @include tablet {
+        font-size: 1.5rem;
+      }
+    }
+
+    // about-content-text
+    @include tablet {
+      margin-top: 0;
+      margin-left: 5%;
+      padding: 0 2rem;
+      text-align: left;
+    }
+  }
+  // about-content
+  @include tablet {
+    @include flex-direction(row);
+  }
+}
+
+
+
+
+
+

@@ -19,17 +19,23 @@ Navigation
 <header class="main-header" id="main-header">
 
   <!-- Main Nav -->
-  <%= render "navigation/main_nav" %>
+  <%= render "navigation/main_nav" unless @disable_nav %>
 
 </header>
 
-<div class="error-notice">
-  <p><%= notice %></p>
-</div>
+<!-- Errors on top of page -->
+<%= render "partials/header_errors" %>
 
 <main>
   <%= yield %>
 </main>
+
+<footer class="main-footer">
+  <div class="footer-inner">
+    <p>&copy; 2016 Pacifica Coffee</p>
+    <p>Design by Drew Peterson and Si Cheng</p>
+  </div>
+</footer>
 
 </body>
 </html>

@@ -1,3 +1,5 @@
+// javascript cannot use undeclared variables
+"use strict";
 // var pacifica = {};
 // pacifica.mobile = true;
 // pacifica.test = "Drew Peterson"
@@ -64,15 +66,22 @@
 $(function(){
 
   // hide show mobile menu
-  $(document).on('click', '#mobile-menu-btn', function(){
-    $('#main-nav').slideToggle()
-
+  $("#main-header").on('click', '#mobile-menu-btn', function(){
+    $('#main-nav').slideToggle();
   })
 
-  $(document).on('click', '#mobile-filter-btn', function(){
-  $('.filter').slideToggle()
+  $("#main-header").on('click', '#mobile-filter-btn', function(){
+    $('.filter').slideToggle();
+  })
 
-})
+  // **********************
+  //Hamburger Jquery
+  // **********************
+
+  $("#main-header").on('click', '.c-hamburger', function(e){
+    $(this).toggleClass('is-active');
+  })
+
 }) // end of ready
 
 

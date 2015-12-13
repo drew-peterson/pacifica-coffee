@@ -1,0 +1,54 @@
+
+//**************************
+// Colors
+
+$wet-gray     : #34495e;
+$light-gray   : #ecf0f1;
+$gray         : #eee;
+$el-gray      :#f4f4f4;
+$emerald      : #2ecc71;
+$google-blue  : #4285f4;
+$off-white    : #fafafa;
+$text-gray    : #848484;
+
+$alert-green : #00c853;
+$error-red    : #e52727;
+
+
+//**************************
+// Primary colors Colors
+
+$primary-color: $light-gray;
+// $secondary-color: ;
+
+//**************************
+// Font family
+
+// NTR
+@import url(https://fonts.googleapis.com/css?family=NTR);
+
+// Font-size
+
+$base__font-size : 16px;
+$base__line      : 24px;
+
+
+
+$font--sm  : 14px ;
+$font--msm : 20px ;
+$font--med : 25px ;
+$font--lg  : 36px ;
+$font--xl  : 50px ;
+
+$font      : $font--msm ; // primary font
+
+// border radius
+$bd-radius: 0.4rem;
+
+// spacing
+$sp--xs  : 7px;
+$sp--sm  : 14px;
+$sp--msm : 20px;
+$sp--med : 25px;
+$sp--lg  : 36px ;
+$sp--xl  : 50px ;

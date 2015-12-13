@@ -1,0 +1,45 @@
+@import 'master';
+
+* {
+  box-sizing: border-box;
+  // and on line 36
+  font-family: 'NTR', sans-serif;
+  color: black;
+}
+
+
+// Mobile
+body {
+  @include display(flex);
+  @include flex-direction(column);
+  min-height: 100vh;
+
+  -webkit-font-smoothing: antialiased;
+}
+
+// NEED TO CLEAR the FIXED HEADER SOMEHOW...
+main {
+  margin: auto;
+  width: 95%;
+  // to clear fixed header need better way
+  margin-top: 4rem;
+
+  @include tablet { margin-top: 4.5rem;};
+
+}
+
+// google auto fill reset
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px $light-gray inset;
+  -webkit-text-fill-color: darken($light-gray, 50%) !important;
+}
+
+.slide-left {
+  animation: slide-left;
+  animation-duration: 0.5s;
+}
+
+.slide-right {
+  animation: slide-right;
+  animation-duration: 1s;
+}

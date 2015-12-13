@@ -1,0 +1,222 @@
+@import 'config';
+// **********************
+// Debugging
+
+@mixin debug {
+  border: 1px solid red;
+}
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+
+// **********************
+//Buttons
+
+
+@mixin main-btn($bg, $padding: 20px) {
+  background: $bg;
+  padding: ($padding / 2) $padding;
+  &:hover {
+    background:darken($bg,8%);
+    transition: all 0.5s ease;
+  }
+  &:active {
+    background:darken($bg,25%);
+  }
+  @content;
+}
+
+@mixin btn--large($bg) {
+  background: $bg;
+  padding: $sp--xs 0;
+  letter-spacing: 0.02em;
+  font-size: $font--msm;
+  color: white;
+  width: 100%;
+
+  &:hover {
+    background:darken($bg,8%);
+    transition: all 0.5s ease;
+  }
+  &:active {
+    background:darken($bg,25%);
+  }
+  @content;
+
+}
+
+
+// **********************
+// Modal
+
+@mixin modal($modal-height: 60vh, $modal-width: 80% ){
+
+  $opacity: 0.7;
+  $modal-half-height: calc($modal-height / 2);
+
+  -webkit-box-shadow: 0 0 2em rgba(0,0,0,0.5);
+  -webkit-border-radius: 0.4rem;
+
+  position: absolute;
+
+  top: 0;
+  // margin-top: 10vh;
+
+
+  left: 0;
+  margin-left: (100% - $modal-width) / 2;
+
+  // Container styles
+  min-height: $modal-height;
+  min-width: $modal-width;
+  background: $off-white;
+
+  &::after {
+    content: "";
+    display: block;
+    position: fixed; // abosolute position doesnt work...
+    top: 0;
+    left: 0;
+    z-index: -99; // look at this drew
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,$opacity);
+
+
+
+    @content;
+
+  }
+}
+
+// **********************
+// Form
+
+//
+
+@mixin form-style(){
+  margin: 0 auto;
+  text-align: center; // center p
+
+  &,
+  form {
+    @include display(flex);
+    @include flex-direction(column);
+  }
+
+  p {
+    font-size: $font--med;
+  }
+
+   input {
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    margin-top: 0.25rem;
+    margin-bottom: 0.5rem;
+    background-color: $light-gray;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem;
+    font-size: $font--msm;
+    color: darken($light-gray, 50%);
+
+    }
+  // submit button
+  .form-submit-btn {
+    font-size: 1.5rem;
+    color: white;
+    margin-top: 1.5rem;
+    padding: .3rem;
+    background-color: darken($light-gray, 50%);
+    transition: .3s ease-in;
+    &:hover {
+      background-color: darken($light-gray, 70%);
+    }
+  }
+
+  @include tablet {
+    width: 70%;
+  }
+  @include desktop {
+    width: 50%;
+  }
+};
+
+
+
+
+
+
+// **********************
+//Vendor Prefix for flexbox
+
+$prefixes: ('webkit', 'ms', 'moz', 'o');
+
+// Display
+@mixin display($value){
+  @each $prefix in $prefixes {
+    display: #{'-' + $prefix + '-' + $value}
+  }
+    display: $value;
+}
+
+//flex direction
+@mixin flex-direction($value){
+  @each $prefix in $prefixes {
+    #{'-' + $prefix + '-' + flex-direction}: $value;
+  }
+    flex-direction: $value;
+}
+
+//justify-content
+@mixin justify-content($value){
+  @each $prefix in $prefixes {
+    #{'-' + $prefix + '-' + justify-content}: #{'-' + $prefix + '-' + $value};
+  }
+    justify-content: $value;
+}
+
+//align-items
+@mixin align-items($value){
+  @each $prefix in $prefixes {
+    #{'-' + $prefix + '-' + align-items}: $value;
+  }
+    align-items: $value;
+}
+
+// flex
+@mixin flex($value){
+  @each $prefix in $prefixes {
+    #{'-' + $prefix + '-' + flex}: $value;
+  }
+    flex: $value;
+}
+
+
+
+// ***********************
+// Media Query mixin
+// ***********************
+
+
+$tablet-width: 769px;
+$desktop-width: 1025px;
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width})  {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}

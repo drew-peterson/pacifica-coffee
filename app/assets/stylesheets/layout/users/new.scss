@@ -1,0 +1,39 @@
+@import 'master';
+
+// Mobile header for login and signup only...
+.mobile-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1.5rem;
+  width: 100%;
+
+  a {
+    text-align: center;
+    font-size: 2rem;
+    text-decoration: none;
+  }
+}
+
+.signup-container {
+  @include form-style();
+  margin-top: 3rem;
+}
+
+
+.signup-login {
+  margin: auto;
+  font-size: 1.5rem;
+  color: black;
+  margin-top: .3rem;
+  padding: 1rem;
+  border-radius: 5px;
+  width: 80%;
+  transition: .3s ease-in;
+  &:hover {
+    color: white;
+    background-color: $emerald;
+  }
+}
+
+

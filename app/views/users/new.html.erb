@@ -1,12 +1,37 @@
-<h1>Signup</h1>
+<div class="mobile-header">
+  <%= link_to('/') do %>
+    <h3> Pacifica Coffee </h3>
+  <% end %>
+</div>
 
-<%= form_for :user, url: '/users' do |f| %>
-  First Name: <%= f.text_field :first_name %>
-  Last Name: <%= f.text_field :last_name %>
-  User Name: <%= f.text_field :user_name %>
-  Password: <%= f.password_field :password %>
-  Password Confirmation: <%= f.password_field :password_confirmation %>
-  Email: <%= f.email_field :email %>
-  Phone Number: <%= f.telephone_field :phone_number %>
-  <%= f.submit 'Submit' %>
-<% end %>
+
+<section class="signup-container">
+
+  <%= form_for :user, url: '/users' do |f| %>
+
+    <span class="signup-col">
+      <p>First Name</p>
+       <%= f.text_field :first_name %>
+      <p>Last Name</p>
+       <%= f.text_field :last_name %>
+    </span>
+
+    <span class="signup-col signup-col-2">
+      <p>User Name</p>
+       <%= f.text_field :user_name %>
+    </span>
+
+    <span class="signup-col signup-col-3">
+      <p>Password</p>
+       <%= f.password_field :password %>
+      <p>Password Confirmation</p>
+       <%= f.password_field :password_confirmation %>
+    </span>
+
+    <%= f.submit 'Submit', class: 'signup-submit-btn form-submit-btn' %>
+
+  <% end %>
+
+  <%= link_to 'Already have an account?', login_path, class: 'signup-login' %>
+
+</section>

@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
 
+#heroku asset pipeline -- drew
+gem 'rails_12factor', group: :production
 
 # generate random seed data
 gem 'faker'
@@ -21,6 +23,8 @@ gem 'coffee-rails', '~> 4.1.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+# Drew-- makes jquery work with turbolinks
+gem 'jquery-turbolinks'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder

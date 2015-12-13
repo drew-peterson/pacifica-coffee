@@ -1,0 +1,14 @@
+@import 'master';
+
+  .error-p {
+    text-align: center;
+    position: absolute;
+    padding: $sp--msm;
+    width: 100%;
+    color: white;
+    // forward keeps last state of animation until refresh
+    animation: errorFade 3s forwards;
+    font-size: 1.5rem;
+  }
+  .error-msg { background: $error-red; }
+  .alert-msg { background: $alert-green; }

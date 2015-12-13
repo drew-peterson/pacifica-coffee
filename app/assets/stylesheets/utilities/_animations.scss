@@ -1,0 +1,73 @@
+// **********************
+//Animation
+
+@keyframes scale-up {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+    }
+
+// ####################
+// Side right
+// ####################
+
+@keyframes slide-left {
+  0% {
+    -webkit-transform: translateX(100%);
+  }
+  50% {
+    -webkit-transform: translateX(-10%);
+  }
+  100% {
+    -webkit-transform: translateX(0%);
+
+  }
+}
+
+
+// ####################
+// Side Left
+// ####################
+@keyframes slide-right {
+  0% {
+    -webkit-transform: translateX(0%);
+  }
+  50% {
+    -webkit-transform: translateX(-10%);
+  }
+  100% {
+    -webkit-transform: translateX(100%);
+    display: none;
+  }
+}
+
+
+
+// Error message nav bar
+
+@keyframes errorFade {
+  0%, 100% {
+    opacity: 0;
+    -webkit-transform: scale(0.5);
+    }
+  20%, 70% {
+    opacity: 1;
+    -webkit-transform: scale(1.0);
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+
+@keyframes modal-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
