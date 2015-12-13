@@ -1,14 +1,9 @@
 class CreateItems < ActiveRecord::Migration
   def change
     create_table :items do |t|
-      t.string :item_name
+      t.string :item_name, :sku, :large_image, :small_image
+      t.integer :quantity, :price
       t.text :item_description
-      t.integer :quantity
-      t.integer :price
-      t.string :sku
-      t.string :large_image
-      t.string :small_image
-      t.integer :user_id
 
       t.timestamps null: false
     end
