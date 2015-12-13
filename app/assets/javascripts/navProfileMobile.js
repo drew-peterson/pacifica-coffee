@@ -28,6 +28,8 @@ $(function(){
       // add last order to html
       var html = data.html
 
+      // remove any html inside to reset
+      $('.profile-history-container').html('')
       // append partial to container
       $('.profile-history-container').append(html)
 
