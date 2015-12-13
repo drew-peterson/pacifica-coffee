@@ -1,0 +1,20 @@
+
+  <!-- header -->
+  <span class="profile-history-hover">
+  </span>
+  <div class="history-details" id="profileHistoryDetails">
+    <span class="date" > <%= @date %> </span>
+    <span class="total"> Total: <%= @total %> </span>
+
+  </div>
+
+  <!-- content -->
+  <ul class="history-content">
+    <% @items.each do |item, qty| %>
+        <li>
+          <span> <%= item.item_name%> </span>
+          <span> $<%= item.price %>.00 </span>
+        </li>
+    <% end %>
+  </ul>
+

@@ -17,9 +17,11 @@ Rails.application.routes.draw do
   get '/users/order_history' => 'users#order_history'
   get '/users/order_history/:id' => 'users#single_order_history'
 
+  get '/users/last_order' => 'users#last_order'
+
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
-  get '/logout' => 'sessions#destroy'  
+  get '/logout' => 'sessions#destroy'
 
   post '/addresses' => 'addresses#create'
 

@@ -1,0 +1,39 @@
+
+<section class="nav-profile-modal" id="navProfileModal">
+  <!-- nav bar w/ X -->
+  <div class="nav-top-wrapper">
+    <div class="modal-top-nav">
+      <h3> Hello <%= current_user.user_name %> </h3>
+      <button class="close-btn" id="close-btn">
+        <span>Close</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="nav-profile-modal-container">
+
+    <!-- Profile -->
+    <div class="profile-col col">
+      <h3>Profile</h3>
+    </div>
+
+    <!-- Order History -->
+    <div class=" history-col col">
+
+      <article class="profile-history-container">
+
+        <!-- append here -->
+
+      </article>
+
+      <!-- end of card -->
+    </div>
+
+    <!-- Logout -->
+    <div class="logout-col col">
+      <%= link_to 'logout', '/logout'%>
+    </div>
+
+
+  </div>
+</section>
