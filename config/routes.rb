@@ -15,8 +15,9 @@ Rails.application.routes.draw do
 
   # order history
   get '/orders' => 'orders#index'
-  get '/orders/recent' => 'orders#recent' #if I put this after show it does not work...
   get '/orders/:id' => 'orders#show'
+  # without /last it does not work, it tries to go do #show, unless i place before show... /recent before #show works, after Nope unless recent/last
+  get '/orders/recent/last' => 'orders#recent'
 
   # login
   get '/login' => 'sessions#new'

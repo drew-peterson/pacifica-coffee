@@ -23,7 +23,7 @@ $(function(){
 
     // get last order
     $.ajax({
-      url: '/orders/recent'
+      url: '/orders/recent/last'
     }).done(function(data){
       console.log("done")
       // add last order to html
