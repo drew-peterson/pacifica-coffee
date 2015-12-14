@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   root 'welcome#index'
 
   # user creation
@@ -12,11 +12,11 @@ Rails.application.routes.draw do
   post '/users/cart/update' => 'users#update_cart'
   delete '/users/cart' => 'users#destroy_from_cart'
   post '/users/cart' => 'users#add_to_cart'
-  
+
   # order history
   get '/orders' => 'orders#index'
+  get '/orders/recent' => 'orders#recent' #if I put this after show it does not work...
   get '/orders/:id' => 'orders#show'
-  get '/orders/recent' => 'orders#recent'
 
   # login
   get '/login' => 'sessions#new'

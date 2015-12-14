@@ -23,8 +23,9 @@ $(function(){
 
     // get last order
     $.ajax({
-      url: '/users/last_order'
+      url: '/orders/recent'
     }).done(function(data){
+      console.log("done")
       // add last order to html
       var html = data.html
 
