@@ -32,5 +32,5 @@ Address.create(nickname: "Joji's Loft", address: '654 321st st', city: 'Manhatta
 Address.create(nickname: "Joji's Mansion", address: '789 123rd ave', city: 'Beverly Hills', state: 'CA', zip: 99999, user_id: 1)
 
 # Testing key
-# PUBLISHABLE_KEY=sk_test_dLVNZ2c2HOfN6Ff5dcV1NbcF SECRET_KEY=pk_test_uksl51zPIOATT1torKitrzfN rails s
+# PUBLISHABLE_KEY=pk_test_6pRNASCoBOKtIshFeQd4XMUh SECRET_KEY=sk_test_BQokikJOvBiI2HlWgH4olfQ2 rails s
 

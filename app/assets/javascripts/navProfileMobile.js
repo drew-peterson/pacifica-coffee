@@ -60,7 +60,7 @@ $(function(){
     // Order history click
   $('#navProfileModal').on('click', '.history-col', function(e){
     // redirect to order history
-    window.location.href = '/users/order_history'
+    window.location.href = '/orders'
     // close modal
     closeModal()
   })
