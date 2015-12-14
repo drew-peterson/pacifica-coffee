@@ -23,4 +23,12 @@ $(function(){
   // change text
   stripeBtnSpan.text('Checkout')
 
+  // hide / show billing address based on check box
+  $('#user_billing_checkbox').change(function(){
+    if ($(this).is(':checked')) {
+      $('.billing_address').hide()
+    } else {
+      $('.billing_address').show()
+    }
+  });
 })
