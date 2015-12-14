@@ -23,11 +23,14 @@ $(function(){
 
     // get last order
     $.ajax({
-      url: '/users/last_order'
+      url: '/orders/recent/last'
     }).done(function(data){
+      console.log("done")
       // add last order to html
       var html = data.html
 
+      // remove any html inside to reset
+      $('.profile-history-container').html('')
       // append partial to container
       $('.profile-history-container').append(html)
 
@@ -58,7 +61,7 @@ $(function(){
     // Order history click
   $('#navProfileModal').on('click', '.history-col', function(e){
     // redirect to order history
-    window.location.href = '/users/order_history'
+    window.location.href = '/orders'
     // close modal
     closeModal()
   })
