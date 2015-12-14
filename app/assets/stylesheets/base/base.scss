@@ -21,10 +21,12 @@ body {
 main {
   margin: auto;
   width: 95%;
-  // to clear fixed header need better way
-  margin-top: 4rem;
 
-  @include tablet { margin-top: 4.5rem;};
+  margin-top: rem(55px);
+  // clear fixed header
+  @include tablet {
+    margin-top: rem(70px);
+  }
 
 }
 

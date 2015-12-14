@@ -6,6 +6,7 @@
   // is there a flex property for this
   text-align: center;
   font-family: 'NTR', sans-serif;
+  @include debug;
 }
 
 .main-header {
@@ -16,7 +17,7 @@
   @include tablet {
     @include display(flex);
     @include justify-content(center);
-    min-height: 4rem;
+    height: 4rem;
   }
 }
 
