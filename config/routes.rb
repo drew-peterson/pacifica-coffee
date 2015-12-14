@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   # cart
   get '/users/cart' => 'users#cart'
+  post '/users/cart' => 'users#proceed'
   get '/users/cart/checkout' => 'users#checkout'
   post '/users/cart/update' => 'users#update_cart'
   delete '/users/cart' => 'users#destroy_from_cart'

@@ -3,26 +3,8 @@
 <section class="cart-container">
 
   <aside class= "tablet-view cart-col">
-    <!-- Col 1
-    #########################-->
-    <!-- Cart Addresses -->
-    <div class="cart-address">
-      <div class="cart-address-selection">
-        <h3>Ship to:</h3>
-        <!-- See http://www.w3schools.com/tags/att_select_form.asp -->
-        <select name="checkout-address" form="#">
-          <% if @addresses.empty? %>
-            <option value="value1">No Saved Address</option>
-          <% else %>
-            <% @addresses.each do |address| %>
-              <option value="value1"><%= address.nickname %> - <%= "#{address.address} #{address.city} #{address.state} #{address.zip} " %> </option>
-            <% end %>
-          <% end %>
-        </select>
-      </div>
-  </div>
 
-  <!-- Col 2
+  <!-- Col 1
   #########################-->
 
   <!-- Cart Items -->
@@ -85,7 +67,7 @@
   </div>
 
   </aside>
-    <!-- Col 3
+    <!-- Col 2
     #########################-->
 
     <!-- Cart payment details -->
@@ -115,15 +97,14 @@
         <% end %>
       </div>
 
-      <!-- Address Container -->
-   <div>
-     <%= render 'addresses/form' %>
-   </div>
-
-    <button><%= link_to 'Proceed to Checkout', new_charge_path, data: { no_turbolink: true} %></button>
     <div>
-      <h4>This page has drop down menu for choosing shipping & billing addresses from saved addresses</h4>
-      <h4>Alternatively, user can fill out their addresses on a form and click save or carry through the address info to the next page </h4>
+      <%= render 'form' %>
+    </div>    
+
+      <!-- Address Container -->
+    <div>
+     <%= render 'addresses/form' %>
     </div>
+
   </div>
 </section>

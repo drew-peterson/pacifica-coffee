@@ -4697,3 +4697,122 @@ Processing by UsersController#cart as HTML
   Rendered navigation/_main_nav.html.erb (1.7ms)
   Rendered partials/_header_errors.html.erb (0.2ms)
 Completed 200 OK in 100ms (Views: 95.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2015-12-14 10:28:02 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (27.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (1.9ms)
+  Rendered navigation/_main_nav.html.erb (1.2ms)
+  Rendered partials/_header_errors.html.erb (0.8ms)
+Completed 200 OK in 1239ms (Views: 1228.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/base/base.self-5c9bec87f8aa7d713ff68210417107d03961c7cf2dcdce9c7557e6c3873dc327.css?body=1" for ::1 at 2015-12-14 10:28:04 -0800
+
+
+Started GET "/assets/layout/layout.self-fe1ad9cac2851f89de0b521c4a6b9133a97bc911ca8da787f1ed94fba568d50a.css?body=1" for ::1 at 2015-12-14 10:28:04 -0800
+
+
+Started GET "/assets/navProfileMobile.self-db6dcae0a338cf0197dacdac79908aad8913f44c6da6443c06371efbeab34a2d.js?body=1" for ::1 at 2015-12-14 10:28:05 -0800
+
+
+Started GET "/items" for ::1 at 2015-12-14 10:28:08 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.3ms)
+  [1m[35mItem Load (28.2ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (60.1ms)
+  Rendered navigation/_main_nav.html.erb (1.6ms)
+  Rendered partials/_header_errors.html.erb (1.1ms)
+Completed 200 OK in 284ms (Views: 244.6ms | ActiveRecord: 36.4ms)
+
+
+Started GET "/login" for ::1 at 2015-12-14 10:28:10 -0800
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.9ms)
+  Rendered partials/_header_errors.html.erb (0.2ms)
+Completed 200 OK in 226ms (Views: 224.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2015-12-14 10:28:12 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sd4hVvl/hiVAKNXwmJVWG2HROYklR6dttPb7kfTzCaJQA3ibRt1QdIAcSBYDMhLdu2jFYqU+/XflACeqK3+6mg==", "user_name"=>"daniel", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (24.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."user_name" = $1 LIMIT 1[0m  [["user_name", "daniel"]]
+Redirected to http://localhost:3000/items
+Completed 302 Found in 137ms (ActiveRecord: 26.6ms)
+
+
+Started GET "/items" for ::1 at 2015-12-14 10:28:12 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.4ms)
+  [1m[35mItem Load (0.6ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (9.7ms)
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered partials/_nav_profile_modal.html.erb (0.8ms)
+  Rendered navigation/_main_nav.html.erb (4.9ms)
+  Rendered partials/_header_errors.html.erb (0.1ms)
+Completed 200 OK in 136ms (Views: 133.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/orders/recent/last" for ::1 at 2015-12-14 10:28:14 -0800
+Processing by OrdersController#recent as */*
+  [1m[35mOrder Load (21.2ms)[0m  SELECT  "orders".* FROM "orders"  ORDER BY "orders"."id" DESC LIMIT 1
+  [1m[36mItem Load (1.7ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 46246]]
+  [1m[35mItem Load (0.8ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 86056]]
+  Rendered partials/_profile_history_last.html.erb (1.9ms)
+Completed 200 OK in 201ms (Views: 0.5ms | ActiveRecord: 25.7ms)
+
+
+Started GET "/" for ::1 at 2015-12-14 10:28:30 -0800
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered partials/_nav_profile_modal.html.erb (0.6ms)
+  Rendered navigation/_main_nav.html.erb (3.5ms)
+  Rendered partials/_header_errors.html.erb (0.2ms)
+Completed 200 OK in 135ms (Views: 134.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/orders/recent/last" for ::1 at 2015-12-14 10:28:32 -0800
+Processing by OrdersController#recent as */*
+  [1m[35mOrder Load (3.2ms)[0m  SELECT  "orders".* FROM "orders"  ORDER BY "orders"."id" DESC LIMIT 1
+  [1m[36mItem Load (0.5ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 46246]]
+  [1m[35mItem Load (0.4ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 86056]]
+  Rendered partials/_profile_history_last.html.erb (0.3ms)
+Completed 200 OK in 18ms (Views: 0.4ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/orders/recent/last" for ::1 at 2015-12-14 10:28:43 -0800
+Processing by OrdersController#recent as */*
+  [1m[36mOrder Load (0.5ms)[0m  [1mSELECT  "orders".* FROM "orders"  ORDER BY "orders"."id" DESC LIMIT 1[0m
+  [1m[35mItem Load (0.7ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 46246]]
+  [1m[36mItem Load (1.6ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 86056]]
+  Rendered partials/_profile_history_last.html.erb (0.2ms)
+Completed 200 OK in 13ms (Views: 0.5ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/orders/recent/last" for ::1 at 2015-12-14 10:29:35 -0800
+Processing by OrdersController#recent as */*
+  [1m[35mOrder Load (0.4ms)[0m  SELECT  "orders".* FROM "orders"  ORDER BY "orders"."id" DESC LIMIT 1
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 46246]]
+  [1m[35mItem Load (1.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 86056]]
+  Rendered partials/_profile_history_last.html.erb (0.2ms)
+Completed 200 OK in 13ms (Views: 0.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/orders/recent/last" for ::1 at 2015-12-14 10:29:39 -0800
+Processing by OrdersController#recent as */*
+  [1m[36mOrder Load (2.6ms)[0m  [1mSELECT  "orders".* FROM "orders"  ORDER BY "orders"."id" DESC LIMIT 1[0m
+  [1m[35mItem Load (0.7ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 46246]]
+  [1m[36mItem Load (1.8ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 86056]]
+  Rendered partials/_profile_history_last.html.erb (0.3ms)
+Completed 200 OK in 15ms (Views: 0.4ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/orders/recent/last" for ::1 at 2015-12-14 10:29:44 -0800
+Processing by OrdersController#recent as */*
+  [1m[35mOrder Load (0.9ms)[0m  SELECT  "orders".* FROM "orders"  ORDER BY "orders"."id" DESC LIMIT 1
+  [1m[36mItem Load (1.3ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 46246]]
+  [1m[35mItem Load (2.8ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 86056]]
+  Rendered partials/_profile_history_last.html.erb (0.3ms)
+Completed 200 OK in 16ms (Views: 0.4ms | ActiveRecord: 5.1ms)
