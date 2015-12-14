@@ -1,0 +1,16 @@
+<h1>Profile</h1>
+
+<div class="container" style="border-bottom: 1px solid black; margin-bottom: 5px;">
+  <ul>
+   <%= link_to "Order History", "/users/order_history/" %>
+</div>
+<div class="user-profile">
+    <p>Account Information:</p>
+    <ul>Name: <%=current_user.first_name%> <%=current_user.last_name%></ul>
+    <ul>Username: <%=current_user.user_name%></ul>
+    <ul>Email: <%=current_user.email%></ul>
+    <ul>Phone: <%=current_user.phone_number%></ul>
+  </ul>
+  <%#render addresses/form%>
+</div>
+

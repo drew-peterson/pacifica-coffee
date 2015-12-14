@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   post '/users/cart/update' => 'users#update_cart'
   delete '/users/cart' => 'users#destroy_from_cart'
   post '/users/cart' => 'users#add_to_cart'
+  # James - user profile
+  get '/users/profile/:id' => 'users#profile'
 
   # order history
   get '/orders' => 'orders#index'
