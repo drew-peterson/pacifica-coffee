@@ -12,7 +12,13 @@ Rails.application.routes.draw do
   get '/users/cart/checkout' => 'users#checkout'
   post '/users/cart/update' => 'users#update_cart'
   delete '/users/cart' => 'users#destroy_from_cart'
+
+  post '/users/cart' => 'users#add_to_cart'
+  # James - user profile
+  get '/users/profile/:id' => 'users#profile'
+
   post '/users/cart/proceed' => 'users#proceed'
+
 
   # order history
   get '/orders' => 'orders#index'
