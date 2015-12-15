@@ -11,9 +11,6 @@ Processing by WelcomeController#index as HTML
 Completed 200 OK in 4941ms (Views: 4872.3ms | ActiveRecord: 56.9ms)
 
 
-Started GET "/assets/base/base.self-440a3aeea38d919fa829c0dd29b95c23f66b5046b3c34a2a5c7b4edb59c4dd7a.css?body=1" for ::1 at 2015-12-13 15:00:04 -0800
-
-
 Started GET "/assets/components/_close_btn.self-dbbfc67765a27970145936a96888bfba3ff4ceffb51097c6f40f487742964aa6.css?body=1" for ::1 at 2015-12-13 15:00:04 -0800
 
 
