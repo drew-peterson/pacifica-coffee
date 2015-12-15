@@ -60,7 +60,7 @@ class UsersController < ApplicationController
   end
 
   def proceed
-    redirect_to users_cart_checkout_path
+    redirect_to new_charge_path
   end
   
   def checkout
