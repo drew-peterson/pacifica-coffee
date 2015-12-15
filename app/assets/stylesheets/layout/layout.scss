@@ -1,12 +1,12 @@
 @import 'master';
 
 .main-header, .main-nav {
+  @include debug;
   @include display(flex);
   @include flex-direction(column);
   // is there a flex property for this
   text-align: center;
   font-family: 'NTR', sans-serif;
-  @include debug;
 }
 
 .main-header {

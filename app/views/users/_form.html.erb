@@ -1,0 +1,38 @@
+<%= form_for :user, url: users_cart_proceed_path do |f| %>
+
+   <% @addresses = Address.where(user_id: current_user.id) %>
+
+   <p>Shipping Address:<br /></p>
+
+   <select name="shipping-address" form="#">
+     <% if @addresses.empty? %>
+       <option value="value1">No Saved Address</option>
+     <% else %>
+       <% @addresses.each do |address| %>
+         <option value="value1"><%= address.nickname %> - <%= "#{address.address} #{address.city} #{address.state} #{address.zip} " %> </option>
+       <% end %>
+     <% end %>
+   </select>
+
+   <p>Check if Billing Address is the same <%= f.check_box 'billing_checkbox' %></p>
+
+   <p class='billing_address'>Billing Address:<br /></p>
+
+   <select name="billing-address" form="#" class='billing_address'>
+     <% if @addresses.empty? %>
+       <option value="value1">No Saved Address</option>
+     <% else %>
+       <% @addresses.each do |address| %>
+         <option value="value1"><%= address.nickname %> - <%= "#{address.address} #{address.city} #{address.state} #{address.zip} " %> </option>
+       <% end %>
+     <% end %>
+   </select>
+
+   <!-- hidden field passing over user_id for strong params -->
+   <%= f.hidden_field :user_id, :value => current_user.id %>
+ <p>
+   <button><%= f.submit 'Proceed to Checkout' %></button>
+ </p>
+<% end %>
+
+ 
