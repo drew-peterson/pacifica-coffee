@@ -14,7 +14,7 @@
 
     <!-- Profile -->
     <div class="profile-col col">
-      <a href="users/profile/#{current_user.id}"><h3>Profile</h3></a>
+      <h3><%= link_to "Profile", "/users/profile/#{current_user.id}" %></h3>
     </div>
 
     <!-- Order History -->

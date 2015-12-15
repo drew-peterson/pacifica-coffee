@@ -1,0 +1,140 @@
+@import 'master';
+
+
+/** {
+  box-sizing: border-box;
+  // and on line 36
+  font-family: 'NTR', sans-serif;
+  color: black;
+}*/
+
+
+// Mobile
+/*body {
+  @include display(flex);
+  @include flex-direction(column);
+  min-height: 100vh;
+
+  -webkit-font-smoothing: antialiased;
+}*/
+
+
+
+// google auto fill reset
+/*input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px $light-gray inset;
+  -webkit-text-fill-color: darken($light-gray, 50%) !important;
+}
+
+
+.slide-left {
+  animation: slide-left;
+  animation-duration: 0.5s;
+}
+
+.slide-right {
+  animation: slide-right;
+  animation-duration: 1s;
+}*/
+
+/*.main-profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+*/
+.main-profile {
+    /*position: absolute;*/
+    top: 100px;
+    bottom: 0px;
+    width: 100%;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#ffffff));
+    background-image: -webkit-linear-gradient(top, #ffffff, #ffffff);
+    background-image:    -moz-linear-gradient(top, #ffffff, #ffffff);
+    background-image:      -o-linear-gradient(top, #ffffff, #ffffff);
+    background-image:         linear-gradient(to bottom, #ffffff, #ffffff);
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-flex-flow: column wrap;
+    flex-flow: column wrap;
+    -webkit-align-content: center;
+    align-content: center;
+
+}
+
+.order-history {
+  margin: auto;
+  font-size: 1.5rem;
+  color: black;
+  /*margin-top: .3rem;
+  padding: 0.3rem;
+  border-radius: 5px;
+  width: 15%; */
+  transition: .3s ease-in;
+  &:hover {
+    color: white;
+    background-color: $emerald;
+  }
+}
+
+.profile-col-2 {
+  font-size: 1.5rem;
+  padding: 1rem;
+  @include justify-content(center);
+   background: linear-gradient(
+    rgba(255,255,255, 0.3),
+    rgba(255,255,255, 0.3)
+    ),url('https://media.licdn.com/media/AAEAAQAAAAAAAAY8AAAAJGEzNzY0Yzg5LTNiMzItNGE0ZS05MzFlLWU1MmY1MDhlMmEzYQ.jpg') no-repeat center center;
+    background-size: contain;
+
+    h3 {
+      color: white;
+      font-size: $font--lg;
+    }
+  &:hover {
+    background: url('https://media.licdn.com/media/AAEAAQAAAAAAAAY8AAAAJGEzNzY0Yzg5LTNiMzItNGE0ZS05MzFlLWU1MmY1MDhlMmEzYQ.jpg') no-repeat center center;
+    background-size: contain;
+    // can also set px height width
+  }
+}
+
+
+.new-address {
+  margin: auto;
+  font-size: 1.5rem;
+  color: black;
+  /*margin-top: .3rem;
+  padding: 0.3rem;
+  border-radius: 5px;
+  width: 15%; */
+  justify-content: space-around;
+  align-items: flex-end;
+  transition: .3s ease-in;
+  &:hover {
+    color: white;
+    background-color: $emerald;
+  }
+}
+
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 1.5rem;
+  color: black;
+  /*margin-top: .3rem;
+  padding: 0.3rem;
+  border-radius: 5px;
+  width: 15%;*/
+  transition: .3s ease-in;
+  &:hover {
+    color: white;
+    background-color: $emerald;
+  }
+}
+
