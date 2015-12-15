@@ -13,13 +13,15 @@
 
 
 /*.main-profile {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-*/
+  @include display(flex);
+  @include flex-direction(column);
+}*/
+
 .main-profile {
     /*position: absolute;*/
+    @include display(flex);
+    @include align-items(center);
+    @include justify-content(center);
     top: 100px;
     bottom: 0px;
     width: 100%;
@@ -28,12 +30,6 @@
     background-image:    -moz-linear-gradient(top, #ffffff, #ffffff);
     background-image:      -o-linear-gradient(top, #ffffff, #ffffff);
     background-image:         linear-gradient(to bottom, #ffffff, #ffffff);
-    display: -webkit-flex;
-    display: flex;
-    -webkit-align-items: center;
-    align-items: center;
-    -webkit-justify-content: center;
-    justify-content: center;
     -webkit-flex-flow: column wrap;
     flex-flow: column wrap;
     -webkit-align-content: center;
