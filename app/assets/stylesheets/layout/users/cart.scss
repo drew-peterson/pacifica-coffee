@@ -2,6 +2,7 @@
 
 // Tablet view stuff
 .cart-col {
+  @include debug;
   @include tablet {
     flex: 1;
   }
@@ -13,7 +14,6 @@
 }
 
 .cart-container {
-
   @include display(flex);
   @include flex-direction(column);
   margin: 0 auto;

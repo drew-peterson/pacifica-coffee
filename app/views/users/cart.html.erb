@@ -1,110 +1,52 @@
-
-
 <section class="cart-container">
-
-  <aside class= "tablet-view cart-col">
 
   <!-- Col 1
   #########################-->
+  <aside class= "tablet-view cart-col">
 
-  <!-- Cart Items -->
-  <div class="cart-items" id="cart-item">
-     <% prices = [] %>
-    <ul>
-      <% @items.each do |item, qty| %>
-        <div class="cart-item">
-
-          <!-- checkout-item-wrapper -->
-          <div class="cart-item-wrapper">
-
-            <!-- col 1 -->
-            <!-- image -->
-            <div class="cart-item-image cart-item-col">
-              <span>Product image</span>
-            </div>
-
-            <!-- col 2 -->
-            <!-- Name -->
-            <div class="cart-item-name cart-item-col">
-              <li> <%= item.item_name %> </li>
-            </div>
-
-            <!-- col 3 -->
-            <!-- details -->
-            <div class="cart-item-details cart-item-col">
-
-              <li> $<%= item.price %>.00
-                    <% prices << item.price * qty.to_i %>
-              </li>
-
-              <li>
-                <%= form_for :user, url: '/users/cart/update' do |f| %>
-                  <%= hidden_field_tag('item_id', value = item.id) %>
-                  <%= hidden_field_tag('old_qty', value = qty) %>
-
-                  <!-- Used fields -->
-                  <%= number_field_tag('qty', value = qty, min: 1) %>
-              </li>
-
-              <li class="cart-item-update-btn">
-                  <%= f.submit 'Update' %>
-                <% end %>
-              </li>
-
-            </div>
-          </div>
-
-            <!-- remove item -->
-
-              <%= link_to 'Remove Item', users_cart_path(item_id: item.id), method: :delete, class: 'cart-item-remove--btn' %>
-
-          </div>
-        <% end %>
-
-      </ul>
-    </div>
-  <!-- address item end -->
-  </div>
+    <!-- item cards -->
+    <%= render 'partials/cart_items', locals: {items: @items} %>
 
   </aside>
-    <!-- Col 2
-    #########################-->
 
-    <!-- Cart payment details -->
-    <div class="cart-col cart-details">
+  <!-- Col 2
+  #########################-->
 
-      <!-- Total and Pay container  -->
-      <div class="cart-details-total">
-        <h3> Order Summary </h3>
-        <% if current_user && current_user.cart != '' %>
-          <%= form_tag charges_path do %>
-            <article>
-              <% if flash[:error].present? %>
-                <div id="error_explanation">
-                  <p><%= flash[:error] %></p>
-                </div>
-              <% end %>
-              <label class="amount">
-                <span>Total:</span>
-                <span>$<%= @cart_total %>.00</span>
-              </label>
-            </article>
+  <!-- Cart payment details -->
+  <div class="cart-col cart-details">
 
-          <% end %>
+    <!-- Total and Pay container  -->
+    <div class="cart-details-total">
+      <h3> Order Summary </h3>
+      <% if current_user && current_user.cart != '' %>
+        <%= form_tag charges_path do %>
+          <article>
+            <% if flash[:error].present? %>
+              <div id="error_explanation">
+                <p><%= flash[:error] %></p>
+              </div>
+            <% end %>
+            <label class="amount">
+              <span>Total:</span>
+              <span>$<%= @cart_total %>.00</span>
+            </label>
+          </article>
 
-        <% else %>
-          <h4>Your Shopping Cart is Empty</h4>
         <% end %>
-      </div>
 
-    <div>
-      <%= render 'form' %>
-    </div>    
-
-      <!-- Address Container -->
-    <div>
-     <%= render 'addresses/form' %>
+      <% else %>
+        <h4>Your Shopping Cart is Empty</h4>
+      <% end %>
     </div>
 
+  <div>
+    <%= render 'form' %>
   </div>
+
+    <!-- Address Container -->
+  <div>
+   <%= render 'addresses/form' %>
+  </div>
+
+</div>
 </section>
