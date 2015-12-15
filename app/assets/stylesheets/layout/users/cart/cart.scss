@@ -1,0 +1,85 @@
+@import 'master';
+
+// Tablet view stuff
+.cart-col {
+  @include debug;
+  @include tablet {
+    flex: 1;
+  }
+}
+
+.tablet-view {
+  flex: 2;
+  margin-right: $sp--lg;
+}
+
+.cart-container {
+  @include display(flex);
+  @include flex-direction(column);
+  margin: 0 auto;
+  width: 100%;
+  background: white;
+
+  @include tablet {
+    @include flex-direction(row);
+  }
+
+} // end of cart-container
+
+// ******************
+// Address Column
+// ******************
+
+.cart-address-selection {
+  margin-bottom: $sp--med;
+  padding: $sp--med;
+  border: 1px solid $emerald;
+
+  @include tablet {
+  }
+}
+
+
+
+
+// #######################
+// total payment details
+.cart-details {
+  margin-top: $sp--med;
+  @include tablet {
+    margin: 0;
+  }
+}
+
+.cart-details-total {
+  h3 {
+    font-size: $font--med;
+    margin-bottom: $sp--med;
+  }
+  .amount {
+    @include display(flex);
+    @include justify-content(space-between);
+    font-size: $font--msm;
+  }
+}
+
+.stripe-button-el {
+  margin-top: $sp--lg;
+  background-image: none;
+  min-height: 60px;
+  line-height: 60px;
+  background: none;
+  background-color: none;
+  width: 100%;
+
+  transition: all .3s ease-in;
+  span {
+    background: none;
+    background-image: none;
+    background-color: none;
+  }
+}
+
+
+
+

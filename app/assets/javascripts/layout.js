@@ -93,6 +93,21 @@ $(function(){
   })
 
 
+  // Add boxshadow when scroll past header
+
+  $(window).scroll(function(){
+    // get height of nav
+    var navHeight = $('#main-header').outerHeight()
+    // get scroll position
+    var currrentPosition = $(window).scrollTop()
+    if (currrentPosition > navHeight){
+      $('#main-header').css('-webkit-box-shadow', '0 0 1em rgba(0,0,0,0.2)')
+    }else {
+      $('#main-header').css('-webkit-box-shadow', 'none')
+    }
+  })
+
+
 
 
 }) // end of ready
