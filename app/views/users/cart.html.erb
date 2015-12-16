@@ -2,16 +2,20 @@
 
   <!-- Col 1
   #########################-->
-  <section class= "tablet-view cart-col">
+  <section class= "cart-col">
+
+    <% if current_user.cart != '' %>
 
     <!-- item cards -->
-    <% if current_user.cart != '' %>
       <%= render 'partials/cart_items', locals: {items: @items} %>
+
     <% else %>
+
     <div class="empty-cart">
       <h4>Your Shopping Cart is Empty</h4>
       <%= link_to 'add more items', items_path %>
     </div>
+
     <% end %>
   </section>
 
@@ -19,46 +23,46 @@
 
   <!-- Col 2
   #########################-->
-
+<% if current_user && current_user.cart != '' %>
+  <!-- stripe error -->
+  <%= form_tag charges_path do %>
+    <article>
+      <% if flash[:error].present? %>
+        <div id="error_explanation">
+          <p><%= flash[:error] %></p>
+        </div>
+      <% end %>
+    </article>
+  <% end %>
 
   <!-- Cart payment details -->
   <div class="cart-col cart-details">
+    <!-- end of error -->
 
-  <% if current_user && current_user.cart != '' %>
-    <!-- Total and Pay container  -->
-    <div class="cart-details-total">
+<!-- Address -->
+    <div class="cart-addresses">
 
-      <h3> Order Summary </h3>
+      <div class="cart-select-address">
+        <%= render 'form' %>
+      </div>
 
-      <%= form_tag charges_path do %>
-        <article>
-          <!-- Error -->
-          <% if flash[:error].present? %>
-
-            <div id="error_explanation">
-              <p><%= flash[:error] %></p>
-            </div>
-          <% end %>
-
-          <label class="amount">
-            <span>Total:</span>
-            <span>$<%= @cart_total %>.00</span>
-          </label>
-        </article>
-      <% end %>
-      <!-- end of form -->
+      <div class="cart-add-address">
+        <input id="cart-show-address" type="checkbox">
+        <label for="cart-show-address"> Add new address </label>
+        <%= render 'addresses/form' %>
+      </div>
 
     </div>
 
-  <div>
-    <%= render 'form' %>
-  </div>
-    <!-- Address Container -->
-  <div>
-   <%= render 'addresses/form' %>
-  </div>
+  <!-- dollar amount -->
+    <div class="cart-details-total">
+      <span>Total:</span>
+      <span>$<%= @cart_total %>.00</span>
+    </div>
 
-      <% end %>
-</div>
+  </div>
+  <!-- end of col 2 -->
+<% end %>
+<!-- end of hide if no items in cart -->
 
 </section>

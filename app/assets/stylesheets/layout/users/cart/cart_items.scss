@@ -4,33 +4,6 @@
 // items Column
 // ******************
 
-.empty-cart {
-
-  position: absolute;
-  width: 95%;
-  margin: $sp--msm auto;
-  text-align: center;
-
-  h4 {
-    font-size: $font--lg;
-    margin-bottom: $sp--lg;
-    @include tablet {
-      font-size: $font--xl;
-    }
-  }
-  a {
-   @include btn--large($text-gray);
-   width: 60%;
-   @include tablet {
-
-     width: 20%;
-
-   }
- }
-
-}
-
-
 .cart-item {
   @include display(flex);
   @include flex-direction(column);

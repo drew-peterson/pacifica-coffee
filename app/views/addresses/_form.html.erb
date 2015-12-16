@@ -1,29 +1,24 @@
 <%= form_for :address, url: addresses_path do |f| %>
- <p>
-   Address Name:<br />
-   <%= f.text_field :nickname %>
- </p>
- <p>
-   Address:<br />
-   <%= f.text_field :address %>
- </p>
- <p>
-   City:<br />
-   <%= f.text_field :city %>
- </p>
- <p>
-   State:<br />
-   <%= f.text_field :state %>
- </p>
- <p>
-   Zip:<br />
-   <%= f.text_field :zip %>
- </p>
+
+ <p> Address Name: </p>
+ <%= f.text_field :nickname %>
+
+ <p>Address: </p>
+ <%= f.text_field :address %>
+
+ <p> City: </p>
+ <%= f.text_field :city %>
+
+ <p> State: </p>
+ <%= f.text_field :state %>
+
+ <p> Zip: </p>
+ <%= f.text_field :zip %>
+
    <!-- hidden field passing over user_id for strong params -->
    <%= f.hidden_field :user_id, :value => current_user.id %>
- <p>
-   <button><%= f.submit 'Save' %></button>
- </p>
+
+   <%= f.submit 'Save' , class: 'form-submit-btn' %>
+
 <% end %>
 
- 
