@@ -36,6 +36,13 @@ input:-webkit-autofill {
   -webkit-text-fill-color: darken($light-gray, 50%) !important;
 }
 
+input[type='text'],
+input[type='password'],
+input[type='email'],
+input[type='number'] {
+  font-family: sans-serif;
+}
+
 .slide-left {
   animation: slide-left;
   animation-duration: 0.5s;
