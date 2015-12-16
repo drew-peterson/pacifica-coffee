@@ -17,30 +17,50 @@
   @include flex-direction(column);
 }*/
 
+#profile-container {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+#profile-container h2 {
+  font-size: 2rem;
+}
+
+#profile-container div {
+  width: 50%;
+  height: 50%;
+  float: left;
+}
+
 .main-profile {
-    /*position: absolute;*/
-    @include display(flex);
+    /*@include display(flex);
     @include align-items(center);
-    @include justify-content(center);
-    top: 100px;
+    @include justify-content(center);*/
+
+/*    @include debug;
+*/    /*top: 100px;
     bottom: 0px;
-    width: 100%;
+    width: 100%;*/
     background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#ffffff));
     background-image: -webkit-linear-gradient(top, #ffffff, #ffffff);
     background-image:    -moz-linear-gradient(top, #ffffff, #ffffff);
     background-image:      -o-linear-gradient(top, #ffffff, #ffffff);
     background-image:         linear-gradient(to bottom, #ffffff, #ffffff);
-    -webkit-flex-flow: column wrap;
+   /* -webkit-flex-flow: column wrap;
     flex-flow: column wrap;
     -webkit-align-content: center;
-    align-content: center;
+    align-content: center;*/
 
 }
 
 .order-history {
   margin: auto;
+  border: 2px solid black;
   font-size: 1.5rem;
+  padding: 1em;
   color: black;
+  text-decoration: underline;
   /*margin-top: .3rem;
   padding: 0.3rem;
   border-radius: 5px;
@@ -54,8 +74,8 @@
 
 .profile-col-2 {
   font-size: 1.5rem;
-  padding: 1rem;
-  @include justify-content(center);
+  padding: 6rem;
+  /*@include justify-content(center);*/
    background: linear-gradient(
     rgba(255,255,255, 0.3),
     rgba(255,255,255, 0.3)
@@ -75,8 +95,9 @@
 
 
 .new-address {
-  margin: auto;
+  /*margin: auto;*/
   font-size: 1.5rem;
+  padding: 1em;
   color: black;
   /*margin-top: .3rem;
   padding: 0.3rem;
@@ -93,9 +114,11 @@
 
 
 .user-info {
-  display: flex;
+  padding: 1em;
+  border: 2px solid black;
+  /*display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-between;*/
   font-size: 1.5rem;
   color: black;
   /*margin-top: .3rem;
@@ -107,5 +130,10 @@
     color: white;
     background-color: $emerald;
   }
+}
+
+.user-info h3 {
+  text-decoration: underline;
+  padding-bottom: 0.5rem;
 }
 
