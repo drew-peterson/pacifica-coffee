@@ -116,6 +116,7 @@
 
    input {
     text-align: center;
+    height: rem(60px);
     width: 80%;
     margin: auto;
     margin-top: 0.25rem;
@@ -126,7 +127,6 @@
     padding: 0.5rem;
     font-size: $font--msm;
     color: darken($light-gray, 50%);
-
     }
   // submit button
   .form-submit-btn {

@@ -9,11 +9,19 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   def authorize
-    redirect_to '/login', notice: 'Unauthorized user, Please login' unless current_user
+    unless current_user
+      flash[:user_unauthorized] = 'Unauthorized user, Please login'
+      redirect_to '/login'
+    end
   end
 
   def admin_access
-    redirect_to '/items', notice: 'Unauthorized user, Admin only' unless current_user.admin
+    unless current_user
+      flash[:admin_unauthorized] = 'Unauthorized user, Admin only'
+      redirect_to '/items'
+    end
   end
 
 end
+
+
