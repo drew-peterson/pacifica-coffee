@@ -1,8 +1,8 @@
 <%= form_for :user, url: users_cart_proceed_path do |f| %>
 
-   <% @addresses = Address.where(user_id: current_user.id) %>
+  <% @addresses = Address.where(user_id: current_user.id) %>
 
-   <p>Shipping Address:<br /></p>
+  <p>Shipping Address:<br /></p>
 
   <%= f.select(:shipping_address) do %>
     <% @addresses.each do |a| -%>
@@ -11,23 +11,22 @@
     <% end %>
   <% end %>
 
+  <p>Check if Billing Address is the same <%= f.check_box 'billing_checkbox' %></p>
 
-   <p>Check if Billing Address is the same <%= f.check_box 'billing_checkbox' %></p>
-
-   <p class='billing_address'>Billing Address:<br /></p>
+  <p class='billing_address'>Billing Address:<br /></p>
    
-   <%= f.select(:billing_address) do %>
-     <% @addresses.each do |a| -%>
-       <% address = "#{a.nickname} - #{a.address} #{a.city} #{a.state} #{a.zip} " %>
-       <%= content_tag(:option, address, value: a.address) %>
-     <% end %>
-   <% end %>
+  <%= f.select(:billing_address) do %>
+    <% @addresses.each do |a| -%>
+      <% address = "#{a.nickname} - #{a.address} #{a.city} #{a.state} #{a.zip} " %>
+      <%= content_tag(:option, address, value: a.address) %>
+    <% end %>
+  <% end %>
 
-   <!-- hidden field passing over user_id for strong params -->
-   <%= f.hidden_field :user_id, :value => current_user.id %>
- <p>
-   <button><%= f.submit 'Proceed to Checkout' %></button>
- </p>
+  <!-- hidden field passing over user_id for strong params -->
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+  
+  <%= f.submit 'Proceed to Checkout', class: 'stripe-button-el' %>
+  
 <% end %>
 
  
