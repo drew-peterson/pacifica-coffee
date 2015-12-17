@@ -45,7 +45,6 @@
 
 
 .cart-item {
-  // @include debug;
   @include display(flex);
   @include flex-direction(column);
 

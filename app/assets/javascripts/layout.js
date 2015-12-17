@@ -67,20 +67,33 @@ $(function(){
 
   // hide show mobile menu
   $("#main-header").on('click', '#mobile-menu-btn', function(){
+
+    // slide the nav down
     $('#main-nav').slideToggle();
+
+    // run animation on hamburger btn
+    $(this).toggleClass('is-active');
+
+
+    // on resize of window
+    $(window).resize(function(){
+      checkWidth()
+    })
+
+    function checkWidth() {
+      // if the window is tablet and above display nav flex
+      if ($(window).width() > 769) {
+        $('#main-nav').css('display', '-webkit-flex')
+      }
+    }
   })
 
   $("#main-header").on('click', '#mobile-filter-btn', function(){
     $('.filter').slideToggle();
   })
 
-  // **********************
-  //Hamburger Jquery
-  // **********************
 
-  $("#main-header").on('click', '.c-hamburger', function(e){
-    $(this).toggleClass('is-active');
-  })
+
 
 }) // end of ready
 
