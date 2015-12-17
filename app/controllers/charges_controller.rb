@@ -9,6 +9,8 @@ class ChargesController < ApplicationController
   end
 
   def create
+    # Check inventory before perform actual charge 
+
     # Amount in cents
     cart_total  
     @amount = @cart_total * 100
