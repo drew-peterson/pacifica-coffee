@@ -43,29 +43,10 @@
     height: 30vh;
     margin: 5px 0;
     cursor: pointer;
-    transition: background-color 0.5s,box-shadow 0.5s;
+    transition: background-color 0.5s ,box-shadow 0.5s ;
     color: $text-gray;
 
-    &:last-child {
-      line-height: 10vh;
-      background: white;
-      height: 10vh;
 
-      a {
-        display: block;
-        width: 100%;
-        color: $text-gray;
-        transition: color 0.5s;
-
-        &:hover {
-          color: white;
-        }
-      }
-      &:hover {
-        background-color: $error-red;
-        border: none;
-      }
-    }
 
     &:hover {
       -webkit-box-shadow: 0 0 1em rgba(0,0,0,0.2);
@@ -74,7 +55,25 @@
   }
 
   .logout-col {
+    line-height: 10vh;
+    background: white;
+    height: 10vh;
+    font-size: $font--msm;
+    a {
+      display: block;
+      width: 100%;
+      color: $text-gray;
+      transition: color 0.5s;
 
+      &:hover {
+        color: white;
+      }
+    }
+
+    &:hover {
+      background-color: $error-red;
+      border: none;
+    }
   }
 
 .profile-col {

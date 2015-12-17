@@ -18,9 +18,6 @@
   0% {
     -webkit-transform: translateX(100%);
   }
-  50% {
-    -webkit-transform: translateX(-10%);
-  }
   100% {
     -webkit-transform: translateX(0%);
 
@@ -51,11 +48,12 @@
 @keyframes errorFade {
   0%, 100% {
     opacity: 0;
-    -webkit-transform: scale(0.5);
+    // can set the bottom property to -60px intially and then set middle to 0;
+    transform: translateY(60px);
     }
   20%, 70% {
     opacity: 1;
-    -webkit-transform: scale(1.0);
+    transform: translateY(0px);
   }
   100% {
     visibility: hidden;
