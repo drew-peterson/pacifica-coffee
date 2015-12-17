@@ -1,4 +1,4 @@
-<%= form_for :user, url: users_cart_proceed_path do |f| %>
+<%= form_for :user, url: new_charge_path do |f| %>
 
   <% @addresses = Address.where(user_id: current_user.id) %>
 
@@ -7,7 +7,7 @@
   <%= f.select(:shipping_address) do %>
     <% @addresses.each do |a| -%>
       <% address = "#{a.nickname} - #{a.address} #{a.city} #{a.state} #{a.zip} " %>
-      <%= content_tag(:option, address, value: a.address) %>
+      <%= content_tag(:option, address) %>
     <% end %>
   <% end %>
 
@@ -18,7 +18,7 @@
   <%= f.select(:billing_address) do %>
     <% @addresses.each do |a| -%>
       <% address = "#{a.nickname} - #{a.address} #{a.city} #{a.state} #{a.zip} " %>
-      <%= content_tag(:option, address, value: a.address) %>
+      <%= content_tag(:option, address) %>
     <% end %>
   <% end %>
 
