@@ -9,10 +9,13 @@ class ChargesController < ApplicationController
   end
 
   def create
+    # Check inventory before perform actual charge 
+
     # Amount in cents
     cart_total  
     @amount = @cart_total * 100
-
+    p flash[:shipping_address]
+    p flash[:billing_address]
     customer = Stripe::Customer.create(
       :email => params[:stripeEmail],
       :source  => params[:stripeToken]
