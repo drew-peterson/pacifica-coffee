@@ -6323,3 +6323,921 @@ Processing by ChargesController#create as HTML
   Rendered navigation/_main_nav.html.erb (1.1ms)
   Rendered partials/_header_errors.html.erb (0.1ms)
 Completed 200 OK in 3057ms (Views: 212.2ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/items" for ::1 at 2015-12-17 09:24:16 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.1ms)
+  [1m[35mItem Load (0.4ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (21.3ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered partials/_nav_profile_modal.html.erb (0.2ms)
+  Rendered navigation/_main_nav.html.erb (21.9ms)
+  Rendered partials/_header_errors.html.erb (0.3ms)
+Completed 200 OK in 306ms (Views: 297.8ms | ActiveRecord: 5.3ms)
+
+
+Started POST "/users/cart" for ::1 at 2015-12-17 09:24:17 -0800
+Processing by UsersController#add_to_cart as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jZE/475ecCPODBlDzHyj+F1moXZzMdF3xL4htkbw9l5sTGYuAfymcg44hKVX2+c+h99dnfNIi22VSP2NmXxFZg==", "item_id"=>"46246", "item_qty"=>"1", "commit"=>"Add to Cart"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "cart" = $1, "updated_at" = $2 WHERE "users"."id" = $3  [["cart", "46246,1,"], ["updated_at", "2015-12-17 17:24:17.796048"], ["id", 1]]
+  [1m[36m (6.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/items
+Completed 302 Found in 15ms (ActiveRecord: 7.4ms)
+
+
+Started GET "/items" for ::1 at 2015-12-17 09:24:17 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.0ms)
+  [1m[35mItem Load (0.5ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (11.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered partials/_nav_profile_modal.html.erb (0.2ms)
+  Rendered navigation/_main_nav.html.erb (3.2ms)
+  Rendered partials/_header_errors.html.erb (0.1ms)
+Completed 200 OK in 162ms (Views: 160.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/items" for ::1 at 2015-12-17 09:24:21 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.1ms)
+  [1m[35mItem Load (0.4ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/index.html.erb within layouts/application (11.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered partials/_nav_profile_modal.html.erb (0.1ms)
+  Rendered navigation/_main_nav.html.erb (3.2ms)
+  Rendered partials/_header_errors.html.erb (0.2ms)
+Completed 200 OK in 235ms (Views: 233.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/cart" for ::1 at 2015-12-17 09:24:23 -0800
+Processing by UsersController#cart as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.5ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 46246]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 46246]]
+  [1m[36mAddress Load (0.4ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/_form.html.erb (18.3ms)
+  Rendered addresses/_form.html.erb (1.0ms)
+  Rendered users/cart.html.erb within layouts/application (23.1ms)
+  Rendered partials/_nav_profile_modal.html.erb (0.3ms)
+  Rendered navigation/_main_nav.html.erb (2.3ms)
+  Rendered partials/_header_errors.html.erb (0.1ms)
+Completed 200 OK in 199ms (Views: 184.8ms | ActiveRecord: 3.1ms)
+
+
+Started POST "/charges/new" for ::1 at 2015-12-17 09:24:25 -0800
+Processing by ChargesController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OfDNdLYhZF5zE/AEDycntzj5fkaqNz/BWI/rqUEzETLYLZS5CYOyD7MnbeKUgGNx4kCCrSpOZdsJeTeSnr+iCg==", "user"=>{"shipping_address"=>"Joji's Palace - 123 456th st El Cerrito CA 94999", "billing_checkbox"=>"0", "billing_address"=>"Joji's Palace - 123 456th st El Cerrito CA 94999", "user_id"=>"1"}, "commit"=>"Proceed to Checkout"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 46246]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 46246]]
+  Rendered charges/new.html.erb within layouts/application (1.5ms)
+  Rendered partials/_nav_profile_modal.html.erb (0.2ms)
+  Rendered navigation/_main_nav.html.erb (1.7ms)
+  Rendered partials/_header_errors.html.erb (0.2ms)
+Completed 200 OK in 218ms (Views: 213.5ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/charges/new" for ::1 at 2015-12-17 09:24:33 -0800
+Processing by ChargesController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OfDNdLYhZF5zE/AEDycntzj5fkaqNz/BWI/rqUEzETLYLZS5CYOyD7MnbeKUgGNx4kCCrSpOZdsJeTeSnr+iCg==", "user"=>{"shipping_address"=>"Joji's Palace - 123 456th st El Cerrito CA 94999", "billing_checkbox"=>"0", "billing_address"=>"Joji's Palace - 123 456th st El Cerrito CA 94999", "user_id"=>"1"}, "commit"=>"Proceed to Checkout"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.2ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 46246]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 46246]]
+  Rendered charges/new.html.erb within layouts/application (1.9ms)
+  Rendered partials/_nav_profile_modal.html.erb (0.2ms)
+  Rendered navigation/_main_nav.html.erb (2.0ms)
+  Rendered partials/_header_errors.html.erb (0.1ms)
+Completed 200 OK in 137ms (Views: 134.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/addresses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-17 09:24:33 -0800
+
+
+Started GET "/assets/base/base.self-5c9bec87f8aa7d713ff68210417107d03961c7cf2dcdce9c7557e6c3873dc327.css?body=1" for ::1 at 2015-12-17 09:24:33 -0800
+
+
+Started GET "/assets/base/reset.self-0d3168da3577f906749dbb18a56d6affd09d4ad177532d68c441d7f0043e1760.css?body=1" for ::1 at 2015-12-17 09:24:33 -0800
+
+
+Started GET "/assets/layout/items/admin.self-8e8347e2e7ab23ca54d815904f63c7627c67a214740c88695a57d9623fc379be.css?body=1" for ::1 at 2015-12-17 09:24:33 -0800
+
+
+Started GET "/assets/components/_close_btn.self-dbbfc67765a27970145936a96888bfba3ff4ceffb51097c6f40f487742964aa6.css?body=1" for ::1 at 2015-12-17 09:24:33 -0800
+
+
+Started GET "/assets/components/_hamburger.self-e21500ce479ae52dee22347d39478db7401dfb1bab9513eb9771b262550b4a4b.css?body=1" for ::1 at 2015-12-17 09:24:33 -0800
+
+
+Started GET "/assets/layout/items/index.self-4120bf8b0a215b435e7e0994ebbc805990db5cb1105c4e5eaf819c58ddbe333c.css?body=1" for ::1 at 2015-12-17 09:24:33 -0800
+
+
+Started GET "/assets/layout/layout.self-41f7a7758fe375a2af0f3c13829daeb462bd1380057b6f0f446acf7677296d62.css?body=1" for ::1 at 2015-12-17 09:24:33 -0800
+
+
+Started GET "/assets/layout/navigation/profile_modal.self-7439314cf722f263bf71f89a1de3f18f9bff35b96250739b3bd005bee12b2877.css?body=1" for ::1 at 2015-12-17 09:24:33 -0800
+
+
+Started GET "/assets/layout/sessions/new.self-010af748ecbdee4a9c16726fd44acd36c7c103e9cbb59ae85a5ccd089c51cb07.css?body=1" for ::1 at 2015-12-17 09:24:33 -0800
+
+
+Started GET "/assets/layout/users/cart.self-bf3b714fa8a4ec58c13e3bad5e007c0d3013be5e9888cbb0fd31b4480a02b51b.css?body=1" for ::1 at 2015-12-17 09:24:33 -0800
+
+
+Started GET "/assets/layout/users/new.self-e0328491701c1c43e1b7b94ca258669ff3b2c2e6e096415ad5011e29968eea8d.css?body=1" for ::1 at 2015-12-17 09:24:34 -0800
+
+
+Started GET "/assets/layout/welcome.self-5f54848a6e1648da8306afd473097f35cfe648a81ec802641bac40403b7ea388.css?body=1" for ::1 at 2015-12-17 09:24:34 -0800
+
+
+Started GET "/assets/master.self-2315f73c37b0863dafcf0873da0190ba767ba78ad20b290cc7bddb36bc44c56a.css?body=1" for ::1 at 2015-12-17 09:24:34 -0800
+
+
+Started GET "/assets/utilities/_animations.self-9858e256ffd3db2f1190e660cab95682d61043dae4dbb23d6db091d234cbc192.css?body=1" for ::1 at 2015-12-17 09:24:34 -0800
+
+
+Started GET "/assets/utilities/_config.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-17 09:24:34 -0800
+
+
+Started GET "/assets/utilities/_functions.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-17 09:24:34 -0800
+
+
+Started GET "/assets/utilities/_mixins.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-17 09:24:34 -0800
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for ::1 at 2015-12-17 09:24:34 -0800
+
+
+Started GET "/assets/utilities/_error.self-994dad6addd106eb69b59e50688cb1281bf59284d07f99f5c91e94508a496dc8.css?body=1" for ::1 at 2015-12-17 09:24:34 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-17 09:24:34 -0800
+
+
+Started GET "/assets/jquery.turbolinks.self-176b9819f30444d441e820bbccd3264fe57753aeafd54dec732b0dbc77129a2a.js?body=1" for ::1 at 2015-12-17 09:24:34 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-17 09:24:34 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-17 09:24:34 -0800
+
+
+Started GET "/assets/addresses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-17 09:24:34 -0800
+
+
+Started GET "/assets/cart.self-f5276b0eb950fb6e4efa8bd0fa59c5080af7451fc2e2b734d72927fddd94d99f.js?body=1" for ::1 at 2015-12-17 09:24:34 -0800
+
+
+Started GET "/assets/layout.self-6ddcbcc42bd0f0989ea3ea6addd5976994bc43e0f83ac0481677cedabbcdc333.js?body=1" for ::1 at 2015-12-17 09:24:34 -0800
+
+
+Started GET "/assets/navProfileMobile.self-db6dcae0a338cf0197dacdac79908aad8913f44c6da6443c06371efbeab34a2d.js?body=1" for ::1 at 2015-12-17 09:24:34 -0800
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-17 09:24:34 -0800
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-12-17 09:24:34 -0800
+
+
+Started POST "/charges/new" for ::1 at 2015-12-17 09:25:13 -0800
+Processing by ChargesController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OfDNdLYhZF5zE/AEDycntzj5fkaqNz/BWI/rqUEzETLYLZS5CYOyD7MnbeKUgGNx4kCCrSpOZdsJeTeSnr+iCg==", "user"=>{"shipping_address"=>"Joji's Palace - 123 456th st El Cerrito CA 94999", "billing_checkbox"=>"0", "billing_address"=>"Joji's Palace - 123 456th st El Cerrito CA 94999", "user_id"=>"1"}, "commit"=>"Proceed to Checkout"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 46246]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 46246]]
+  Rendered charges/new.html.erb within layouts/application (1.6ms)
+  Rendered partials/_nav_profile_modal.html.erb (0.2ms)
+  Rendered navigation/_main_nav.html.erb (1.8ms)
+  Rendered partials/_header_errors.html.erb (0.1ms)
+Completed 200 OK in 144ms (Views: 139.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/addresses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-17 09:25:14 -0800
+
+
+Started GET "/assets/base/base.self-5c9bec87f8aa7d713ff68210417107d03961c7cf2dcdce9c7557e6c3873dc327.css?body=1" for ::1 at 2015-12-17 09:25:14 -0800
+
+
+Started GET "/assets/layout/items/index.self-4120bf8b0a215b435e7e0994ebbc805990db5cb1105c4e5eaf819c58ddbe333c.css?body=1" for ::1 at 2015-12-17 09:25:14 -0800
+
+
+Started GET "/assets/base/reset.self-0d3168da3577f906749dbb18a56d6affd09d4ad177532d68c441d7f0043e1760.css?body=1" for ::1 at 2015-12-17 09:25:14 -0800
+
+
+Started GET "/assets/components/_close_btn.self-dbbfc67765a27970145936a96888bfba3ff4ceffb51097c6f40f487742964aa6.css?body=1" for ::1 at 2015-12-17 09:25:14 -0800
+
+
+Started GET "/assets/components/_hamburger.self-e21500ce479ae52dee22347d39478db7401dfb1bab9513eb9771b262550b4a4b.css?body=1" for ::1 at 2015-12-17 09:25:14 -0800
+
+
+Started GET "/assets/layout/items/admin.self-8e8347e2e7ab23ca54d815904f63c7627c67a214740c88695a57d9623fc379be.css?body=1" for ::1 at 2015-12-17 09:25:14 -0800
+
+
+Started GET "/assets/layout/layout.self-41f7a7758fe375a2af0f3c13829daeb462bd1380057b6f0f446acf7677296d62.css?body=1" for ::1 at 2015-12-17 09:25:14 -0800
+
+
+Started GET "/assets/layout/navigation/profile_modal.self-7439314cf722f263bf71f89a1de3f18f9bff35b96250739b3bd005bee12b2877.css?body=1" for ::1 at 2015-12-17 09:25:14 -0800
+
+
+Started GET "/assets/layout/sessions/new.self-010af748ecbdee4a9c16726fd44acd36c7c103e9cbb59ae85a5ccd089c51cb07.css?body=1" for ::1 at 2015-12-17 09:25:14 -0800
+
+
+Started GET "/assets/layout/users/cart.self-bf3b714fa8a4ec58c13e3bad5e007c0d3013be5e9888cbb0fd31b4480a02b51b.css?body=1" for ::1 at 2015-12-17 09:25:14 -0800
+
+
+Started GET "/assets/layout/users/new.self-e0328491701c1c43e1b7b94ca258669ff3b2c2e6e096415ad5011e29968eea8d.css?body=1" for ::1 at 2015-12-17 09:25:14 -0800
+
+
+Started GET "/assets/layout/welcome.self-5f54848a6e1648da8306afd473097f35cfe648a81ec802641bac40403b7ea388.css?body=1" for ::1 at 2015-12-17 09:25:14 -0800
+
+
+Started GET "/assets/master.self-2315f73c37b0863dafcf0873da0190ba767ba78ad20b290cc7bddb36bc44c56a.css?body=1" for ::1 at 2015-12-17 09:25:14 -0800
+
+
+Started GET "/assets/utilities/_animations.self-9858e256ffd3db2f1190e660cab95682d61043dae4dbb23d6db091d234cbc192.css?body=1" for ::1 at 2015-12-17 09:25:14 -0800
+
+
+Started GET "/assets/utilities/_config.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-17 09:25:14 -0800
+
+
+Started GET "/assets/utilities/_error.self-994dad6addd106eb69b59e50688cb1281bf59284d07f99f5c91e94508a496dc8.css?body=1" for ::1 at 2015-12-17 09:25:14 -0800
+
+
+Started GET "/assets/utilities/_functions.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-17 09:25:14 -0800
+
+
+Started GET "/assets/utilities/_mixins.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-17 09:25:14 -0800
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for ::1 at 2015-12-17 09:25:14 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-17 09:25:14 -0800
+
+
+Started GET "/assets/jquery.turbolinks.self-176b9819f30444d441e820bbccd3264fe57753aeafd54dec732b0dbc77129a2a.js?body=1" for ::1 at 2015-12-17 09:25:14 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-17 09:25:14 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-17 09:25:14 -0800
+
+
+Started GET "/assets/addresses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-17 09:25:14 -0800
+
+
+Started GET "/assets/cart.self-f5276b0eb950fb6e4efa8bd0fa59c5080af7451fc2e2b734d72927fddd94d99f.js?body=1" for ::1 at 2015-12-17 09:25:14 -0800
+
+
+Started GET "/assets/layout.self-6ddcbcc42bd0f0989ea3ea6addd5976994bc43e0f83ac0481677cedabbcdc333.js?body=1" for ::1 at 2015-12-17 09:25:14 -0800
+
+
+Started GET "/assets/navProfileMobile.self-db6dcae0a338cf0197dacdac79908aad8913f44c6da6443c06371efbeab34a2d.js?body=1" for ::1 at 2015-12-17 09:25:14 -0800
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-17 09:25:14 -0800
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-12-17 09:25:14 -0800
+
+
+Started POST "/charges" for ::1 at 2015-12-17 09:25:36 -0800
+Processing by ChargesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"etLv9JkTUpU9vTGi976RHI6SWFy5B2vgyzmiMpPf1BCbD7Y5JrGExP2JrERsGdXaVCuktzl+Mfqaz34JTFNnKA==", "test"=>"", "stripeToken"=>"tok_17J5VR2eZvKYlo2Ci0G2rOOJ", "stripeTokenType"=>"card", "stripeEmail"=>"sicheng@wdas.com"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.9ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 46246]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "orders" ("item_ids_quantities", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["item_ids_quantities", "46246,1,"], ["user_id", 1], ["created_at", "2015-12-17 17:25:37.463352"], ["updated_at", "2015-12-17 17:25:37.463352"]]
+  [1m[36m (6.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "cart" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["cart", ""], ["updated_at", "2015-12-17 17:25:37.473480"], ["id", 1]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  Rendered charges/create.html.erb within layouts/application (0.2ms)
+  Rendered partials/_nav_profile_modal.html.erb (0.1ms)
+  Rendered navigation/_main_nav.html.erb (1.7ms)
+  Rendered partials/_header_errors.html.erb (0.1ms)
+Completed 200 OK in 3354ms (Views: 217.0ms | ActiveRecord: 11.1ms)
+
+
+Started GET "/items" for ::1 at 2015-12-17 09:28:41 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.1ms)
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  Rendered items/index.html.erb within layouts/application (20.0ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered partials/_nav_profile_modal.html.erb (0.1ms)
+  Rendered navigation/_main_nav.html.erb (25.5ms)
+  Rendered partials/_header_errors.html.erb (0.1ms)
+Completed 200 OK in 308ms (Views: 300.7ms | ActiveRecord: 4.2ms)
+
+
+Started POST "/users/cart" for ::1 at 2015-12-17 09:28:44 -0800
+Processing by UsersController#add_to_cart as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nxX3tCUyT2rsD26Nsn9fcRyHt81zd3zdWp9Qh4qW9G9+yK55mpCZOyw782sp2Bu3xj5LJvMOJscLaYy8VRpHVw==", "item_id"=>"18793", "item_qty"=>"1", "commit"=>"Add to Cart"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "cart" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["cart", "18793,1,"], ["updated_at", "2015-12-17 17:28:44.332755"], ["id", 1]]
+  [1m[35m (7.0ms)[0m  COMMIT
+Redirected to http://localhost:3000/items
+Completed 302 Found in 15ms (ActiveRecord: 8.0ms)
+
+
+Started GET "/items" for ::1 at 2015-12-17 09:28:44 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.1ms)
+  [1m[36mItem Load (0.5ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  Rendered items/index.html.erb within layouts/application (9.2ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered partials/_nav_profile_modal.html.erb (0.2ms)
+  Rendered navigation/_main_nav.html.erb (3.1ms)
+  Rendered partials/_header_errors.html.erb (0.2ms)
+Completed 200 OK in 146ms (Views: 144.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/items" for ::1 at 2015-12-17 09:28:48 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.1ms)
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  Rendered items/index.html.erb within layouts/application (8.7ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered partials/_nav_profile_modal.html.erb (0.2ms)
+  Rendered navigation/_main_nav.html.erb (3.7ms)
+  Rendered partials/_header_errors.html.erb (0.2ms)
+Completed 200 OK in 257ms (Views: 255.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/cart" for ::1 at 2015-12-17 09:28:49 -0800
+Processing by UsersController#cart as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.3ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 18793]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 18793]]
+  [1m[35mAddress Load (0.4ms)[0m  SELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = $1  [["user_id", 1]]
+  Rendered users/_form.html.erb (13.8ms)
+  Rendered addresses/_form.html.erb (1.6ms)
+  Rendered users/cart.html.erb within layouts/application (19.7ms)
+  Rendered partials/_nav_profile_modal.html.erb (0.4ms)
+  Rendered navigation/_main_nav.html.erb (2.6ms)
+  Rendered partials/_header_errors.html.erb (0.2ms)
+Completed 200 OK in 270ms (Views: 255.7ms | ActiveRecord: 2.6ms)
+
+
+Started POST "/charges/new" for ::1 at 2015-12-17 09:28:51 -0800
+Processing by ChargesController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MoMQMtDqh+D15KBNu+fYsxzNbZrnF6GjEEaU7julp3nTXkn/b0hRsTXQPasgQJx1xnSRcWdu+7lBsEjV5CkUQQ==", "user"=>{"shipping_address"=>"Joji's Palace - 123 456th st El Cerrito CA 94999", "billing_checkbox"=>"0", "billing_address"=>"Joji's Palace - 123 456th st El Cerrito CA 94999", "user_id"=>"1"}, "commit"=>"Proceed to Checkout"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.2ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 18793]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 18793]]
+  Rendered charges/new.html.erb within layouts/application (1.5ms)
+  Rendered partials/_nav_profile_modal.html.erb (0.2ms)
+  Rendered navigation/_main_nav.html.erb (2.1ms)
+  Rendered partials/_header_errors.html.erb (0.1ms)
+Completed 200 OK in 175ms (Views: 171.4ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/charges" for ::1 at 2015-12-17 09:29:10 -0800
+Processing by ChargesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xtUeG9l270M4d0WWqs2sXnoBtvql2CWnEJGofi3tpM4nCEfWZtQ5EvhD2HAxauiYoLhKESWhf71BZ3RF8mEX9g==", "test"=>"", "stripeToken"=>"tok_17J5Yt2eZvKYlo2CxKkdSHUq", "stripeTokenType"=>"card", "stripeEmail"=>"21312@2e1.com"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 18793]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "orders" ("item_ids_quantities", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["item_ids_quantities", "18793,1,"], ["user_id", 1], ["created_at", "2015-12-17 17:29:11.017961"], ["updated_at", "2015-12-17 17:29:11.017961"]]
+  [1m[35m (5.7ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "users" SET "cart" = $1, "updated_at" = $2 WHERE "users"."id" = $3  [["cart", ""], ["updated_at", "2015-12-17 17:29:11.026976"], ["id", 1]]
+  [1m[36m (4.9ms)[0m  [1mCOMMIT[0m
+  Rendered charges/create.html.erb within layouts/application (0.1ms)
+  Rendered partials/_nav_profile_modal.html.erb (0.1ms)
+  Rendered navigation/_main_nav.html.erb (1.3ms)
+  Rendered partials/_header_errors.html.erb (0.1ms)
+Completed 200 OK in 2497ms (Views: 143.2ms | ActiveRecord: 13.7ms)
+
+
+Started POST "/charges" for ::1 at 2015-12-17 09:32:44 -0800
+Processing by ChargesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xtUeG9l270M4d0WWqs2sXnoBtvql2CWnEJGofi3tpM4nCEfWZtQ5EvhD2HAxauiYoLhKESWhf71BZ3RF8mEX9g==", "test"=>"", "stripeToken"=>"tok_17J5Yt2eZvKYlo2CxKkdSHUq", "stripeTokenType"=>"card", "stripeEmail"=>"21312@2e1.com"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.3ms)
+
+NoMethodError (undefined method `*' for nil:NilClass):
+  app/controllers/charges_controller.rb:14:in `create'
+
+
+  Rendered /Users/sizhou/.rvm/gems/ruby-2.0.0-p0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.6ms)
+  Rendered /Users/sizhou/.rvm/gems/ruby-2.0.0-p0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/sizhou/.rvm/gems/ruby-2.0.0-p0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/sizhou/.rvm/gems/ruby-2.0.0-p0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (28.8ms)
+  Rendered /Users/sizhou/.rvm/gems/ruby-2.0.0-p0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/sizhou/.rvm/gems/ruby-2.0.0-p0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/sizhou/.rvm/gems/ruby-2.0.0-p0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/sizhou/.rvm/gems/ruby-2.0.0-p0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/sizhou/.rvm/gems/ruby-2.0.0-p0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (22.0ms)
+  Rendered /Users/sizhou/.rvm/gems/ruby-2.0.0-p0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/sizhou/.rvm/gems/ruby-2.0.0-p0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/sizhou/.rvm/gems/ruby-2.0.0-p0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (45.9ms)
+
+
+Started POST "/charges" for ::1 at 2015-12-17 09:33:26 -0800
+Processing by ChargesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xtUeG9l270M4d0WWqs2sXnoBtvql2CWnEJGofi3tpM4nCEfWZtQ5EvhD2HAxauiYoLhKESWhf71BZ3RF8mEX9g==", "test"=>"", "stripeToken"=>"tok_17J5Yt2eZvKYlo2CxKkdSHUq", "stripeTokenType"=>"card", "stripeEmail"=>"21312@2e1.com"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.3ms)
+
+NoMethodError (undefined method `*' for nil:NilClass):
+  app/controllers/charges_controller.rb:14:in `create'
+
+
+  Rendered /Users/sizhou/.rvm/gems/ruby-2.0.0-p0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.7ms)
+  Rendered /Users/sizhou/.rvm/gems/ruby-2.0.0-p0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /Users/sizhou/.rvm/gems/ruby-2.0.0-p0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/sizhou/.rvm/gems/ruby-2.0.0-p0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (26.2ms)
+  Rendered /Users/sizhou/.rvm/gems/ruby-2.0.0-p0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/sizhou/.rvm/gems/ruby-2.0.0-p0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/sizhou/.rvm/gems/ruby-2.0.0-p0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/sizhou/.rvm/gems/ruby-2.0.0-p0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/sizhou/.rvm/gems/ruby-2.0.0-p0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (20.1ms)
+  Rendered /Users/sizhou/.rvm/gems/ruby-2.0.0-p0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/sizhou/.rvm/gems/ruby-2.0.0-p0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/sizhou/.rvm/gems/ruby-2.0.0-p0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (120.0ms)
+
+
+Started GET "/" for ::1 at 2015-12-17 09:33:32 -0800
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.8ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered partials/_nav_profile_modal.html.erb (0.1ms)
+  Rendered navigation/_main_nav.html.erb (3.7ms)
+  Rendered partials/_header_errors.html.erb (0.1ms)
+Completed 200 OK in 165ms (Views: 163.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/cart" for ::1 at 2015-12-17 09:33:34 -0800
+Processing by UsersController#cart as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mAddress Load (0.3ms)[0m  SELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = $1  [["user_id", 1]]
+  Rendered users/_form.html.erb (4.8ms)
+  Rendered addresses/_form.html.erb (0.7ms)
+  Rendered users/cart.html.erb within layouts/application (7.6ms)
+  Rendered partials/_nav_profile_modal.html.erb (0.2ms)
+  Rendered navigation/_main_nav.html.erb (3.5ms)
+  Rendered partials/_header_errors.html.erb (0.3ms)
+Completed 200 OK in 257ms (Views: 254.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/items" for ::1 at 2015-12-17 09:33:36 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.0ms)
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  Rendered items/index.html.erb within layouts/application (12.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered partials/_nav_profile_modal.html.erb (0.2ms)
+  Rendered navigation/_main_nav.html.erb (2.5ms)
+  Rendered partials/_header_errors.html.erb (0.2ms)
+Completed 200 OK in 178ms (Views: 176.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/users/cart" for ::1 at 2015-12-17 09:33:37 -0800
+Processing by UsersController#add_to_cart as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KcrE2vFdfDBDzifHz3JrFAhfaJerDg4usirk2K018FzIF50XTv+qYYP6uiFU1S/S0uaUfCt3VDTj3DjjcrlDZA==", "item_id"=>"86056", "item_qty"=>"1", "commit"=>"Add to Cart"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (1.7ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "cart" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["cart", "86056,1,"], ["updated_at", "2015-12-17 17:33:37.719862"], ["id", 1]]
+  [1m[35m (2.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/items
+Completed 302 Found in 12ms (ActiveRecord: 5.0ms)
+
+
+Started GET "/items" for ::1 at 2015-12-17 09:33:37 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.1ms)
+  [1m[36mItem Load (3.8ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  Rendered items/index.html.erb within layouts/application (21.1ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered partials/_nav_profile_modal.html.erb (0.2ms)
+  Rendered navigation/_main_nav.html.erb (3.8ms)
+  Rendered partials/_header_errors.html.erb (0.2ms)
+Completed 200 OK in 309ms (Views: 303.4ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/users/cart" for ::1 at 2015-12-17 09:33:42 -0800
+Processing by UsersController#cart as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.3ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 86056]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 86056]]
+  [1m[35mAddress Load (0.3ms)[0m  SELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = $1  [["user_id", 1]]
+  Rendered users/_form.html.erb (4.2ms)
+  Rendered addresses/_form.html.erb (1.5ms)
+  Rendered users/cart.html.erb within layouts/application (8.4ms)
+  Rendered partials/_nav_profile_modal.html.erb (0.4ms)
+  Rendered navigation/_main_nav.html.erb (3.6ms)
+  Rendered partials/_header_errors.html.erb (0.2ms)
+Completed 200 OK in 171ms (Views: 164.6ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/charges/new" for ::1 at 2015-12-17 09:33:44 -0800
+Processing by ChargesController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Lf2DU7BrpUbdzMdlyiLrK/VzUgi790KWUyNufjSM6XnMINqeD8lzFx34WoNRha/tL8qu4zuOGIwC1bJF6wBaQQ==", "user"=>{"shipping_address"=>"Joji's Palace - 123 456th st El Cerrito CA 94999", "billing_checkbox"=>"0", "billing_address"=>"Joji's Palace - 123 456th st El Cerrito CA 94999"}, "commit"=>"Proceed to Checkout"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.5ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 86056]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 86056]]
+  Rendered charges/new.html.erb within layouts/application (1.6ms)
+  Rendered partials/_nav_profile_modal.html.erb (0.2ms)
+  Rendered navigation/_main_nav.html.erb (2.0ms)
+  Rendered partials/_header_errors.html.erb (0.2ms)
+Completed 200 OK in 206ms (Views: 201.2ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/charges/new" for ::1 at 2015-12-17 09:33:50 -0800
+Processing by ChargesController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Lf2DU7BrpUbdzMdlyiLrK/VzUgi790KWUyNufjSM6XnMINqeD8lzFx34WoNRha/tL8qu4zuOGIwC1bJF6wBaQQ==", "user"=>{"shipping_address"=>"Joji's Palace - 123 456th st El Cerrito CA 94999", "billing_checkbox"=>"0", "billing_address"=>"joji's - 123123 SF CA 12421"}, "commit"=>"Proceed to Checkout"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.6ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 86056]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 86056]]
+  Rendered charges/new.html.erb within layouts/application (1.1ms)
+  Rendered partials/_nav_profile_modal.html.erb (0.1ms)
+  Rendered navigation/_main_nav.html.erb (1.3ms)
+  Rendered partials/_header_errors.html.erb (0.1ms)
+Completed 200 OK in 140ms (Views: 133.9ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/charges/new" for ::1 at 2015-12-17 09:33:55 -0800
+Processing by ChargesController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Lf2DU7BrpUbdzMdlyiLrK/VzUgi790KWUyNufjSM6XnMINqeD8lzFx34WoNRha/tL8qu4zuOGIwC1bJF6wBaQQ==", "user"=>{"shipping_address"=>"Joji's Mansion - 789 123rd ave Beverly Hills CA 99999", "billing_checkbox"=>"1", "billing_address"=>"joji's - 123123 SF CA 12421"}, "commit"=>"Proceed to Checkout"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.2ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 86056]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 86056]]
+  Rendered charges/new.html.erb within layouts/application (0.7ms)
+  Rendered partials/_nav_profile_modal.html.erb (0.2ms)
+  Rendered navigation/_main_nav.html.erb (1.6ms)
+  Rendered partials/_header_errors.html.erb (0.1ms)
+Completed 200 OK in 207ms (Views: 203.3ms | ActiveRecord: 0.5ms)
+  [1m[36m (32.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (1.8ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateItems (20151118191227)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (27.2ms)[0m  [1mCREATE TABLE "items" ("id" serial primary key, "item_name" character varying, "sku" character varying, "large_image" character varying, "small_image" character varying, "quantity" integer, "price" integer, "item_description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151118191227"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateUsers (20151120234929)
+  [1m[35m (5.6ms)[0m  BEGIN
+  [1m[36m (18.7ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "first_name" character varying, "last_name" character varying, "user_name" character varying, "password_digest" character varying, "email" character varying, "phone_number" character varying, "admin" boolean DEFAULT 'f', "cart" text DEFAULT '', "address" text DEFAULT '', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151120234929"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+Migrating to CreateOrders (20151121183924)
+  [1m[35m (6.1ms)[0m  BEGIN
+  [1m[36m (15.8ms)[0m  [1mCREATE TABLE "orders" ("id" serial primary key, "item_ids_quantities" character varying, "shipping_address" character varying, "billing_address" character varying, "user_id" integer, "shipped" boolean DEFAULT 'f', "requested_return" boolean DEFAULT 'f', "return_received" boolean DEFAULT 'f', "refunded" boolean DEFAULT 'f', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151121183924"]]
+  [1m[36m (1.4ms)[0m  [1mCOMMIT[0m
+Migrating to CreateAddresses (20151210193550)
+  [1m[35m (11.2ms)[0m  BEGIN
+  [1m[36m (14.1ms)[0m  [1mCREATE TABLE "addresses" ("id" serial primary key, "nickname" character varying, "address" character varying, "city" character varying, "state" character varying, "zip" integer, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151210193550"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (4.1ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'addresses'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.7ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'items'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.2ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'orders'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.8ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "user_name", "password_digest", "phone_number", "admin", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["first_name", "Joji"], ["last_name", "Gordon"], ["user_name", "joji"], ["password_digest", "$2a$10$D37fUoJbqO4UtpsED40KVOfd/x.e2ljzI8XpP5hR9WfvPzhHEwacm"], ["phone_number", "911"], ["admin", "t"], ["created_at", "2015-12-17 17:34:25.683707"], ["updated_at", "2015-12-17 17:34:25.683707"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("first_name", "last_name", "user_name", "password_digest", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["first_name", "Daniel"], ["last_name", "Huang"], ["user_name", "daniel"], ["password_digest", "$2a$10$BGI4MrZWLG6WABmySRk.mOJe8T6ybeCXzpCsqXhDaFnkx2uFRPOE6"], ["phone_number", "911"], ["created_at", "2015-12-17 17:34:25.762965"], ["updated_at", "2015-12-17 17:34:25.762965"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["id", 64852], ["item_name", "Labor of Love"], ["item_description", "My labor of love is putting together the great coffees from non marguis origins at a great price. It's my thanks to use those that labor to keep everything going."], ["quantity", 6], ["price", 15], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/2.png"], ["created_at", "2015-12-17 17:34:25.781911"], ["updated_at", "2015-12-17 17:34:25.781911"]]
+  [1m[35m (6.0ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["id", 59108], ["item_name", "Peru"], ["item_description", "Peru is a delicious, subtle coffee. It's perfect for a morning brew. Its mild flavor means you can brew it very strong to bring out it subtle nature. Note hte sweetness and brigthness of the cup."], ["quantity", 86], ["price", 13], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/2.png"], ["created_at", "2015-12-17 17:34:25.791199"], ["updated_at", "2015-12-17 17:34:25.791199"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["id", 44053], ["item_name", "Espresso"], ["item_description", "It's risky making coffee so full flavored thats is intended to be very concentrated. This espressco is crema laced bliss. So full flavored that it is excellent as a brewed coffee as well."], ["quantity", 49], ["price", 11], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/2.png"], ["created_at", "2015-12-17 17:34:25.793226"], ["updated_at", "2015-12-17 17:34:25.793226"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["id", 96535], ["item_name", "Timor"], ["item_description", "Bright and Lovely, Timor is a great coffee. this rare and exotic coffee is warm and familar and the best at being so. Drink it all day long. Some parts of the year we cannot get this coffee, its is from a small crop. It is so loved by customers that it is one of our signature coffees just the same."], ["quantity", 37], ["price", 13], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/13.png"], ["created_at", "2015-12-17 17:34:25.795194"], ["updated_at", "2015-12-17 17:34:25.795194"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["id", 48771], ["item_name", "Costa Rica"], ["item_description", "Costa Rican coffee is bright and fresh tasting with a medium body. There is a subtle flavor, like the scent of a tropical breeze, that gives it a unique flavor."], ["quantity", 73], ["price", 11], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/8.png"], ["created_at", "2015-12-17 17:34:25.797249"], ["updated_at", "2015-12-17 17:34:25.797249"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["id", 85845], ["item_name", "Black Rocks Mountain Clouds"], ["item_description", "This classic dark/light blend takes the best flavors from coffees that roast dark and coffees that roast well light. It is sweet with some toastliness and a medium body. In Sweden, where they drink more coffee per person than anywhere; these dark/light blends are very popular."], ["quantity", 3], ["price", 16], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/12.png"], ["created_at", "2015-12-17 17:34:25.799686"], ["updated_at", "2015-12-17 17:34:25.799686"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["id", 32360], ["item_name", "New Guinea"], ["item_description", "This is a medium to full bodied coffee with a distinct roasted nut flavor."], ["quantity", 72], ["price", 8], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/13.png"], ["created_at", "2015-12-17 17:34:25.802892"], ["updated_at", "2015-12-17 17:34:25.802892"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["id", 95943], ["item_name", "Mexican"], ["item_description", "We put a slightly darker roast on this coffee to bring out its fantastic aroma. It has a medium to full body and very clean finish."], ["quantity", 17], ["price", 15], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/12.png"], ["created_at", "2015-12-17 17:34:25.806825"], ["updated_at", "2015-12-17 17:34:25.806825"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["id", 92568], ["item_name", "Decaf Harmony"], ["item_description", "This Swiss Water Process coffee is made from new crop coffees as they become available from all over the world. It's full flavor make some wonder if it's really decaf. It is!"], ["quantity", 95], ["price", 8], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/5.png"], ["created_at", "2015-12-17 17:34:25.809387"], ["updated_at", "2015-12-17 17:34:25.809387"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["id", 82879], ["item_name", "River Mud"], ["item_description", "What if we didn't hold anything back and blended all our thick dark strong coffees? It would sit in the cup like River Mud. The coffee flavor would be full and rich and fresh because it's Pacifica Coffee. The blend enjoys almost a cult following in some circles."], ["quantity", 93], ["price", 8], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/7.png"], ["created_at", "2015-12-17 17:34:25.811769"], ["updated_at", "2015-12-17 17:34:25.811769"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["id", 53649], ["item_name", "Sumatra"], ["item_description", "The king of full bodied coffees come from Sumatra. Ours is roasted dark to bring out it's earthiness and to compliment the full body. It's a simple description, but there is more to this coffee. We have sold more of it in every one of our 20 years in business than any other variety."], ["quantity", 41], ["price", 11], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/13.png"], ["created_at", "2015-12-17 17:34:25.815014"], ["updated_at", "2015-12-17 17:34:25.815014"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["id", 49813], ["item_name", "Bolivia"], ["item_description", "Bright tropical blooms and complex aromas grace this fantastic coffee roasted at a full city roast. A very flavorful and approachable coffee."], ["quantity", 18], ["price", 11], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/13.png"], ["created_at", "2015-12-17 17:34:25.818303"], ["updated_at", "2015-12-17 17:34:25.818303"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["id", 40067], ["item_name", "Ethiopia"], ["item_description", "\"From the botanical origin of coffee comes this fully flavored African coffee. It is floral and has wine like tones. A great coffee experience unlike any other."], ["quantity", 1], ["price", 11], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/8.png"], ["created_at", "2015-12-17 17:34:25.821576"], ["updated_at", "2015-12-17 17:34:25.821576"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["id", 92758], ["item_name", "French Roast"], ["item_description", "French Roast is our darkest roast coffee. Our version is smooth and not ,overly heavy. It has a fine roasty, toasty flavor, just as your would expect."], ["quantity", 43], ["price", 13], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/1.png"], ["created_at", "2015-12-17 17:34:25.824491"], ["updated_at", "2015-12-17 17:34:25.824491"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["id", 82667], ["item_name", "Komodo"], ["item_description", "Komodo is our blend from the home of the dragon. Three different roasts ,of three different coffees produces this earthy coffee with a lot of body and a subtle nut like tone. All three coffees come from the Indonesian Islands."], ["quantity", 87], ["price", 10], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/13.png"], ["created_at", "2015-12-17 17:34:25.826861"], ["updated_at", "2015-12-17 17:34:25.826861"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["id", 50662], ["item_name", "Guatemala"], ["item_description", "This classic Central American coffee has subtle sweet floral tones in its, well balanced cup."], ["quantity", 90], ["price", 15], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/9.png"], ["created_at", "2015-12-17 17:34:25.828862"], ["updated_at", "2015-12-17 17:34:25.828862"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["id", 96831], ["item_name", "Uganda"], ["item_description", "Uganda has a unique subtle fruit aroma with cup flavor of fresh coffee cherries. It is medium bodied and very smooth"], ["quantity", 40], ["price", 13], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/2.png"], ["created_at", "2015-12-17 17:34:25.831022"], ["updated_at", "2015-12-17 17:34:25.831022"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["id", 58514], ["item_name", "Sicilian"], ["item_description", "This dark Italian style coffee was developed for a first class Italian restaurant. It was such a success, we now offer it to you. The coffee is dark roasted with a fruity aroma and a subtle wine like aftertaste."], ["quantity", 49], ["price", 11], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/9.png"], ["created_at", "2015-12-17 17:34:25.833175"], ["updated_at", "2015-12-17 17:34:25.833175"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["id", 95153], ["item_name", "Bali Blue Moon"], ["item_description", "A delicious full bodies coffee with a dark roast. A hint of sweetness and chocolate tones grace this rare coffee."], ["quantity", 90], ["price", 8], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/8.png"], ["created_at", "2015-12-17 17:34:25.835782"], ["updated_at", "2015-12-17 17:34:25.835782"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["id", 58185], ["item_name", "Colombia"], ["item_description", "We look for a bright cup with a touch of sweetness for our Colombian coffee. Either way, it is always one of our greatest coffees."], ["quantity", 96], ["price", 14], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/7.png"], ["created_at", "2015-12-17 17:34:25.838465"], ["updated_at", "2015-12-17 17:34:25.838465"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["id", 39357], ["item_name", "Tanzania"], ["item_description", "A very full flavor with a wine like finish. Tanzania has a medium to, dark roast to bring out all of its amazing profile."], ["quantity", 71], ["price", 8], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/6.png"], ["created_at", "2015-12-17 17:34:25.840952"], ["updated_at", "2015-12-17 17:34:25.840952"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "addresses" ("nickname", "address", "city", "state", "zip", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["nickname", "Joji's Palace"], ["address", "123 456th st"], ["city", "El Cerrito"], ["state", "CA"], ["zip", 94999], ["user_id", 1], ["created_at", "2015-12-17 17:34:25.857872"], ["updated_at", "2015-12-17 17:34:25.857872"]]
+  [1m[36m (6.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "addresses" ("nickname", "address", "city", "state", "zip", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["nickname", "Joji's Loft"], ["address", "654 321st st"], ["city", "Manhattan"], ["state", "NY"], ["zip", 99997], ["user_id", 1], ["created_at", "2015-12-17 17:34:25.868510"], ["updated_at", "2015-12-17 17:34:25.868510"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "addresses" ("nickname", "address", "city", "state", "zip", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["nickname", "Joji's Mansion"], ["address", "789 123rd ave"], ["city", "Beverly Hills"], ["state", "CA"], ["zip", 99999], ["user_id", 1], ["created_at", "2015-12-17 17:34:25.871465"], ["updated_at", "2015-12-17 17:34:25.871465"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/" for ::1 at 2015-12-17 09:35:17 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (2.1ms)
+  [1m[35mUser Load (1.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered partials/_nav_profile_modal.html.erb (3.4ms)
+  Rendered navigation/_main_nav.html.erb (46.9ms)
+  Rendered partials/_header_errors.html.erb (1.3ms)
+Completed 200 OK in 787ms (Views: 767.7ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/items" for ::1 at 2015-12-17 09:35:20 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.6ms)
+  [1m[36mItem Load (0.7ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  Rendered items/index.html.erb within layouts/application (38.1ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered partials/_nav_profile_modal.html.erb (0.6ms)
+  Rendered navigation/_main_nav.html.erb (5.6ms)
+  Rendered partials/_header_errors.html.erb (1.2ms)
+Completed 200 OK in 368ms (Views: 359.0ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/users/cart" for ::1 at 2015-12-17 09:35:21 -0800
+Processing by UsersController#add_to_cart as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pi1/G9AksjMpPLOybBq1ZAJHtlTymxKOHDtZOQnpJrxH8CbWb4ZkYukILlT3vfGi2P5Kv3LiSJRNzYUC1mWVhA==", "item_id"=>"59108", "item_qty"=>"1", "commit"=>"Add to Cart"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "cart" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["cart", "59108,1,"], ["updated_at", "2015-12-17 17:35:21.785679"], ["id", 1]]
+  [1m[35m (6.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/items
+Completed 302 Found in 19ms (ActiveRecord: 7.0ms)
+
+
+Started GET "/items" for ::1 at 2015-12-17 09:35:21 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.5ms)
+  [1m[36mItem Load (0.7ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  Rendered items/index.html.erb within layouts/application (16.2ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered partials/_nav_profile_modal.html.erb (0.4ms)
+  Rendered navigation/_main_nav.html.erb (5.0ms)
+  Rendered partials/_header_errors.html.erb (0.2ms)
+Completed 200 OK in 233ms (Views: 230.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/cart" for ::1 at 2015-12-17 09:35:25 -0800
+Processing by UsersController#cart as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.5ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 59108]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 59108]]
+  [1m[35mAddress Load (0.6ms)[0m  SELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = $1  [["user_id", 1]]
+  Rendered users/_form.html.erb (39.0ms)
+  Rendered addresses/_form.html.erb (9.2ms)
+  Rendered users/cart.html.erb within layouts/application (160.9ms)
+  Rendered partials/_nav_profile_modal.html.erb (0.1ms)
+  Rendered navigation/_main_nav.html.erb (1.3ms)
+  Rendered partials/_header_errors.html.erb (0.1ms)
+Completed 200 OK in 365ms (Views: 349.4ms | ActiveRecord: 3.6ms)
+
+
+Started POST "/charges/new" for ::1 at 2015-12-17 09:35:29 -0800
+Processing by ChargesController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hvB8hvKz41Mk/D7Yqo7ikE3zxMIY9pDyNZnzwaD8e0xnLSVLTRE1AuTIoz4xKaZWl0o4KZiPyuhkby/6f3DIdA==", "user"=>{"shipping_address"=>"Joji's Palace - 123 456th st El Cerrito CA 94999", "billing_checkbox"=>"0", "billing_address"=>"Joji's Mansion - 789 123rd ave Beverly Hills CA 99999"}, "commit"=>"Proceed to Checkout"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.2ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 59108]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 59108]]
+  Rendered charges/new.html.erb within layouts/application (2.9ms)
+  Rendered partials/_nav_profile_modal.html.erb (0.2ms)
+  Rendered navigation/_main_nav.html.erb (2.6ms)
+  Rendered partials/_header_errors.html.erb (0.2ms)
+Completed 200 OK in 268ms (Views: 264.6ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/charges/new" for ::1 at 2015-12-17 09:35:45 -0800
+Processing by ChargesController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hvB8hvKz41Mk/D7Yqo7ikE3zxMIY9pDyNZnzwaD8e0xnLSVLTRE1AuTIoz4xKaZWl0o4KZiPyuhkby/6f3DIdA==", "user"=>{"shipping_address"=>"Joji's Palace - 123 456th st El Cerrito CA 94999", "billing_checkbox"=>"0", "billing_address"=>"Joji's Mansion - 789 123rd ave Beverly Hills CA 99999"}, "commit"=>"Proceed to Checkout"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 59108]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 59108]]
+  Rendered charges/new.html.erb within layouts/application (1.5ms)
+  Rendered partials/_nav_profile_modal.html.erb (0.2ms)
+  Rendered navigation/_main_nav.html.erb (2.0ms)
+  Rendered partials/_header_errors.html.erb (0.2ms)
+Completed 200 OK in 200ms (Views: 197.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/base/base.self-5c9bec87f8aa7d713ff68210417107d03961c7cf2dcdce9c7557e6c3873dc327.css?body=1" for ::1 at 2015-12-17 09:35:45 -0800
+
+
+Started GET "/assets/base/reset.self-0d3168da3577f906749dbb18a56d6affd09d4ad177532d68c441d7f0043e1760.css?body=1" for ::1 at 2015-12-17 09:35:45 -0800
+
+
+Started GET "/assets/components/_close_btn.self-dbbfc67765a27970145936a96888bfba3ff4ceffb51097c6f40f487742964aa6.css?body=1" for ::1 at 2015-12-17 09:35:45 -0800
+
+
+Started GET "/assets/components/_hamburger.self-e21500ce479ae52dee22347d39478db7401dfb1bab9513eb9771b262550b4a4b.css?body=1" for ::1 at 2015-12-17 09:35:45 -0800
+
+
+Started GET "/assets/layout/items/admin.self-8e8347e2e7ab23ca54d815904f63c7627c67a214740c88695a57d9623fc379be.css?body=1" for ::1 at 2015-12-17 09:35:45 -0800
+
+
+Started GET "/assets/layout/items/index.self-4120bf8b0a215b435e7e0994ebbc805990db5cb1105c4e5eaf819c58ddbe333c.css?body=1" for ::1 at 2015-12-17 09:35:45 -0800
+
+
+Started GET "/assets/addresses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-17 09:35:45 -0800
+
+
+Started GET "/assets/layout/layout.self-41f7a7758fe375a2af0f3c13829daeb462bd1380057b6f0f446acf7677296d62.css?body=1" for ::1 at 2015-12-17 09:35:45 -0800
+
+
+Started GET "/assets/layout/navigation/profile_modal.self-7439314cf722f263bf71f89a1de3f18f9bff35b96250739b3bd005bee12b2877.css?body=1" for ::1 at 2015-12-17 09:35:45 -0800
+
+
+Started GET "/assets/layout/sessions/new.self-010af748ecbdee4a9c16726fd44acd36c7c103e9cbb59ae85a5ccd089c51cb07.css?body=1" for ::1 at 2015-12-17 09:35:45 -0800
+
+
+Started GET "/assets/layout/users/cart.self-bf3b714fa8a4ec58c13e3bad5e007c0d3013be5e9888cbb0fd31b4480a02b51b.css?body=1" for ::1 at 2015-12-17 09:35:45 -0800
+
+
+Started GET "/assets/layout/users/new.self-e0328491701c1c43e1b7b94ca258669ff3b2c2e6e096415ad5011e29968eea8d.css?body=1" for ::1 at 2015-12-17 09:35:45 -0800
+
+
+Started GET "/assets/layout/welcome.self-5f54848a6e1648da8306afd473097f35cfe648a81ec802641bac40403b7ea388.css?body=1" for ::1 at 2015-12-17 09:35:45 -0800
+
+
+Started GET "/assets/master.self-2315f73c37b0863dafcf0873da0190ba767ba78ad20b290cc7bddb36bc44c56a.css?body=1" for ::1 at 2015-12-17 09:35:45 -0800
+
+
+Started GET "/assets/utilities/_animations.self-9858e256ffd3db2f1190e660cab95682d61043dae4dbb23d6db091d234cbc192.css?body=1" for ::1 at 2015-12-17 09:35:45 -0800
+
+
+Started GET "/assets/utilities/_config.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-17 09:35:45 -0800
+
+
+Started GET "/assets/utilities/_error.self-994dad6addd106eb69b59e50688cb1281bf59284d07f99f5c91e94508a496dc8.css?body=1" for ::1 at 2015-12-17 09:35:45 -0800
+
+
+Started GET "/assets/utilities/_functions.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-17 09:35:45 -0800
+
+
+Started GET "/assets/utilities/_mixins.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-17 09:35:45 -0800
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for ::1 at 2015-12-17 09:35:45 -0800
+
+
+Started GET "/assets/jquery.turbolinks.self-176b9819f30444d441e820bbccd3264fe57753aeafd54dec732b0dbc77129a2a.js?body=1" for ::1 at 2015-12-17 09:35:45 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-17 09:35:45 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-17 09:35:46 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-17 09:35:46 -0800
+
+
+Started GET "/assets/addresses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-17 09:35:46 -0800
+
+
+Started GET "/assets/cart.self-f5276b0eb950fb6e4efa8bd0fa59c5080af7451fc2e2b734d72927fddd94d99f.js?body=1" for ::1 at 2015-12-17 09:35:46 -0800
+
+
+Started GET "/assets/layout.self-6ddcbcc42bd0f0989ea3ea6addd5976994bc43e0f83ac0481677cedabbcdc333.js?body=1" for ::1 at 2015-12-17 09:35:46 -0800
+
+
+Started GET "/assets/navProfileMobile.self-db6dcae0a338cf0197dacdac79908aad8913f44c6da6443c06371efbeab34a2d.js?body=1" for ::1 at 2015-12-17 09:35:46 -0800
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-17 09:35:46 -0800
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-12-17 09:35:46 -0800
+
+
+Started POST "/charges" for ::1 at 2015-12-17 09:36:11 -0800
+Processing by ChargesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aED9upy2AU6g4LzSsSr67d9wrBJdwtu+7uooLQ1EecuJnaR3IxTXH2DUITQqjb4rBclQ+d27gaS/HPQW0sjK8w==", "stripeToken"=>"tok_17J5fg2eZvKYlo2C3YbxBljF", "stripeTokenType"=>"card", "stripeEmail"=>"124cx12@sad.com"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.3ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 59108]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "orders" ("item_ids_quantities", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["item_ids_quantities", "59108,1,"], ["user_id", 1], ["created_at", "2015-12-17 17:36:12.673568"], ["updated_at", "2015-12-17 17:36:12.673568"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "cart" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["cart", ""], ["updated_at", "2015-12-17 17:36:12.677847"], ["id", 1]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  Rendered charges/create.html.erb within layouts/application (1.0ms)
+  Rendered partials/_nav_profile_modal.html.erb (0.2ms)
+  Rendered navigation/_main_nav.html.erb (3.3ms)
+  Rendered partials/_header_errors.html.erb (0.1ms)
+Completed 200 OK in 3404ms (Views: 260.9ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/orders/recent/last" for ::1 at 2015-12-17 09:36:29 -0800
+Processing by OrdersController#recent as */*
+  [1m[36mOrder Load (1.4ms)[0m  [1mSELECT  "orders".* FROM "orders"  ORDER BY "orders"."id" DESC LIMIT 1[0m
+  [1m[35mItem Load (0.7ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 59108]]
+  Rendered partials/_profile_history_last.html.erb (1.4ms)
+Completed 200 OK in 26ms (Views: 1.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/orders" for ::1 at 2015-12-17 09:36:31 -0800
+Processing by OrdersController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mOrder Load (0.3ms)[0m  SELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1  [["user_id", 1]]
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 59108]]
+  Rendered orders/index.html.erb within layouts/application (2.4ms)
+  Rendered partials/_nav_profile_modal.html.erb (0.5ms)
+  Rendered navigation/_main_nav.html.erb (6.6ms)
+  Rendered partials/_header_errors.html.erb (0.3ms)
+Completed 200 OK in 347ms (Views: 337.9ms | ActiveRecord: 1.5ms)

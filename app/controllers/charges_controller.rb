@@ -6,15 +6,14 @@ class ChargesController < ApplicationController
   include UsersHelper
 
   def new
-    @params = params
   end
 
   def create
     # Amount in cents
     cart_total  
     @amount = @cart_total * 100
-    p ""
-    p @params
+    p flash[:shipping_address]
+    p flash[:billing_address]
     customer = Stripe::Customer.create(
       :email => params[:stripeEmail],
       :source  => params[:stripeToken]

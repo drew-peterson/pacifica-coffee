@@ -11,13 +11,18 @@
 
   <div>
     <h4>Shipping Address:</h4>
-    <%= params[:user][:shipping_address] %>
+
+    <% flash[:shipping_address] = params[:user][:shipping_address] %>
+    <%= flash[:shipping_address] %>
+
     <h4>Billing Address:</h4>
+
     <% if params[:user][:billing_checkbox] == '1' %>
-      <%= params[:user][:shipping_address] %>
+      <% flash[:billing_address] = flash[:shipping_address] %>
     <% else %>
-      <%= params[:user][:billing_address] %>
+      <% flash[:billing_address] = params[:user][:billing_address] %>
     <% end %>
+    <%= flash[:billing_address] %>
   </div>
 
 <%= form_tag charges_path do %>
