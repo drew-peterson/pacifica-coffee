@@ -6,6 +6,9 @@ class ChargesController < ApplicationController
   include UsersHelper
 
   def new
+        p '' * 80
+          p params
+        p '' * 80
   end
 
   def create
