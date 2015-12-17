@@ -1,7 +1,5 @@
 "use strict";
 
-
-
 $(function(){
 
   // Variables
@@ -52,7 +50,7 @@ $(function(){
 
       closeModal();
 
-      // show the navbar when tablet and above;
+      // when nav is hidden on profile click, need to make it appear again on close when in tablet or above..
       if ($(window).width() > 769) {
         $(navbar).fadeIn();
       }
