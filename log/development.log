@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 Started GET "/" for ::1 at 2015-12-13 14:59:58 -0800
@@ -13996,3 +13997,5 @@ Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde
 
 
 Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-12-16 13:16:51 -0800
+=======
+>>>>>>> b5b59f2a9aaaedb38348e4df85054f57a692aaa2

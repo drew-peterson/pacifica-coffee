@@ -35,6 +35,9 @@ Rails.application.routes.draw do
   # save user address
   post '/addresses' => 'addresses#create'
 
+  # post shipping address to new charge / order confirmation
+  post '/charges/new' => 'charges#new'
+  
   # for Strip payment
   resources :charges
 
