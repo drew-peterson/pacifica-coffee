@@ -2,19 +2,20 @@
 
   <% @addresses = Address.where(user_id: current_user.id) %>
 
-  <p>Shipping Address:<br /></p>
+   <p>Shipping</p>
 
-  <%= f.select(:shipping_address) do %>
+    <%= f.select(:shipping_address) do %>
     <% @addresses.each do |a| -%>
       <% address = "#{a.nickname} - #{a.address} #{a.city} #{a.state} #{a.zip} " %>
       <%= content_tag(:option, address) %>
     <% end %>
   <% end %>
 
-  <p>Check if Billing Address is the same <%= f.check_box 'billing_checkbox' %></p>
 
-  <p class='billing_address'>Billing Address:<br /></p>
-   
+   <p>Billing</p>
+
+   <p class="check_billing">Use Shipping Address <%= f.check_box 'billing_checkbox', id: 'user_billing_checkbox' %></p>
+
   <%= f.select(:billing_address) do %>
     <% @addresses.each do |a| -%>
       <% address = "#{a.nickname} - #{a.address} #{a.city} #{a.state} #{a.zip} " %>
@@ -22,9 +23,16 @@
     <% end %>
   <% end %>
 
-  
-  <%= f.submit 'Proceed to Checkout', class: 'stripe-button-el' %>
-  
+  <!-- dollar amount -->
+  <div class="cart-details-total">
+    <span>Total:</span>
+    <span>$<%= @cart_total %>.00</span>
+  </div>
+
+    <!-- submit btn -->
+    <div class="cart-ship-bill-submit">
+   <%= f.submit 'Checkout' %>
+   </div>
+
 <% end %>
 
- 

@@ -25,10 +25,13 @@ $(function(){
 
   // hide / show billing address based on check box
   $('#user_billing_checkbox').change(function(){
+    console.log('click')
     if ($(this).is(':checked')) {
-      $('#user_billing_address').hide()
+
+      $('#user_billing_address').fadeOut()
     } else {
-      $('#user_billing_address').show()
+      $('#user_billing_address').fadeIn()
+
     }
   });
 })

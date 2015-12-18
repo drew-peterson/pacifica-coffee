@@ -1,110 +1,71 @@
-
-
 <section class="cart-container">
-
-  <aside class= "tablet-view cart-col">
 
   <!-- Col 1
   #########################-->
+  <div class= "cart-col cart-items-wrapper">
 
-  <!-- Cart Items -->
-  <div class="cart-items" id="cart-item">
-     <% prices = [] %>
-    <ul>
-      <% @items.each do |item, qty| %>
-        <div class="cart-item">
+    <% if current_user.cart != '' %>
 
-          <!-- checkout-item-wrapper -->
-          <div class="cart-item-wrapper">
+    <!-- item cards -->
+      <%= render 'partials/cart_items', locals: {items: @items} %>
 
-            <!-- col 1 -->
-            <!-- image -->
-            <div class="cart-item-image cart-item-col">
-              <span>Product image</span>
-            </div>
+    <% else %>
 
-            <!-- col 2 -->
-            <!-- Name -->
-            <div class="cart-item-name cart-item-col">
-              <li> <%= item.item_name %> </li>
-            </div>
-
-            <!-- col 3 -->
-            <!-- details -->
-            <div class="cart-item-details cart-item-col">
-
-              <li> $<%= item.price %>.00
-                    <% prices << item.price * qty.to_i %>
-              </li>
-
-              <li>
-                <%= form_for :user, url: '/users/cart/update' do |f| %>
-                  <%= hidden_field_tag('item_id', value = item.id) %>
-                  <%= hidden_field_tag('old_qty', value = qty) %>
-
-                  <!-- Used fields -->
-                  <%= number_field_tag('qty', value = qty, min: 1) %>
-              </li>
-
-              <li class="cart-item-update-btn">
-                  <%= f.submit 'Update' %>
-                <% end %>
-              </li>
-
-            </div>
-          </div>
-
-            <!-- remove item -->
-
-              <%= link_to 'Remove Item', users_cart_path(item_id: item.id), method: :delete, class: 'cart-item-remove--btn' %>
-
-          </div>
-        <% end %>
-
-      </ul>
+    <div class="empty-cart">
+      <h4>Your Shopping Cart is Empty</h4>
+      <%= link_to 'add more items', items_path %>
     </div>
-  <!-- address item end -->
+
+    <% end %>
   </div>
 
-  </aside>
-    <!-- Col 2
-    #########################-->
 
-    <!-- Cart payment details -->
-    <div class="cart-col cart-details">
 
-      <!-- Total and Pay container  -->
-      <div class="cart-details-total">
-        <h3> Order Summary </h3>
-        <% if current_user && current_user.cart != '' %>
-          <%= form_tag charges_path do %>
-            <article>
-              <% if flash[:error].present? %>
-                <div id="error_explanation">
-                  <p><%= flash[:error] %></p>
-                </div>
-              <% end %>
-              <label class="amount">
-                <span>Total:</span>
-                <span>$<%= @cart_total %>.00</span>
-              </label>
-            </article>
+  <!-- Col 2
+  #########################-->
+<% if current_user && current_user.cart != '' %>
+  <!-- stripe error -->
+  <%= form_tag charges_path do %>
+    <article>
+      <% if flash[:error].present? %>
+        <div id="error_explanation">
+          <p><%= flash[:error] %></p>
+        </div>
+      <% end %>
+    </article>
+  <% end %>
 
-          <% end %>
+  <!-- Cart payment details -->
+  <div class="cart-col cart-details">
+    <!-- end of error -->
 
-        <% else %>
-          <h4>Your Shopping Cart is Empty</h4>
-        <% end %>
+<!-- Address -->
+    <div class="cart-addresses">
+      <h2 style="font-size: 35px; margin-bottom: 10px;"> Address </h2>
+      <!-- add new item button -->
+      <div class="cart-add-address">
+        <input id="cart-show-address" type="checkbox">
+        <label for="cart-show-address"> Add new address </label>
+        <!-- add item modal -->
+        <span class="cart-address-modal">
+          <p>Add new address</p>
+          <label for="cart-show-address"> &#10006; </label>
+          <%= render 'addresses/form' %>
+        </span>
       </div>
 
-    <div>
-      <%= render 'form' %>
-    </div>    
+      <div class="cart-select-address">
+        <%= render 'form' %>
+      </div>
 
-      <!-- Address Container -->
-    <div>
-     <%= render 'addresses/form' %>
+
     </div>
 
+
+
   </div>
+  <!-- end of col 2 -->
+<% end %>
+<!-- end of hide if no items in cart -->
+
 </section>

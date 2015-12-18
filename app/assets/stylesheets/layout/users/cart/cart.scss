@@ -1,0 +1,264 @@
+@import 'master';
+
+// When cart is empty
+
+.empty-cart {
+  position: absolute;
+  width: 95%;
+  margin: $sp--msm auto;
+  text-align: center;
+
+  h4 {
+    font-size: $font--lg;
+    margin-bottom: $sp--lg;
+    @include tablet {
+      font-size: $font--xl;
+    }
+  }
+  a {
+   @include btn--large($text-gray);
+   width: 60%;
+   @include tablet {
+     width: 20%;
+   }
+ }
+}
+
+// Cart Layout
+
+.cart-container {
+
+  @include display(flex);
+  @include flex-direction(column);
+  margin: 0 auto;
+  width: 100%;
+  background: white;
+
+  @include tablet {
+    @include flex-direction(row);
+  }
+
+  .cart-col {
+    @include tablet {
+      @include flex(1);
+    }
+  }
+
+  .cart-items-wrapper {
+    @include tablet {
+      // not really needed unless i change to 2
+      @include flex(1);
+    }
+  }
+
+
+
+} // end of cart-container
+
+// ******************
+// Address Column
+// ******************
+
+.cart-address-selection {
+  margin-bottom: $sp--med;
+  padding: $sp--med;
+  border: 1px solid $emerald;
+
+  @include tablet {
+  }
+}
+
+// #######################
+// Select address
+
+// container div
+.cart-details {
+  margin-top: $sp--med;
+
+  @include tablet {
+    margin-top: 0;
+  }
+
+}
+
+.cart-addresses {
+  @include display(flex);
+  @include flex-direction(column);
+  @include align-items(center);
+
+  width: 80%;
+  margin: 0 auto;
+
+}
+
+.cart-select-address {
+  width: 100%;
+  form {
+    p {
+      font-size: $font--msm;
+
+    }
+    .check_billing {
+      margin-top: $sp--xs;
+      padding: $sp--xs;
+      font-size: 15px;
+      font-style: italic;
+      background-color: $light-gray;
+
+      input[type='checkbox'] { margin-left: 10px; }
+    }
+  } // end of form
+
+  select {
+    margin: $sp--sm 0;
+    display: block;
+    width: 100%;
+    font-size: $font--msm;
+
+  }
+
+  .cart-ship-bill-submit {
+    @include display(flex);
+    @include justify-content(center);
+    margin: $sp--sm 0;
+    input {
+      @include main-btn($emerald);
+      color: white;
+      font-size: $font--msm;
+      padding: 5px;
+      width: 60%;
+    }
+  }
+}
+
+.cart-add-address {
+  margin-bottom: $sp--sm;
+  width: 70%;
+  #cart-show-address {
+    position: absolute; // hide the checkbox and position off screen
+    top: -1000px;
+  }
+
+  // button for add address modal
+
+  label {
+    color: $text-gray;
+    text-align: center;
+    width: 100%;
+    cursor: pointer;
+    @include main-btn($off-white){
+    border: 2px solid $gray;
+    padding: $sp--xs;
+
+    &:hover {
+      color: darken($text-gray, 20%);
+    }
+
+    }
+  }
+  .cart-address-modal {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    // background-color: rgba(0,0,0, 0.65);
+
+    z-index: -100;
+    opacity: 0;
+    transform: scale(0.2);
+    transition: all .75s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    // Close button
+    label {
+      text-align: center;
+      border: none;
+      padding: 0;
+      font-size: 30px;
+      height: 50px;
+      width: 50px;
+      line-height: 60px;
+      border-radius: 50%;
+      color: black;
+      cursor: pointer;
+      display: inline-block;
+      position: absolute;
+      right: .5em;
+      top: 0.1em;
+
+      box-shadow: 0px 11px 21px -6px rgba(0,0,0,0.55);
+
+      &:hover {
+        background-color: darken(white, 10%);
+      }
+    }
+  }
+
+  p {
+    padding: $sp--sm;
+    // background-color: rgba(0,0,0, 0.45);
+    // background-color: black;
+    // color: white;
+    font-size: $font--med;
+    margin-bottom: $sp--msm;
+
+  }
+
+  // Add new form
+  form {
+    // style form and alter defaults
+      @include form-style {
+      p { font-size: $font--msm; }
+      input { padding: 0; }
+    }
+  } // end of form
+
+  // click btn trigger event
+  #cart-show-address:checked ~ .cart-address-modal {
+    opacity: 1;
+    z-index: 800;
+    transform: scale(1);
+  }
+
+} // end of add address
+
+// total and dollars
+.cart-details-total {
+  @include display(flex);
+  @include justify-content(space-between);
+  font-size: $font--lg;
+  margin-bottom: $sp--med ;
+  margin-top: $sp--lg;
+}
+
+
+
+
+
+
+
+
+
+
+.stripe-button-el {
+  margin-top: $sp--lg;
+  background-image: none;
+  min-height: 60px;
+  line-height: 60px;
+  background: none;
+  background-color: none;
+  width: 100%;
+
+  transition: all .3s ease-in;
+  span {
+    background: none;
+    background-image: none;
+    background-color: none;
+  }
+}
+
+
+
+

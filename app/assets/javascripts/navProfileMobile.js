@@ -18,7 +18,7 @@ $(function(){
 
 
   $('#main-header').on('click', '#profileNavBtn', function(e){
-
+    console.log("profile click from #profileNavBtn")
     // get last order
     $.ajax({
       url: '/orders/recent/last'

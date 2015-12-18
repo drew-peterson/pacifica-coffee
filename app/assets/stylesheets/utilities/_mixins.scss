@@ -20,6 +20,7 @@
 
 
 @mixin main-btn($bg, $padding: 20px) {
+  display: inline-block;
   background: $bg;
   padding: ($padding / 2) $padding;
   &:hover {
@@ -33,8 +34,9 @@
 }
 
 @mixin btn--large($bg) {
+  display: inline-block;
   background: $bg;
-  padding: $sp--xs 0;
+  padding: $sp--sm 0;
   letter-spacing: 0.02em;
   font-size: $font--msm;
   color: white;
@@ -127,6 +129,12 @@
     padding: 0.5rem;
     font-size: $font--msm;
     color: darken($light-gray, 50%);
+    transition: all 0.2s ease-in;
+
+    &:focus {
+      border: 3px solid $dark-gray;
+      background-color: $off-white;
+    }
     }
   // submit button
   .form-submit-btn {
@@ -147,6 +155,8 @@
   @include desktop {
     width: 50%;
   }
+
+  @content;
 };
 
 
