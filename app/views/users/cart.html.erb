@@ -41,16 +41,22 @@
 
 <!-- Address -->
     <div class="cart-addresses">
+      <!-- add new item button -->
+      <div class="cart-add-address">
+        <input id="cart-show-address" type="checkbox">
+        <label for="cart-show-address"> Add new address </label>
+
+        <span class="cart-address-modal">
+          <p>Add new address</p>
+          <label for="cart-show-address"> &#10006; </label>
+          <%= render 'addresses/form' %>
+        </span>
+      </div>
 
       <div class="cart-select-address">
         <%= render 'form' %>
       </div>
 
-      <div class="cart-add-address">
-        <input id="cart-show-address" type="checkbox">
-        <label for="cart-show-address"> Add new address </label>
-        <%= render 'addresses/form' %>
-      </div>
 
     </div>
 

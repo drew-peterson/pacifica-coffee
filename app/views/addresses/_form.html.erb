@@ -1,19 +1,14 @@
 <%= form_for :address, url: addresses_path do |f| %>
 
- <p> Address Name: </p>
- <%= f.text_field :nickname %>
+ <%= f.text_field :nickname, placeholder: 'Address Name' %>
 
- <p>Address: </p>
- <%= f.text_field :address %>
+ <%= f.text_field :address, placeholder: 'Address' %>
 
- <p> City: </p>
- <%= f.text_field :city %>
+ <%= f.text_field :city , placeholder: 'City' %>
 
- <p> State: </p>
- <%= f.text_field :state %>
+ <%= f.text_field :state , placeholder: 'State' %>
 
- <p> Zip: </p>
- <%= f.text_field :zip %>
+ <%= f.text_field :zip , placeholder: 'Zip Code' %>
 
    <!-- hidden field passing over user_id for strong params -->
    <%= f.hidden_field :user_id, :value => current_user.id %>
