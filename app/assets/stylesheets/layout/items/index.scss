@@ -44,7 +44,10 @@
     }
 
     .btn-add-to-cart {
-      @include btn--large($google-blue);
+      @include btn--large($google-blue) {
+        padding: 3px;
+        width: 80%;
+      }
 
     }
 
