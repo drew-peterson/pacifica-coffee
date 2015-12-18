@@ -38,6 +38,14 @@
     @include flex-direction(row);
   }
 
+  .cart-col {
+    @include tablet {
+      @include flex(1);
+    }
+  }
+
+
+
 } // end of cart-container
 
 // ******************
@@ -59,8 +67,11 @@
 // container div
 .cart-details {
   margin-top: $sp--med;
+
   @include tablet {
-    margin: 0;
+
+    margin-top: 0;
+    margin-left: $sp--lg;
   }
 }
 
