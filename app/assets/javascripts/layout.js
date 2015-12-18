@@ -6,7 +6,6 @@
 // Alternative hide show menu
 
 $(function(){
-  console.log("hello from layout.js")
 
   // hide show mobile menu
   $("#main-header").on('click', '#mobile-menu-btn', function(){

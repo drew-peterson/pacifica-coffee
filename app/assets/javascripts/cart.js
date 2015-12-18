@@ -2,7 +2,6 @@
 
 $(function(){
 
-  console.log("hello from cart")
   var stripeBtn = $('.stripe-button-el')
   var stripeBtnSpan = $('.stripe-button-el span')
 
