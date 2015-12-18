@@ -1,0 +1,17 @@
+@import 'master';
+
+// submit button
+
+// standard class is being overridden by input[type]
+// input[type="submit"].form-submit-btn {
+//   font-size: $font--msm;
+//   color: white;
+//   margin-top: 1.5rem;
+//   padding: .2rem;
+//   background-color: darken($light-gray, 50%) ;
+//   transition: .3s ease-in;
+
+//   &:hover {
+//     background-color: darken($light-gray, 70%);
+//   }
+// }

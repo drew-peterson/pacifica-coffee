@@ -27,7 +27,7 @@
 // Cart Layout
 
 .cart-container {
-  @include debug;
+
   @include display(flex);
   @include flex-direction(column);
   margin: 0 auto;
@@ -54,7 +54,7 @@
 }
 
 // #######################
-// total payment details
+// Select address
 
 // container div
 .cart-details {
@@ -72,25 +72,41 @@
 
 .cart-select-address {
   width: 100%;
-
   form {
     p {
       font-size: $font--msm;
-      margin-bottom: $sp--xs;
 
     }
     .check_billing {
-      padding: $sp--sm 0;
+      margin-top: $sp--xs;
+      padding: $sp--xs;
+      font-size: 15px;
       font-style: italic;
-      border-bottom: 2px solid $gray;
+      background-color: $light-gray;
+
+      input[type='checkbox'] { margin-left: 10px; }
     }
   } // end of form
 
   select {
+    margin: $sp--sm 0;
     display: block;
     width: 100%;
     font-size: $font--msm;
 
+  }
+
+  .cart-ship-bill-submit {
+    @include display(flex);
+    @include justify-content(center);
+    margin: $sp--sm 0;
+    input {
+      @include main-btn($emerald);
+      color: white;
+      font-size: $font--msm;
+      padding: 5px;
+      width: 60%;
+    }
   }
 }
 
@@ -126,13 +142,15 @@
     top: 0;
     width: 100%;
     height: 100vh;
-    background-color: rgba(0,0,0, 0.65);
+    background-color: white;
+    // background-color: rgba(0,0,0, 0.65);
 
     z-index: -100;
     opacity: 0;
     transform: scale(0.2);
     transition: all .75s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
+    // Close button
     label {
       text-align: center;
       border: none;
@@ -140,20 +158,19 @@
       font-size: 30px;
       height: 50px;
       width: 50px;
-      line-height: 58px;
-      background: $emerald;
+      line-height: 60px;
       border-radius: 50%;
-      color: #000000;
+      color: black;
       cursor: pointer;
       display: inline-block;
       position: absolute;
       right: .5em;
-      top: 0;
+      top: 0.1em;
 
-      box-shadow: 0px 11px 21px -6px rgba(0,0,0,0.75);
+      box-shadow: 0px 11px 21px -6px rgba(0,0,0,0.55);
 
       &:hover {
-        background-color: darken($emerald, 10%);
+        background-color: darken(white, 10%);
       }
     }
   }
@@ -161,19 +178,17 @@
   p {
     padding: $sp--sm;
     // background-color: rgba(0,0,0, 0.45);
-    background-color: $google-blue;
-    color: white;
+    // background-color: black;
+    // color: white;
     font-size: $font--med;
-    font-weight: bold;
-    margin-bottom: $sp--med;
+    margin-bottom: $sp--msm;
+
   }
 
+  // Add new form
   form {
-    // transform: scale(1,0);
-    transform-origin: top;
-    transition: all .75s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     // style form and alter defaults
-    @include form-style {
+      @include form-style {
       p { font-size: $font--msm; }
       input { padding: 0; }
     }
@@ -192,7 +207,9 @@
 .cart-details-total {
   @include display(flex);
   @include justify-content(space-between);
-  font-size: $font--msm;
+  font-size: $font--lg;
+  margin-bottom: $sp--med ;
+  margin-top: $sp--lg;
 }
 
 

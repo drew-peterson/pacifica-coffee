@@ -26,9 +26,9 @@ $(function(){
   // hide / show billing address based on check box
   $('#user_billing_checkbox').change(function(){
     if ($(this).is(':checked')) {
-      $('.billing_address').hide()
+      $('.billing_address').fadeOut()
     } else {
-      $('.billing_address').show()
+      $('.billing_address').fadeIn()
     }
   });
 })
