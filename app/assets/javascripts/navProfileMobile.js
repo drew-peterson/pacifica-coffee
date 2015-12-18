@@ -1,7 +1,6 @@
 "use strict";
 
 $(function(){
-  console.log("hello from modal js")
   // Variables
    var hambugerBtn = $('#mobile-menu-btn')
    var navbar = $('#main-nav')
@@ -18,12 +17,11 @@ $(function(){
 
 
   $('#main-header').on('click', '#profileNavBtn', function(e){
-    console.log("profile click from #profileNavBtn")
     // get last order
     $.ajax({
       url: '/orders/recent/last'
     }).done(function(data){
-      console.log("done")
+
       // add last order to html
       var html = data.html
 
