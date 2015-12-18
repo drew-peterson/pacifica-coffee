@@ -59,6 +59,10 @@ class UsersController < ApplicationController
     @addresses = Address.where(user_id: current_user.id)
   end
 
+  def proceed
+    redirect_to new_charge_path
+  end
+  
   def checkout
   end
 

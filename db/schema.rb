@@ -41,6 +41,8 @@ ActiveRecord::Schema.define(version: 20151210193550) do
 
   create_table "orders", force: :cascade do |t|
     t.string   "item_ids_quantities"
+    t.string   "shipping_address"
+    t.string   "billing_address"
     t.integer  "user_id"
     t.boolean  "shipped",             default: false
     t.boolean  "requested_return",    default: false

@@ -1,6 +1,21 @@
+  <!--ERRORS
+####################-->
+
 <!-- user controller add to chart -->
 <% if flash[:already_in_cart] %>
   <p class="error-p error-msg"><%= flash[:already_in_cart]%></p>
+
+<!-- application controller * authorize -->
+<% elsif flash[:user_unauthorized] %>
+  <p class="error-p error-msg"><%= flash[:user_unauthorized]%></p>
+
+<!-- application controller * authorize -->
+<% elsif flash[:admin_unauthorized] %>
+  <p class="error-p error-msg"><%= flash[:admin_unauthorized]%></p>
+
+
+  <!--ALERTS
+####################-->
 
 <!-- user controller add to chart -->
 <% elsif flash[:item_added] %>

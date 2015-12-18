@@ -61,12 +61,12 @@
     display: flex;
   }
 
-  aside,
+  .filter-container,
   .items-container {
     @include flex(1);
   }
 
-  aside {
+  .filter-container {
     // width: 80%;
     text-align: center;
 
@@ -79,7 +79,6 @@
       width: 80%;
       font-size: 1.3rem;
       padding-bottom: .5rem;
-      border-bottom: 1px solid $wet-gray;
     }
     div {
 

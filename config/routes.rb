@@ -8,14 +8,22 @@ Rails.application.routes.draw do
 
   # cart
   get '/users/cart' => 'users#cart'
+  post '/users/cart' => 'users#add_to_cart'
   get '/users/cart/checkout' => 'users#checkout'
   post '/users/cart/update' => 'users#update_cart'
   delete '/users/cart' => 'users#destroy_from_cart'
+
   post '/users/cart' => 'users#add_to_cart'
+  # James - user profile
+  get '/users/profile/:id' => 'users#profile'
+
+  post '/users/cart/proceed' => 'users#proceed'
+
 
   # order history
   get '/orders' => 'orders#index'
   get '/orders/:id' => 'orders#show'
+  
   # without /last it does not work, it tries to go do #show, unless i place before show... /recent before #show works, after Nope unless recent/last -- this is for jquery ajax
   get '/orders/recent/last' => 'orders#recent'
 
@@ -27,6 +35,9 @@ Rails.application.routes.draw do
   # save user address
   post '/addresses' => 'addresses#create'
 
+  # post shipping address to new charge / order confirmation
+  post '/charges/new' => 'charges#new'
+  
   # for Strip payment
   resources :charges
 
