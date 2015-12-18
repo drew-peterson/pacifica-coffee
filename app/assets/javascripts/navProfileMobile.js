@@ -1,7 +1,7 @@
 "use strict";
 
 $(function(){
-
+  console.log("hello from modal js")
   // Variables
    var hambugerBtn = $('#mobile-menu-btn')
    var navbar = $('#main-nav')
