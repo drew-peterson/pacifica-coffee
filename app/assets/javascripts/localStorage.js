@@ -6,7 +6,7 @@ $(function(){
   // get storage and set tab...
   var selectedTab = getStorage('pacifica').element
   // set style the css
-  $('.' + selectedTab).css('border', '1px solid black');
+  $('.' + selectedTab).css('color', 'black');
 
 
 // listen and store click in local storage
