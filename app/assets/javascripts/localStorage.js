@@ -1,6 +1,7 @@
 
 
 $(function(){
+  console.log("hello from localstorage.js")
   var pacifica = {};
 
   // get storage and set tab...
