@@ -158,7 +158,7 @@
   }
   .cart-address-modal {
     display: block;
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     width: 100%;
@@ -181,7 +181,8 @@
       width: 50px;
       line-height: 60px;
       border-radius: 50%;
-      color: black;
+      color: white;
+      background: $google-blue;
       cursor: pointer;
       display: inline-block;
       position: absolute;
@@ -191,19 +192,23 @@
       box-shadow: 0px 11px 21px -6px rgba(0,0,0,0.55);
 
       &:hover {
-        background-color: darken(white, 10%);
+        background-color: lighten($google-blue, 10%);
       }
     }
   }
 
+  // modal p
   p {
     padding: $sp--sm;
-    // background-color: rgba(0,0,0, 0.45);
+    // background-color: rgba(0,0,0, 0.15);
     // background-color: black;
     // color: white;
     font-size: $font--med;
     margin-bottom: $sp--msm;
-
+    @include tablet {
+      font-size: $font--lg;
+      text-align: center;
+    }
   }
 
   // Add new form
