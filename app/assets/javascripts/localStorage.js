@@ -1,13 +1,22 @@
 
 
 $(function(){
-  console.log("hello from localstorage.js")
-  var pacifica = {};
+  // this has to be outside if
+    var pacifica = {}
+
+  // if local storage has not been set..
+  if(!localStorage.pacifica) {
+    pacifica.currentTab = 'default';
+  // set default tab on page load
+    setStorage(pacifica)
+  }
 
   // get storage and set tab...
-  var selectedTab = getStorage('pacifica').element
+  var selectedTab = getStorage('pacifica').currentTab ;
   // set style the css
   $('.' + selectedTab).css('color', 'black');
+
+  console.log('current tab: ' + selectedTab)
 
 
 // listen and store click in local storage
@@ -16,12 +25,11 @@ $(function(){
     // get class of clicked
     var click = $(this).attr('class')
     // set object to click value
-    pacifica.element = click;
+    pacifica.currentTab = click;
     // just test data to for object
     pacifica.somethingElse = "Drew Peterson"
     // set the local storage to object
     setStorage(pacifica)
-
   })
 
 
