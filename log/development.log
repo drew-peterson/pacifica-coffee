@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 Started GET "/" for ::1 at 2015-12-13 14:59:58 -0800
@@ -14184,3 +14185,5 @@ Processing by UsersController#cart as HTML
   Rendered partials/_header_errors.html.erb (0.1ms)
 Completed 200 OK in 101ms (Views: 97.8ms | ActiveRecord: 0.9ms)
 >>>>>>> cart-styles
+=======
+>>>>>>> f3bd2d9691dad062d4a5893389d7cdfb7c0cc842
