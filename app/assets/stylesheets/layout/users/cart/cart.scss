@@ -1,19 +1,33 @@
 @import 'master';
 
-// Tablet view stuff
-.cart-col {
+// When cart is empty
 
-  @include tablet {
-    flex: 1;
+.empty-cart {
+  position: absolute;
+  width: 95%;
+  margin: $sp--msm auto;
+  text-align: center;
+
+  h4 {
+    font-size: $font--lg;
+    margin-bottom: $sp--lg;
+    @include tablet {
+      font-size: $font--xl;
+    }
   }
+  a {
+   @include btn--large($text-gray);
+   width: 60%;
+   @include tablet {
+     width: 20%;
+   }
+ }
 }
 
-.tablet-view {
-  flex: 2;
-  margin-right: $sp--lg;
-}
+// Cart Layout
 
 .cart-container {
+  @include debug;
   @include display(flex);
   @include flex-direction(column);
   margin: 0 auto;
@@ -39,11 +53,10 @@
   }
 }
 
-
-
-
 // #######################
 // total payment details
+
+// container div
 .cart-details {
   margin-top: $sp--med;
   @include tablet {
@@ -51,17 +64,57 @@
   }
 }
 
-.cart-details-total {
-  h3 {
-    font-size: $font--med;
-    margin-bottom: $sp--med;
-  }
-  .amount {
-    @include display(flex);
-    @include justify-content(space-between);
-    font-size: $font--msm;
-  }
+.cart-addresses {
+
 }
+
+.cart-add-address {
+
+  #cart-show-address {
+    position: absolute; // hide the checkbox and position off screen
+    top: -1000px;
+  }
+  // the hover over for the form popup
+  label {
+
+    cursor: pointer;
+    @include main-btn($google-blue){
+      color: white;
+    }
+  }
+
+  #cart-show-address:checked ~ form {
+    transform: scale(1,1);
+  }
+
+  form {
+    transform: scale(1,0);
+    transform-origin: top;
+    transition: all .75s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    // style form and alter defaults
+    @include form-style {
+      p { font-size: $font--msm; }
+      input { padding: 0; }
+    }
+  } // end of form
+
+} // end of add address
+
+// total and dollars
+.cart-details-total {
+  @include display(flex);
+  @include justify-content(space-between);
+  font-size: $font--msm;
+}
+
+
+
+
+
+
+
+
+
 
 .stripe-button-el {
   margin-top: $sp--lg;
