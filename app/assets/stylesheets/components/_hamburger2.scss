@@ -1,0 +1,81 @@
+// ***********************************
+// Drew P Version
+// ***********************************
+
+
+// HTML
+// <button>
+//   <span>close</span>
+// </button>
+
+// JS
+// $(function(){
+//   $('button').click(function(){
+//     $(this).toggleClass('active')
+//   })
+// })
+
+
+// CSS
+
+button {
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  height: 50px;
+  width: 50px;
+  position: relative;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 0;
+
+  transition: transform .5s ease;
+}
+
+button:focus {
+  outline: none;
+}
+
+button span,
+button span::before,
+button span::after {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 7px;
+  width: 100%;
+  background: black;
+
+  transition: all .2s ease;
+  transition-delay: .2s;
+}
+
+button span {
+  top: calc(25px - 3.5px);
+}
+
+button span::before {
+  top: -13px;
+}
+
+button span::after {
+  top: 13px;
+}
+
+/* animation */
+.active {
+  transform: rotateY(180deg);
+}
+
+.active span {
+  background: none;
+}
+.active span::after {
+  top: 0;
+  transform: rotate(45deg);
+}
+.active span::before {
+  top: 0;
+  transform: rotate(-45deg);
+}
