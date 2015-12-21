@@ -3,7 +3,7 @@ $(function(){
 
   $('.item-card').on('click', '.quickviewBtn', function(e){
     e.preventDefault();
-    console.log('click')
+
     // select the modal for item
     var modal = $(this).next()
 
@@ -14,7 +14,8 @@ $(function(){
     // Close button - not using same btn so I toggle will not work...
     $('.item-card').on('click', '.quickviewBtn-close', function(e){
       e.preventDefault()
-      var modal = $(this).parent()
+
+      var modal = $(this).closest('.quickview-container')
       modal.removeClass('quickview-container-show')
     })
 
