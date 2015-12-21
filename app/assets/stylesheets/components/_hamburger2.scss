@@ -4,46 +4,51 @@
 
 
 // HTML
-// <button>
+// <button id="ham-btn">
 //   <span>close</span>
 // </button>
 
 // JS
 // $(function(){
-//   $('button').click(function(){
-//     $(this).toggleClass('active')
+//   $('#ham-btn').click(function(){
+//     $(this).toggleClass('ham-active')
 //   })
 // })
 
 
-// CSS
 
-button {
+
+//vars
+
+$btn-height: 30px;
+$btn-width: 30px;
+$bar-height: 4px;
+$bar-space: 10px;
+
+#ham-btn {
   cursor: pointer;
-  padding: 0;
-  margin: 0;
-  height: 50px;
-  width: 50px;
+  height: $btn-height;
+  width: $btn-width;
   position: relative;
   background: none;
   border: none;
-  color: white;
   font-size: 0;
 
   transition: transform .5s ease;
+
+  &:focus {
+    outline: none; // remove blue box on button click
+  }
 }
 
-button:focus {
-  outline: none;
-}
 
-button span,
-button span::before,
-button span::after {
+#ham-btn span,
+#ham-btn span::before,
+#ham-btn span::after {
   content: '';
   display: block;
   position: absolute;
-  height: 7px;
+  height: $bar-height;
   width: 100%;
   background: black;
 
@@ -51,31 +56,33 @@ button span::after {
   transition-delay: .2s;
 }
 
-button span {
-  top: calc(25px - 3.5px);
+#ham-btn span {
+  top: ($btn-height / 2) - ($bar-height / 2) // center the middle span
 }
 
-button span::before {
-  top: -13px;
+#ham-btn span::before {
+  top: -$bar-space;
 }
 
-button span::after {
-  top: 13px;
+#ham-btn span::after {
+  top: $bar-space;
 }
 
 /* animation */
-.active {
+.ham-active {
   transform: rotateY(180deg);
 }
 
-.active span {
+.ham-active span {
   background: none;
-}
-.active span::after {
-  top: 0;
-  transform: rotate(45deg);
-}
-.active span::before {
-  top: 0;
-  transform: rotate(-45deg);
-}
+
+  &::after {
+    top: 0;
+    transform: rotate(45deg);
+  }
+
+  &::before {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+} // end of active span
