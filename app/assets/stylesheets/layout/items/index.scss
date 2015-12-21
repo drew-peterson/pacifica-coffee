@@ -28,6 +28,7 @@
     padding: 1% 2%;
     background: $light-gray;
     margin-bottom: 3%;
+    border-bottom: $bb--card;
 
 
     h4 {
@@ -45,8 +46,8 @@
 
     .btn-add-to-cart {
       @include btn--large($google-blue) {
-        padding: 3px;
-        width: 80%;
+        padding: 2px;
+        width: 60%;
       }
 
     }

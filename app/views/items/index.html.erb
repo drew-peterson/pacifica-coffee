@@ -22,6 +22,12 @@
         <% end %>
       </li>
 
+      <!-- Quick view modal and button-->
+
+      <!-- pass along the local var as an istance only way to traverse render -->
+      <% @item = item %>
+      <%= render 'quick_view', locals: @item %>
+
     </div>
   <% end %>
 </ul>
