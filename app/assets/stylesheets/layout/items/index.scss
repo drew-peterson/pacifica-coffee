@@ -22,8 +22,11 @@
 .items-container {
   display: flex;
   flex-direction: column;
+  @include align-items(center);
 
   .item-card {
+    width: 85%;
+    min-height: rem(406px); // account for large titles
     text-align: center;
     padding: 1% 2%;
     background: $el-gray;
