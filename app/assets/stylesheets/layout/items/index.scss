@@ -25,6 +25,9 @@
   @include align-items(center);
 
   .item-card {
+    @include display(flex);
+    @include flex-direction(column);
+
     width: 85%;
     min-height: rem(406px); // account for large titles
     text-align: center;
@@ -49,7 +52,7 @@
     }
     li {
       font-size: $font--med;
-      padding: $sp--sm 0;
+      margin-top: auto;
     }
 
 
