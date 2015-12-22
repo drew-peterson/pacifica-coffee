@@ -32,7 +32,7 @@
 
 .cart-item-image {
   background: url('http://noblebeancoffeeroasters.com/shop/wp-content/uploads/2013/05/coffee-bag.png') no-repeat center center;
-  background-size: cover;
+  background-size: contain;
   height: rem(150px);
   font-size: 0;
 }

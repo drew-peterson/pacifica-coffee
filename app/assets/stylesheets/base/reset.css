@@ -60,11 +60,11 @@ input:focus{
 }
 
 /* input type default styling remove */
-input[type=number]::-webkit-inner-spin-button,
+/*input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
-}
+}*/
 
 /************************
  Input resets

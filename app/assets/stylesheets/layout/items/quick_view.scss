@@ -11,28 +11,36 @@
 
 // quick view modal
 .quickview-container {
+  @include display(flex);
+  @include flex-direction(column);
+  @include align-items(center);
+
   visibility: hidden;
-  background: red;
+  opacity: 0;
+  background: white;
   width: 100%;
   height: 0vh;
   position: fixed;
   top: 0;
   left: 0;
 
-  transition: all 0.75s ease;
+  transition: all 0.75s ease-in-out;
 
 
   // ======
   // Header
+
   .modal-header {
-    background: green;
+    @include display(flex);
+    @include justify-content(flex-end);
+    padding: $sp--sm;
     width: 100%;
 
     // Close Btn
     .quickviewBtn-close {
       @include button-reset;
-      height: 50px;
-      width: 50px;
+      height: 30px;
+      width: 30px;
       position: relative;
       font-size: 0;
 
@@ -47,25 +55,87 @@
       }
 
       & span {
-        top: (50px / 2) - (5px / 2);
+        top: (30px / 2) - (5px / 2);
         transform: rotate(45deg);
       }
       & span::after {
         transform: rotate(-90deg);
       }
+
+      &:hover span,
+      &:hover span::after {
+        background: white;
+      }
     }
+  } // end of header
+
+// ===============
+// item img
+.modal-itemImage {
+  background: url('http://goo.gl/bLj6Ou') no-repeat center center;
+  background-size: contain;
+  height: 200px;
+  width: 200px;
+}
+
+
+// ===============
+// item details
+.modal-itemDetails {
+  width: 85%;
+  margin: 0 auto;
+
+  h4 {
+    font-size: $font--lg;
+    margin: $sp--sm 0;
+  }
+  p {
+    font-size: $font--msm;
+  }
+  .price {
+    margin: $sp--sm 0;
+    padding: $sp--sm 0;
+    font-size: $font--med;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
   }
 
+  form {
 
+    span,
+    label,
+    input {
+      font-size: $font--med;
+    }
+    span {
+      display: block;
+      height: 55px;
+      line-height: 55px;
+      text-align: center;
+    }
 
-
-
-
-
+    input {
+      font-size: $font--msm;
+      width: 50px;
+      padding: $sp--xs 0;
+      background: white;
+      border: 1px solid black;
+    }
+  }
 }
+
+
+
+
+} // end of container
+
+
+//============
+// modal transition
 
 .quickview-container-show {
   visibility: visible;
   z-index: 100;
   height: 100vh;
+  opacity: 1;
 }
