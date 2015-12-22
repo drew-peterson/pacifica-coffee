@@ -12,7 +12,7 @@ $(function(){
 
 
     // Close button - not using same btn so I toggle will not work...
-    $('.item-card').on('click', '.quickviewBtn-close', function(e){
+    $('.item-card').on('click', '#x-btn', function(e){
       e.preventDefault()
 
       var modal = $(this).closest('.quickview-container')
