@@ -171,29 +171,10 @@
     transform: scale(0.2);
     transition: all .75s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
-    // Close button
-    label {
-      text-align: center;
-      border: none;
-      padding: 0;
-      font-size: 30px;
-      height: 50px;
-      width: 50px;
-      line-height: 60px;
-      border-radius: 50%;
-      color: white;
-      background: $google-blue;
-      cursor: pointer;
-      display: inline-block;
-      position: absolute;
-      right: .5em;
-      top: 0.1em;
-
-      box-shadow: 0px 11px 21px -6px rgba(0,0,0,0.55);
-
-      &:hover {
-        background-color: lighten($google-blue, 10%);
-      }
+    & div:first-of-type {
+      @include display(flex);
+      @include justify-content(flex-end);
+      padding: $sp--sm;
     }
   }
 
