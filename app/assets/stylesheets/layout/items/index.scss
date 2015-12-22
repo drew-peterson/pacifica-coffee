@@ -26,28 +26,34 @@
   .item-card {
     text-align: center;
     padding: 1% 2%;
-    background: $light-gray;
+    background: $el-gray;
     margin-bottom: 3%;
     border-bottom: $bb--card;
 
+    // ===============
+    // item img
+    .modal-itemImage {
+      background: url('http://goo.gl/bLj6Ou') no-repeat center center;
+      background-size: contain;
+      height: 150px;
+      width: 100px;
+      margin: 0 auto;
+    }
 
     h4 {
-      font-size: 1.3rem;
-      margin-top: .6rem;
+      font-size: $font--lg;
+      margin-top: $sp--msm;
     }
     li {
-      padding: .3rem;
-
+      font-size: $font--med;
+      padding: $sp--sm 0;
     }
-    li:last-child {
-      margin-top: auto;
 
-    }
 
     .btn-add-to-cart {
       @include btn--large($google-blue) {
         padding: 2px;
-        width: 60%;
+        width: rem(200px);
       }
 
     }

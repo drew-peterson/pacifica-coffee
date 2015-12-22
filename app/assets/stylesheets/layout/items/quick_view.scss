@@ -5,11 +5,14 @@
   display: block;
   padding: $sp--sm;
   width: 50%;
-  margin: $sp--sm auto;
+  margin: $sp--msm auto;
   border: 1px solid black;
+  background: white;
+  transition: all .3s;
 
   &:hover {
-    background: white;
+    background: black;
+    color: white;
   }
 }
 
@@ -106,7 +109,6 @@
   }
 
   form {
-
     span,
     label,
     input {
@@ -119,12 +121,14 @@
       text-align: center;
     }
 
-    input {
+    input[type='number'] {
+      cursor: pointer;
       font-size: $font--msm;
       width: 50px;
       padding: $sp--xs 0;
       background: white;
       border: 1px solid black;
+      margin-bottom: $sp--sm;
     }
   }
 }
@@ -141,6 +145,6 @@
 .quickview-container-show {
   visibility: visible;
   z-index: 100;
-  height: 100vh;
+  height: 100%;
   opacity: 1;
 }

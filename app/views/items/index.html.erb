@@ -9,14 +9,19 @@
 <ul class="items-container">
   <% @items.each do |item| %>
     <div class="item-card">
+      <!-- product image -->
+      <section class="modal-itemImage"></section>
+
+      <!-- Item Details -->
       <h4> <%= item.item_name %> </h4>
       <li> $<%= item.price %>.00 </li>
 
       <!-- Quick view modal and button-->
-
       <!-- pass along the local var as an istance only way to traverse render -->
       <% @item = item %>
       <%= render 'quick_view', locals: @item %>
+
+
 
     </div>
   <% end %>

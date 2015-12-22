@@ -23,6 +23,7 @@
   display: inline-block;
   background: $bg;
   padding: ($padding / 2) $padding;
+  cursor: pointer;
   &:hover {
     background:darken($bg,8%);
     transition: all 0.5s ease;
@@ -41,6 +42,7 @@
   font-size: $font--msm;
   color: white;
   width: 100%;
+  cursor: pointer;
 
   &:hover {
     background:darken($bg,8%);
