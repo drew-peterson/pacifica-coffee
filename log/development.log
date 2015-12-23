@@ -14879,3 +14879,202 @@ Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde
 
 
 Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-12-23 09:06:50 -0800
+
+
+Started GET "/" for ::1 at 2015-12-23 10:23:02 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (2.4ms)
+Completed 500 Internal Server Error in 3540ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (CssSyntaxError: /Users/drewpeterson/Desktop/pacifica-coffee/app/assets/stylesheets/base/reset.css:60:18: Unknown word
+input:focus{
+  outline: none; // gets ride of my stupied blue box
+                 ^
+}):
+    4: <html>
+    5: <head>
+    6:   <title>PacificaCoffee</title>
+    7:   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    8:   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    9:   <%= csrf_meta_tags %>
+   10: 
+  apply.from (eval at <anonymous> ((execjs):27834:8), <anonymous>:1:39)
+  app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___95361237219487329_70149675219340'
+
+
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.9ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (27.7ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (19.3ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/drewpeterson/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (40.3ms)
+
+
+Started GET "/" for ::1 at 2015-12-23 10:25:54 -0800
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered partials/_nav_profile_modal.html.erb (0.6ms)
+  Rendered navigation/_main_nav.html.erb (25.9ms)
+  Rendered partials/_header_errors.html.erb (0.6ms)
+Completed 200 OK in 16599ms (Views: 16595.5ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/assets/addresses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-23 10:26:11 -0800
+
+
+Started GET "/assets/base/base.self-23e1dfb4843cb9ec552d1800fa35ceaa2042511c2cec97e25240dda8d761bab7.css?body=1" for ::1 at 2015-12-23 10:26:11 -0800
+
+
+Started GET "/assets/base/reset.self-ee751026e628351d140506fb4c1957bf029298d1301db5bd6ddac3fd6abb0a5d.css?body=1" for ::1 at 2015-12-23 10:26:11 -0800
+
+
+Started GET "/assets/components/_close_btn.self-25c54feb31fcf014c233df59211aa1cc9cddaf37fd5402ef117e3b38df29e630.css?body=1" for ::1 at 2015-12-23 10:26:11 -0800
+
+
+Started GET "/assets/components/_flexbox_vendors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-23 10:26:11 -0800
+
+
+Started GET "/assets/components/_hamburger.self-b99aedeb9edfa9956e0d236ab2c32cacb4ad431cfdc2a691057437d868dfa912.css?body=1" for ::1 at 2015-12-23 10:26:11 -0800
+
+
+Started GET "/assets/components/_hamburger2.self-20d3fcf680dee61adc02811ac32827176fd50da1a292ee03eaf6d793dc46c649.css?body=1" for ::1 at 2015-12-23 10:26:11 -0800
+
+
+Started GET "/assets/components/_psuedo_icons.self-e87a2dcdd6f8da864e1bafe3b08b197db049e54bb550e001cdd5d7ef61efba5c.css?body=1" for ::1 at 2015-12-23 10:26:11 -0800
+
+
+Started GET "/assets/layout/items/admin.self-37b8910f0fe3472a85945ca05d62ff323fc56914c56b32177414dc9ba0305ef2.css?body=1" for ::1 at 2015-12-23 10:26:11 -0800
+
+
+Started GET "/assets/layout/items/index.self-f12e3844223abd99f4c90ad516caf76e3a2f5efc2ad7b125164134622a28c9e7.css?body=1" for ::1 at 2015-12-23 10:26:11 -0800
+
+
+Started GET "/assets/layout/items/quick_view.self-ac0cce553063dcd5717e024dffcb84389651d52241dab9ce7d46f48c5ee25c94.css?body=1" for ::1 at 2015-12-23 10:26:11 -0800
+
+
+Started GET "/assets/layout/layout.self-8b4c40d79999ea1662537e7bda6d75189de033964d3739f4590b73d07e8c9651.css?body=1" for ::1 at 2015-12-23 10:26:11 -0800
+
+
+Started GET "/assets/layout/navigation/profile_modal.self-501af8fcc9b19bc26ab1ba30d3606f28cf9c1bdae7711f25e09c9ce8e45e67d8.css?body=1" for ::1 at 2015-12-23 10:26:11 -0800
+
+
+Started GET "/assets/layout/sessions/new.self-34350cd934b0e5bbda5f5182f7a43fdb36739508cf6f8a5ca2fba0ddc30e6f14.css?body=1" for ::1 at 2015-12-23 10:26:11 -0800
+
+
+Started GET "/assets/layout/users/cart/cart.self-7d3e74a136f57f8b2df4df098ee345c50aa965de80e44f56f8143251d4118a0d.css?body=1" for ::1 at 2015-12-23 10:26:11 -0800
+
+
+Started GET "/assets/layout/users/cart/cart_items.self-94c28a9ff911bdfe90839e0d4a6a1fdb15c8533c85790c6278c9328315408be0.css?body=1" for ::1 at 2015-12-23 10:26:11 -0800
+
+
+Started GET "/assets/layout/users/new.self-b5848d6a131ba5ae355826f7dd7cef8e5e42d09321f253f9388bdb6ed2256876.css?body=1" for ::1 at 2015-12-23 10:26:11 -0800
+
+
+Started GET "/assets/layout/users/profile.self-a67d792770901b221a1651870134e9ee962f2e70ba58bf2554553be3dec13780.css?body=1" for ::1 at 2015-12-23 10:26:11 -0800
+
+
+Started GET "/assets/layout/welcome.self-e1ae3806ce99e72842e75b41270e4c30e56f74031c9f8d984279dd079c1203d6.css?body=1" for ::1 at 2015-12-23 10:26:11 -0800
+
+
+Started GET "/assets/master.self-cf0a516414e7f287441c5ea504ce16573f5ca0df79818391706bc1d9f7a889f0.css?body=1" for ::1 at 2015-12-23 10:26:11 -0800
+
+
+Started GET "/assets/utilities/_animations.self-0bfff9fbf8761df6b9f8f6d7ab4b22bf64ab0be955cdf58925833c349a70f34c.css?body=1" for ::1 at 2015-12-23 10:26:11 -0800
+
+
+Started GET "/assets/utilities/_config.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-23 10:26:11 -0800
+
+
+Started GET "/assets/utilities/_error.self-08ff0e591a65de20d015aa09df905d8215dfb0542dcae5f284add17cf26fcf14.css?body=1" for ::1 at 2015-12-23 10:26:11 -0800
+
+
+Started GET "/assets/utilities/_functions.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-23 10:26:11 -0800
+
+
+Started GET "/assets/utilities/_mixins.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-23 10:26:11 -0800
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for ::1 at 2015-12-23 10:26:11 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-23 10:26:11 -0800
+
+
+Started GET "/assets/jquery.turbolinks.self-176b9819f30444d441e820bbccd3264fe57753aeafd54dec732b0dbc77129a2a.js?body=1" for ::1 at 2015-12-23 10:26:11 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-23 10:26:11 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-23 10:26:11 -0800
+
+
+Started GET "/assets/addresses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-23 10:26:11 -0800
+
+
+Started GET "/assets/cart.self-03fef7267f7e1dd54345830ec75e009a4d4488b2e10dc20e84f006f437c2bf00.js?body=1" for ::1 at 2015-12-23 10:26:11 -0800
+
+
+Started GET "/assets/hamburger.self-69af8d23d56907285d64ab59e0d42aa8d5e75578de85e48b8f83b3c11510b711.js?body=1" for ::1 at 2015-12-23 10:26:12 -0800
+
+
+Started GET "/assets/layout.self-265b45f02364b3c4baf58b7524e80114aaccc0d70ba3585746f9ffd2869e8299.js?body=1" for ::1 at 2015-12-23 10:26:12 -0800
+
+
+Started GET "/assets/localStorage.self-3d8308f8eb240399394df285a4ec2a4a3f54894968f71cedd68248720286fce4.js?body=1" for ::1 at 2015-12-23 10:26:12 -0800
+
+
+Started GET "/assets/navProfileMobile.self-86f10e059bc2639ddd3a6444e30b5daa52c6b741a304475835575de20ce11f54.js?body=1" for ::1 at 2015-12-23 10:26:12 -0800
+
+
+Started GET "/assets/quickview.self-9b9a7af921a2085a82710a5790ea73b484f62ada20be7c3f2ae9ae98a592e3a5.js?body=1" for ::1 at 2015-12-23 10:26:12 -0800
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-23 10:26:12 -0800
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-12-23 10:26:12 -0800
+
+
+Started GET "/assets/splash-d5f9d86b5b9965dc4986c77272463ba2ccd7b21f68624a124ed35d47ed0c2578.jpg" for ::1 at 2015-12-23 10:26:12 -0800
+
+
+Started GET "/items" for ::1 at 2015-12-23 10:26:17 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.3ms)
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  Rendered items/_quick_view.html.erb (0.9ms)
+  Rendered items/_quick_view.html.erb (0.4ms)
+  Rendered items/_quick_view.html.erb (0.4ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.4ms)
+  Rendered items/_quick_view.html.erb (0.5ms)
+  Rendered items/_quick_view.html.erb (0.4ms)
+  Rendered items/_quick_view.html.erb (0.4ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.5ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/index.html.erb within layouts/application (32.8ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered partials/_nav_profile_modal.html.erb (0.5ms)
+  Rendered navigation/_main_nav.html.erb (4.3ms)
+  Rendered partials/_header_errors.html.erb (0.5ms)
+Completed 200 OK in 132ms (Views: 128.4ms | ActiveRecord: 1.6ms)

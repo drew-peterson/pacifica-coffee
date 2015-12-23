@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-
+#autoprefixer -- drewp
+gem "autoprefixer-rails"
 #heroku asset pipeline -- drew
 gem 'rails_12factor', group: :production
 
