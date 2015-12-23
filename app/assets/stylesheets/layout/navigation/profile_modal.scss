@@ -1,5 +1,16 @@
 @import 'master';
 
+// div that is wrapped using jquery
+.modal-wrap-opacity {
+  @include debug;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(255,255,255, 0.7);
+}
+
 .nav-profile-modal {
   @include modal();
   display: none; // hide by default
