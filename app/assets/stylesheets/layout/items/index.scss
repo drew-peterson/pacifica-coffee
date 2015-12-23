@@ -22,11 +22,11 @@
 .items-container {
   display: flex;
   flex-direction: column;
-  @include align-items(center);
+  align-items: center;
 
   .item-card {
-    @include display(flex);
-    @include flex-direction(column);
+    display: flex;
+    flex-direction: column;
 
     width: 85%;
     min-height: rem(406px); // account for large titles
@@ -80,7 +80,7 @@
 
   .filter-container,
   .items-container {
-    @include flex(1);
+    flex: 1;
   }
 
   .filter-container {

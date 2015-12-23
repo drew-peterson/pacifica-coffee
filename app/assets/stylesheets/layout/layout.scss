@@ -1,8 +1,8 @@
 @import 'master';
 
 .main-header, .main-nav {
-  @include display(flex);
-  @include flex-direction(column);
+  display: flex;
+  flex-direction: column;
   // is there a flex property for this
   text-align: center;
   font-family: 'NTR', sans-serif;
@@ -14,16 +14,16 @@
   background-color: #fff;
 
   @include tablet {
-    @include display(flex);
-    @include justify-content(center);
+    display: flex;
+    justify-content: center;
     height: 4rem;
   }
 }
 
 .btn-wrap {
-  @include display(flex);
-  @include align-items(center);
-  @include justify-content(space-between);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   width: 95%;
   margin: 0 auto;
 
@@ -50,7 +50,7 @@
     padding: .5rem;
     transition: all ease-in-out 0.35s;
     @include tablet {
-      @include flex(1);
+      flex: 1;
       min-width: 75px;
     }
 
@@ -61,8 +61,8 @@
   }
 
   @include tablet{
-    @include display(flex);
-    @include flex-direction(row);
+    display: flex;
+    flex-direction: row;
   }
 }
 
@@ -79,8 +79,8 @@
 // Tablet Layout
 @include tablet {
   .nav-container {
-    @include display(flex);
-    @include justify-content(space-between);
+    display: flex;
+    justify-content: space-between;
     width: 95%;
     margin: 0 auto;
   }

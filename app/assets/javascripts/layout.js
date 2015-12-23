@@ -25,7 +25,7 @@ $(function(){
     function checkWidth() {
       // if the window is tablet and above display nav flex
       if ($(window).width() > 769) {
-        $('#main-nav').css('display', '-webkit-flex')
+        $('#main-nav').css('display', 'flex')
       }
     }
   })
@@ -45,9 +45,9 @@ $(function(){
     var currrentPosition = $(window).scrollTop() // get scroll position
 
     if (currrentPosition > navHeight){
-      $(nav).css('-webkit-box-shadow', '0 0 1em rgba(0,0,0,0.2)')
+      $(nav).css('box-shadow', '0 0 1em rgba(0,0,0,0.2)')
     }else {
-      $(nav).css('-webkit-box-shadow', 'none')
+      $(nav).css('box-shadow', 'none')
     }
 
   })

@@ -20,7 +20,7 @@ $(function(){
     function checkWidth() {
       // if the window is tablet and above display nav flex
       if ($(window).width() > 769) {
-        $('#main-nav').css('display', '-webkit-flex')
+        $('#main-nav').css('display', 'flex')
       }
     }
   })
