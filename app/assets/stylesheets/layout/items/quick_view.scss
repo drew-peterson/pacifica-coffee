@@ -29,7 +29,6 @@
   top: 0;
   left: 0;
 
-
   //========
   // transition
 
@@ -54,18 +53,24 @@
 // main-content
 
 .main-content {
-  @include debug;
   display: flex;
   flex-direction: column;
 
   @include tablet {
+    @include debug {border-color: blue;}
+    width: 100%;
     flex-direction: row;
+    align-items: center;
+    height: calc(80vh - 30px); // combined with align items will center items in div
   }
 
   .col {
-    @include debug;
-    flex: 1;
-  }
+    @include tablet {
+      @include debug;
+      flex: 1;
+    }
+  } // end of col
+
 }
 
 
@@ -75,20 +80,34 @@
 .modal-itemImage {
   background: url('http://goo.gl/bLj6Ou') no-repeat center center;
   background-size: contain;
-  height: 200px;
-  width: 200px;
+  height: rem(150px);
+
+  @include tablet {
+    height: rem(350px);
+  }
 }
 
 
 // ===============
 // item details
 .modal-itemDetails {
+  display: flex;
+  flex-direction: column;
+
   width: 85%;
   margin: 0 auto;
+
+  @include tablet {
+    height: rem(350px);
+  }
 
   h4 {
     font-size: $font--lg;
     margin: $sp--sm 0;
+
+    @include tablet {
+      font-size: $font--xl;
+    }
   }
   p {
     font-size: $font--msm;
@@ -102,6 +121,8 @@
   }
 
   form {
+    margin-top: auto; // push qty and btn to bottom
+
     span,
     label,
     input {
@@ -112,17 +133,20 @@
       height: 55px;
       line-height: 55px;
       text-align: center;
+      margin-bottom: $sp--sm;
+      @include tablet {
+        margin-bottom: $sp--msm;
+      }
     }
 
     input[type='number'] {
       cursor: pointer;
-      font-size: $font--msm;
       width: 50px;
       padding: $sp--xs 0;
       background: white;
       border: 1px solid black;
-      margin-bottom: $sp--sm;
     }
+
   }
 }
 
