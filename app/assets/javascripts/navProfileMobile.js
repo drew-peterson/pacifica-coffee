@@ -11,12 +11,20 @@ $(function(){
     $(profileModal).removeClass('slide-left');
     $(profileModal).fadeOut()
 
+    // remove opacity wrap
+    profileModal.unwrap();
+
     // fade in hidden navigations
     $('.nav-container').fadeIn();
   }
 
 
   $('#main-header').on('click', '#profileNavBtn', function(e){
+    // Append opacity div around modal
+    profileModal.wrap('<div class="modal-wrap-opacity"></div>');
+
+
+
     // get last order
     $.ajax({
       url: '/orders/recent/last'

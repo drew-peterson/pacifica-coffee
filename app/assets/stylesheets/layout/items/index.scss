@@ -22,31 +22,45 @@
 .items-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
 
   .item-card {
+    display: flex;
+    flex-direction: column;
+
+    width: 85%;
+    min-height: rem(406px); // account for large titles
     text-align: center;
     padding: 1% 2%;
-    background: $light-gray;
+    background: $el-gray;
     margin-bottom: 3%;
+    border-bottom: $bb--card;
 
+    // ===============
+    // item img
+    .itemImage {
+      background: url('http://goo.gl/bLj6Ou') no-repeat center center;
+      background-size: contain;
+      height: 150px;
+      width: 100px;
+      margin: 0 auto;
+      margin-top: $sp--sm;
+    }
 
     h4 {
-      font-size: 1.3rem;
-      margin-top: .6rem;
+      font-size: $font--lg;
+      margin-top: $sp--msm;
     }
     li {
-      padding: .3rem;
-
-    }
-    li:last-child {
+      font-size: $font--med;
       margin-top: auto;
-
     }
+
 
     .btn-add-to-cart {
       @include btn--large($google-blue) {
-        padding: 3px;
-        width: 80%;
+        padding: 2px;
+        width: rem(200px);
       }
 
     }
@@ -66,7 +80,7 @@
 
   .filter-container,
   .items-container {
-    @include flex(1);
+    flex: 1;
   }
 
   .filter-container {

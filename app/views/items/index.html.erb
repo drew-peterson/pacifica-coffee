@@ -9,18 +9,31 @@
 <ul class="items-container">
   <% @items.each do |item| %>
     <div class="item-card">
+
+      <!-- Quick Add Plus Btn -->
+    <%= form_for :user, url: '/users/cart', html: {class: 'quickform'} do |f| %>
+      <%= hidden_field_tag('item_id', value = item.id) %>
+      <%= hidden_field_tag('item_qty', value = 1) %>
+      <label for='quickAddCart' class="quickAddBtn">
+        <%= f.submit 'Add to Cart', id: 'quickAddCart' %>
+      </label>
+
+    <% end %>
+
+
+      <!-- product image -->
+      <section class="itemImage"></section>
+
+      <!-- Item Details -->
       <h4> <%= item.item_name %> </h4>
-      <li> <%= item.item_description %> </li>
       <li> $<%= item.price %>.00 </li>
-      <li>
-        <%= form_for :user, url: '/users/cart' do |f| %>
 
-          <%= hidden_field_tag('item_id', value = item.id) %>
-          <%= number_field_tag('item_qty', value = 1) %><br>
-          <%= f.submit 'Add to Cart', class:"btn-add-to-cart" %>
+      <!-- Quick view modal and button-->
+      <!-- pass along the local var as an istance only way to traverse render -->
+      <% @item = item %>
+      <%= render 'quick_view', locals: @item %>
 
-        <% end %>
-      </li>
+
 
     </div>
   <% end %>

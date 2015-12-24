@@ -5,8 +5,8 @@
 // ******************
 
 .cart-item {
-  @include display(flex);
-  @include flex-direction(column);
+  display: flex;
+  flex-direction: column;
 
   background: $primary-color;
   border-bottom: rem(5px) solid darken($primary-color, 10%);
@@ -22,17 +22,17 @@
 }
 
 .cart-item-wrapper {
-  @include display(flex);
+  display: flex;
 
 }
 
 .cart-item-col {
-  @include flex(1);
+  flex: 1;
 }
 
 .cart-item-image {
   background: url('http://noblebeancoffeeroasters.com/shop/wp-content/uploads/2013/05/coffee-bag.png') no-repeat center center;
-  background-size: cover;
+  background-size: contain;
   height: rem(150px);
   font-size: 0;
 }
@@ -42,10 +42,10 @@
 }
 
 .cart-item-details {
-  @include display(flex);
-  @include flex-direction(column);
-  @include justify-content(space-between);
-  @include align-items(center);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   font-size: $font--med;
 
   li {

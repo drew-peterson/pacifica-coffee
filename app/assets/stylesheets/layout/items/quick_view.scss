@@ -1,0 +1,234 @@
+@import 'master';
+
+//===========
+// Quick Add btn
+.item-card {
+  position: relative;
+  .quickform {
+    position: absolute;
+    top: 10px + 10px; // account for the overhang on top
+    right: 10px;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .quickAddBtn,
+  .quickAddBtn::after {
+    display: inline-block;
+    position: relative;
+    height: 5px;
+    width: 25px;
+    background: $emerald;
+    cursor: pointer;
+  }
+
+  .quickAddBtn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(90deg);
+  }
+
+   .quickAddBtn::before {
+    content: '';
+    position: absolute;
+    left: -5.60px;
+    top: -(30px / 2);
+    height: 35px;
+    width: 35px;
+  }
+
+  #quickAddCart {
+    font-size: 0;
+    display: none;
+    background: none;
+  }
+
+
+} // end of item-card
+
+
+
+
+
+//==========
+// Quick btn ----- Bring up modal
+
+.quickviewBtn {
+  cursor: pointer;
+  display: block;
+  padding: $sp--sm;
+  width: 50%;
+  margin: $sp--msm auto;
+  border: 1px solid black;
+  background: white;
+  transition: all .3s;
+
+  &:hover {
+    background: black;
+    color: white;
+  }
+}
+
+
+//==========
+// quick view modal
+
+.quickview-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 100;
+
+  background: white;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  //========
+  // transition
+
+  visibility: hidden;
+  transform: scale(0);
+  height: 100%;
+  transition: all 0.75s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  // ======
+  // Header
+
+  .modal-header {
+    display: flex;
+    justify-content: flex-end;
+    padding: $sp--sm;
+    width: 100%;
+
+
+  } // end of header
+
+// ===============
+// main-content
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+
+  @include tablet {
+    width: 95%;
+    flex-direction: row;
+    align-items: center;
+    height: calc(80vh - 30px); // combined with align items will center items in div
+  }
+
+  .col {
+    @include tablet {
+      flex: 1;
+    }
+  } // end of col
+
+}
+
+
+
+// ===============
+// item img
+.modal-itemImage {
+  background: url('http://goo.gl/bLj6Ou') no-repeat center center;
+  background-size: contain;
+  height: rem(150px);
+
+  @include tablet {
+
+    height: rem(350px);
+  }
+}
+
+
+// ===============
+// item details
+.modal-itemDetails {
+  display: flex;
+  flex-direction: column;
+
+
+  @include tablet {
+    padding: 0 $sp--lg;
+    height: rem(350px);
+  }
+
+  h4 {
+    font-size: $font--lg;
+    margin: $sp--sm 0;
+
+    @include tablet {
+      font-size: $font--xl;
+    }
+  }
+  p {
+    font-size: $font--msm;
+    text-align: left;
+  }
+  .price {
+    text-align: center;
+    margin: $sp--sm auto;
+    padding: $sp--sm 0;
+    font-size: $font--med;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    width: 100%;
+
+    @include tablet {
+    }
+  }
+
+  form {
+    margin-top: auto; // push qty and btn to bottom
+
+    span,
+    label,
+    input {
+      font-size: $font--med;
+    }
+    span {
+      display: block;
+      height: 55px;
+      line-height: 55px;
+      text-align: center;
+      margin-bottom: $sp--sm;
+      @include tablet {
+        margin-bottom: $sp--msm;
+      }
+    }
+
+    input[type='number'] {
+      cursor: pointer;
+      width: 50px;
+      padding: $sp--xs 0;
+      background: white;
+      border: 1px solid black;
+    }
+    .btn-add-to-cart {
+      @include tablet {
+        font-size: $font--med;
+        width: 40%;
+      }
+    }
+  }
+}
+
+
+
+
+} // end of container
+
+
+//============
+// modal transition
+
+.quickview-container-show {
+  visibility: visible;
+  height: 100%;
+  transform: scale(1);
+}

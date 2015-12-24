@@ -1,8 +1,9 @@
 @import 'master';
 
   .error-p {
+    z-index: 100; // position @ same level as modal
     text-align: center;
-    position: absolute;
+    position: fixed; // always on bottom
     bottom: 0;
     height: 60px;
     line-height: 60px;

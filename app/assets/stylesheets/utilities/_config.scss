@@ -1,4 +1,3 @@
-
 //**************************
 // Colors
 
@@ -25,7 +24,6 @@ $primary-color: $light-gray;
 
 //**************************
 // Font family
-
 // NTR
 @import url(https://fonts.googleapis.com/css?family=NTR);
 
@@ -44,6 +42,9 @@ $font      : $font--msm ; // primary font
 
 // border radius
 $bd-radius: 0.4rem;
+
+// card border bottom
+$bb--card : 5px solid darken($primary-color, 10%) ;
 
 // spacing
 $sp--xs  : 7px;
