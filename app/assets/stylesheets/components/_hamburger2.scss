@@ -1,0 +1,89 @@
+// ***********************************
+// Drew P Version
+// ***********************************
+
+@import 'master';
+
+// HTML
+// <button id="ham-btn">
+//   <span>close</span>
+// </button>
+
+// JS
+// $(function(){
+//   $('#ham-btn').click(function(){
+//     $(this).toggleClass('ham-active')
+//   })
+// })
+
+
+
+
+//vars
+
+$btn-height: 30px;
+$btn-width: 30px;
+$bar-height: 4px;
+$bar-space: 10px;
+
+#ham-btn {
+  cursor: pointer;
+  height: $btn-height;
+  width: $btn-width;
+  position: relative;
+  background: none;
+  border: none;
+  font-size: 0;
+
+  transition: transform .5s ease;
+
+  &:focus {
+    outline: none; // remove blue box on button click
+  }
+}
+
+
+#ham-btn span,
+#ham-btn span::before,
+#ham-btn span::after {
+  content: '';
+  display: block;
+  position: absolute;
+  height: $bar-height;
+  width: 100%;
+  background: black;
+
+  transition: all .2s ease;
+  transition-delay: .2s;
+}
+
+#ham-btn span {
+  top: ($btn-height / 2) - ($bar-height / 2) // center the middle span
+}
+
+#ham-btn span::before {
+  top: -$bar-space;
+}
+
+#ham-btn span::after {
+  top: $bar-space;
+}
+
+/* animation */
+.ham-active {
+  transform: rotateY(180deg);
+}
+
+.ham-active span {
+  background: none;
+
+  &::after {
+    top: 0;
+    transform: rotate(45deg);
+  }
+
+  &::before {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+} // end of active span

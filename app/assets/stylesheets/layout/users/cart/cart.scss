@@ -28,26 +28,26 @@
 
 .cart-container {
 
-  @include display(flex);
-  @include flex-direction(column);
+  display: flex;
+  flex-direction: column;
   margin: 0 auto;
   width: 100%;
   background: white;
 
   @include tablet {
-    @include flex-direction(row);
+    flex-direction: row;
   }
 
   .cart-col {
     @include tablet {
-      @include flex(1);
+      flex: 1;
     }
   }
 
   .cart-items-wrapper {
     @include tablet {
       // not really needed unless i change to 2
-      @include flex(1);
+      flex: 1;
     }
   }
 
@@ -82,9 +82,9 @@
 }
 
 .cart-addresses {
-  @include display(flex);
-  @include flex-direction(column);
-  @include align-items(center);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   width: 80%;
   margin: 0 auto;
@@ -118,8 +118,8 @@
   }
 
   .cart-ship-bill-submit {
-    @include display(flex);
-    @include justify-content(center);
+    display: flex;
+    justify-content: center;
     margin: $sp--sm 0;
     input {
       @include main-btn($emerald);
@@ -171,29 +171,10 @@
     transform: scale(0.2);
     transition: all .75s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
-    // Close button
-    label {
-      text-align: center;
-      border: none;
-      padding: 0;
-      font-size: 30px;
-      height: 50px;
-      width: 50px;
-      line-height: 60px;
-      border-radius: 50%;
-      color: white;
-      background: $google-blue;
-      cursor: pointer;
-      display: inline-block;
-      position: absolute;
-      right: .5em;
-      top: 0.1em;
-
-      box-shadow: 0px 11px 21px -6px rgba(0,0,0,0.55);
-
-      &:hover {
-        background-color: lighten($google-blue, 10%);
-      }
+    & div:first-of-type {
+      display: flex;
+      justify-content: flex-end;
+      padding: $sp--sm;
     }
   }
 
@@ -223,7 +204,7 @@
   // click btn trigger event
   #cart-show-address:checked ~ .cart-address-modal {
     opacity: 1;
-    z-index: 800;
+    z-index: 100;
     transform: scale(1);
   }
 
@@ -231,8 +212,8 @@
 
 // total and dollars
 .cart-details-total {
-  @include display(flex);
-  @include justify-content(space-between);
+  display: flex;
+  justify-content: space-between;
   font-size: $font--lg;
   margin-bottom: $sp--med ;
   margin-top: $sp--lg;

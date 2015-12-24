@@ -26,8 +26,9 @@ $button-transistion-duration: 0.3s;     // The transition duration
   font-size: 0; // for screen readers, text is there but not visible to human
   border: none;
   cursor: pointer;
-  transition: background $button-transistion-duration;
   background: none;
+
+  transition: transform 0.5s ease;
 }
 
 .c-hamburger:focus {
@@ -37,12 +38,15 @@ $button-transistion-duration: 0.3s;     // The transition duration
 
 .c-hamburger span {
   display: block;
+  opacity: 1;
   position: absolute;
   top: ($button-height / 2) - ($bar-thickness / 2); // sets the middle bar in the middle of the box
   left: $button-pad; // you need both of these for the bar to show
   right: $button-pad;
   height: $bar-thickness; // thickness of middle bar
-  background: $text-gray;
+  background: rgba(0,0,0,1);
+
+  transition: background 0.1s ease 0.1s; // hide and show middle on delay with opacity fade
 }
 
 .c-hamburger span::before,
@@ -52,8 +56,11 @@ $button-transistion-duration: 0.3s;     // The transition duration
   left: 0;
   width: 100%;
   height: $bar-thickness;
-  background-color: $text-gray;
+  background-color: black;
   content: "";
+
+  transition: all 0.2s ease;
+  transition-delay: 0.2s;
 }
 
 .c-hamburger span::before {
@@ -72,39 +79,29 @@ $button-transistion-duration: 0.3s;     // The transition duration
  */
 
 
-.c-hamburger--htx span::before,
-.c-hamburger--htx span::after {
-  transition-duration: $button-transistion-duration, $button-transistion-duration;
-  transition-delay: $button-transistion-duration, 0s;
-}
-
-.c-hamburger--htx span::before {
-  transition-property: top, transform;
-}
-
-.c-hamburger--htx span::after {
-  transition-property: bottom, transform;
-}
 
 /* active state, i.e. menu open */
 
-.c-hamburger--htx.is-active span {
-  background: none; // do not show the middle bar when in x form
+.c-hamburger.is-active {
+  transform: rotateY(180deg);
 }
 
-.c-hamburger--htx.is-active span::before {
+.c-hamburger.is-active span {
+  background: rgba(0,0,0,0); // do not show the middle bar when in x form
+}
+
+.c-hamburger.is-active span::before {
   top: 0;
   transform: rotate(45deg);
 }
 
-.c-hamburger--htx.is-active span::after {
+.c-hamburger.is-active span::after {
   bottom: 0;
   transform: rotate(-45deg);
 }
 
-.c-hamburger--htx.is-active span::before,
-.c-hamburger--htx.is-active span::after {
+.c-hamburger.is-active span::before,
+.c-hamburger.is-active span::after {
   transition-delay: 0s, $button-transistion-duration;
 }
 
-// ***********************************

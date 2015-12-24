@@ -4,6 +4,7 @@
 
 @mixin debug {
   border: 1px solid red;
+  @content;
 }
 
 @mixin clearfix {
@@ -23,6 +24,7 @@
   display: inline-block;
   background: $bg;
   padding: ($padding / 2) $padding;
+  cursor: pointer;
   &:hover {
     background:darken($bg,8%);
     transition: all 0.5s ease;
@@ -41,6 +43,7 @@
   font-size: $font--msm;
   color: white;
   width: 100%;
+  cursor: pointer;
 
   &:hover {
     background:darken($bg,8%);
@@ -54,13 +57,31 @@
 }
 
 
+@mixin button-reset(){
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  font-size: 16px;
+  &:focus {
+    outline: none;
+  }
+}
+
 // **********************
 // Modal
 
 @mixin modal($modal-height: 60vh, $modal-width: 80% ){
 
-  $opacity: 0.7;
-  $modal-half-height: calc($modal-height / 2);
+  // vars
+  $modal-half-height: calc($modal-height / 2); // this will be used to center modal vertically
+
+  // Container styles
+
+  min-height: $modal-height;
+  min-width: $modal-width;
+  background: $off-white;
 
   -webkit-box-shadow: 0 0 2em rgba(0,0,0,0.5);
   -webkit-border-radius: 0.4rem;
@@ -68,34 +89,13 @@
   position: absolute;
 
   top: 0;
-  // margin-top: 10vh;
-
-
   left: 0;
-  margin-left: (100% - $modal-width) / 2;
 
-  // Container styles
-  min-height: $modal-height;
-  min-width: $modal-width;
-  background: $off-white;
-
-  &::after {
-    content: "";
-    display: block;
-    position: fixed; // abosolute position doesnt work...
-    top: 0;
-    left: 0;
-    z-index: -99; // look at this drew
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255,255,255,$opacity);
-
-
-
-    @content;
-
-  }
+  margin-left: (100% - $modal-width) / 2; // center container
 }
+
+
+
 
 // **********************
 // Form
@@ -108,8 +108,8 @@
 
   &,
   form {
-    @include display(flex);
-    @include flex-direction(column);
+    display: flex;
+    flex-direction: column;
   }
 
   p {

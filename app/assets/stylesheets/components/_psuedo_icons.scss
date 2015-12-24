@@ -1,0 +1,41 @@
+@import 'master';
+
+//===================
+// close button X
+//===================
+
+//====== HTML
+ // <button id='x-btn'>
+ //    <span>close</span>
+ //  </button>
+
+  #x-btn {
+    @include button-reset;
+    height: 30px;
+    width: 30px;
+    position: relative;
+    font-size: 0;
+
+    & span,
+    & span::after {
+      content: '';
+      display: block;
+      position: absolute;
+      height: 5px;
+      width: 100%;
+      background: black;
+    }
+
+    & span {
+      top: (30px / 2) - (5px / 2);
+      transform: rotate(45deg);
+    }
+    & span::after {
+      transform: rotate(-90deg);
+    }
+
+    &:hover span,
+    &:hover span::after {
+      background: $error-red;
+    }
+  }

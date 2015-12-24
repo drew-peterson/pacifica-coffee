@@ -1,121 +1,132 @@
-// **********************
-//Vendor Prefix for flexbox
 
-$prefixes: ('webkit', 'ms', 'moz', 'o');
-
-// Display
-@mixin display($value){
-  @each $prefix in $prefixes {
-    display: #{'-' + $prefix + '-' + $value}
-  }
-    display: $value;
-
-    //legacy
-    display: -webkit-box;
-    display: -ms-flexbox;
-}
-
-//flex direction
-@mixin flex-direction($value){
-  @each $prefix in $prefixes {
-    #{'-' + $prefix + '-' + flex-direction}: $value;
-  }
-    flex-direction: $value;
-
-    //legacy
-    @if $value == row-reverse {
-    -webkit-box-direction: reverse;
-    -webkit-box-orient: horizontal;
-  } @else if $value == column {
-    -webkit-box-direction: normal;
-    -webkit-box-orient: vertical;
-  } @else if $value == column-reverse {
-    -webkit-box-direction: reverse;
-    -webkit-box-orient: vertical;
-  } @else {
-    -webkit-box-direction: normal;
-    -webkit-box-orient: horizontal;
-  }
-}
+//======================================
+// Commented out because autoprefixer Gem Does this for use
+//======================================
 
 
-//flex wrap
-@mixin flex-wrap($value: nowrap) {
-  // No Webkit Box fallback.
-  -webkit-flex-wrap: $value;
-  -moz-flex-wrap: $value;
-  @if $value == nowrap {
-    -ms-flex-wrap: none;
-  } @else {
-    -ms-flex-wrap: $value;
-  }
-  flex-wrap: $value;
-}
 
-//flex
+// // **********************
+// //Vendor Prefix for flexbox
 
-@mixin flex($fg: 1, $fs: null, $fb: null) {
+// $prefixes: ('webkit', 'ms', 'moz', 'o');
 
-  // Set a variable to be used by box-flex properties
-  $fg-boxflex: $fg;
+// // Display
+// @mixin display($value:flex){
+//   @each $prefix in $prefixes {
+//     display: #{'-' + $prefix + '-' + $value}
+//   }
+//     display: $value;
 
-  // Box-Flex only supports a flex-grow value so let's grab the
-  // first item in the list and just return that.
-  @if type-of($fg) == 'list' {
-    $fg-boxflex: nth($fg, 1);
-  }
+//     //legacy
+//     display: -ms-flexbox;
+//     display: -webkit-flex;
+//     display: -webkit-box;
+//     display: -moz-box;
+//     -moz-box-orient: vertical;
+//     -webkit-box-orient: vertical;
+// }
 
-  -webkit-box-flex: $fg-boxflex;
-  -webkit-flex: $fg $fs $fb;
-  -moz-box-flex: $fg-boxflex;
-  -moz-flex: $fg $fs $fb;
-  -ms-flex: $fg $fs $fb;
-  flex: $fg $fs $fb;
-}
+// //flex direction
+// @mixin flex-direction($value){
+//   @each $prefix in $prefixes {
+//     #{'-' + $prefix + '-' + flex-direction}: $value;
+//   }
+//     flex-direction: $value;
+
+//     //legacy
+//     @if $value == row-reverse {
+//     -webkit-box-direction: reverse;
+//     -webkit-box-orient: horizontal;
+//   } @else if $value == column {
+//     -webkit-box-direction: normal;
+//     -webkit-box-orient: vertical;
+//   } @else if $value == column-reverse {
+//     -webkit-box-direction: reverse;
+//     -webkit-box-orient: vertical;
+//   } @else {
+//     -webkit-box-direction: normal;
+//     -webkit-box-orient: horizontal;
+//   }
+// }
 
 
-//justify-content
-@mixin justify-content($value){
-  @each $prefix in $prefixes {
-    #{'-' + $prefix + '-' + justify-content}: #{'-' + $prefix + '-' + $value};
-  }
-    justify-content: $value;
+// //flex wrap
+// @mixin flex-wrap($value: nowrap) {
+//   // No Webkit Box fallback.
+//   -webkit-flex-wrap: $value;
+//   -moz-flex-wrap: $value;
+//   @if $value == nowrap {
+//     -ms-flex-wrap: none;
+//   } @else {
+//     -ms-flex-wrap: $value;
+//   }
+//   flex-wrap: $value;
+// }
 
-    //legacy
-    @if $value == flex-start {
-    -webkit-box-pack: start;
-    -ms-flex-pack: start;
-  } @else if $value == flex-end {
-    -webkit-box-pack: end;
-    -ms-flex-pack: end;
-  } @else if $value == space-between {
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-  } @else if $value == space-around {
-    -ms-flex-pack: distribute;
-  } @else {
-    -webkit-box-pack: $value;
-    -ms-flex-pack: $value;
-  }
-}
+// //flex
 
-//align-items
-@mixin align-items($value: stretch){
+// @mixin flex($fg: 1, $fs: null, $fb: null) {
 
-  @each $prefix in $prefixes {
-    #{'-' + $prefix + '-' + align-items}: $value;
-  }
-    align-items: $value;
+//   // Set a variable to be used by box-flex properties
+//   $fg-boxflex: $fg;
 
-    //legacy
-      @if $value == flex-start {
-    -webkit-box-align: start;
-    -ms-flex-align: start;
-  } @else if $value == flex-end {
-    -webkit-box-align: end;
-    -ms-flex-align: end;
-  } @else {
-    -webkit-box-align: $value;
-    -ms-flex-align: $value;
-  }
-}
+//   // Box-Flex only supports a flex-grow value so let's grab the
+//   // first item in the list and just return that.
+//   @if type-of($fg) == 'list' {
+//     $fg-boxflex: nth($fg, 1);
+//   }
+
+//   -webkit-box-flex: $fg-boxflex;
+//   -webkit-flex: $fg $fs $fb;
+//   -moz-box-flex: $fg-boxflex;
+//   -moz-flex: $fg $fs $fb;
+//   -ms-flex: $fg $fs $fb;
+//   flex: $fg $fs $fb;
+// }
+
+
+// //justify-content
+// @mixin justify-content($value){
+//   @each $prefix in $prefixes {
+//     #{'-' + $prefix + '-' + justify-content}: #{'-' + $prefix + '-' + $value};
+//   }
+//     justify-content: $value;
+
+//     //legacy
+//     @if $value == flex-start {
+//     -webkit-box-pack: start;
+//     -ms-flex-pack: start;
+//   } @else if $value == flex-end {
+//     -webkit-box-pack: end;
+//     -ms-flex-pack: end;
+//   } @else if $value == space-between {
+//     -webkit-box-pack: justify;
+//     -ms-flex-pack: justify;
+//   } @else if $value == space-around {
+//     -ms-flex-pack: distribute;
+//   } @else {
+//     -webkit-box-pack: $value;
+//     -ms-flex-pack: $value;
+//   }
+// }
+
+// //align-items
+// @mixin align-items($value: stretch){
+
+//   @each $prefix in $prefixes {
+//     #{'-' + $prefix + '-' + align-items}: $value;
+//   }
+//     align-items: $value;
+
+//     //legacy
+//       @if $value == flex-start {
+//     -webkit-box-align: start;
+//     -ms-flex-align: start;
+//   } @else if $value == flex-end {
+//     -webkit-box-align: end;
+//     -ms-flex-align: end;
+//   } @else {
+//     -webkit-box-align: $value;
+//     -ms-flex-align: $value;
+//   }
+// }
