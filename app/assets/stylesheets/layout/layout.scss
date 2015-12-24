@@ -12,6 +12,7 @@
   width: 100%;
   position: fixed;
   background-color: #fff;
+  z-index: 10; // position it above everything
 
   @include tablet {
     display: flex;

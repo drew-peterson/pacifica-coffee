@@ -9,6 +9,18 @@
 <ul class="items-container">
   <% @items.each do |item| %>
     <div class="item-card">
+
+      <!-- Quick Add Plus Btn -->
+    <%= form_for :user, url: '/users/cart' do |f| %>
+      <%= hidden_field_tag('item_id', value = item.id) %>
+      <%= hidden_field_tag('item_qty', value = 1) %>
+
+      <label for='quickAddCart' class="quickAddBtn">
+        <%= f.submit 'Add to Cart', id: 'quickAddCart' %>
+      </label>
+    <% end %>
+
+
       <!-- product image -->
       <section class="itemImage"></section>
 
