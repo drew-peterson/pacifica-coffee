@@ -3,6 +3,14 @@
 //===========
 // Quick Add btn
 .item-card {
+  position: relative;
+  .quickform {
+    position: absolute;
+    top: 10px + 10px; // account for the overhang on top
+    right: 10px;
+    display: flex;
+    justify-content: flex-end;
+  }
 
   .quickAddBtn,
   .quickAddBtn::after {
@@ -20,6 +28,15 @@
     top: 0;
     left: 0;
     transform: rotate(90deg);
+  }
+
+   .quickAddBtn::before {
+    content: '';
+    position: absolute;
+    left: -5.60px;
+    top: -(30px / 2);
+    height: 35px;
+    width: 35px;
   }
 
   #quickAddCart {
