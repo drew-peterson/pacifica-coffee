@@ -186,10 +186,9 @@
     // color: white;
     font-size: $font--med;
     margin-bottom: $sp--msm;
-    @include tablet {
+    text-align: center;
       font-size: $font--lg;
-      text-align: center;
-    }
+
   }
 
   // Add new form
