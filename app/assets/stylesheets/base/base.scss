@@ -52,3 +52,8 @@ input[type='number'] {
   animation: slide-right;
   animation-duration: 1s;
 }
+
+// always show the spinner...
+input[type=number]::-webkit-inner-spin-button {
+  opacity: 1;
+}

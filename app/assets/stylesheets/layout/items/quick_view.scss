@@ -37,6 +37,10 @@
     top: -(30px / 2);
     height: 35px;
     width: 35px;
+
+    &:hover ~ .quickAddBtn {
+      background: blue;
+    }
   }
 
   #quickAddCart {
