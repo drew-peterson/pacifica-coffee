@@ -35,4 +35,9 @@ $(function(){
 
     }
   });
+
+  // set the height for modal to be 100% height of page
+  var pageHeight = $(document).height();
+  $('.cart-address-modal').height(pageHeight);
+
 })
