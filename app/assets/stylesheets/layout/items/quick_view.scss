@@ -2,7 +2,7 @@
 
 //===========
 // Quick Add btn
-.item-card {
+.item-card { // scope the classes
   position: relative;
   .quickform {
     position: absolute;
@@ -30,6 +30,7 @@
     transform: rotate(90deg);
   }
 
+    // border around plus for hitbox...
    .quickAddBtn::before {
     content: '';
     position: absolute;
@@ -38,7 +39,7 @@
     height: 35px;
     width: 35px;
 
-    &:hover ~ .quickAddBtn {
+    &:hover {
       background: blue;
     }
   }
@@ -49,6 +50,15 @@
     background: none;
   }
 
+  .quickAddBtn:hover {
+    background: darken($emerald, 10%);
+
+
+    &::after {
+      background: darken($emerald, 10%);
+    }
+
+  }
 
 } // end of item-card
 
