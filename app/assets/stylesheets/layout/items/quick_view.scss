@@ -196,8 +196,7 @@
 
 
   @include tablet {
-    padding: 0 $sp--lg;
-    height: rem(350px);
+    padding: 0 $sp--lg; // extra spacing around sides
   }
 
   h4 {
