@@ -50,6 +50,14 @@
     h4 {
       font-size: $font--lg;
       margin-top: $sp--msm;
+
+      @include tablet {
+        font-size: $font--med;
+      }
+
+      @include desktop {
+        font-size: $font--lg;
+      }
     }
     li {
       font-size: $font--med;
