@@ -57,3 +57,14 @@ input[type='number'] {
 input[type=number]::-webkit-inner-spin-button {
   opacity: 1;
 }
+
+// Show elemtn via pop
+.pop-show {
+  opacity: 1          !important;
+  visibility: visible !important;
+  transform: scale(1) !important;
+
+
+
+  // These are being overridden so I used import
+}
