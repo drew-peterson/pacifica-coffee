@@ -13,7 +13,7 @@
     <% @items.each do |item, qty| %>
         <li>
           <span> <%= item.item_name%> </span>
-          <span> $<%= item.price %>.00 </span>
+          <span> $<%= item.price %>.00 X <%= qty %> </span>
         </li>
     <% end %>
   </ul>
