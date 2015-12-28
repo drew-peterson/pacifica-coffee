@@ -5,30 +5,34 @@
 
   <% @orders.each_with_index do |order, index| %>
 
-    <div class="item" >
+    <div class="order-card-container" style="border-bottom: 3px solid blue;" >
 
       <li> <%=  Date.parse("#{order.created_at}") %> </li>
       <li> $<%= @order_totals[index] %>.00</li>
-      <p> <%= "/orders/#{order.id}" %> </p>
 
-      <!-- Ajax get items for individual order -->
+      <!-- Main Content -->
+      <!-- dynamic ids to target later with javascript -->
+      <div class="order-items" id=<%= "order#{order.id}" %>
+        <!-- Javascript below will append item partial here -->
+      </div>
+
+      <!-- Ajax get items for individual order called on each loop to grab info-->
+      <!-- dunno what best practice is, but this is kinda cool, might be slow though -->
       <script type="text/javascript">
-        console.log("order/#{order.id}")
         $.ajax({
           type: "GET",
           dataType: "json", // this is needed to work, make it best practice...
           url: "<%= "/orders/#{order.id}" %>" //Not sure this is best practice but its kinda cool
         }).done(function(data){
-          console.log(data)
-        })
+          // Appending the html into correct div
+          var id = "#<%= "order#{order.id}" %>" // grab the id in dom
 
+          // append data inside appropriate id
+          $(id).append(data.html);
+        })
       </script>
 
     </div>
-
-
-    <!-- Button -->
-    <%= link_to "Order No.#{order.id}", "/orders/#{order.id}" %>
 
   <% end %>
 

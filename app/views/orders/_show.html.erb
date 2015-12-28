@@ -1,15 +1,10 @@
-<h1>Show partial</h1>
 
-<% prices = [] %>
 <ul>
   <% @items.each do |item, qty| %>
-    <div class="item" style="border-bottom: 1px solid black; margin-bottom: 5px;">
+    <div class="">
       <li> <%= item.item_name %> </li>
-      <li> <%= item.item_description %> </li>
       <li> $<%= item.price %>.00 </li>
-            <% prices << item.price * qty.to_i %>
+      <li>qty: <%= qty %></li>
     </div>
   <% end %>
 </ul>
-
-<h4>Order Total: $<%= prices.inject(:+) %>.00</h4>

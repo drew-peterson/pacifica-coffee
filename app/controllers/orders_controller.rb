@@ -4,16 +4,17 @@ class OrdersController < ApplicationController
   include UsersHelper
 
   # show single order history
-  # user in the order history page
+  # used in the order history page ajax call
   def show
     @order = Order.find(params[:id])
     find_items(@order.item_ids_quantities) #gets me @items
 
+    # partial for the show page, has to be _show file name, standard show did not work...
     @html = view_context.render 'orders/show', locals: {items: @items}
 
     respond_to do |format|
-      format.html {render :show} #render show page
-      format.json  { render :json => {items: @items, html: @html} } # don't do msg.to_json
+      format.html {render :show} #render show page for html requests
+      format.json  { render :json => {html: @html} } # Ajax call from order history
     end
   end
 
