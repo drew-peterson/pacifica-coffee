@@ -4,9 +4,17 @@ class OrdersController < ApplicationController
   include UsersHelper
 
   # show single order history
+  # user in the order history page
   def show
     @order = Order.find(params[:id])
-    find_items(@order.item_ids_quantities)
+    find_items(@order.item_ids_quantities) #gets me @items
+
+    @html = view_context.render 'orders/show', locals: {items: @items}
+
+    respond_to do |format|
+      format.html {render :show} #render show page
+      format.json  { render :json => {items: @items, html: @html} } # don't do msg.to_json
+    end
   end
 
   # show all order histories
