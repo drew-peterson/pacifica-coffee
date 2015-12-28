@@ -1,0 +1,48 @@
+@import 'master';
+
+#order-history {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  h1 {
+    text-align: center;
+    font-size: $font--med;
+    margin-bottom: $sp--sm;
+
+    @include tablet {
+      font-size: $font--lg;
+    }
+  }
+
+
+  // card wrap
+  .orders-wrap {
+    background-color: $el-gray;
+    margin-bottom: $sp--sm;
+    padding: $sp--sm;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: $sp--xs;
+  }
+
+  // items in that order
+  .order-items {
+    background: white;
+    padding: $sp--xs;
+
+    // individual items
+    .details {
+      display: flex;
+      justify-content: space-between;
+
+      padding: $sp--xs 0;
+
+    }
+  }
+
+
+} // end of order history

@@ -1,16 +1,17 @@
-<h1>Your Orders</h1>
+<section id="order-history">
 
-
-<ul>
+  <h1>Your Orders</h1>
 
   <% @orders.each_with_index do |order, index| %>
 
-    <div class="order-card-container" style="border-bottom: 3px solid blue;" >
-
-      <li> <%=  Date.parse("#{order.created_at}") %> </li>
-      <li> $<%= @order_totals[index] %>.00</li>
+    <div class="orders-wrap">
+      <div class="header">
+        <span> <%=  Date.parse("#{order.created_at}") %> </span>
+        <span> Total: $<%= @order_totals[index] %>.00</span>
+      </div>
 
       <!-- Main Content -->
+
       <!-- dynamic ids to target later with javascript -->
       <div class="order-items" id=<%= "order#{order.id}" %>
         <!-- Javascript below will append item partial here -->
@@ -36,6 +37,5 @@
 
   <% end %>
 
-</ul>
-
+</section>
 

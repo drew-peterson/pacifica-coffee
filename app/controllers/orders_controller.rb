@@ -10,6 +10,7 @@ class OrdersController < ApplicationController
     find_items(@order.item_ids_quantities) #gets me @items
 
     # partial for the show page, has to be _show file name, standard show did not work...
+    # Is is more module to break up index and show, since they are used on same page??
     @html = view_context.render 'orders/show', locals: {items: @items}
 
     respond_to do |format|

@@ -1,10 +1,9 @@
+<!-- Partial will be appeneded inside the orders/index page for each card -->
 
-<ul>
-  <% @items.each do |item, qty| %>
-    <div class="">
-      <li> <%= item.item_name %> </li>
-      <li> $<%= item.price %>.00 </li>
-      <li>qty: <%= qty %></li>
-    </div>
-  <% end %>
-</ul>
+<% @items.each do |item, qty| %>
+  <div class="details">
+    <span> <%= item.item_name %> </span>
+    <span> $<%= item.price %>.00 X <%= qty %> </span>
+  </div>
+<% end %>
+
