@@ -48,6 +48,12 @@
       padding: $sp--xs 0;
 
     }
+
+    .btn-add-to-cart {
+      @include debug;
+      cursor: pointer;
+
+    }
   }
 
 
