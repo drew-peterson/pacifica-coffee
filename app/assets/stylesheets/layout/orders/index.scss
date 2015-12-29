@@ -18,6 +18,10 @@
 
   // card wrap
   .orders-wrap {
+    display: flex;
+    flex-direction: column;
+
+    font-size: $font--msm;
     background-color: $el-gray;
     margin-bottom: $sp--sm;
     padding: $sp--sm;
@@ -39,23 +43,25 @@
   .order-items {
     background: white;
     padding: $sp--xs;
-
     // individual items
     .details {
       display: flex;
       justify-content: space-between;
 
+      color: $text-gray;
       padding: $sp--xs 0;
-
     }
 
-    .btn-add-to-cart {
-      position: absolute;
-      display: none;
-      z-index: -100;
-      top: -1000;
 
+  }
+  #buyAgain {
+    @include btn--large($google-blue){
+      width: 50%;
+      padding: 0;
+      border: none;
     }
+    margin: 0 auto;
+    margin-top: $sp--sm;
   }
 
 
