@@ -78,7 +78,7 @@
       align-items: center;
       background: white;
       color: $text-gray;
-      padding: $sp--xs ;
+      padding: $sp--sm ;
 
       @include tablet {
         margin-bottom: $sp--sm; // need to reset this
