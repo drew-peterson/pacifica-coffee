@@ -50,8 +50,10 @@
     }
 
     .btn-add-to-cart {
-      @include debug;
-      cursor: pointer;
+      position: absolute;
+      display: none;
+      z-index: -100;
+      top: -1000;
 
     }
   }

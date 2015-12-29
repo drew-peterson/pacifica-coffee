@@ -6,17 +6,16 @@
     <span> $<%= item.price %>.00 X <%= qty %> </span>
   </div>
 
-
-<% end %>
-
-<!-- Buy again BTN -->
-<%= form_for :user, url: '/users/cart' do |f| %>
-
-  <% @items.each do |item, qty|%>
-    <%= hidden_field_tag('item_id', value = item.id) %>
-    <%= hidden_field_tag('item_qty', value = qty) %>
-
+  <!-- Each item has a form attached with id and qty-->
+  <%= form_for :user, url: '/users/cart' do |f| %>
+      <%= hidden_field_tag('item_id', value = item.id) %>
+      <%= hidden_field_tag('item_qty', value = qty) %>
   <% end %>
 
-  <%= f.submit 'Buy Again', class:"btn-add-to-cart" %>
+
 <% end %>
+
+
+
+
+
