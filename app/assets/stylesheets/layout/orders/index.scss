@@ -30,6 +30,7 @@
     background-color: $el-gray;
     margin-bottom: $sp--sm;
     padding: $sp--sm;
+    border-radius: $bd-radius;
 
     transition: background-color 0.5s ,box-shadow 0.5s;
 
@@ -51,10 +52,9 @@
 
   // items in that order
   .order-items {
-
     padding: $sp--xs;
-    // individual items
 
+    // individual items
     .item-image {
       // hide by default
       display: none;
@@ -76,9 +76,11 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+
       background: white;
       color: $text-gray;
       padding: $sp--sm ;
+      border-radius: $bd-radius;
 
       @include tablet {
         margin-bottom: $sp--sm; // need to reset this
