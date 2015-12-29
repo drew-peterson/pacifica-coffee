@@ -19,7 +19,6 @@ class UsersController < ApplicationController
   end
 
   def add_to_cart
-
     # check if the item is already in cart
     if current_user.cart.split(',').include?(params[:item_id])
 
