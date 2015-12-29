@@ -20,10 +20,6 @@ class UsersController < ApplicationController
 
   def add_to_cart
 
-    puts "X" * 100
-    p params
-    puts "X" * 100
-
     # check if the item is already in cart
     if current_user.cart.split(',').include?(params[:item_id])
 

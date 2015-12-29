@@ -24,7 +24,9 @@ Navigation
 </header>
 
 <!-- Errors on top of page -->
-<%= render "partials/header_errors" %>
+<div id="errorContainer">
+  <%= render "partials/header_errors" %>
+</div>
 
 <main>
   <%= yield %>
