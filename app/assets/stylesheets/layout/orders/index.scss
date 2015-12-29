@@ -5,13 +5,18 @@
   flex-direction: column;
   width: 100%;
 
+  @include tablet {
+    width: 70%;
+    margin: 0 auto;
+  }
+
   h1 {
     text-align: center;
     font-size: $font--med;
     margin-bottom: $sp--sm;
 
     @include tablet {
-      font-size: $font--lg;
+      font-size: $font--xl;
     }
   }
 
@@ -31,6 +36,11 @@
     &:hover {
       box-shadow: 0 0 1em rgba(0,0,0,0.2);
     }
+
+    @include tablet {
+      font-size: $font--med;
+      padding: $sp--msm;
+    }
   }
 
   .header {
@@ -41,17 +51,41 @@
 
   // items in that order
   .order-items {
-    background: white;
+
     padding: $sp--xs;
     // individual items
+
+    .item-image {
+      // hide by default
+      display: none;
+
+      @include tablet {
+        $height: rem(100px);
+        $width: $height;
+
+        display: block;
+        background: url('http://goo.gl/bLj6Ou') no-repeat center center;
+        background-size: contain;
+        height: $height;
+        width: $width;
+
+      }
+    }
+
     .details {
       display: flex;
       justify-content: space-between;
-
+      align-items: center;
+      background: white;
       color: $text-gray;
-      padding: $sp--xs 0;
-    }
+      padding: $sp--xs ;
 
+      @include tablet {
+        margin-bottom: $sp--sm; // need to reset this
+        justify-content: space-around;
+      }
+
+    }
 
   }
   #buyAgain {
@@ -61,7 +95,15 @@
       border: none;
     }
     margin: 0 auto;
-    margin-top: $sp--sm;
+    margin-top: $sp--xs;
+
+    @include tablet {
+      width: 30%;
+      padding: $sp--xs;
+      margin: 0;
+      margin-left: auto;
+
+    }
   }
 
 

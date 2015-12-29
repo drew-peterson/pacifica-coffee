@@ -2,6 +2,9 @@
 
 <% @items.each do |item, qty| %>
   <div class="details">
+    <!-- product image display @tablet + -->
+    <span class="item-image"></span>
+
     <span> <%= item.item_name %> </span>
     <span> $<%= item.price %>.00 X <%= qty %> </span>
   </div>
