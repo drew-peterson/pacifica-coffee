@@ -28,7 +28,13 @@
     display: flex;
     flex-direction: column;
 
+
     width: 85%;
+
+    @include tablet {
+      max-width: rem(310px); // stretchs too far on large desktops
+    }
+
     min-height: rem(406px); // account for large titles
     text-align: center;
     padding: 1% 2%;
