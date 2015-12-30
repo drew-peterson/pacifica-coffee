@@ -2,9 +2,8 @@
 // **********************
 // Debugging
 
-@mixin debug {
-  border: 1px solid red;
-  @content;
+@mixin debug($color: red) {
+  border: 1px solid $color;
 }
 
 @mixin clearfix {

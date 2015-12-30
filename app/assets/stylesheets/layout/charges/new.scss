@@ -1,0 +1,93 @@
+@import 'master';
+
+#finalCheckout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+
+  width: 90%;
+  margin: 0 auto;
+
+  h2 {
+    font-size: $font--lg;
+    margin-bottom: $sp--msm;
+  }
+
+// ====================
+// Address
+
+  .address {
+    width: 100%;
+    text-align: left;
+    font-size: $font--msm;
+    margin-bottom: $sp--sm;
+
+    h4 {
+      font-size: $font--msm;
+      margin-top: $sp--xs;
+    }
+
+    p {
+      padding: $sp--sm;
+      background: $light-gray;
+    }
+  } // end of address
+
+// ====================
+// Total
+
+.total {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+
+  h4 {
+    font-size: $font--med;
+    margin-bottom: $sp--sm;
+
+  }
+
+  .item {
+    background: lighten($light-gray, 3%);
+    padding: $sp--sm;
+    padding-bottom: 0;
+    margin-bottom: $sp--xs;
+    border: 2px solid $light-gray;
+    border-bottom: $bb--card;
+
+    p {
+      font-size: $font--med;
+      margin-bottom: $sp--sm;
+    }
+
+  } // end of item
+
+  .details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    span {
+      font-size: $font--msm;
+      padding: $sp--xs 0;
+    }
+  } // end of details
+
+  // total amount
+  .total-amount {
+    display: flex;
+    font-size: $font--med;
+
+    span:last-child {
+      margin-left: auto;
+    }
+  }
+} // end of total
+
+
+
+
+
+} // finalCheckout end
