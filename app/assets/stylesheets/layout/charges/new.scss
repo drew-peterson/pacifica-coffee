@@ -50,11 +50,10 @@
   }
 
   .item {
-    background: lighten($light-gray, 3%);
+    background: $light-gray;
     padding: $sp--sm;
     padding-bottom: 0;
     margin-bottom: $sp--xs;
-    border: 2px solid $light-gray;
     border-bottom: $bb--card;
 
     p {
@@ -79,6 +78,7 @@
   .total-amount {
     display: flex;
     font-size: $font--med;
+    margin-top: $sp--msm;
 
     span:last-child {
       margin-left: auto;
@@ -87,7 +87,27 @@
 } // end of total
 
 
+.stripe {
+  width: 60%;
+  margin: 0 auto;
+  margin-top: $sp--med;
 
+  .stripe-button-el {
+    background-image: none;
+    min-height: 60px;
+    line-height: 60px;
+    background: none;
+    background-color: none;
+    width: 100%;
+
+    transition: all .3s ease-in;
+    span {
+      background: none;
+      background-image: none;
+      background-color: none;
+    }
+  }
+}
 
 
 } // finalCheckout end
