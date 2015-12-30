@@ -60,11 +60,9 @@ input[type=number]::-webkit-inner-spin-button {
 
 // Show elemtn via pop
 .pop-in {
+  // These are being overridden so I used import
   opacity: 1          !important;
   visibility: visible !important;
   transform: scale(1) !important;
-
-
-
-  // These are being overridden so I used import
 }
+

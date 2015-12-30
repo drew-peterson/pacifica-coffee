@@ -5,7 +5,6 @@
   flex-direction: column;
   align-items: center;
 
-
   width: 90%;
   margin: 0 auto;
 
@@ -13,10 +12,32 @@
     width: 70%;
   }
 
-  h2 {
-    font-size: $font--lg;
+  .header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: $sp--msm 0;
+    position: relative;
+    height: 40px; // aline abolsute item
+
+    h2 {
+      font-size: rem(30px);
+      @include tablet {
+        font-size: $font--lg;
+      }
+    }
+
+    .arrow__left {
+      display: flex;
+      align-items: center;
+      position: absolute;
+      top: 4px; // math says 5px but 4px looks correct...
+      left: 0;
+    }
+
   }
+
 
 // ====================
 // Address
