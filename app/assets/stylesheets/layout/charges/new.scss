@@ -9,9 +9,13 @@
   width: 90%;
   margin: 0 auto;
 
+  @include tablet {
+    width: 70%;
+  }
+
   h2 {
     font-size: $font--lg;
-    margin-bottom: $sp--msm;
+    margin: $sp--msm 0;
   }
 
 // ====================
@@ -88,9 +92,13 @@
 
 
 .stripe {
-  width: 60%;
+  width: 80%;
   margin: 0 auto;
   margin-top: $sp--med;
+
+  @include tablet {
+    width: 50%;
+  }
 
   .stripe-button-el {
     background-image: none;
