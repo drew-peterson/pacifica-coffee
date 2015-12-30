@@ -89,6 +89,10 @@
   width: 80%;
   margin: 0 auto;
 
+  h2 {
+    font-size: 35px;
+    margin-bottom: 10px;
+  }
 }
 
 .cart-select-address {
@@ -158,11 +162,11 @@
   }
   .cart-address-modal {
     display: block;
-    position: fixed;
+    position: absolute;
     left: 0;
     top: 0;
     width: 100%;
-    height: 100vh;
+    height: 100%; // have to set height in javascript to be exact
     background-color: white;
     // background-color: rgba(0,0,0, 0.65);
 
@@ -186,10 +190,9 @@
     // color: white;
     font-size: $font--med;
     margin-bottom: $sp--msm;
-    @include tablet {
+    text-align: center;
       font-size: $font--lg;
-      text-align: center;
-    }
+
   }
 
   // Add new form
@@ -228,22 +231,7 @@
 
 
 
-.stripe-button-el {
-  margin-top: $sp--lg;
-  background-image: none;
-  min-height: 60px;
-  line-height: 60px;
-  background: none;
-  background-color: none;
-  width: 100%;
 
-  transition: all .3s ease-in;
-  span {
-    background: none;
-    background-image: none;
-    background-color: none;
-  }
-}
 
 
 

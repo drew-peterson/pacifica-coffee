@@ -6,13 +6,14 @@ class ChargesController < ApplicationController
   include UsersHelper
 
   def new
+
   end
 
   def create
-    # Check inventory before perform actual charge 
+    # Check inventory before perform actual charge
 
     # Amount in cents
-    cart_total  
+    cart_total
     @amount = @cart_total * 100
     p flash[:shipping_address]
     p flash[:billing_address]
@@ -30,7 +31,7 @@ class ChargesController < ApplicationController
 
     # create an order history
     @order = Order.new(item_ids_quantities: current_user.cart, user_id: current_user.id)
-    
+
     # clear cart upon order history creation
     if @order.save
       current_user.update(cart: '')

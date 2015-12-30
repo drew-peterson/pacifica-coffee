@@ -20,7 +20,19 @@ $(function(){
     })
 
 
+  }) // end ofpen close modal
+
+  //=========
+  // Tool tip
+  $('.quickform').hover(function(){
+    // select the tool tip and show
+    var toolTip = $(this).next('span');
+    toolTip.toggleClass('pop-in')
   })
+
+  // Hover for the plus btn
+
+
 
 
 })

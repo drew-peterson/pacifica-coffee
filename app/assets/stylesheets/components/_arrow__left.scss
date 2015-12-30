@@ -1,0 +1,64 @@
+@import 'master';
+
+// <a href="" class="arrow__left">
+//   <span class="center line">
+//     <span class="arrow line"></span>
+//     <span class="arrow2 line"></span>
+//   </span>
+// </a>
+
+
+.arrow__left {
+  display: flex;
+  align-items: center;
+
+  display: block;
+  cursor: pointer;
+  height: 30px;
+  width: 50px;
+  background: none;
+  border: none;
+
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateX(-10px);
+
+    span {
+      background: $google-blue;
+    }
+  }
+
+  .line {
+    display: block;
+    height: 4px;
+    width: 20px;
+    background: black;
+    border-radius: 2px;
+
+  }
+
+  .center {
+    position: relative;
+    width: 40px;
+  }
+
+  .arrow,
+  .arrow2 {
+    position: absolute;
+    background: black;
+    transform-origin: left;
+    left: -2px;
+  }
+
+  .arrow {
+    transform: rotate(45deg);
+    bottom: 1px;
+  }
+
+  .arrow2 {
+    transform: rotate(-45deg);
+    bottom: -1px;
+  }
+
+}

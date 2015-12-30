@@ -1,35 +1,98 @@
-  <div>
+
+  <!--  -->
+
+  <section id='finalCheckout'>
+
+    <!-- ============ -->
+    <!-- header -->
+
+    <div class="header">
+      <!-- Left Arrow -->
+      <a href="/users/cart" class="arrow__left">
+        <span class="center line">
+          <span class="arrow line"></span>
+          <span class="arrow2 line"></span>
+        </span>
+      </a>
+
+      <h2> Confirm Information </h2>
+
+    </div>
+    <!-- ==============  -->
+    <!-- Addresses -->
+
+    <div class="address">
+
+      <h4>Shipping Address</h4>
+
+      <% flash[:shipping_address] = params[:user][:shipping_address] %>
+
+      <!-- shipping address -->
+      <p> <%= flash[:shipping_address] %> </p>
+
+      <h4>Billing Address</h4>
+
+      <% if params[:user][:billing_checkbox] == '1' %>
+        <% flash[:billing_address] = flash[:shipping_address] %>
+      <% else %>
+        <% flash[:billing_address] = params[:user][:billing_address] %>
+      <% end %>
+
+      <!-- billing address -->
+      <p> <%= flash[:billing_address] %> </p>
+
+    </div>
+
+  <!-- ==============  -->
+  <!-- Money Information-->
+
+    <div class="total">
+
+      <h4>Items</h4>
+
+      <% @items.each do |item, qty| %>
+
+      <div class="item">
+
+        <p> <%= item.item_name %> </p>
+
+        <div class="details">
+
+          <div>
+            <span> $<%= item.price %>.00 </span>
+            <span>     X <%= qty %> = </span>
+          </div>
+            <span> $<%= item.price * qty.to_i %>.00 </span>
+          </div>
+
+        </div>
+
+      <% end %>
+
+      <div class="total-amount">
+        <span> Total: </span>
+        <span> $<%= @cart_total %>.00 </span>
+      </div>
+    </div>
+
+  <!-- ==============  -->
+  <!-- Stripe Checkout -->
+
+  <div class="stripe">
     <% if flash[:error].present? %>
       <div id="error_explanation">
         <p><%= flash[:error] %></p>
       </div>
     <% end %>
-    <label class="amount">
-      <span>Amount: $<%= @cart_total %>.00</span>
-    </label>
-  </div>
 
-  <div>
-    <h4>Shipping Address:</h4>
-
-    <% flash[:shipping_address] = params[:user][:shipping_address] %>
-    <%= flash[:shipping_address] %>
-
-    <h4>Billing Address:</h4>
-
-    <% if params[:user][:billing_checkbox] == '1' %>
-      <% flash[:billing_address] = flash[:shipping_address] %>
-    <% else %>
-      <% flash[:billing_address] = params[:user][:billing_address] %>
+    <%= form_tag charges_path do %>
+      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+        data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+        data-description="Test Charge"
+        data-amount="<%= @cart_total %>00"
+        data-locale="auto">
+      </script>
     <% end %>
-    <%= flash[:billing_address] %>
   </div>
 
-<%= form_tag charges_path do %>
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-    data-description="Test Charge"
-    data-amount="<%= @cart_total %>00"
-    data-locale="auto">
-  </script>
-<% end %>
+</section>

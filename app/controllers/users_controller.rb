@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def new
    @disable_nav = true;
   end
-  
+
   # create new user
   def create
     user = User.new(user_params)
@@ -24,12 +24,13 @@ class UsersController < ApplicationController
 
       flash[:already_in_cart] = 'Item already in cart'
       redirect_to '/items'
+
     else
     # Add item.id & desired quantity to user.cart string
       item_id_qty = current_user.cart + params[:item_id] + ',' + params[:item_qty] + ','
       current_user.update(cart: item_id_qty)
        flash[:item_added] = 'Item added'
-      redirect_to '/items'
+      redirect_to(:back);
     end
   end
 
@@ -62,7 +63,7 @@ class UsersController < ApplicationController
   def proceed
     redirect_to new_charge_path
   end
-  
+
   def checkout
   end
 

@@ -14,11 +14,15 @@
     <%= form_for :user, url: '/users/cart', html: {class: 'quickform'} do |f| %>
       <%= hidden_field_tag('item_id', value = item.id) %>
       <%= hidden_field_tag('item_qty', value = 1) %>
-      <label for='quickAddCart' class="quickAddBtn">
-        <%= f.submit 'Add to Cart', id: 'quickAddCart' %>
+
+      <!-- The submit click is on the label, each label and btn have to be unqiue so they link -->
+      <label for= <%= "quickAddCart#{item.id}" %> class="quickAddBtn">
+        <%= f.submit '', id: "quickAddCart#{item.id}" %>
       </label>
 
     <% end %>
+    <!-- tool tip -->
+    <span>Add To Cart</span>
 
 
       <!-- product image -->

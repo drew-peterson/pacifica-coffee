@@ -2,7 +2,7 @@
 
 //===========
 // Quick Add btn
-.item-card {
+.item-card { // scope the classes
   position: relative;
   .quickform {
     position: absolute;
@@ -10,6 +10,39 @@
     right: 10px;
     display: flex;
     justify-content: flex-end;
+
+
+    // tooltip
+    & + span {
+      z-index: 10;
+      position: absolute;
+      background: white;
+      padding: $sp--sm;
+      border: 2px solid $wet-gray;
+      right: -30px;
+      top: 50px;
+
+      // transition
+      transform: scale(0);
+      opacity: 0;
+      visibility: hidden;
+
+      transition: $pop-in;
+      transition-delay: 0.5s;
+
+      // triangle on toolip
+      &::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid $wet-gray;
+        top: -12px;
+        right: 40px
+      }
+    }
   }
 
   .quickAddBtn,
@@ -30,6 +63,7 @@
     transform: rotate(90deg);
   }
 
+    // border around plus for hitbox...
    .quickAddBtn::before {
     content: '';
     position: absolute;
@@ -38,11 +72,19 @@
     height: 35px;
     width: 35px;
   }
-
+  // hide the actual btn
   #quickAddCart {
     font-size: 0;
     display: none;
     background: none;
+  }
+
+  // Hover BTN
+  .quickAddBtn:hover {
+    background: darken($emerald, 10%);
+    &::after {
+      background: darken($emerald, 10%); // It works, but i bet I can refactor...
+    }
   }
 
 
@@ -154,8 +196,7 @@
 
 
   @include tablet {
-    padding: 0 $sp--lg;
-    height: rem(350px);
+    margin-right: 10%;
   }
 
   h4 {

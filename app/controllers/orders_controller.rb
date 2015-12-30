@@ -4,9 +4,19 @@ class OrdersController < ApplicationController
   include UsersHelper
 
   # show single order history
+  # used in the order history page ajax call
   def show
     @order = Order.find(params[:id])
-    find_items(@order.item_ids_quantities)
+    find_items(@order.item_ids_quantities) #gets me @items
+
+    # partial for the show page, has to be _show file name, standard show did not work...
+    # Is is more module to break up index and show, since they are used on same page??
+    @html = view_context.render 'orders/show', locals: {items: @items}
+
+    respond_to do |format|
+      format.html {render :show} #render show page for html requests
+      format.json  { render :json => {html: @html} } # Ajax call from order history
+    end
   end
 
   # show all order histories

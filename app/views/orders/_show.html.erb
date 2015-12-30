@@ -1,0 +1,24 @@
+<!-- Partial will be appeneded inside the orders/index page for each card -->
+
+<% @items.each do |item, qty| %>
+  <div class="details">
+    <!-- product image display @tablet + -->
+    <span class="item-image"></span>
+
+    <span> <%= item.item_name %> </span>
+    <span> $<%= item.price %>.00 X <%= qty %> </span>
+  </div>
+
+  <!-- Each item has a form attached with id and qty-->
+  <%= form_for :user, url: '/users/cart' do |f| %>
+      <%= hidden_field_tag('item_id', value = item.id) %>
+      <%= hidden_field_tag('item_qty', value = qty) %>
+  <% end %>
+
+
+<% end %>
+
+
+
+
+

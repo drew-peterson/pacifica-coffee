@@ -52,3 +52,17 @@ input[type='number'] {
   animation: slide-right;
   animation-duration: 1s;
 }
+
+// always show the spinner...
+input[type=number]::-webkit-inner-spin-button {
+  opacity: 1;
+}
+
+// Show elemtn via pop
+.pop-in {
+  // These are being overridden so I used import
+  opacity: 1          !important;
+  visibility: visible !important;
+  transform: scale(1) !important;
+}
+
