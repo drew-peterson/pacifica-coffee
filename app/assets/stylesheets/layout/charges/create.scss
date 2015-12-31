@@ -3,20 +3,21 @@
 
   width: 100%;
   text-align: center;
+  margin-top: 20px;
 
 
   h1 {
-    $font-size: 40px;
+    font-size: 40px;
   }
 
   p {
     font-size: 25px;
-    margin-top: 10px;
+    margin: $sp--msm 0;
   }
 
   a {
     @include btn--large($emerald) {
-      width: 60%;
+      width: 50%;
       margin: 0 auto;
     }
   }

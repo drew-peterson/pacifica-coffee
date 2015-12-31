@@ -37,24 +37,4 @@ $(function(){
   }) // end of click
 
 
-  // stripe pay button
-  $('#finalCheckout').on('click', '.stripe-button-el', function(e){
-    e.preventDefault();
-
-    // find load div
-    var lc = $('.loading-dial')
-    var load = '<div class="loader"></div>'
-
-    // wait before appending
-    setTimeout(function(){
-      lc.append(load);
-      lc.show();
-    }, 500);
-    // after the redirect all this goes away because it is not held in state...
-
-  })
-
-
-  // remove the animation
-
 }) // end of ready
