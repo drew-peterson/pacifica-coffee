@@ -2,7 +2,7 @@
 
 #order-history {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   width: 100%;
 
   @include tablet {
