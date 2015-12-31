@@ -41,14 +41,16 @@ $(function(){
   $('#finalCheckout').on('click', '.stripe-button-el', function(e){
     e.preventDefault();
 
+    // find load div
     var lc = $('.loading-dial')
     var load = '<div class="loader"></div>'
 
-    lc.append(load);
-    lc.show();
-
-
-    // listen for the
+    // wait before appending
+    setTimeout(function(){
+      lc.append(load);
+      lc.show();
+    }, 500);
+    // after the redirect all this goes away because it is not held in state...
 
   })
 
