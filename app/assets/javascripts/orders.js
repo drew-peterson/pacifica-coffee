@@ -36,4 +36,23 @@ $(function(){
 
   }) // end of click
 
+
+  // stripe pay button
+  $('#finalCheckout').on('click', '.stripe-button-el', function(e){
+    e.preventDefault();
+
+    var lc = $('.loading-dial')
+    var load = '<div class="loader"></div>'
+
+    lc.append(load);
+    lc.show();
+
+
+    // listen for the
+
+  })
+
+
+  // remove the animation
+
 }) // end of ready

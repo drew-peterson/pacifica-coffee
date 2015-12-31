@@ -29926,3 +29926,3308 @@ Processing by WelcomeController#index as HTML
   Rendered navigation/_main_nav.html.erb (1.7ms)
   Rendered partials/_header_errors.html.erb (0.1ms)
 Completed 200 OK in 120ms (Views: 119.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2015-12-30 18:18:33 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (1.6ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered partials/_nav_profile_modal.html.erb (0.7ms)
+  Rendered navigation/_main_nav.html.erb (26.4ms)
+  Rendered partials/_header_errors.html.erb (0.6ms)
+Completed 200 OK in 3056ms (Views: 3044.9ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/assets/layout/charges/create.self-ac9a2aed2733f7c169909c801b8e02b70e9b5c0f75c1e73db99bd6eaf5dc9fee.css?body=1" for ::1 at 2015-12-30 18:18:37 -0800
+
+
+Started GET "/assets/orders.self-f4a04591b1967f8b9ba7031645e04fef9c165d9acf568b96ad5d93224bbbff1c.js?body=1" for ::1 at 2015-12-30 18:18:37 -0800
+
+
+Started GET "/orders/recent/last" for ::1 at 2015-12-30 18:18:39 -0800
+Processing by OrdersController#recent as */*
+  [1m[36mOrder Load (1.1ms)[0m  [1mSELECT  "orders".* FROM "orders"  ORDER BY "orders"."id" DESC LIMIT 1[0m
+  [1m[35mItem Load (2.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 97016]]
+  [1m[36mItem Load (3.4ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 48782]]
+  Rendered partials/_profile_history_last.html.erb (1.1ms)
+Completed 200 OK in 71ms (Views: 0.5ms | ActiveRecord: 20.3ms)
+
+
+Started GET "/users/cart" for ::1 at 2015-12-30 18:18:42 -0800
+Processing by UsersController#cart as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 97016]]
+  [1m[35mItem Load (0.2ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 48782]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 97016]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 48782]]
+  Rendered partials/_cart_items.html.erb (2.8ms)
+  Rendered addresses/_form.html.erb (7.9ms)
+  [1m[36mAddress Load (0.3ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/_form.html.erb (13.0ms)
+  Rendered users/cart.html.erb within layouts/application (26.8ms)
+  Rendered partials/_nav_profile_modal.html.erb (0.1ms)
+  Rendered navigation/_main_nav.html.erb (1.0ms)
+  Rendered partials/_header_errors.html.erb (0.1ms)
+Completed 200 OK in 198ms (Views: 192.4ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/charges/new" for ::1 at 2015-12-30 18:18:53 -0800
+Processing by ChargesController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4XR0wC6sEsU+32WumVskAkTtODJfqjBm0cwzwfBl9aoDnaBPm9LN70HLqmbbrlFlYSudmb8zU0VPRbbpDK1HAw==", "user"=>{"shipping_address"=>"Joji's Palace - 123 456th st El Cerrito CA 94999", "billing_checkbox"=>"0", "billing_address"=>"Joji's Palace - 123 456th st El Cerrito CA 94999"}, "commit"=>"Continue"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 97016]]
+  [1m[35mItem Load (0.2ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 48782]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 97016]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 48782]]
+  Rendered charges/new.html.erb within layouts/application (1.1ms)
+  Rendered partials/_nav_profile_modal.html.erb (0.1ms)
+  Rendered navigation/_main_nav.html.erb (0.8ms)
+  Rendered partials/_header_errors.html.erb (0.0ms)
+Completed 200 OK in 135ms (Views: 131.7ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/charges" for ::1 at 2015-12-30 18:19:40 -0800
+Processing by ChargesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RnaIwMsCBW2kxO8EcuA9G2zeyp+92iGrgVcT3U104oCkn1xPfnzaR9vQIMwwFUh8SRhvNF1DQogf3pb1sbxQKQ==", "stripeToken"=>"tok_17Nw2PC7KtOpeljmyaexbw3a", "stripeTokenType"=>"card", "stripeEmail"=>"peteand07@gmail.com"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 97016]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 48782]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "orders" ("item_ids_quantities", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["item_ids_quantities", "97016,3,48782,2,"], ["user_id", 1], ["created_at", "2015-12-31 02:19:41.929446"], ["updated_at", "2015-12-31 02:19:41.929446"]]
+  [1m[35m (6.3ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "cart" = $1, "updated_at" = $2 WHERE "users"."id" = $3  [["cart", ""], ["updated_at", "2015-12-31 02:19:41.939826"], ["id", 1]]
+  [1m[36m (6.3ms)[0m  [1mCOMMIT[0m
+  Rendered charges/create.html.erb within layouts/application (0.4ms)
+  Rendered partials/_nav_profile_modal.html.erb (0.2ms)
+  Rendered navigation/_main_nav.html.erb (1.3ms)
+  Rendered partials/_header_errors.html.erb (0.1ms)
+Completed 200 OK in 3342ms (Views: 111.7ms | ActiveRecord: 14.0ms)
+
+
+Started GET "/items" for ::1 at 2015-12-30 18:22:30 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.4ms)
+  [1m[35mItem Load (0.5ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/_quick_view.html.erb (1.4ms)
+  Rendered items/_quick_view.html.erb (0.5ms)
+  Rendered items/_quick_view.html.erb (0.5ms)
+  Rendered items/_quick_view.html.erb (0.6ms)
+  Rendered items/_quick_view.html.erb (0.5ms)
+  Rendered items/_quick_view.html.erb (0.5ms)
+  Rendered items/_quick_view.html.erb (0.5ms)
+  Rendered items/_quick_view.html.erb (0.5ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/index.html.erb within layouts/application (32.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered partials/_nav_profile_modal.html.erb (0.2ms)
+  Rendered navigation/_main_nav.html.erb (3.5ms)
+  Rendered partials/_header_errors.html.erb (0.2ms)
+Completed 200 OK in 1513ms (Views: 1510.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/layout/charges/create.self-0ec0dcc0b0a1eb22841a92f2744da12fe6583cdc850a5427d7883aa42f9092c9.css?body=1" for ::1 at 2015-12-30 18:22:31 -0800
+
+
+Started POST "/users/cart" for ::1 at 2015-12-30 18:22:39 -0800
+Processing by UsersController#add_to_cart as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HufRyIpt4Blt3eibD+mYIaoRK9uNAn45Fezb/WmGgP38DgVHPxM/MxLJJ1NNHO1Gj9eOcG2bHRqLZV7VlU4yVA==", "item_id"=>"97016", "item_qty"=>"1", "commit"=>""}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "cart" = $1, "updated_at" = $2 WHERE "users"."id" = $3  [["cart", "97016,1,"], ["updated_at", "2015-12-31 02:22:39.786440"], ["id", 1]]
+  [1m[36m (1.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/items
+Completed 302 Found in 5ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/items" for ::1 at 2015-12-30 18:22:39 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.0ms)
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/_quick_view.html.erb (0.4ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.4ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/index.html.erb within layouts/application (22.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered partials/_nav_profile_modal.html.erb (0.1ms)
+  Rendered navigation/_main_nav.html.erb (2.2ms)
+  Rendered partials/_header_errors.html.erb (0.2ms)
+Completed 200 OK in 147ms (Views: 145.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/cart" for ::1 at 2015-12-30 18:22:40 -0800
+Processing by UsersController#cart as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 97016]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 97016]]
+  Rendered partials/_cart_items.html.erb (0.6ms)
+  Rendered addresses/_form.html.erb (0.5ms)
+  [1m[36mAddress Load (0.3ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/_form.html.erb (1.9ms)
+  Rendered users/cart.html.erb within layouts/application (4.6ms)
+  Rendered partials/_nav_profile_modal.html.erb (0.3ms)
+  Rendered navigation/_main_nav.html.erb (2.1ms)
+  Rendered partials/_header_errors.html.erb (0.1ms)
+Completed 200 OK in 260ms (Views: 257.4ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/charges/new" for ::1 at 2015-12-30 18:22:43 -0800
+Processing by ChargesController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6DI9hYJk9S0AxVGeu0jrr33rEsX3CPUC/8z+vxguoUQK2+kKNxoqB3/Rnlb5vZ7IWC23bheRliFhRXuX5OYT7Q==", "user"=>{"shipping_address"=>"Joji's Palace - 123 456th st El Cerrito CA 94999", "billing_checkbox"=>"0", "billing_address"=>"Joji's Palace - 123 456th st El Cerrito CA 94999"}, "commit"=>"Continue"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 97016]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 97016]]
+  Rendered charges/new.html.erb within layouts/application (0.5ms)
+  Rendered partials/_nav_profile_modal.html.erb (0.2ms)
+  Rendered navigation/_main_nav.html.erb (1.5ms)
+  Rendered partials/_header_errors.html.erb (0.1ms)
+Completed 200 OK in 128ms (Views: 126.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/charges/new" for ::1 at 2015-12-30 18:26:18 -0800
+Processing by ChargesController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6DI9hYJk9S0AxVGeu0jrr33rEsX3CPUC/8z+vxguoUQK2+kKNxoqB3/Rnlb5vZ7IWC23bheRliFhRXuX5OYT7Q==", "user"=>{"shipping_address"=>"Joji's Palace - 123 456th st El Cerrito CA 94999", "billing_checkbox"=>"0", "billing_address"=>"Joji's Palace - 123 456th st El Cerrito CA 94999"}, "commit"=>"Continue"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.2ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 97016]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 97016]]
+  Rendered charges/new.html.erb within layouts/application (0.4ms)
+  Rendered partials/_nav_profile_modal.html.erb (0.1ms)
+  Rendered navigation/_main_nav.html.erb (0.9ms)
+  Rendered partials/_header_errors.html.erb (0.1ms)
+Completed 200 OK in 488ms (Views: 485.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/base/base.self-b1fd57ca6f92076ec94055938ef4c1cf03bb515deb0627731dffc4737acd46c1.css?body=1" for ::1 at 2015-12-30 18:26:18 -0800
+
+
+Started GET "/assets/base/reset.self-ee751026e628351d140506fb4c1957bf029298d1301db5bd6ddac3fd6abb0a5d.css?body=1" for ::1 at 2015-12-30 18:26:18 -0800
+
+
+Started GET "/assets/components/_close_btn.self-25c54feb31fcf014c233df59211aa1cc9cddaf37fd5402ef117e3b38df29e630.css?body=1" for ::1 at 2015-12-30 18:26:18 -0800
+
+
+Started GET "/assets/components/_flexbox_vendors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-30 18:26:18 -0800
+
+
+Started GET "/assets/components/_arrow__left.self-1343a8c61866e77d155dd21495403cd9e9e3bd9e411aadea784a59b818e6b9b1.css?body=1" for ::1 at 2015-12-30 18:26:19 -0800
+
+
+Started GET "/assets/components/_hamburger.self-aafc3be9901611504edc9669ec2e21071093fbb7dbdb39739016cdef2f4d0757.css?body=1" for ::1 at 2015-12-30 18:26:19 -0800
+
+
+Started GET "/assets/addresses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-30 18:26:19 -0800
+
+
+Started GET "/assets/components/_hamburger2.self-20d3fcf680dee61adc02811ac32827176fd50da1a292ee03eaf6d793dc46c649.css?body=1" for ::1 at 2015-12-30 18:26:19 -0800
+
+
+Started GET "/assets/components/_psuedo_icons.self-e87a2dcdd6f8da864e1bafe3b08b197db049e54bb550e001cdd5d7ef61efba5c.css?body=1" for ::1 at 2015-12-30 18:26:19 -0800
+
+
+Started GET "/assets/layout/charges/create.self-0ec0dcc0b0a1eb22841a92f2744da12fe6583cdc850a5427d7883aa42f9092c9.css?body=1" for ::1 at 2015-12-30 18:26:19 -0800
+
+
+Started GET "/assets/layout/charges/new.self-df2298c8b25000ceb5482f2ff3a92061c9911d553bf36564c942c4d2140ec9be.css?body=1" for ::1 at 2015-12-30 18:26:19 -0800
+
+
+Started GET "/assets/layout/items/admin.self-cf7c1aac518e4c0af596bf2633a26b8dab58352d13568ddc49743e680f335102.css?body=1" for ::1 at 2015-12-30 18:26:19 -0800
+
+
+Started GET "/assets/layout/items/index.self-d620d265d7272bc9ab2cc4cfbbf2c3548c3183d70506abef1df21267af62e425.css?body=1" for ::1 at 2015-12-30 18:26:19 -0800
+
+
+Started GET "/assets/layout/items/quick_view.self-b9b027948aa9a7870597b2cfb94eafafdad7028de8587fac87d110d43d056d88.css?body=1" for ::1 at 2015-12-30 18:26:19 -0800
+
+
+Started GET "/assets/layout/layout.self-39b18e25103de4c514ed412d535c8d7fef8b366c80d40fd5fd6c3d62acd89279.css?body=1" for ::1 at 2015-12-30 18:26:19 -0800
+
+
+Started GET "/assets/layout/navigation/profile_modal.self-068778f0d4a8aa44f0d0a1e91251bf37a68432646f6d498424dee552028ea5cd.css?body=1" for ::1 at 2015-12-30 18:26:19 -0800
+
+
+Started GET "/assets/layout/orders/index.self-ae895e4bcd9b2bc69748df8f7967089094f112c0a834d4e87fd355355af56061.css?body=1" for ::1 at 2015-12-30 18:26:19 -0800
+
+
+Started GET "/assets/layout/sessions/new.self-87757b10cfb6eccca0582ca33f0261fc3b2a82936625ff5ac61e4c83c0e3b364.css?body=1" for ::1 at 2015-12-30 18:26:19 -0800
+
+
+Started GET "/assets/layout/users/cart/cart.self-8115b4ceec3652c44e8af6ce1accb2d09ef483bc46057056034452c73bb7d8ff.css?body=1" for ::1 at 2015-12-30 18:26:19 -0800
+
+
+Started GET "/assets/layout/users/cart/cart_items.self-cfa782ef73120f95919152a36619c29e74b2e99d09773d57efacf7b3a8fed9f4.css?body=1" for ::1 at 2015-12-30 18:26:19 -0800
+
+
+Started GET "/assets/layout/users/new.self-1b77be1f56391c7544835f73964bfe34dcd052ed1601b055677e61aa0a09ee36.css?body=1" for ::1 at 2015-12-30 18:26:19 -0800
+
+
+Started GET "/assets/layout/users/profile.self-b84257c4ae5d1693f0001a784dd918200a69c7964100c015d6ad85c76d55f35a.css?body=1" for ::1 at 2015-12-30 18:26:19 -0800
+
+
+Started GET "/assets/layout/welcome.self-d640b1fee6c52bba835041cbf9ee3a08686733b2c3dc992394c2682e243b7c2d.css?body=1" for ::1 at 2015-12-30 18:26:19 -0800
+
+
+Started GET "/assets/master.self-cf0a516414e7f287441c5ea504ce16573f5ca0df79818391706bc1d9f7a889f0.css?body=1" for ::1 at 2015-12-30 18:26:19 -0800
+
+
+Started GET "/assets/utilities/_animations.self-0bfff9fbf8761df6b9f8f6d7ab4b22bf64ab0be955cdf58925833c349a70f34c.css?body=1" for ::1 at 2015-12-30 18:26:19 -0800
+
+
+Started GET "/assets/utilities/_config.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-30 18:26:19 -0800
+
+
+Started GET "/assets/utilities/_error.self-75ac0774127f9897ab08ca211040f87314b0be5ee2de93e4c8637d12df843301.css?body=1" for ::1 at 2015-12-30 18:26:19 -0800
+
+
+Started GET "/assets/utilities/_functions.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-30 18:26:19 -0800
+
+
+Started GET "/assets/utilities/_mixins.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-30 18:26:19 -0800
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for ::1 at 2015-12-30 18:26:19 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-30 18:26:19 -0800
+
+
+Started GET "/assets/jquery.turbolinks.self-176b9819f30444d441e820bbccd3264fe57753aeafd54dec732b0dbc77129a2a.js?body=1" for ::1 at 2015-12-30 18:26:19 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-30 18:26:19 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-30 18:26:19 -0800
+
+
+Started GET "/assets/addresses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-30 18:26:19 -0800
+
+
+Started GET "/assets/cart.self-efec194c50647bf422163e3ae8f95b6dd0b538a64ea4ba2234da6f02de611cc2.js?body=1" for ::1 at 2015-12-30 18:26:19 -0800
+
+
+Started GET "/assets/hamburger.self-389fddc2ca44002951500adc5ea8dfbb882e8d6e2792d8ada52f321799e70c49.js?body=1" for ::1 at 2015-12-30 18:26:19 -0800
+
+
+Started GET "/assets/layout.self-431905c730bfa782ba8aff783043fec36d7f97bffcf881df0dd01d3538baaa4b.js?body=1" for ::1 at 2015-12-30 18:26:19 -0800
+
+
+Started GET "/assets/localStorage.self-3d8308f8eb240399394df285a4ec2a4a3f54894968f71cedd68248720286fce4.js?body=1" for ::1 at 2015-12-30 18:26:19 -0800
+
+
+Started GET "/assets/navProfileMobile.self-86f10e059bc2639ddd3a6444e30b5daa52c6b741a304475835575de20ce11f54.js?body=1" for ::1 at 2015-12-30 18:26:19 -0800
+
+
+Started GET "/assets/orders.self-45a961becee86eb4edbe6c63633feeaa07a168733edd4be915d726ce79fa338e.js?body=1" for ::1 at 2015-12-30 18:26:19 -0800
+
+
+Started GET "/assets/quickview.self-735c319d704907aba6f915021e6afe7b25597b4336c0a519609ef1ff6328a16f.js?body=1" for ::1 at 2015-12-30 18:26:19 -0800
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-30 18:26:19 -0800
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-12-30 18:26:19 -0800
+
+
+Started POST "/charges/new" for ::1 at 2015-12-30 18:26:30 -0800
+Processing by ChargesController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6DI9hYJk9S0AxVGeu0jrr33rEsX3CPUC/8z+vxguoUQK2+kKNxoqB3/Rnlb5vZ7IWC23bheRliFhRXuX5OYT7Q==", "user"=>{"shipping_address"=>"Joji's Palace - 123 456th st El Cerrito CA 94999", "billing_checkbox"=>"0", "billing_address"=>"Joji's Palace - 123 456th st El Cerrito CA 94999"}, "commit"=>"Continue"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 97016]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 97016]]
+  Rendered charges/new.html.erb within layouts/application (0.5ms)
+  Rendered partials/_nav_profile_modal.html.erb (0.3ms)
+  Rendered navigation/_main_nav.html.erb (2.4ms)
+  Rendered partials/_header_errors.html.erb (0.2ms)
+Completed 200 OK in 369ms (Views: 367.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/base/reset.self-ee751026e628351d140506fb4c1957bf029298d1301db5bd6ddac3fd6abb0a5d.css?body=1" for ::1 at 2015-12-30 18:26:31 -0800
+
+
+Started GET "/assets/components/_arrow__left.self-1343a8c61866e77d155dd21495403cd9e9e3bd9e411aadea784a59b818e6b9b1.css?body=1" for ::1 at 2015-12-30 18:26:31 -0800
+
+
+Started GET "/assets/base/base.self-b1fd57ca6f92076ec94055938ef4c1cf03bb515deb0627731dffc4737acd46c1.css?body=1" for ::1 at 2015-12-30 18:26:31 -0800
+
+
+Started GET "/assets/components/_close_btn.self-25c54feb31fcf014c233df59211aa1cc9cddaf37fd5402ef117e3b38df29e630.css?body=1" for ::1 at 2015-12-30 18:26:31 -0800
+
+
+Started GET "/assets/addresses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-30 18:26:31 -0800
+
+
+Started GET "/assets/components/_flexbox_vendors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-30 18:26:31 -0800
+
+
+Started GET "/assets/components/_hamburger.self-aafc3be9901611504edc9669ec2e21071093fbb7dbdb39739016cdef2f4d0757.css?body=1" for ::1 at 2015-12-30 18:26:31 -0800
+
+
+Started GET "/assets/components/_hamburger2.self-20d3fcf680dee61adc02811ac32827176fd50da1a292ee03eaf6d793dc46c649.css?body=1" for ::1 at 2015-12-30 18:26:31 -0800
+
+
+Started GET "/assets/components/_psuedo_icons.self-e87a2dcdd6f8da864e1bafe3b08b197db049e54bb550e001cdd5d7ef61efba5c.css?body=1" for ::1 at 2015-12-30 18:26:31 -0800
+
+
+Started GET "/assets/layout/charges/create.self-0ec0dcc0b0a1eb22841a92f2744da12fe6583cdc850a5427d7883aa42f9092c9.css?body=1" for ::1 at 2015-12-30 18:26:31 -0800
+
+
+Started GET "/assets/layout/charges/new.self-df2298c8b25000ceb5482f2ff3a92061c9911d553bf36564c942c4d2140ec9be.css?body=1" for ::1 at 2015-12-30 18:26:31 -0800
+
+
+Started GET "/assets/layout/items/admin.self-cf7c1aac518e4c0af596bf2633a26b8dab58352d13568ddc49743e680f335102.css?body=1" for ::1 at 2015-12-30 18:26:31 -0800
+
+
+Started GET "/assets/layout/items/index.self-d620d265d7272bc9ab2cc4cfbbf2c3548c3183d70506abef1df21267af62e425.css?body=1" for ::1 at 2015-12-30 18:26:31 -0800
+
+
+Started GET "/assets/layout/items/quick_view.self-b9b027948aa9a7870597b2cfb94eafafdad7028de8587fac87d110d43d056d88.css?body=1" for ::1 at 2015-12-30 18:26:31 -0800
+
+
+Started GET "/assets/layout/layout.self-39b18e25103de4c514ed412d535c8d7fef8b366c80d40fd5fd6c3d62acd89279.css?body=1" for ::1 at 2015-12-30 18:26:31 -0800
+
+
+Started GET "/assets/layout/navigation/profile_modal.self-068778f0d4a8aa44f0d0a1e91251bf37a68432646f6d498424dee552028ea5cd.css?body=1" for ::1 at 2015-12-30 18:26:31 -0800
+
+
+Started GET "/assets/layout/orders/index.self-ae895e4bcd9b2bc69748df8f7967089094f112c0a834d4e87fd355355af56061.css?body=1" for ::1 at 2015-12-30 18:26:31 -0800
+
+
+Started GET "/assets/layout/sessions/new.self-87757b10cfb6eccca0582ca33f0261fc3b2a82936625ff5ac61e4c83c0e3b364.css?body=1" for ::1 at 2015-12-30 18:26:31 -0800
+
+
+Started GET "/assets/layout/users/cart/cart.self-8115b4ceec3652c44e8af6ce1accb2d09ef483bc46057056034452c73bb7d8ff.css?body=1" for ::1 at 2015-12-30 18:26:31 -0800
+
+
+Started GET "/assets/layout/users/cart/cart_items.self-cfa782ef73120f95919152a36619c29e74b2e99d09773d57efacf7b3a8fed9f4.css?body=1" for ::1 at 2015-12-30 18:26:31 -0800
+
+
+Started GET "/assets/layout/users/new.self-1b77be1f56391c7544835f73964bfe34dcd052ed1601b055677e61aa0a09ee36.css?body=1" for ::1 at 2015-12-30 18:26:31 -0800
+
+
+Started GET "/assets/layout/users/profile.self-b84257c4ae5d1693f0001a784dd918200a69c7964100c015d6ad85c76d55f35a.css?body=1" for ::1 at 2015-12-30 18:26:31 -0800
+
+
+Started GET "/assets/layout/welcome.self-d640b1fee6c52bba835041cbf9ee3a08686733b2c3dc992394c2682e243b7c2d.css?body=1" for ::1 at 2015-12-30 18:26:31 -0800
+
+
+Started GET "/assets/master.self-cf0a516414e7f287441c5ea504ce16573f5ca0df79818391706bc1d9f7a889f0.css?body=1" for ::1 at 2015-12-30 18:26:31 -0800
+
+
+Started GET "/assets/utilities/_animations.self-0bfff9fbf8761df6b9f8f6d7ab4b22bf64ab0be955cdf58925833c349a70f34c.css?body=1" for ::1 at 2015-12-30 18:26:31 -0800
+
+
+Started GET "/assets/utilities/_config.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-30 18:26:31 -0800
+
+
+Started GET "/assets/utilities/_error.self-75ac0774127f9897ab08ca211040f87314b0be5ee2de93e4c8637d12df843301.css?body=1" for ::1 at 2015-12-30 18:26:31 -0800
+
+
+Started GET "/assets/utilities/_functions.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-30 18:26:31 -0800
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for ::1 at 2015-12-30 18:26:31 -0800
+
+
+Started GET "/assets/utilities/_mixins.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-30 18:26:31 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-30 18:26:31 -0800
+
+
+Started GET "/assets/jquery.turbolinks.self-176b9819f30444d441e820bbccd3264fe57753aeafd54dec732b0dbc77129a2a.js?body=1" for ::1 at 2015-12-30 18:26:31 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-30 18:26:31 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-30 18:26:31 -0800
+
+
+Started GET "/assets/addresses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-30 18:26:31 -0800
+
+
+Started GET "/assets/cart.self-efec194c50647bf422163e3ae8f95b6dd0b538a64ea4ba2234da6f02de611cc2.js?body=1" for ::1 at 2015-12-30 18:26:31 -0800
+
+
+Started GET "/assets/hamburger.self-389fddc2ca44002951500adc5ea8dfbb882e8d6e2792d8ada52f321799e70c49.js?body=1" for ::1 at 2015-12-30 18:26:31 -0800
+
+
+Started GET "/assets/layout.self-431905c730bfa782ba8aff783043fec36d7f97bffcf881df0dd01d3538baaa4b.js?body=1" for ::1 at 2015-12-30 18:26:31 -0800
+
+
+Started GET "/assets/localStorage.self-3d8308f8eb240399394df285a4ec2a4a3f54894968f71cedd68248720286fce4.js?body=1" for ::1 at 2015-12-30 18:26:31 -0800
+
+
+Started GET "/assets/navProfileMobile.self-86f10e059bc2639ddd3a6444e30b5daa52c6b741a304475835575de20ce11f54.js?body=1" for ::1 at 2015-12-30 18:26:31 -0800
+
+
+Started GET "/assets/orders.self-ae077a6e457a697d8fda0dee840e3090af0144e521530e0601e3c76cc1ba6996.js?body=1" for ::1 at 2015-12-30 18:26:31 -0800
+
+
+Started GET "/assets/quickview.self-735c319d704907aba6f915021e6afe7b25597b4336c0a519609ef1ff6328a16f.js?body=1" for ::1 at 2015-12-30 18:26:31 -0800
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-30 18:26:31 -0800
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-12-30 18:26:31 -0800
+
+
+Started GET "/orders/recent/last" for ::1 at 2015-12-31 09:15:17 -0800
+Processing by OrdersController#recent as */*
+  [1m[36mOrder Load (1.5ms)[0m  [1mSELECT  "orders".* FROM "orders"  ORDER BY "orders"."id" DESC LIMIT 1[0m
+  [1m[35mItem Load (0.5ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 97016]]
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 48782]]
+  Rendered partials/_profile_history_last.html.erb (0.4ms)
+Completed 200 OK in 15ms (Views: 0.8ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/orders" for ::1 at 2015-12-31 09:15:18 -0800
+Processing by OrdersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mOrder Load (0.2ms)[0m  [1mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35mItem Load (0.3ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 68540]]
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 21206]]
+  [1m[35mItem Load (0.5ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 97016]]
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 21662]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 97016]]
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 48782]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 97016]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 48782]]
+  Rendered orders/index.html.erb within layouts/application (1.3ms)
+  Rendered partials/_nav_profile_modal.html.erb (0.2ms)
+  Rendered navigation/_main_nav.html.erb (2.2ms)
+  Rendered partials/_header_errors.html.erb (0.2ms)
+Completed 200 OK in 1742ms (Views: 1732.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/components/_loading.self-c820364a3a9d11cca77ea16325599ead474f548d6ef63ff32cfb0023bde95dcd.css?body=1" for ::1 at 2015-12-31 09:15:20 -0800
+
+
+Started GET "/assets/orders.self-0f857b552e7b25d7a8b46d88c016c368cae04089b32c410d6b44d2d6429b6910.js?body=1" for ::1 at 2015-12-31 09:15:20 -0800
+
+
+Started GET "/orders/1" for ::1 at 2015-12-31 09:15:20 -0800
+Processing by OrdersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mOrder Load (0.4ms)[0m  SELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (2.6ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 68540]]
+  [1m[35mItem Load (0.2ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 21206]]
+  Rendered orders/_show.html.erb (2.3ms)
+Completed 200 OK in 17ms (Views: 0.4ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/orders/2" for ::1 at 2015-12-31 09:15:20 -0800
+Processing by OrdersController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mOrder Load (0.2ms)[0m  [1mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 97016]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 21662]]
+  Rendered orders/_show.html.erb (0.5ms)
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/orders/3" for ::1 at 2015-12-31 09:15:20 -0800
+Processing by OrdersController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[35mOrder Load (0.3ms)[0m  SELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 97016]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 48782]]
+  Rendered orders/_show.html.erb (0.8ms)
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/orders/4" for ::1 at 2015-12-31 09:15:20 -0800
+Processing by OrdersController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mOrder Load (0.3ms)[0m  [1mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mItem Load (0.2ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 97016]]
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 48782]]
+  Rendered orders/_show.html.erb (0.9ms)
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/orders" for ::1 at 2015-12-31 09:16:08 -0800
+Processing by OrdersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mOrder Load (0.2ms)[0m  [1mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 68540]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 21206]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 97016]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 21662]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 97016]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 48782]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 97016]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 48782]]
+  Rendered orders/index.html.erb within layouts/application (0.8ms)
+  Rendered partials/_nav_profile_modal.html.erb (0.2ms)
+  Rendered navigation/_main_nav.html.erb (2.2ms)
+  Rendered partials/_header_errors.html.erb (0.3ms)
+Completed 200 OK in 1534ms (Views: 1529.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/addresses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-31 09:16:09 -0800
+
+
+Started GET "/assets/base/reset.self-ee751026e628351d140506fb4c1957bf029298d1301db5bd6ddac3fd6abb0a5d.css?body=1" for ::1 at 2015-12-31 09:16:09 -0800
+
+
+Started GET "/assets/base/base.self-b1fd57ca6f92076ec94055938ef4c1cf03bb515deb0627731dffc4737acd46c1.css?body=1" for ::1 at 2015-12-31 09:16:09 -0800
+
+
+Started GET "/assets/components/_arrow__left.self-1343a8c61866e77d155dd21495403cd9e9e3bd9e411aadea784a59b818e6b9b1.css?body=1" for ::1 at 2015-12-31 09:16:09 -0800
+
+
+Started GET "/assets/components/_close_btn.self-25c54feb31fcf014c233df59211aa1cc9cddaf37fd5402ef117e3b38df29e630.css?body=1" for ::1 at 2015-12-31 09:16:09 -0800
+
+
+Started GET "/assets/components/_flexbox_vendors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-31 09:16:09 -0800
+
+
+Started GET "/assets/components/_hamburger.self-aafc3be9901611504edc9669ec2e21071093fbb7dbdb39739016cdef2f4d0757.css?body=1" for ::1 at 2015-12-31 09:16:09 -0800
+
+
+Started GET "/assets/layout/charges/new.self-56c3a214dc001ea805f4712f8754e17e7c2646431927754c4cb5b28bbbd27f88.css?body=1" for ::1 at 2015-12-31 09:16:09 -0800
+
+
+Started GET "/assets/components/_loading.self-c820364a3a9d11cca77ea16325599ead474f548d6ef63ff32cfb0023bde95dcd.css?body=1" for ::1 at 2015-12-31 09:16:09 -0800
+
+
+Started GET "/assets/components/_hamburger2.self-20d3fcf680dee61adc02811ac32827176fd50da1a292ee03eaf6d793dc46c649.css?body=1" for ::1 at 2015-12-31 09:16:09 -0800
+
+
+Started GET "/assets/layout/items/admin.self-cf7c1aac518e4c0af596bf2633a26b8dab58352d13568ddc49743e680f335102.css?body=1" for ::1 at 2015-12-31 09:16:09 -0800
+
+
+Started GET "/assets/layout/charges/create.self-0ec0dcc0b0a1eb22841a92f2744da12fe6583cdc850a5427d7883aa42f9092c9.css?body=1" for ::1 at 2015-12-31 09:16:09 -0800
+
+
+Started GET "/assets/components/_psuedo_icons.self-e87a2dcdd6f8da864e1bafe3b08b197db049e54bb550e001cdd5d7ef61efba5c.css?body=1" for ::1 at 2015-12-31 09:16:09 -0800
+
+
+Started GET "/assets/layout/items/index.self-d620d265d7272bc9ab2cc4cfbbf2c3548c3183d70506abef1df21267af62e425.css?body=1" for ::1 at 2015-12-31 09:16:09 -0800
+
+
+Started GET "/assets/layout/orders/index.self-ae895e4bcd9b2bc69748df8f7967089094f112c0a834d4e87fd355355af56061.css?body=1" for ::1 at 2015-12-31 09:16:09 -0800
+
+
+Started GET "/assets/layout/layout.self-39b18e25103de4c514ed412d535c8d7fef8b366c80d40fd5fd6c3d62acd89279.css?body=1" for ::1 at 2015-12-31 09:16:09 -0800
+
+
+Started GET "/assets/layout/navigation/profile_modal.self-068778f0d4a8aa44f0d0a1e91251bf37a68432646f6d498424dee552028ea5cd.css?body=1" for ::1 at 2015-12-31 09:16:09 -0800
+
+
+Started GET "/assets/layout/items/quick_view.self-b9b027948aa9a7870597b2cfb94eafafdad7028de8587fac87d110d43d056d88.css?body=1" for ::1 at 2015-12-31 09:16:10 -0800
+
+
+Started GET "/assets/layout/sessions/new.self-87757b10cfb6eccca0582ca33f0261fc3b2a82936625ff5ac61e4c83c0e3b364.css?body=1" for ::1 at 2015-12-31 09:16:10 -0800
+
+
+Started GET "/assets/layout/welcome.self-d640b1fee6c52bba835041cbf9ee3a08686733b2c3dc992394c2682e243b7c2d.css?body=1" for ::1 at 2015-12-31 09:16:10 -0800
+
+
+Started GET "/assets/layout/users/cart/cart_items.self-cfa782ef73120f95919152a36619c29e74b2e99d09773d57efacf7b3a8fed9f4.css?body=1" for ::1 at 2015-12-31 09:16:10 -0800
+
+
+Started GET "/assets/layout/users/cart/cart.self-8115b4ceec3652c44e8af6ce1accb2d09ef483bc46057056034452c73bb7d8ff.css?body=1" for ::1 at 2015-12-31 09:16:10 -0800
+
+
+Started GET "/assets/master.self-cf0a516414e7f287441c5ea504ce16573f5ca0df79818391706bc1d9f7a889f0.css?body=1" for ::1 at 2015-12-31 09:16:10 -0800
+
+
+Started GET "/assets/layout/users/profile.self-b84257c4ae5d1693f0001a784dd918200a69c7964100c015d6ad85c76d55f35a.css?body=1" for ::1 at 2015-12-31 09:16:10 -0800
+
+
+Started GET "/assets/layout/users/new.self-1b77be1f56391c7544835f73964bfe34dcd052ed1601b055677e61aa0a09ee36.css?body=1" for ::1 at 2015-12-31 09:16:10 -0800
+
+
+Started GET "/assets/utilities/_config.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-31 09:16:10 -0800
+
+
+Started GET "/assets/utilities/_functions.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-31 09:16:10 -0800
+
+
+Started GET "/assets/utilities/_error.self-75ac0774127f9897ab08ca211040f87314b0be5ee2de93e4c8637d12df843301.css?body=1" for ::1 at 2015-12-31 09:16:10 -0800
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for ::1 at 2015-12-31 09:16:10 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-31 09:16:10 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-31 09:16:10 -0800
+
+
+Started GET "/assets/jquery.turbolinks.self-176b9819f30444d441e820bbccd3264fe57753aeafd54dec732b0dbc77129a2a.js?body=1" for ::1 at 2015-12-31 09:16:10 -0800
+
+
+Started GET "/assets/utilities/_mixins.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-31 09:16:10 -0800
+
+
+Started GET "/assets/layout.self-431905c730bfa782ba8aff783043fec36d7f97bffcf881df0dd01d3538baaa4b.js?body=1" for ::1 at 2015-12-31 09:16:10 -0800
+
+
+Started GET "/assets/cart.self-efec194c50647bf422163e3ae8f95b6dd0b538a64ea4ba2234da6f02de611cc2.js?body=1" for ::1 at 2015-12-31 09:16:10 -0800
+
+
+Started GET "/assets/navProfileMobile.self-86f10e059bc2639ddd3a6444e30b5daa52c6b741a304475835575de20ce11f54.js?body=1" for ::1 at 2015-12-31 09:16:10 -0800
+
+
+Started GET "/assets/hamburger.self-389fddc2ca44002951500adc5ea8dfbb882e8d6e2792d8ada52f321799e70c49.js?body=1" for ::1 at 2015-12-31 09:16:10 -0800
+
+
+Started GET "/assets/utilities/_animations.self-0bfff9fbf8761df6b9f8f6d7ab4b22bf64ab0be955cdf58925833c349a70f34c.css?body=1" for ::1 at 2015-12-31 09:16:10 -0800
+
+
+Started GET "/assets/localStorage.self-3d8308f8eb240399394df285a4ec2a4a3f54894968f71cedd68248720286fce4.js?body=1" for ::1 at 2015-12-31 09:16:10 -0800
+
+
+Started GET "/assets/addresses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-31 09:16:10 -0800
+
+
+Started GET "/assets/orders.self-0f857b552e7b25d7a8b46d88c016c368cae04089b32c410d6b44d2d6429b6910.js?body=1" for ::1 at 2015-12-31 09:16:10 -0800
+
+
+Started GET "/assets/quickview.self-735c319d704907aba6f915021e6afe7b25597b4336c0a519609ef1ff6328a16f.js?body=1" for ::1 at 2015-12-31 09:16:10 -0800
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-12-31 09:16:10 -0800
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-31 09:16:10 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-31 09:16:10 -0800
+
+
+Started GET "/orders/1" for ::1 at 2015-12-31 09:16:10 -0800
+Processing by OrdersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mOrder Load (0.2ms)[0m  SELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 68540]]
+  [1m[35mItem Load (0.2ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 21206]]
+  Rendered orders/_show.html.erb (1.0ms)
+Completed 200 OK in 11ms (Views: 0.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/orders/3" for ::1 at 2015-12-31 09:16:10 -0800
+Processing by OrdersController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mOrder Load (0.3ms)[0m  [1mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mItem Load (0.3ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 97016]]
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 48782]]
+  Rendered orders/_show.html.erb (0.9ms)
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/orders/2" for ::1 at 2015-12-31 09:16:10 -0800
+Processing by OrdersController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[35mOrder Load (0.2ms)[0m  SELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 97016]]
+  [1m[35mItem Load (0.2ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 21662]]
+  Rendered orders/_show.html.erb (0.5ms)
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/orders/4" for ::1 at 2015-12-31 09:16:10 -0800
+Processing by OrdersController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mOrder Load (0.2ms)[0m  [1mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mItem Load (0.2ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 97016]]
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 48782]]
+  Rendered orders/_show.html.erb (0.8ms)
+Completed 200 OK in 8ms (Views: 0.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/orders" for ::1 at 2015-12-31 09:16:49 -0800
+Processing by OrdersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mOrder Load (0.2ms)[0m  [1mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 68540]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 21206]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 97016]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 21662]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 97016]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 48782]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 97016]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 48782]]
+  Rendered orders/index.html.erb within layouts/application (0.7ms)
+  Rendered partials/_nav_profile_modal.html.erb (0.1ms)
+  Rendered navigation/_main_nav.html.erb (1.1ms)
+  Rendered partials/_header_errors.html.erb (0.1ms)
+Completed 200 OK in 1473ms (Views: 1468.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/addresses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-31 09:16:51 -0800
+
+
+Started GET "/assets/base/base.self-b1fd57ca6f92076ec94055938ef4c1cf03bb515deb0627731dffc4737acd46c1.css?body=1" for ::1 at 2015-12-31 09:16:51 -0800
+
+
+Started GET "/assets/base/reset.self-ee751026e628351d140506fb4c1957bf029298d1301db5bd6ddac3fd6abb0a5d.css?body=1" for ::1 at 2015-12-31 09:16:51 -0800
+
+
+Started GET "/assets/components/_arrow__left.self-1343a8c61866e77d155dd21495403cd9e9e3bd9e411aadea784a59b818e6b9b1.css?body=1" for ::1 at 2015-12-31 09:16:51 -0800
+
+
+Started GET "/assets/components/_close_btn.self-25c54feb31fcf014c233df59211aa1cc9cddaf37fd5402ef117e3b38df29e630.css?body=1" for ::1 at 2015-12-31 09:16:51 -0800
+
+
+Started GET "/assets/components/_flexbox_vendors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-31 09:16:51 -0800
+
+
+Started GET "/assets/components/_hamburger.self-aafc3be9901611504edc9669ec2e21071093fbb7dbdb39739016cdef2f4d0757.css?body=1" for ::1 at 2015-12-31 09:16:51 -0800
+
+
+Started GET "/assets/components/_hamburger2.self-20d3fcf680dee61adc02811ac32827176fd50da1a292ee03eaf6d793dc46c649.css?body=1" for ::1 at 2015-12-31 09:16:51 -0800
+
+
+Started GET "/assets/components/_loading.self-c820364a3a9d11cca77ea16325599ead474f548d6ef63ff32cfb0023bde95dcd.css?body=1" for ::1 at 2015-12-31 09:16:51 -0800
+
+
+Started GET "/assets/components/_psuedo_icons.self-e87a2dcdd6f8da864e1bafe3b08b197db049e54bb550e001cdd5d7ef61efba5c.css?body=1" for ::1 at 2015-12-31 09:16:51 -0800
+
+
+Started GET "/assets/layout/charges/create.self-0ec0dcc0b0a1eb22841a92f2744da12fe6583cdc850a5427d7883aa42f9092c9.css?body=1" for ::1 at 2015-12-31 09:16:51 -0800
+
+
+Started GET "/assets/layout/charges/new.self-ad291cb1d6352d60fe73c19491d19d9e4c4c9c6c33f3bf9b8e7e1288fde5b2b3.css?body=1" for ::1 at 2015-12-31 09:16:51 -0800
+
+
+Started GET "/assets/layout/items/admin.self-cf7c1aac518e4c0af596bf2633a26b8dab58352d13568ddc49743e680f335102.css?body=1" for ::1 at 2015-12-31 09:16:51 -0800
+
+
+Started GET "/assets/layout/items/index.self-d620d265d7272bc9ab2cc4cfbbf2c3548c3183d70506abef1df21267af62e425.css?body=1" for ::1 at 2015-12-31 09:16:51 -0800
+
+
+Started GET "/assets/layout/items/quick_view.self-b9b027948aa9a7870597b2cfb94eafafdad7028de8587fac87d110d43d056d88.css?body=1" for ::1 at 2015-12-31 09:16:51 -0800
+
+
+Started GET "/assets/layout/layout.self-39b18e25103de4c514ed412d535c8d7fef8b366c80d40fd5fd6c3d62acd89279.css?body=1" for ::1 at 2015-12-31 09:16:51 -0800
+
+
+Started GET "/assets/layout/navigation/profile_modal.self-068778f0d4a8aa44f0d0a1e91251bf37a68432646f6d498424dee552028ea5cd.css?body=1" for ::1 at 2015-12-31 09:16:51 -0800
+
+
+Started GET "/assets/layout/orders/index.self-ae895e4bcd9b2bc69748df8f7967089094f112c0a834d4e87fd355355af56061.css?body=1" for ::1 at 2015-12-31 09:16:51 -0800
+
+
+Started GET "/assets/layout/sessions/new.self-87757b10cfb6eccca0582ca33f0261fc3b2a82936625ff5ac61e4c83c0e3b364.css?body=1" for ::1 at 2015-12-31 09:16:51 -0800
+
+
+Started GET "/assets/layout/users/cart/cart.self-8115b4ceec3652c44e8af6ce1accb2d09ef483bc46057056034452c73bb7d8ff.css?body=1" for ::1 at 2015-12-31 09:16:51 -0800
+
+
+Started GET "/assets/layout/users/cart/cart_items.self-cfa782ef73120f95919152a36619c29e74b2e99d09773d57efacf7b3a8fed9f4.css?body=1" for ::1 at 2015-12-31 09:16:51 -0800
+
+
+Started GET "/assets/layout/users/new.self-1b77be1f56391c7544835f73964bfe34dcd052ed1601b055677e61aa0a09ee36.css?body=1" for ::1 at 2015-12-31 09:16:51 -0800
+
+
+Started GET "/assets/layout/users/profile.self-b84257c4ae5d1693f0001a784dd918200a69c7964100c015d6ad85c76d55f35a.css?body=1" for ::1 at 2015-12-31 09:16:51 -0800
+
+
+Started GET "/assets/master.self-cf0a516414e7f287441c5ea504ce16573f5ca0df79818391706bc1d9f7a889f0.css?body=1" for ::1 at 2015-12-31 09:16:51 -0800
+
+
+Started GET "/assets/layout/welcome.self-d640b1fee6c52bba835041cbf9ee3a08686733b2c3dc992394c2682e243b7c2d.css?body=1" for ::1 at 2015-12-31 09:16:51 -0800
+
+
+Started GET "/assets/utilities/_animations.self-0bfff9fbf8761df6b9f8f6d7ab4b22bf64ab0be955cdf58925833c349a70f34c.css?body=1" for ::1 at 2015-12-31 09:16:51 -0800
+
+
+Started GET "/assets/utilities/_config.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-31 09:16:51 -0800
+
+
+Started GET "/assets/utilities/_error.self-75ac0774127f9897ab08ca211040f87314b0be5ee2de93e4c8637d12df843301.css?body=1" for ::1 at 2015-12-31 09:16:51 -0800
+
+
+Started GET "/assets/utilities/_mixins.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-31 09:16:51 -0800
+
+
+Started GET "/assets/utilities/_functions.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-31 09:16:51 -0800
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for ::1 at 2015-12-31 09:16:51 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-31 09:16:51 -0800
+
+
+Started GET "/assets/jquery.turbolinks.self-176b9819f30444d441e820bbccd3264fe57753aeafd54dec732b0dbc77129a2a.js?body=1" for ::1 at 2015-12-31 09:16:51 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-31 09:16:51 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-31 09:16:51 -0800
+
+
+Started GET "/assets/addresses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-31 09:16:51 -0800
+
+
+Started GET "/assets/cart.self-efec194c50647bf422163e3ae8f95b6dd0b538a64ea4ba2234da6f02de611cc2.js?body=1" for ::1 at 2015-12-31 09:16:51 -0800
+
+
+Started GET "/assets/hamburger.self-389fddc2ca44002951500adc5ea8dfbb882e8d6e2792d8ada52f321799e70c49.js?body=1" for ::1 at 2015-12-31 09:16:51 -0800
+
+
+Started GET "/assets/layout.self-431905c730bfa782ba8aff783043fec36d7f97bffcf881df0dd01d3538baaa4b.js?body=1" for ::1 at 2015-12-31 09:16:51 -0800
+
+
+Started GET "/assets/localStorage.self-3d8308f8eb240399394df285a4ec2a4a3f54894968f71cedd68248720286fce4.js?body=1" for ::1 at 2015-12-31 09:16:51 -0800
+
+
+Started GET "/assets/navProfileMobile.self-86f10e059bc2639ddd3a6444e30b5daa52c6b741a304475835575de20ce11f54.js?body=1" for ::1 at 2015-12-31 09:16:51 -0800
+
+
+Started GET "/assets/orders.self-0f857b552e7b25d7a8b46d88c016c368cae04089b32c410d6b44d2d6429b6910.js?body=1" for ::1 at 2015-12-31 09:16:51 -0800
+
+
+Started GET "/assets/quickview.self-735c319d704907aba6f915021e6afe7b25597b4336c0a519609ef1ff6328a16f.js?body=1" for ::1 at 2015-12-31 09:16:51 -0800
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-31 09:16:51 -0800
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-12-31 09:16:51 -0800
+
+
+Started GET "/orders/1" for ::1 at 2015-12-31 09:16:51 -0800
+Processing by OrdersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mOrder Load (0.3ms)[0m  SELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 68540]]
+  [1m[35mItem Load (0.2ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 21206]]
+  Rendered orders/_show.html.erb (0.9ms)
+Completed 200 OK in 11ms (Views: 0.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/orders/2" for ::1 at 2015-12-31 09:16:51 -0800
+Processing by OrdersController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mOrder Load (0.2ms)[0m  [1mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mItem Load (0.2ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 97016]]
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 21662]]
+  Rendered orders/_show.html.erb (0.7ms)
+Completed 200 OK in 10ms (Views: 0.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/orders/3" for ::1 at 2015-12-31 09:16:51 -0800
+Processing by OrdersController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[35mOrder Load (0.2ms)[0m  SELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 97016]]
+  [1m[35mItem Load (0.2ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 48782]]
+  Rendered orders/_show.html.erb (0.8ms)
+Completed 200 OK in 8ms (Views: 0.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/orders/4" for ::1 at 2015-12-31 09:16:51 -0800
+Processing by OrdersController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mOrder Load (0.2ms)[0m  [1mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mItem Load (0.2ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 97016]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 48782]]
+  Rendered orders/_show.html.erb (0.5ms)
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/orders" for ::1 at 2015-12-31 09:16:57 -0800
+Processing by OrdersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mOrder Load (0.2ms)[0m  [1mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 68540]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 21206]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 97016]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 21662]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 97016]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 48782]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 97016]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 48782]]
+  Rendered orders/index.html.erb within layouts/application (0.6ms)
+  Rendered partials/_nav_profile_modal.html.erb (0.1ms)
+  Rendered navigation/_main_nav.html.erb (1.0ms)
+  Rendered partials/_header_errors.html.erb (0.1ms)
+Completed 200 OK in 1426ms (Views: 1421.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/addresses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-31 09:16:59 -0800
+
+
+Started GET "/assets/base/base.self-b1fd57ca6f92076ec94055938ef4c1cf03bb515deb0627731dffc4737acd46c1.css?body=1" for ::1 at 2015-12-31 09:16:59 -0800
+
+
+Started GET "/assets/components/_close_btn.self-25c54feb31fcf014c233df59211aa1cc9cddaf37fd5402ef117e3b38df29e630.css?body=1" for ::1 at 2015-12-31 09:16:59 -0800
+
+
+Started GET "/assets/layout/charges/new.self-9f321be09c8fb2050276d23efd6c171cf15218051e00e6a708e86a819e43f261.css?body=1" for ::1 at 2015-12-31 09:16:59 -0800
+
+
+Started GET "/assets/components/_arrow__left.self-1343a8c61866e77d155dd21495403cd9e9e3bd9e411aadea784a59b818e6b9b1.css?body=1" for ::1 at 2015-12-31 09:16:59 -0800
+
+
+Started GET "/assets/components/_flexbox_vendors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-31 09:16:59 -0800
+
+
+Started GET "/assets/components/_hamburger.self-aafc3be9901611504edc9669ec2e21071093fbb7dbdb39739016cdef2f4d0757.css?body=1" for ::1 at 2015-12-31 09:16:59 -0800
+
+
+Started GET "/assets/base/reset.self-ee751026e628351d140506fb4c1957bf029298d1301db5bd6ddac3fd6abb0a5d.css?body=1" for ::1 at 2015-12-31 09:16:59 -0800
+
+
+Started GET "/assets/components/_hamburger2.self-20d3fcf680dee61adc02811ac32827176fd50da1a292ee03eaf6d793dc46c649.css?body=1" for ::1 at 2015-12-31 09:16:59 -0800
+
+
+Started GET "/assets/components/_loading.self-c820364a3a9d11cca77ea16325599ead474f548d6ef63ff32cfb0023bde95dcd.css?body=1" for ::1 at 2015-12-31 09:16:59 -0800
+
+
+Started GET "/assets/components/_psuedo_icons.self-e87a2dcdd6f8da864e1bafe3b08b197db049e54bb550e001cdd5d7ef61efba5c.css?body=1" for ::1 at 2015-12-31 09:16:59 -0800
+
+
+Started GET "/assets/layout/charges/create.self-0ec0dcc0b0a1eb22841a92f2744da12fe6583cdc850a5427d7883aa42f9092c9.css?body=1" for ::1 at 2015-12-31 09:16:59 -0800
+
+
+Started GET "/assets/layout/items/admin.self-cf7c1aac518e4c0af596bf2633a26b8dab58352d13568ddc49743e680f335102.css?body=1" for ::1 at 2015-12-31 09:16:59 -0800
+
+
+Started GET "/assets/layout/items/index.self-d620d265d7272bc9ab2cc4cfbbf2c3548c3183d70506abef1df21267af62e425.css?body=1" for ::1 at 2015-12-31 09:16:59 -0800
+
+
+Started GET "/assets/layout/items/quick_view.self-b9b027948aa9a7870597b2cfb94eafafdad7028de8587fac87d110d43d056d88.css?body=1" for ::1 at 2015-12-31 09:16:59 -0800
+
+
+Started GET "/assets/layout/layout.self-39b18e25103de4c514ed412d535c8d7fef8b366c80d40fd5fd6c3d62acd89279.css?body=1" for ::1 at 2015-12-31 09:16:59 -0800
+
+
+Started GET "/assets/layout/navigation/profile_modal.self-068778f0d4a8aa44f0d0a1e91251bf37a68432646f6d498424dee552028ea5cd.css?body=1" for ::1 at 2015-12-31 09:16:59 -0800
+
+
+Started GET "/assets/layout/orders/index.self-ae895e4bcd9b2bc69748df8f7967089094f112c0a834d4e87fd355355af56061.css?body=1" for ::1 at 2015-12-31 09:16:59 -0800
+
+
+Started GET "/assets/layout/sessions/new.self-87757b10cfb6eccca0582ca33f0261fc3b2a82936625ff5ac61e4c83c0e3b364.css?body=1" for ::1 at 2015-12-31 09:16:59 -0800
+
+
+Started GET "/assets/layout/users/cart/cart.self-8115b4ceec3652c44e8af6ce1accb2d09ef483bc46057056034452c73bb7d8ff.css?body=1" for ::1 at 2015-12-31 09:16:59 -0800
+
+
+Started GET "/assets/layout/users/cart/cart_items.self-cfa782ef73120f95919152a36619c29e74b2e99d09773d57efacf7b3a8fed9f4.css?body=1" for ::1 at 2015-12-31 09:16:59 -0800
+
+
+Started GET "/assets/layout/users/new.self-1b77be1f56391c7544835f73964bfe34dcd052ed1601b055677e61aa0a09ee36.css?body=1" for ::1 at 2015-12-31 09:16:59 -0800
+
+
+Started GET "/assets/layout/users/profile.self-b84257c4ae5d1693f0001a784dd918200a69c7964100c015d6ad85c76d55f35a.css?body=1" for ::1 at 2015-12-31 09:16:59 -0800
+
+
+Started GET "/assets/layout/welcome.self-d640b1fee6c52bba835041cbf9ee3a08686733b2c3dc992394c2682e243b7c2d.css?body=1" for ::1 at 2015-12-31 09:16:59 -0800
+
+
+Started GET "/assets/master.self-cf0a516414e7f287441c5ea504ce16573f5ca0df79818391706bc1d9f7a889f0.css?body=1" for ::1 at 2015-12-31 09:16:59 -0800
+
+
+Started GET "/assets/utilities/_animations.self-0bfff9fbf8761df6b9f8f6d7ab4b22bf64ab0be955cdf58925833c349a70f34c.css?body=1" for ::1 at 2015-12-31 09:16:59 -0800
+
+
+Started GET "/assets/utilities/_config.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-31 09:16:59 -0800
+
+
+Started GET "/assets/utilities/_error.self-75ac0774127f9897ab08ca211040f87314b0be5ee2de93e4c8637d12df843301.css?body=1" for ::1 at 2015-12-31 09:16:59 -0800
+
+
+Started GET "/assets/utilities/_functions.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-31 09:16:59 -0800
+
+
+Started GET "/assets/utilities/_mixins.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-31 09:16:59 -0800
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for ::1 at 2015-12-31 09:16:59 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-31 09:16:59 -0800
+
+
+Started GET "/assets/jquery.turbolinks.self-176b9819f30444d441e820bbccd3264fe57753aeafd54dec732b0dbc77129a2a.js?body=1" for ::1 at 2015-12-31 09:16:59 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-31 09:16:59 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-31 09:16:59 -0800
+
+
+Started GET "/assets/addresses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-31 09:16:59 -0800
+
+
+Started GET "/assets/cart.self-efec194c50647bf422163e3ae8f95b6dd0b538a64ea4ba2234da6f02de611cc2.js?body=1" for ::1 at 2015-12-31 09:16:59 -0800
+
+
+Started GET "/assets/hamburger.self-389fddc2ca44002951500adc5ea8dfbb882e8d6e2792d8ada52f321799e70c49.js?body=1" for ::1 at 2015-12-31 09:16:59 -0800
+
+
+Started GET "/assets/layout.self-431905c730bfa782ba8aff783043fec36d7f97bffcf881df0dd01d3538baaa4b.js?body=1" for ::1 at 2015-12-31 09:16:59 -0800
+
+
+Started GET "/assets/localStorage.self-3d8308f8eb240399394df285a4ec2a4a3f54894968f71cedd68248720286fce4.js?body=1" for ::1 at 2015-12-31 09:16:59 -0800
+
+
+Started GET "/assets/navProfileMobile.self-86f10e059bc2639ddd3a6444e30b5daa52c6b741a304475835575de20ce11f54.js?body=1" for ::1 at 2015-12-31 09:16:59 -0800
+
+
+Started GET "/assets/orders.self-0f857b552e7b25d7a8b46d88c016c368cae04089b32c410d6b44d2d6429b6910.js?body=1" for ::1 at 2015-12-31 09:16:59 -0800
+
+
+Started GET "/assets/quickview.self-735c319d704907aba6f915021e6afe7b25597b4336c0a519609ef1ff6328a16f.js?body=1" for ::1 at 2015-12-31 09:16:59 -0800
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-31 09:16:59 -0800
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-12-31 09:16:59 -0800
+
+
+Started GET "/orders/1" for ::1 at 2015-12-31 09:16:59 -0800
+Processing by OrdersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mOrder Load (0.2ms)[0m  SELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 68540]]
+  [1m[35mItem Load (0.2ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 21206]]
+  Rendered orders/_show.html.erb (1.0ms)
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/orders/2" for ::1 at 2015-12-31 09:16:59 -0800
+Processing by OrdersController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mOrder Load (0.3ms)[0m  [1mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mItem Load (0.3ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 97016]]
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 21662]]
+  Rendered orders/_show.html.erb (0.8ms)
+Completed 200 OK in 8ms (Views: 0.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/orders/3" for ::1 at 2015-12-31 09:16:59 -0800
+Processing by OrdersController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[35mOrder Load (0.2ms)[0m  SELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 97016]]
+  [1m[35mItem Load (0.2ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 48782]]
+  Rendered orders/_show.html.erb (0.8ms)
+Completed 200 OK in 10ms (Views: 0.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/orders/4" for ::1 at 2015-12-31 09:16:59 -0800
+Processing by OrdersController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mOrder Load (0.2ms)[0m  [1mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mItem Load (0.2ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 97016]]
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 48782]]
+  Rendered orders/_show.html.erb (1.8ms)
+Completed 200 OK in 12ms (Views: 0.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/cart" for ::1 at 2015-12-31 09:19:12 -0800
+Processing by UsersController#cart as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 97016]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 97016]]
+  Rendered partials/_cart_items.html.erb (0.8ms)
+  Rendered addresses/_form.html.erb (0.6ms)
+  [1m[36mAddress Load (0.2ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/_form.html.erb (1.8ms)
+  Rendered users/cart.html.erb within layouts/application (5.0ms)
+  Rendered partials/_nav_profile_modal.html.erb (0.1ms)
+  Rendered navigation/_main_nav.html.erb (0.9ms)
+  Rendered partials/_header_errors.html.erb (0.0ms)
+Completed 200 OK in 150ms (Views: 147.6ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/charges/new" for ::1 at 2015-12-31 09:19:16 -0800
+Processing by ChargesController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IwB8kAoS8egCHdu3XlCvatx3KNAH82AtTZPe4bbmisvB6agfv2wuwn0JFH8cpdoN+bGNe+dqAw7TGlvJSi44Yg==", "user"=>{"shipping_address"=>"Joji's Palace - 123 456th st El Cerrito CA 94999", "billing_checkbox"=>"0", "billing_address"=>"Joji's Palace - 123 456th st El Cerrito CA 94999"}, "commit"=>"Continue"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 97016]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 97016]]
+  Rendered charges/new.html.erb within layouts/application (0.5ms)
+  Rendered partials/_nav_profile_modal.html.erb (0.2ms)
+  Rendered navigation/_main_nav.html.erb (1.5ms)
+  Rendered partials/_header_errors.html.erb (0.1ms)
+Completed 200 OK in 203ms (Views: 200.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/cart" for ::1 at 2015-12-31 09:19:28 -0800
+Processing by UsersController#cart as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 97016]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 97016]]
+  Rendered partials/_cart_items.html.erb (0.7ms)
+  Rendered addresses/_form.html.erb (0.6ms)
+  [1m[35mAddress Load (0.2ms)[0m  SELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = $1  [["user_id", 1]]
+  Rendered users/_form.html.erb (1.9ms)
+  Rendered users/cart.html.erb within layouts/application (4.9ms)
+  Rendered partials/_nav_profile_modal.html.erb (0.1ms)
+  Rendered navigation/_main_nav.html.erb (1.4ms)
+  Rendered partials/_header_errors.html.erb (0.1ms)
+Completed 200 OK in 128ms (Views: 125.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/items" for ::1 at 2015-12-31 09:19:32 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.3ms)
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  Rendered items/_quick_view.html.erb (0.9ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.4ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.6ms)
+  Rendered items/_quick_view.html.erb (0.6ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.5ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.6ms)
+  Rendered items/index.html.erb within layouts/application (32.7ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered partials/_nav_profile_modal.html.erb (0.7ms)
+  Rendered navigation/_main_nav.html.erb (5.3ms)
+  Rendered partials/_header_errors.html.erb (0.6ms)
+Completed 200 OK in 177ms (Views: 175.3ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/users/cart" for ::1 at 2015-12-31 09:19:35 -0800
+Processing by UsersController#add_to_cart as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/GwM6MpI66Wa6UkT0Muyw9oYuCnml5uO1Gv4ZtdpySQehdhnfzY0j+X9htuSPsek/94dggYO+K1K4n1OK6F7jQ==", "item_id"=>"21206", "item_qty"=>"1", "commit"=>""}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "cart" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["cart", "97016,1,21206,1,"], ["updated_at", "2015-12-31 17:19:35.470459"], ["id", 1]]
+  [1m[35m (1.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/items
+Completed 302 Found in 6ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/items" for ::1 at 2015-12-31 09:19:35 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.0ms)
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.4ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.4ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.4ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/index.html.erb within layouts/application (94.6ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered partials/_nav_profile_modal.html.erb (0.2ms)
+  Rendered navigation/_main_nav.html.erb (3.5ms)
+  Rendered partials/_header_errors.html.erb (0.2ms)
+Completed 200 OK in 225ms (Views: 224.0ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/users/cart" for ::1 at 2015-12-31 09:19:39 -0800
+Processing by UsersController#add_to_cart as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LlS44MFN30yDpNCr0xxugcQ0jEK37nUAi4vpO0/i5IjMvWxvdDMAZvywH2OR6Rvm4fIp6Vd3FiMVAmwTsypWIQ==", "item_id"=>"80750", "item_qty"=>"1", "commit"=>""}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "cart" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["cart", "97016,1,21206,1,80750,1,"], ["updated_at", "2015-12-31 17:19:39.220423"], ["id", 1]]
+  [1m[35m (1.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/items
+Completed 302 Found in 5ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/items" for ::1 at 2015-12-31 09:19:39 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.0ms)
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.5ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/index.html.erb within layouts/application (22.3ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered partials/_nav_profile_modal.html.erb (0.1ms)
+  Rendered navigation/_main_nav.html.erb (2.1ms)
+  Rendered partials/_header_errors.html.erb (0.1ms)
+Completed 200 OK in 148ms (Views: 146.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/users/cart" for ::1 at 2015-12-31 09:19:51 -0800
+Processing by UsersController#add_to_cart as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"y14Q1NAMWxjXLznZBrBcQdPYVb/lM3tw1ISIIwVxr8Apt8RbZXKEMqg79hFERSkm9h7wFAWqGFNKDQ0L+bkdaQ==", "item_id"=>"80437", "item_qty"=>"1", "commit"=>""}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "cart" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["cart", "97016,1,21206,1,80750,1,80437,1,"], ["updated_at", "2015-12-31 17:19:51.708933"], ["id", 1]]
+  [1m[35m (1.3ms)[0m  COMMIT
+Redirected to http://localhost:3000/items
+Completed 302 Found in 4ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/items" for ::1 at 2015-12-31 09:19:51 -0800
+Processing by ItemsController#index as HTML
+  Rendered navigation/_filter_nav.html.erb (0.0ms)
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.4ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/index.html.erb within layouts/application (83.5ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered partials/_nav_profile_modal.html.erb (0.1ms)
+  Rendered navigation/_main_nav.html.erb (2.0ms)
+  Rendered partials/_header_errors.html.erb (0.1ms)
+Completed 200 OK in 203ms (Views: 201.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/cart" for ::1 at 2015-12-31 09:19:54 -0800
+Processing by UsersController#cart as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 97016]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 21206]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 80750]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 80437]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 97016]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 21206]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 80750]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 80437]]
+  Rendered partials/_cart_items.html.erb (1.6ms)
+  Rendered addresses/_form.html.erb (0.9ms)
+  [1m[35mAddress Load (0.7ms)[0m  SELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = $1  [["user_id", 1]]
+  Rendered users/_form.html.erb (5.1ms)
+  Rendered users/cart.html.erb within layouts/application (9.7ms)
+  Rendered partials/_nav_profile_modal.html.erb (0.1ms)
+  Rendered navigation/_main_nav.html.erb (1.0ms)
+  Rendered partials/_header_errors.html.erb (0.1ms)
+Completed 200 OK in 174ms (Views: 170.3ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/charges/new" for ::1 at 2015-12-31 09:19:58 -0800
+Processing by ChargesController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UxGdmV6pbPfwTJzYeKAysPovoJ2kyCopiafLiO87xlGx+EkW69ez3Y9YUxA6VUfX3+kFNkRRSQoXLk6gE/N0+A==", "user"=>{"shipping_address"=>"Joji's Palace - 123 456th st El Cerrito CA 94999", "billing_checkbox"=>"0", "billing_address"=>"Joji's Palace - 123 456th st El Cerrito CA 94999"}, "commit"=>"Continue"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 97016]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 21206]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 80750]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 80437]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 97016]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 21206]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 80750]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 80437]]
+  Rendered charges/new.html.erb within layouts/application (0.5ms)
+  Rendered partials/_nav_profile_modal.html.erb (0.2ms)
+  Rendered navigation/_main_nav.html.erb (1.5ms)
+  Rendered partials/_header_errors.html.erb (0.1ms)
+Completed 200 OK in 211ms (Views: 207.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/cart" for ::1 at 2015-12-31 09:28:05 -0800
+Processing by UsersController#cart as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 97016]]
+  [1m[35mItem Load (0.2ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 21206]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 80750]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 80437]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 97016]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 21206]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 80750]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 80437]]
+  Rendered partials/_cart_items.html.erb (1.4ms)
+  Rendered addresses/_form.html.erb (0.5ms)
+  [1m[36mAddress Load (0.3ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/_form.html.erb (2.4ms)
+  Rendered users/cart.html.erb within layouts/application (6.1ms)
+  Rendered partials/_nav_profile_modal.html.erb (0.4ms)
+  Rendered navigation/_main_nav.html.erb (1.6ms)
+  Rendered partials/_header_errors.html.erb (0.0ms)
+Completed 200 OK in 131ms (Views: 125.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2015-12-31 09:28:09 -0800
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.4ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered partials/_nav_profile_modal.html.erb (0.3ms)
+  Rendered navigation/_main_nav.html.erb (3.1ms)
+  Rendered partials/_header_errors.html.erb (0.2ms)
+Completed 200 OK in 122ms (Views: 121.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/cart" for ::1 at 2015-12-31 09:28:39 -0800
+Processing by UsersController#cart as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 97016]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 21206]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 80750]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 80437]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 97016]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 21206]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 80750]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 80437]]
+  Rendered partials/_cart_items.html.erb (2.5ms)
+  Rendered addresses/_form.html.erb (0.7ms)
+  [1m[35mAddress Load (0.2ms)[0m  SELECT "addresses".* FROM "addresses" WHERE "addresses"."user_id" = $1  [["user_id", 1]]
+  Rendered users/_form.html.erb (2.2ms)
+  Rendered users/cart.html.erb within layouts/application (8.4ms)
+  Rendered partials/_nav_profile_modal.html.erb (0.2ms)
+  Rendered navigation/_main_nav.html.erb (2.0ms)
+  Rendered partials/_header_errors.html.erb (0.1ms)
+Completed 200 OK in 264ms (Views: 260.5ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/charges/new" for ::1 at 2015-12-31 09:28:41 -0800
+Processing by ChargesController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0soW1Q9NM9jcw+XADVXA2MbJL5V1BimAwMrog/1am0QwI8JaujPs8qPXKghPoLW/4w+KPpWfSqNeQ22rAZIp7Q==", "user"=>{"shipping_address"=>"Joji's Palace - 123 456th st El Cerrito CA 94999", "billing_checkbox"=>"0", "billing_address"=>"Joji's Palace - 123 456th st El Cerrito CA 94999"}, "commit"=>"Continue"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.3ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 97016]]
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 21206]]
+  [1m[35mItem Load (0.3ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 80750]]
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 80437]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 97016]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 21206]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 80750]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 80437]]
+  Rendered charges/new.html.erb within layouts/application (1.0ms)
+  Rendered partials/_nav_profile_modal.html.erb (0.2ms)
+  Rendered navigation/_main_nav.html.erb (1.9ms)
+  Rendered partials/_header_errors.html.erb (0.1ms)
+Completed 200 OK in 188ms (Views: 178.2ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/charges/new" for ::1 at 2015-12-31 09:32:47 -0800
+Processing by ChargesController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0soW1Q9NM9jcw+XADVXA2MbJL5V1BimAwMrog/1am0QwI8JaujPs8qPXKghPoLW/4w+KPpWfSqNeQ22rAZIp7Q==", "user"=>{"shipping_address"=>"Joji's Palace - 123 456th st El Cerrito CA 94999", "billing_checkbox"=>"0", "billing_address"=>"Joji's Palace - 123 456th st El Cerrito CA 94999"}, "commit"=>"Continue"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 97016]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 21206]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 80750]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 80437]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 97016]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 21206]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 80750]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 80437]]
+  Rendered charges/new.html.erb within layouts/application (1.6ms)
+  Rendered partials/_nav_profile_modal.html.erb (0.2ms)
+  Rendered navigation/_main_nav.html.erb (1.4ms)
+  Rendered partials/_header_errors.html.erb (0.1ms)
+Completed 200 OK in 1764ms (Views: 1759.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/base/base.self-b1fd57ca6f92076ec94055938ef4c1cf03bb515deb0627731dffc4737acd46c1.css?body=1" for ::1 at 2015-12-31 09:32:48 -0800
+
+
+Started GET "/assets/components/_close_btn.self-25c54feb31fcf014c233df59211aa1cc9cddaf37fd5402ef117e3b38df29e630.css?body=1" for ::1 at 2015-12-31 09:32:48 -0800
+
+
+Started GET "/assets/components/_arrow__left.self-1343a8c61866e77d155dd21495403cd9e9e3bd9e411aadea784a59b818e6b9b1.css?body=1" for ::1 at 2015-12-31 09:32:49 -0800
+
+
+Started GET "/assets/components/_flexbox_vendors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-31 09:32:49 -0800
+
+
+Started GET "/assets/components/_loading.self-c820364a3a9d11cca77ea16325599ead474f548d6ef63ff32cfb0023bde95dcd.css?body=1" for ::1 at 2015-12-31 09:32:49 -0800
+
+
+Started GET "/assets/base/reset.self-ee751026e628351d140506fb4c1957bf029298d1301db5bd6ddac3fd6abb0a5d.css?body=1" for ::1 at 2015-12-31 09:32:49 -0800
+
+
+Started GET "/assets/addresses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-31 09:32:49 -0800
+
+
+Started GET "/assets/components/_hamburger2.self-20d3fcf680dee61adc02811ac32827176fd50da1a292ee03eaf6d793dc46c649.css?body=1" for ::1 at 2015-12-31 09:32:49 -0800
+
+
+Started GET "/assets/components/_hamburger.self-aafc3be9901611504edc9669ec2e21071093fbb7dbdb39739016cdef2f4d0757.css?body=1" for ::1 at 2015-12-31 09:32:49 -0800
+
+
+Started GET "/assets/components/_psuedo_icons.self-e87a2dcdd6f8da864e1bafe3b08b197db049e54bb550e001cdd5d7ef61efba5c.css?body=1" for ::1 at 2015-12-31 09:32:49 -0800
+
+
+Started GET "/assets/layout/charges/create.self-0ec0dcc0b0a1eb22841a92f2744da12fe6583cdc850a5427d7883aa42f9092c9.css?body=1" for ::1 at 2015-12-31 09:32:49 -0800
+
+
+Started GET "/assets/layout/charges/new.self-7c22b4f33d9285a88600d1ba9094cb850197bed54bdde664c96c75edc3470d11.css?body=1" for ::1 at 2015-12-31 09:32:49 -0800
+
+
+Started GET "/assets/layout/items/admin.self-cf7c1aac518e4c0af596bf2633a26b8dab58352d13568ddc49743e680f335102.css?body=1" for ::1 at 2015-12-31 09:32:49 -0800
+
+
+Started GET "/assets/layout/items/index.self-d620d265d7272bc9ab2cc4cfbbf2c3548c3183d70506abef1df21267af62e425.css?body=1" for ::1 at 2015-12-31 09:32:49 -0800
+
+
+Started GET "/assets/layout/items/quick_view.self-b9b027948aa9a7870597b2cfb94eafafdad7028de8587fac87d110d43d056d88.css?body=1" for ::1 at 2015-12-31 09:32:49 -0800
+
+
+Started GET "/assets/layout/layout.self-39b18e25103de4c514ed412d535c8d7fef8b366c80d40fd5fd6c3d62acd89279.css?body=1" for ::1 at 2015-12-31 09:32:49 -0800
+
+
+Started GET "/assets/layout/navigation/profile_modal.self-068778f0d4a8aa44f0d0a1e91251bf37a68432646f6d498424dee552028ea5cd.css?body=1" for ::1 at 2015-12-31 09:32:49 -0800
+
+
+Started GET "/assets/layout/orders/index.self-ae895e4bcd9b2bc69748df8f7967089094f112c0a834d4e87fd355355af56061.css?body=1" for ::1 at 2015-12-31 09:32:49 -0800
+
+
+Started GET "/assets/layout/sessions/new.self-87757b10cfb6eccca0582ca33f0261fc3b2a82936625ff5ac61e4c83c0e3b364.css?body=1" for ::1 at 2015-12-31 09:32:49 -0800
+
+
+Started GET "/assets/layout/users/cart/cart.self-8115b4ceec3652c44e8af6ce1accb2d09ef483bc46057056034452c73bb7d8ff.css?body=1" for ::1 at 2015-12-31 09:32:49 -0800
+
+
+Started GET "/assets/layout/users/cart/cart_items.self-cfa782ef73120f95919152a36619c29e74b2e99d09773d57efacf7b3a8fed9f4.css?body=1" for ::1 at 2015-12-31 09:32:49 -0800
+
+
+Started GET "/assets/layout/users/new.self-1b77be1f56391c7544835f73964bfe34dcd052ed1601b055677e61aa0a09ee36.css?body=1" for ::1 at 2015-12-31 09:32:49 -0800
+
+
+Started GET "/assets/layout/users/profile.self-b84257c4ae5d1693f0001a784dd918200a69c7964100c015d6ad85c76d55f35a.css?body=1" for ::1 at 2015-12-31 09:32:49 -0800
+
+
+Started GET "/assets/layout/welcome.self-d640b1fee6c52bba835041cbf9ee3a08686733b2c3dc992394c2682e243b7c2d.css?body=1" for ::1 at 2015-12-31 09:32:49 -0800
+
+
+Started GET "/assets/master.self-cf0a516414e7f287441c5ea504ce16573f5ca0df79818391706bc1d9f7a889f0.css?body=1" for ::1 at 2015-12-31 09:32:49 -0800
+
+
+Started GET "/assets/utilities/_animations.self-0bfff9fbf8761df6b9f8f6d7ab4b22bf64ab0be955cdf58925833c349a70f34c.css?body=1" for ::1 at 2015-12-31 09:32:49 -0800
+
+
+Started GET "/assets/utilities/_config.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-31 09:32:49 -0800
+
+
+Started GET "/assets/utilities/_error.self-75ac0774127f9897ab08ca211040f87314b0be5ee2de93e4c8637d12df843301.css?body=1" for ::1 at 2015-12-31 09:32:49 -0800
+
+
+Started GET "/assets/utilities/_functions.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-31 09:32:49 -0800
+
+
+Started GET "/assets/utilities/_mixins.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-31 09:32:49 -0800
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for ::1 at 2015-12-31 09:32:49 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-31 09:32:49 -0800
+
+
+Started GET "/assets/jquery.turbolinks.self-176b9819f30444d441e820bbccd3264fe57753aeafd54dec732b0dbc77129a2a.js?body=1" for ::1 at 2015-12-31 09:32:49 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-31 09:32:49 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-31 09:32:49 -0800
+
+
+Started GET "/assets/addresses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-31 09:32:49 -0800
+
+
+Started GET "/assets/cart.self-efec194c50647bf422163e3ae8f95b6dd0b538a64ea4ba2234da6f02de611cc2.js?body=1" for ::1 at 2015-12-31 09:32:49 -0800
+
+
+Started GET "/assets/hamburger.self-389fddc2ca44002951500adc5ea8dfbb882e8d6e2792d8ada52f321799e70c49.js?body=1" for ::1 at 2015-12-31 09:32:49 -0800
+
+
+Started GET "/assets/layout.self-431905c730bfa782ba8aff783043fec36d7f97bffcf881df0dd01d3538baaa4b.js?body=1" for ::1 at 2015-12-31 09:32:49 -0800
+
+
+Started GET "/assets/localStorage.self-3d8308f8eb240399394df285a4ec2a4a3f54894968f71cedd68248720286fce4.js?body=1" for ::1 at 2015-12-31 09:32:49 -0800
+
+
+Started GET "/assets/navProfileMobile.self-86f10e059bc2639ddd3a6444e30b5daa52c6b741a304475835575de20ce11f54.js?body=1" for ::1 at 2015-12-31 09:32:49 -0800
+
+
+Started GET "/assets/orders.self-35f9acc90e97f7dfc08e14063459a9ab4e5c414f16d89287cabf2aa8bb3e9f8b.js?body=1" for ::1 at 2015-12-31 09:32:49 -0800
+
+
+Started GET "/assets/quickview.self-735c319d704907aba6f915021e6afe7b25597b4336c0a519609ef1ff6328a16f.js?body=1" for ::1 at 2015-12-31 09:32:49 -0800
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-31 09:32:49 -0800
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-12-31 09:32:49 -0800
+
+
+Started POST "/charges/new" for ::1 at 2015-12-31 09:33:05 -0800
+Processing by ChargesController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0soW1Q9NM9jcw+XADVXA2MbJL5V1BimAwMrog/1am0QwI8JaujPs8qPXKghPoLW/4w+KPpWfSqNeQ22rAZIp7Q==", "user"=>{"shipping_address"=>"Joji's Palace - 123 456th st El Cerrito CA 94999", "billing_checkbox"=>"0", "billing_address"=>"Joji's Palace - 123 456th st El Cerrito CA 94999"}, "commit"=>"Continue"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.3ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 97016]]
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 21206]]
+  [1m[35mItem Load (0.2ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 80750]]
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 80437]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 97016]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 21206]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 80750]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 80437]]
+  Rendered charges/new.html.erb within layouts/application (0.7ms)
+  Rendered partials/_nav_profile_modal.html.erb (0.3ms)
+  Rendered navigation/_main_nav.html.erb (2.3ms)
+  Rendered partials/_header_errors.html.erb (0.5ms)
+Completed 200 OK in 1620ms (Views: 1611.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/components/_arrow__left.self-1343a8c61866e77d155dd21495403cd9e9e3bd9e411aadea784a59b818e6b9b1.css?body=1" for ::1 at 2015-12-31 09:33:06 -0800
+
+
+Started GET "/assets/components/_close_btn.self-25c54feb31fcf014c233df59211aa1cc9cddaf37fd5402ef117e3b38df29e630.css?body=1" for ::1 at 2015-12-31 09:33:06 -0800
+
+
+Started GET "/assets/components/_flexbox_vendors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-31 09:33:07 -0800
+
+
+Started GET "/assets/base/base.self-b1fd57ca6f92076ec94055938ef4c1cf03bb515deb0627731dffc4737acd46c1.css?body=1" for ::1 at 2015-12-31 09:33:07 -0800
+
+
+Started GET "/assets/components/_hamburger.self-aafc3be9901611504edc9669ec2e21071093fbb7dbdb39739016cdef2f4d0757.css?body=1" for ::1 at 2015-12-31 09:33:07 -0800
+
+
+Started GET "/assets/base/reset.self-ee751026e628351d140506fb4c1957bf029298d1301db5bd6ddac3fd6abb0a5d.css?body=1" for ::1 at 2015-12-31 09:33:07 -0800
+
+
+Started GET "/assets/components/_loading.self-c820364a3a9d11cca77ea16325599ead474f548d6ef63ff32cfb0023bde95dcd.css?body=1" for ::1 at 2015-12-31 09:33:07 -0800
+
+
+Started GET "/assets/addresses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-31 09:33:07 -0800
+
+
+Started GET "/assets/components/_hamburger2.self-20d3fcf680dee61adc02811ac32827176fd50da1a292ee03eaf6d793dc46c649.css?body=1" for ::1 at 2015-12-31 09:33:07 -0800
+
+
+Started GET "/assets/components/_psuedo_icons.self-e87a2dcdd6f8da864e1bafe3b08b197db049e54bb550e001cdd5d7ef61efba5c.css?body=1" for ::1 at 2015-12-31 09:33:07 -0800
+
+
+Started GET "/assets/layout/charges/create.self-0ec0dcc0b0a1eb22841a92f2744da12fe6583cdc850a5427d7883aa42f9092c9.css?body=1" for ::1 at 2015-12-31 09:33:07 -0800
+
+
+Started GET "/assets/layout/charges/new.self-b5e33b92c9d30155b1d7af45f278baef342a6e8fe0bacfbb03535c239435198d.css?body=1" for ::1 at 2015-12-31 09:33:07 -0800
+
+
+Started GET "/assets/layout/items/admin.self-cf7c1aac518e4c0af596bf2633a26b8dab58352d13568ddc49743e680f335102.css?body=1" for ::1 at 2015-12-31 09:33:07 -0800
+
+
+Started GET "/assets/layout/items/index.self-d620d265d7272bc9ab2cc4cfbbf2c3548c3183d70506abef1df21267af62e425.css?body=1" for ::1 at 2015-12-31 09:33:07 -0800
+
+
+Started GET "/assets/layout/items/quick_view.self-b9b027948aa9a7870597b2cfb94eafafdad7028de8587fac87d110d43d056d88.css?body=1" for ::1 at 2015-12-31 09:33:07 -0800
+
+
+Started GET "/assets/layout/layout.self-39b18e25103de4c514ed412d535c8d7fef8b366c80d40fd5fd6c3d62acd89279.css?body=1" for ::1 at 2015-12-31 09:33:07 -0800
+
+
+Started GET "/assets/layout/navigation/profile_modal.self-068778f0d4a8aa44f0d0a1e91251bf37a68432646f6d498424dee552028ea5cd.css?body=1" for ::1 at 2015-12-31 09:33:07 -0800
+
+
+Started GET "/assets/layout/orders/index.self-ae895e4bcd9b2bc69748df8f7967089094f112c0a834d4e87fd355355af56061.css?body=1" for ::1 at 2015-12-31 09:33:07 -0800
+
+
+Started GET "/assets/layout/sessions/new.self-87757b10cfb6eccca0582ca33f0261fc3b2a82936625ff5ac61e4c83c0e3b364.css?body=1" for ::1 at 2015-12-31 09:33:07 -0800
+
+
+Started GET "/assets/layout/users/cart/cart.self-8115b4ceec3652c44e8af6ce1accb2d09ef483bc46057056034452c73bb7d8ff.css?body=1" for ::1 at 2015-12-31 09:33:07 -0800
+
+
+Started GET "/assets/layout/users/cart/cart_items.self-cfa782ef73120f95919152a36619c29e74b2e99d09773d57efacf7b3a8fed9f4.css?body=1" for ::1 at 2015-12-31 09:33:07 -0800
+
+
+Started GET "/assets/layout/users/new.self-1b77be1f56391c7544835f73964bfe34dcd052ed1601b055677e61aa0a09ee36.css?body=1" for ::1 at 2015-12-31 09:33:07 -0800
+
+
+Started GET "/assets/layout/users/profile.self-b84257c4ae5d1693f0001a784dd918200a69c7964100c015d6ad85c76d55f35a.css?body=1" for ::1 at 2015-12-31 09:33:07 -0800
+
+
+Started GET "/assets/layout/welcome.self-d640b1fee6c52bba835041cbf9ee3a08686733b2c3dc992394c2682e243b7c2d.css?body=1" for ::1 at 2015-12-31 09:33:07 -0800
+
+
+Started GET "/assets/master.self-cf0a516414e7f287441c5ea504ce16573f5ca0df79818391706bc1d9f7a889f0.css?body=1" for ::1 at 2015-12-31 09:33:07 -0800
+
+
+Started GET "/assets/utilities/_animations.self-0bfff9fbf8761df6b9f8f6d7ab4b22bf64ab0be955cdf58925833c349a70f34c.css?body=1" for ::1 at 2015-12-31 09:33:07 -0800
+
+
+Started GET "/assets/utilities/_config.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-31 09:33:07 -0800
+
+
+Started GET "/assets/utilities/_error.self-75ac0774127f9897ab08ca211040f87314b0be5ee2de93e4c8637d12df843301.css?body=1" for ::1 at 2015-12-31 09:33:07 -0800
+
+
+Started GET "/assets/utilities/_functions.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-31 09:33:07 -0800
+
+
+Started GET "/assets/utilities/_mixins.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-31 09:33:07 -0800
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for ::1 at 2015-12-31 09:33:07 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-31 09:33:07 -0800
+
+
+Started GET "/assets/jquery.turbolinks.self-176b9819f30444d441e820bbccd3264fe57753aeafd54dec732b0dbc77129a2a.js?body=1" for ::1 at 2015-12-31 09:33:07 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-31 09:33:07 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-31 09:33:07 -0800
+
+
+Started GET "/assets/addresses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-31 09:33:07 -0800
+
+
+Started GET "/assets/cart.self-efec194c50647bf422163e3ae8f95b6dd0b538a64ea4ba2234da6f02de611cc2.js?body=1" for ::1 at 2015-12-31 09:33:07 -0800
+
+
+Started GET "/assets/hamburger.self-389fddc2ca44002951500adc5ea8dfbb882e8d6e2792d8ada52f321799e70c49.js?body=1" for ::1 at 2015-12-31 09:33:07 -0800
+
+
+Started GET "/assets/layout.self-431905c730bfa782ba8aff783043fec36d7f97bffcf881df0dd01d3538baaa4b.js?body=1" for ::1 at 2015-12-31 09:33:07 -0800
+
+
+Started GET "/assets/localStorage.self-3d8308f8eb240399394df285a4ec2a4a3f54894968f71cedd68248720286fce4.js?body=1" for ::1 at 2015-12-31 09:33:07 -0800
+
+
+Started GET "/assets/navProfileMobile.self-86f10e059bc2639ddd3a6444e30b5daa52c6b741a304475835575de20ce11f54.js?body=1" for ::1 at 2015-12-31 09:33:07 -0800
+
+
+Started GET "/assets/orders.self-35f9acc90e97f7dfc08e14063459a9ab4e5c414f16d89287cabf2aa8bb3e9f8b.js?body=1" for ::1 at 2015-12-31 09:33:07 -0800
+
+
+Started GET "/assets/quickview.self-735c319d704907aba6f915021e6afe7b25597b4336c0a519609ef1ff6328a16f.js?body=1" for ::1 at 2015-12-31 09:33:07 -0800
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-31 09:33:07 -0800
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-12-31 09:33:07 -0800
+
+
+Started POST "/charges/new" for ::1 at 2015-12-31 09:33:39 -0800
+Processing by ChargesController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0soW1Q9NM9jcw+XADVXA2MbJL5V1BimAwMrog/1am0QwI8JaujPs8qPXKghPoLW/4w+KPpWfSqNeQ22rAZIp7Q==", "user"=>{"shipping_address"=>"Joji's Palace - 123 456th st El Cerrito CA 94999", "billing_checkbox"=>"0", "billing_address"=>"Joji's Palace - 123 456th st El Cerrito CA 94999"}, "commit"=>"Continue"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 97016]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 21206]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 80750]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 80437]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 97016]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 21206]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 80750]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 80437]]
+  Rendered charges/new.html.erb within layouts/application (0.8ms)
+  Rendered partials/_nav_profile_modal.html.erb (0.3ms)
+  Rendered navigation/_main_nav.html.erb (2.3ms)
+  Rendered partials/_header_errors.html.erb (0.1ms)
+Completed 200 OK in 1495ms (Views: 1489.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/addresses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-31 09:33:41 -0800
+
+
+Started GET "/assets/base/base.self-b1fd57ca6f92076ec94055938ef4c1cf03bb515deb0627731dffc4737acd46c1.css?body=1" for ::1 at 2015-12-31 09:33:41 -0800
+
+
+Started GET "/assets/base/reset.self-ee751026e628351d140506fb4c1957bf029298d1301db5bd6ddac3fd6abb0a5d.css?body=1" for ::1 at 2015-12-31 09:33:41 -0800
+
+
+Started GET "/assets/components/_arrow__left.self-1343a8c61866e77d155dd21495403cd9e9e3bd9e411aadea784a59b818e6b9b1.css?body=1" for ::1 at 2015-12-31 09:33:41 -0800
+
+
+Started GET "/assets/components/_hamburger.self-aafc3be9901611504edc9669ec2e21071093fbb7dbdb39739016cdef2f4d0757.css?body=1" for ::1 at 2015-12-31 09:33:41 -0800
+
+
+Started GET "/assets/components/_close_btn.self-25c54feb31fcf014c233df59211aa1cc9cddaf37fd5402ef117e3b38df29e630.css?body=1" for ::1 at 2015-12-31 09:33:41 -0800
+
+
+Started GET "/assets/components/_flexbox_vendors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-31 09:33:41 -0800
+
+
+Started GET "/assets/components/_hamburger2.self-20d3fcf680dee61adc02811ac32827176fd50da1a292ee03eaf6d793dc46c649.css?body=1" for ::1 at 2015-12-31 09:33:41 -0800
+
+
+Started GET "/assets/components/_loading.self-c820364a3a9d11cca77ea16325599ead474f548d6ef63ff32cfb0023bde95dcd.css?body=1" for ::1 at 2015-12-31 09:33:41 -0800
+
+
+Started GET "/assets/components/_psuedo_icons.self-e87a2dcdd6f8da864e1bafe3b08b197db049e54bb550e001cdd5d7ef61efba5c.css?body=1" for ::1 at 2015-12-31 09:33:41 -0800
+
+
+Started GET "/assets/layout/charges/create.self-0ec0dcc0b0a1eb22841a92f2744da12fe6583cdc850a5427d7883aa42f9092c9.css?body=1" for ::1 at 2015-12-31 09:33:41 -0800
+
+
+Started GET "/assets/layout/charges/new.self-655e3e43f52d3ecb946e002ac78b949f7d65a67eb94a167f9bd022dfbbce3f41.css?body=1" for ::1 at 2015-12-31 09:33:41 -0800
+
+
+Started GET "/assets/layout/items/admin.self-cf7c1aac518e4c0af596bf2633a26b8dab58352d13568ddc49743e680f335102.css?body=1" for ::1 at 2015-12-31 09:33:41 -0800
+
+
+Started GET "/assets/layout/items/index.self-d620d265d7272bc9ab2cc4cfbbf2c3548c3183d70506abef1df21267af62e425.css?body=1" for ::1 at 2015-12-31 09:33:41 -0800
+
+
+Started GET "/assets/layout/items/quick_view.self-b9b027948aa9a7870597b2cfb94eafafdad7028de8587fac87d110d43d056d88.css?body=1" for ::1 at 2015-12-31 09:33:41 -0800
+
+
+Started GET "/assets/layout/layout.self-39b18e25103de4c514ed412d535c8d7fef8b366c80d40fd5fd6c3d62acd89279.css?body=1" for ::1 at 2015-12-31 09:33:41 -0800
+
+
+Started GET "/assets/layout/navigation/profile_modal.self-068778f0d4a8aa44f0d0a1e91251bf37a68432646f6d498424dee552028ea5cd.css?body=1" for ::1 at 2015-12-31 09:33:41 -0800
+
+
+Started GET "/assets/layout/orders/index.self-ae895e4bcd9b2bc69748df8f7967089094f112c0a834d4e87fd355355af56061.css?body=1" for ::1 at 2015-12-31 09:33:41 -0800
+
+
+Started GET "/assets/layout/sessions/new.self-87757b10cfb6eccca0582ca33f0261fc3b2a82936625ff5ac61e4c83c0e3b364.css?body=1" for ::1 at 2015-12-31 09:33:41 -0800
+
+
+Started GET "/assets/layout/users/cart/cart.self-8115b4ceec3652c44e8af6ce1accb2d09ef483bc46057056034452c73bb7d8ff.css?body=1" for ::1 at 2015-12-31 09:33:41 -0800
+
+
+Started GET "/assets/layout/users/cart/cart_items.self-cfa782ef73120f95919152a36619c29e74b2e99d09773d57efacf7b3a8fed9f4.css?body=1" for ::1 at 2015-12-31 09:33:41 -0800
+
+
+Started GET "/assets/layout/users/new.self-1b77be1f56391c7544835f73964bfe34dcd052ed1601b055677e61aa0a09ee36.css?body=1" for ::1 at 2015-12-31 09:33:41 -0800
+
+
+Started GET "/assets/layout/users/profile.self-b84257c4ae5d1693f0001a784dd918200a69c7964100c015d6ad85c76d55f35a.css?body=1" for ::1 at 2015-12-31 09:33:41 -0800
+
+
+Started GET "/assets/layout/welcome.self-d640b1fee6c52bba835041cbf9ee3a08686733b2c3dc992394c2682e243b7c2d.css?body=1" for ::1 at 2015-12-31 09:33:41 -0800
+
+
+Started GET "/assets/master.self-cf0a516414e7f287441c5ea504ce16573f5ca0df79818391706bc1d9f7a889f0.css?body=1" for ::1 at 2015-12-31 09:33:41 -0800
+
+
+Started GET "/assets/utilities/_animations.self-0bfff9fbf8761df6b9f8f6d7ab4b22bf64ab0be955cdf58925833c349a70f34c.css?body=1" for ::1 at 2015-12-31 09:33:41 -0800
+
+
+Started GET "/assets/utilities/_config.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-31 09:33:41 -0800
+
+
+Started GET "/assets/utilities/_error.self-75ac0774127f9897ab08ca211040f87314b0be5ee2de93e4c8637d12df843301.css?body=1" for ::1 at 2015-12-31 09:33:41 -0800
+
+
+Started GET "/assets/utilities/_functions.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-31 09:33:41 -0800
+
+
+Started GET "/assets/utilities/_mixins.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-31 09:33:41 -0800
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for ::1 at 2015-12-31 09:33:41 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-31 09:33:41 -0800
+
+
+Started GET "/assets/jquery.turbolinks.self-176b9819f30444d441e820bbccd3264fe57753aeafd54dec732b0dbc77129a2a.js?body=1" for ::1 at 2015-12-31 09:33:41 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-31 09:33:41 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-31 09:33:41 -0800
+
+
+Started GET "/assets/addresses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-31 09:33:41 -0800
+
+
+Started GET "/assets/cart.self-efec194c50647bf422163e3ae8f95b6dd0b538a64ea4ba2234da6f02de611cc2.js?body=1" for ::1 at 2015-12-31 09:33:41 -0800
+
+
+Started GET "/assets/hamburger.self-389fddc2ca44002951500adc5ea8dfbb882e8d6e2792d8ada52f321799e70c49.js?body=1" for ::1 at 2015-12-31 09:33:41 -0800
+
+
+Started GET "/assets/layout.self-431905c730bfa782ba8aff783043fec36d7f97bffcf881df0dd01d3538baaa4b.js?body=1" for ::1 at 2015-12-31 09:33:41 -0800
+
+
+Started GET "/assets/localStorage.self-3d8308f8eb240399394df285a4ec2a4a3f54894968f71cedd68248720286fce4.js?body=1" for ::1 at 2015-12-31 09:33:41 -0800
+
+
+Started GET "/assets/navProfileMobile.self-86f10e059bc2639ddd3a6444e30b5daa52c6b741a304475835575de20ce11f54.js?body=1" for ::1 at 2015-12-31 09:33:41 -0800
+
+
+Started GET "/assets/orders.self-35f9acc90e97f7dfc08e14063459a9ab4e5c414f16d89287cabf2aa8bb3e9f8b.js?body=1" for ::1 at 2015-12-31 09:33:41 -0800
+
+
+Started GET "/assets/quickview.self-735c319d704907aba6f915021e6afe7b25597b4336c0a519609ef1ff6328a16f.js?body=1" for ::1 at 2015-12-31 09:33:41 -0800
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-31 09:33:41 -0800
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-12-31 09:33:41 -0800
+
+
+Started POST "/charges/new" for ::1 at 2015-12-31 09:34:03 -0800
+Processing by ChargesController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0soW1Q9NM9jcw+XADVXA2MbJL5V1BimAwMrog/1am0QwI8JaujPs8qPXKghPoLW/4w+KPpWfSqNeQ22rAZIp7Q==", "user"=>{"shipping_address"=>"Joji's Palace - 123 456th st El Cerrito CA 94999", "billing_checkbox"=>"0", "billing_address"=>"Joji's Palace - 123 456th st El Cerrito CA 94999"}, "commit"=>"Continue"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 97016]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 21206]]
+  [1m[35mItem Load (0.2ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 80750]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 80437]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 97016]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 21206]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 80750]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 80437]]
+  Rendered charges/new.html.erb within layouts/application (0.7ms)
+  Rendered partials/_nav_profile_modal.html.erb (0.3ms)
+  Rendered navigation/_main_nav.html.erb (2.4ms)
+  Rendered partials/_header_errors.html.erb (0.2ms)
+Completed 200 OK in 1490ms (Views: 1484.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/base/base.self-b1fd57ca6f92076ec94055938ef4c1cf03bb515deb0627731dffc4737acd46c1.css?body=1" for ::1 at 2015-12-31 09:34:05 -0800
+
+
+Started GET "/assets/base/reset.self-ee751026e628351d140506fb4c1957bf029298d1301db5bd6ddac3fd6abb0a5d.css?body=1" for ::1 at 2015-12-31 09:34:05 -0800
+
+
+Started GET "/assets/addresses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-31 09:34:05 -0800
+
+
+Started GET "/assets/components/_hamburger2.self-20d3fcf680dee61adc02811ac32827176fd50da1a292ee03eaf6d793dc46c649.css?body=1" for ::1 at 2015-12-31 09:34:05 -0800
+
+
+Started GET "/assets/components/_loading.self-c820364a3a9d11cca77ea16325599ead474f548d6ef63ff32cfb0023bde95dcd.css?body=1" for ::1 at 2015-12-31 09:34:05 -0800
+
+
+Started GET "/assets/components/_flexbox_vendors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-31 09:34:05 -0800
+
+
+Started GET "/assets/components/_hamburger.self-aafc3be9901611504edc9669ec2e21071093fbb7dbdb39739016cdef2f4d0757.css?body=1" for ::1 at 2015-12-31 09:34:05 -0800
+
+
+Started GET "/assets/components/_arrow__left.self-1343a8c61866e77d155dd21495403cd9e9e3bd9e411aadea784a59b818e6b9b1.css?body=1" for ::1 at 2015-12-31 09:34:05 -0800
+
+
+Started GET "/assets/components/_close_btn.self-25c54feb31fcf014c233df59211aa1cc9cddaf37fd5402ef117e3b38df29e630.css?body=1" for ::1 at 2015-12-31 09:34:05 -0800
+
+
+Started GET "/assets/components/_psuedo_icons.self-e87a2dcdd6f8da864e1bafe3b08b197db049e54bb550e001cdd5d7ef61efba5c.css?body=1" for ::1 at 2015-12-31 09:34:05 -0800
+
+
+Started GET "/assets/layout/charges/create.self-0ec0dcc0b0a1eb22841a92f2744da12fe6583cdc850a5427d7883aa42f9092c9.css?body=1" for ::1 at 2015-12-31 09:34:05 -0800
+
+
+Started GET "/assets/layout/charges/new.self-dbc386d5d7414c1f6413618af81d6f2724cca9dc960c728b9d5c725ac2dbb8ac.css?body=1" for ::1 at 2015-12-31 09:34:05 -0800
+
+
+Started GET "/assets/layout/items/admin.self-cf7c1aac518e4c0af596bf2633a26b8dab58352d13568ddc49743e680f335102.css?body=1" for ::1 at 2015-12-31 09:34:05 -0800
+
+
+Started GET "/assets/layout/items/index.self-d620d265d7272bc9ab2cc4cfbbf2c3548c3183d70506abef1df21267af62e425.css?body=1" for ::1 at 2015-12-31 09:34:05 -0800
+
+
+Started GET "/assets/layout/items/quick_view.self-b9b027948aa9a7870597b2cfb94eafafdad7028de8587fac87d110d43d056d88.css?body=1" for ::1 at 2015-12-31 09:34:05 -0800
+
+
+Started GET "/assets/layout/layout.self-39b18e25103de4c514ed412d535c8d7fef8b366c80d40fd5fd6c3d62acd89279.css?body=1" for ::1 at 2015-12-31 09:34:05 -0800
+
+
+Started GET "/assets/layout/navigation/profile_modal.self-068778f0d4a8aa44f0d0a1e91251bf37a68432646f6d498424dee552028ea5cd.css?body=1" for ::1 at 2015-12-31 09:34:05 -0800
+
+
+Started GET "/assets/layout/orders/index.self-ae895e4bcd9b2bc69748df8f7967089094f112c0a834d4e87fd355355af56061.css?body=1" for ::1 at 2015-12-31 09:34:05 -0800
+
+
+Started GET "/assets/layout/sessions/new.self-87757b10cfb6eccca0582ca33f0261fc3b2a82936625ff5ac61e4c83c0e3b364.css?body=1" for ::1 at 2015-12-31 09:34:05 -0800
+
+
+Started GET "/assets/layout/users/cart/cart.self-8115b4ceec3652c44e8af6ce1accb2d09ef483bc46057056034452c73bb7d8ff.css?body=1" for ::1 at 2015-12-31 09:34:05 -0800
+
+
+Started GET "/assets/layout/users/cart/cart_items.self-cfa782ef73120f95919152a36619c29e74b2e99d09773d57efacf7b3a8fed9f4.css?body=1" for ::1 at 2015-12-31 09:34:05 -0800
+
+
+Started GET "/assets/layout/users/new.self-1b77be1f56391c7544835f73964bfe34dcd052ed1601b055677e61aa0a09ee36.css?body=1" for ::1 at 2015-12-31 09:34:05 -0800
+
+
+Started GET "/assets/layout/users/profile.self-b84257c4ae5d1693f0001a784dd918200a69c7964100c015d6ad85c76d55f35a.css?body=1" for ::1 at 2015-12-31 09:34:05 -0800
+
+
+Started GET "/assets/layout/welcome.self-d640b1fee6c52bba835041cbf9ee3a08686733b2c3dc992394c2682e243b7c2d.css?body=1" for ::1 at 2015-12-31 09:34:05 -0800
+
+
+Started GET "/assets/master.self-cf0a516414e7f287441c5ea504ce16573f5ca0df79818391706bc1d9f7a889f0.css?body=1" for ::1 at 2015-12-31 09:34:05 -0800
+
+
+Started GET "/assets/utilities/_animations.self-0bfff9fbf8761df6b9f8f6d7ab4b22bf64ab0be955cdf58925833c349a70f34c.css?body=1" for ::1 at 2015-12-31 09:34:05 -0800
+
+
+Started GET "/assets/utilities/_config.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-31 09:34:05 -0800
+
+
+Started GET "/assets/utilities/_error.self-75ac0774127f9897ab08ca211040f87314b0be5ee2de93e4c8637d12df843301.css?body=1" for ::1 at 2015-12-31 09:34:05 -0800
+
+
+Started GET "/assets/utilities/_functions.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-31 09:34:05 -0800
+
+
+Started GET "/assets/utilities/_mixins.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-31 09:34:05 -0800
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for ::1 at 2015-12-31 09:34:05 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-31 09:34:05 -0800
+
+
+Started GET "/assets/jquery.turbolinks.self-176b9819f30444d441e820bbccd3264fe57753aeafd54dec732b0dbc77129a2a.js?body=1" for ::1 at 2015-12-31 09:34:05 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-31 09:34:05 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-31 09:34:05 -0800
+
+
+Started GET "/assets/addresses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-31 09:34:05 -0800
+
+
+Started GET "/assets/cart.self-efec194c50647bf422163e3ae8f95b6dd0b538a64ea4ba2234da6f02de611cc2.js?body=1" for ::1 at 2015-12-31 09:34:05 -0800
+
+
+Started GET "/assets/hamburger.self-389fddc2ca44002951500adc5ea8dfbb882e8d6e2792d8ada52f321799e70c49.js?body=1" for ::1 at 2015-12-31 09:34:05 -0800
+
+
+Started GET "/assets/layout.self-431905c730bfa782ba8aff783043fec36d7f97bffcf881df0dd01d3538baaa4b.js?body=1" for ::1 at 2015-12-31 09:34:05 -0800
+
+
+Started GET "/assets/localStorage.self-3d8308f8eb240399394df285a4ec2a4a3f54894968f71cedd68248720286fce4.js?body=1" for ::1 at 2015-12-31 09:34:05 -0800
+
+
+Started GET "/assets/navProfileMobile.self-86f10e059bc2639ddd3a6444e30b5daa52c6b741a304475835575de20ce11f54.js?body=1" for ::1 at 2015-12-31 09:34:05 -0800
+
+
+Started GET "/assets/orders.self-35f9acc90e97f7dfc08e14063459a9ab4e5c414f16d89287cabf2aa8bb3e9f8b.js?body=1" for ::1 at 2015-12-31 09:34:05 -0800
+
+
+Started GET "/assets/quickview.self-735c319d704907aba6f915021e6afe7b25597b4336c0a519609ef1ff6328a16f.js?body=1" for ::1 at 2015-12-31 09:34:05 -0800
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-31 09:34:05 -0800
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-12-31 09:34:05 -0800
+
+
+Started POST "/charges/new" for ::1 at 2015-12-31 09:35:05 -0800
+Processing by ChargesController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0soW1Q9NM9jcw+XADVXA2MbJL5V1BimAwMrog/1am0QwI8JaujPs8qPXKghPoLW/4w+KPpWfSqNeQ22rAZIp7Q==", "user"=>{"shipping_address"=>"Joji's Palace - 123 456th st El Cerrito CA 94999", "billing_checkbox"=>"0", "billing_address"=>"Joji's Palace - 123 456th st El Cerrito CA 94999"}, "commit"=>"Continue"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 97016]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 21206]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 80750]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 80437]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 97016]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 21206]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 80750]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 80437]]
+  Rendered charges/new.html.erb within layouts/application (0.6ms)
+  Rendered partials/_nav_profile_modal.html.erb (0.1ms)
+  Rendered navigation/_main_nav.html.erb (0.9ms)
+  Rendered partials/_header_errors.html.erb (0.1ms)
+Completed 200 OK in 293ms (Views: 288.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/addresses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-31 09:35:05 -0800
+
+
+Started GET "/assets/base/base.self-b1fd57ca6f92076ec94055938ef4c1cf03bb515deb0627731dffc4737acd46c1.css?body=1" for ::1 at 2015-12-31 09:35:05 -0800
+
+
+Started GET "/assets/base/reset.self-ee751026e628351d140506fb4c1957bf029298d1301db5bd6ddac3fd6abb0a5d.css?body=1" for ::1 at 2015-12-31 09:35:05 -0800
+
+
+Started GET "/assets/components/_hamburger.self-aafc3be9901611504edc9669ec2e21071093fbb7dbdb39739016cdef2f4d0757.css?body=1" for ::1 at 2015-12-31 09:35:05 -0800
+
+
+Started GET "/assets/components/_arrow__left.self-1343a8c61866e77d155dd21495403cd9e9e3bd9e411aadea784a59b818e6b9b1.css?body=1" for ::1 at 2015-12-31 09:35:05 -0800
+
+
+Started GET "/assets/components/_close_btn.self-25c54feb31fcf014c233df59211aa1cc9cddaf37fd5402ef117e3b38df29e630.css?body=1" for ::1 at 2015-12-31 09:35:05 -0800
+
+
+Started GET "/assets/components/_flexbox_vendors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-31 09:35:05 -0800
+
+
+Started GET "/assets/components/_hamburger2.self-20d3fcf680dee61adc02811ac32827176fd50da1a292ee03eaf6d793dc46c649.css?body=1" for ::1 at 2015-12-31 09:35:05 -0800
+
+
+Started GET "/assets/components/_loading.self-c820364a3a9d11cca77ea16325599ead474f548d6ef63ff32cfb0023bde95dcd.css?body=1" for ::1 at 2015-12-31 09:35:05 -0800
+
+
+Started GET "/assets/components/_psuedo_icons.self-e87a2dcdd6f8da864e1bafe3b08b197db049e54bb550e001cdd5d7ef61efba5c.css?body=1" for ::1 at 2015-12-31 09:35:05 -0800
+
+
+Started GET "/assets/layout/charges/create.self-0ec0dcc0b0a1eb22841a92f2744da12fe6583cdc850a5427d7883aa42f9092c9.css?body=1" for ::1 at 2015-12-31 09:35:05 -0800
+
+
+Started GET "/assets/layout/charges/new.self-dbc386d5d7414c1f6413618af81d6f2724cca9dc960c728b9d5c725ac2dbb8ac.css?body=1" for ::1 at 2015-12-31 09:35:05 -0800
+
+
+Started GET "/assets/layout/items/admin.self-cf7c1aac518e4c0af596bf2633a26b8dab58352d13568ddc49743e680f335102.css?body=1" for ::1 at 2015-12-31 09:35:05 -0800
+
+
+Started GET "/assets/layout/items/index.self-d620d265d7272bc9ab2cc4cfbbf2c3548c3183d70506abef1df21267af62e425.css?body=1" for ::1 at 2015-12-31 09:35:05 -0800
+
+
+Started GET "/assets/layout/layout.self-39b18e25103de4c514ed412d535c8d7fef8b366c80d40fd5fd6c3d62acd89279.css?body=1" for ::1 at 2015-12-31 09:35:05 -0800
+
+
+Started GET "/assets/layout/items/quick_view.self-b9b027948aa9a7870597b2cfb94eafafdad7028de8587fac87d110d43d056d88.css?body=1" for ::1 at 2015-12-31 09:35:05 -0800
+
+
+Started GET "/assets/layout/navigation/profile_modal.self-068778f0d4a8aa44f0d0a1e91251bf37a68432646f6d498424dee552028ea5cd.css?body=1" for ::1 at 2015-12-31 09:35:05 -0800
+
+
+Started GET "/assets/layout/orders/index.self-ae895e4bcd9b2bc69748df8f7967089094f112c0a834d4e87fd355355af56061.css?body=1" for ::1 at 2015-12-31 09:35:05 -0800
+
+
+Started GET "/assets/layout/sessions/new.self-87757b10cfb6eccca0582ca33f0261fc3b2a82936625ff5ac61e4c83c0e3b364.css?body=1" for ::1 at 2015-12-31 09:35:05 -0800
+
+
+Started GET "/assets/layout/users/cart/cart.self-8115b4ceec3652c44e8af6ce1accb2d09ef483bc46057056034452c73bb7d8ff.css?body=1" for ::1 at 2015-12-31 09:35:05 -0800
+
+
+Started GET "/assets/layout/users/cart/cart_items.self-cfa782ef73120f95919152a36619c29e74b2e99d09773d57efacf7b3a8fed9f4.css?body=1" for ::1 at 2015-12-31 09:35:05 -0800
+
+
+Started GET "/assets/layout/users/new.self-1b77be1f56391c7544835f73964bfe34dcd052ed1601b055677e61aa0a09ee36.css?body=1" for ::1 at 2015-12-31 09:35:05 -0800
+
+
+Started GET "/assets/layout/users/profile.self-b84257c4ae5d1693f0001a784dd918200a69c7964100c015d6ad85c76d55f35a.css?body=1" for ::1 at 2015-12-31 09:35:05 -0800
+
+
+Started GET "/assets/layout/welcome.self-d640b1fee6c52bba835041cbf9ee3a08686733b2c3dc992394c2682e243b7c2d.css?body=1" for ::1 at 2015-12-31 09:35:05 -0800
+
+
+Started GET "/assets/master.self-cf0a516414e7f287441c5ea504ce16573f5ca0df79818391706bc1d9f7a889f0.css?body=1" for ::1 at 2015-12-31 09:35:05 -0800
+
+
+Started GET "/assets/utilities/_animations.self-0bfff9fbf8761df6b9f8f6d7ab4b22bf64ab0be955cdf58925833c349a70f34c.css?body=1" for ::1 at 2015-12-31 09:35:05 -0800
+
+
+Started GET "/assets/utilities/_config.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-31 09:35:05 -0800
+
+
+Started GET "/assets/utilities/_error.self-75ac0774127f9897ab08ca211040f87314b0be5ee2de93e4c8637d12df843301.css?body=1" for ::1 at 2015-12-31 09:35:05 -0800
+
+
+Started GET "/assets/utilities/_functions.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-31 09:35:05 -0800
+
+
+Started GET "/assets/utilities/_mixins.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-31 09:35:05 -0800
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for ::1 at 2015-12-31 09:35:06 -0800
+
+
+Started GET "/assets/orders.self-d03135deb0e146f4bd5ced6f493a37474e56dd3c53be7a5b0ef958dbbff398de.js?body=1" for ::1 at 2015-12-31 09:35:06 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-31 09:35:06 -0800
+
+
+Started GET "/assets/jquery.turbolinks.self-176b9819f30444d441e820bbccd3264fe57753aeafd54dec732b0dbc77129a2a.js?body=1" for ::1 at 2015-12-31 09:35:06 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-31 09:35:06 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-31 09:35:06 -0800
+
+
+Started GET "/assets/addresses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-31 09:35:06 -0800
+
+
+Started GET "/assets/cart.self-efec194c50647bf422163e3ae8f95b6dd0b538a64ea4ba2234da6f02de611cc2.js?body=1" for ::1 at 2015-12-31 09:35:06 -0800
+
+
+Started GET "/assets/hamburger.self-389fddc2ca44002951500adc5ea8dfbb882e8d6e2792d8ada52f321799e70c49.js?body=1" for ::1 at 2015-12-31 09:35:06 -0800
+
+
+Started GET "/assets/layout.self-431905c730bfa782ba8aff783043fec36d7f97bffcf881df0dd01d3538baaa4b.js?body=1" for ::1 at 2015-12-31 09:35:06 -0800
+
+
+Started GET "/assets/localStorage.self-3d8308f8eb240399394df285a4ec2a4a3f54894968f71cedd68248720286fce4.js?body=1" for ::1 at 2015-12-31 09:35:06 -0800
+
+
+Started GET "/assets/quickview.self-735c319d704907aba6f915021e6afe7b25597b4336c0a519609ef1ff6328a16f.js?body=1" for ::1 at 2015-12-31 09:35:06 -0800
+
+
+Started GET "/assets/navProfileMobile.self-86f10e059bc2639ddd3a6444e30b5daa52c6b741a304475835575de20ce11f54.js?body=1" for ::1 at 2015-12-31 09:35:06 -0800
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-31 09:35:06 -0800
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-12-31 09:35:06 -0800
+
+
+Started POST "/charges/new" for ::1 at 2015-12-31 09:35:18 -0800
+Processing by ChargesController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0soW1Q9NM9jcw+XADVXA2MbJL5V1BimAwMrog/1am0QwI8JaujPs8qPXKghPoLW/4w+KPpWfSqNeQ22rAZIp7Q==", "user"=>{"shipping_address"=>"Joji's Palace - 123 456th st El Cerrito CA 94999", "billing_checkbox"=>"0", "billing_address"=>"Joji's Palace - 123 456th st El Cerrito CA 94999"}, "commit"=>"Continue"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 97016]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 21206]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 80750]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 80437]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 97016]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 21206]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 80750]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 80437]]
+  Rendered charges/new.html.erb within layouts/application (0.6ms)
+  Rendered partials/_nav_profile_modal.html.erb (0.2ms)
+  Rendered navigation/_main_nav.html.erb (1.3ms)
+  Rendered partials/_header_errors.html.erb (0.1ms)
+Completed 200 OK in 210ms (Views: 206.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/base/base.self-b1fd57ca6f92076ec94055938ef4c1cf03bb515deb0627731dffc4737acd46c1.css?body=1" for ::1 at 2015-12-31 09:35:19 -0800
+
+
+Started GET "/assets/base/reset.self-ee751026e628351d140506fb4c1957bf029298d1301db5bd6ddac3fd6abb0a5d.css?body=1" for ::1 at 2015-12-31 09:35:19 -0800
+
+
+Started GET "/assets/components/_arrow__left.self-1343a8c61866e77d155dd21495403cd9e9e3bd9e411aadea784a59b818e6b9b1.css?body=1" for ::1 at 2015-12-31 09:35:19 -0800
+
+
+Started GET "/assets/components/_close_btn.self-25c54feb31fcf014c233df59211aa1cc9cddaf37fd5402ef117e3b38df29e630.css?body=1" for ::1 at 2015-12-31 09:35:19 -0800
+
+
+Started GET "/assets/components/_flexbox_vendors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-31 09:35:19 -0800
+
+
+Started GET "/assets/addresses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-31 09:35:19 -0800
+
+
+Started GET "/assets/components/_hamburger.self-aafc3be9901611504edc9669ec2e21071093fbb7dbdb39739016cdef2f4d0757.css?body=1" for ::1 at 2015-12-31 09:35:19 -0800
+
+
+Started GET "/assets/components/_hamburger2.self-20d3fcf680dee61adc02811ac32827176fd50da1a292ee03eaf6d793dc46c649.css?body=1" for ::1 at 2015-12-31 09:35:19 -0800
+
+
+Started GET "/assets/components/_loading.self-c820364a3a9d11cca77ea16325599ead474f548d6ef63ff32cfb0023bde95dcd.css?body=1" for ::1 at 2015-12-31 09:35:19 -0800
+
+
+Started GET "/assets/components/_psuedo_icons.self-e87a2dcdd6f8da864e1bafe3b08b197db049e54bb550e001cdd5d7ef61efba5c.css?body=1" for ::1 at 2015-12-31 09:35:19 -0800
+
+
+Started GET "/assets/layout/charges/create.self-0ec0dcc0b0a1eb22841a92f2744da12fe6583cdc850a5427d7883aa42f9092c9.css?body=1" for ::1 at 2015-12-31 09:35:19 -0800
+
+
+Started GET "/assets/layout/charges/new.self-dbc386d5d7414c1f6413618af81d6f2724cca9dc960c728b9d5c725ac2dbb8ac.css?body=1" for ::1 at 2015-12-31 09:35:19 -0800
+
+
+Started GET "/assets/layout/items/admin.self-cf7c1aac518e4c0af596bf2633a26b8dab58352d13568ddc49743e680f335102.css?body=1" for ::1 at 2015-12-31 09:35:19 -0800
+
+
+Started GET "/assets/layout/items/index.self-d620d265d7272bc9ab2cc4cfbbf2c3548c3183d70506abef1df21267af62e425.css?body=1" for ::1 at 2015-12-31 09:35:19 -0800
+
+
+Started GET "/assets/layout/items/quick_view.self-b9b027948aa9a7870597b2cfb94eafafdad7028de8587fac87d110d43d056d88.css?body=1" for ::1 at 2015-12-31 09:35:19 -0800
+
+
+Started GET "/assets/layout/layout.self-39b18e25103de4c514ed412d535c8d7fef8b366c80d40fd5fd6c3d62acd89279.css?body=1" for ::1 at 2015-12-31 09:35:19 -0800
+
+
+Started GET "/assets/layout/navigation/profile_modal.self-068778f0d4a8aa44f0d0a1e91251bf37a68432646f6d498424dee552028ea5cd.css?body=1" for ::1 at 2015-12-31 09:35:19 -0800
+
+
+Started GET "/assets/layout/orders/index.self-ae895e4bcd9b2bc69748df8f7967089094f112c0a834d4e87fd355355af56061.css?body=1" for ::1 at 2015-12-31 09:35:19 -0800
+
+
+Started GET "/assets/layout/sessions/new.self-87757b10cfb6eccca0582ca33f0261fc3b2a82936625ff5ac61e4c83c0e3b364.css?body=1" for ::1 at 2015-12-31 09:35:19 -0800
+
+
+Started GET "/assets/layout/users/cart/cart.self-8115b4ceec3652c44e8af6ce1accb2d09ef483bc46057056034452c73bb7d8ff.css?body=1" for ::1 at 2015-12-31 09:35:19 -0800
+
+
+Started GET "/assets/layout/users/cart/cart_items.self-cfa782ef73120f95919152a36619c29e74b2e99d09773d57efacf7b3a8fed9f4.css?body=1" for ::1 at 2015-12-31 09:35:19 -0800
+
+
+Started GET "/assets/layout/users/new.self-1b77be1f56391c7544835f73964bfe34dcd052ed1601b055677e61aa0a09ee36.css?body=1" for ::1 at 2015-12-31 09:35:19 -0800
+
+
+Started GET "/assets/layout/users/profile.self-b84257c4ae5d1693f0001a784dd918200a69c7964100c015d6ad85c76d55f35a.css?body=1" for ::1 at 2015-12-31 09:35:19 -0800
+
+
+Started GET "/assets/layout/welcome.self-d640b1fee6c52bba835041cbf9ee3a08686733b2c3dc992394c2682e243b7c2d.css?body=1" for ::1 at 2015-12-31 09:35:19 -0800
+
+
+Started GET "/assets/master.self-cf0a516414e7f287441c5ea504ce16573f5ca0df79818391706bc1d9f7a889f0.css?body=1" for ::1 at 2015-12-31 09:35:19 -0800
+
+
+Started GET "/assets/utilities/_animations.self-0bfff9fbf8761df6b9f8f6d7ab4b22bf64ab0be955cdf58925833c349a70f34c.css?body=1" for ::1 at 2015-12-31 09:35:19 -0800
+
+
+Started GET "/assets/utilities/_config.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-31 09:35:19 -0800
+
+
+Started GET "/assets/utilities/_error.self-75ac0774127f9897ab08ca211040f87314b0be5ee2de93e4c8637d12df843301.css?body=1" for ::1 at 2015-12-31 09:35:19 -0800
+
+
+Started GET "/assets/utilities/_functions.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-31 09:35:19 -0800
+
+
+Started GET "/assets/utilities/_mixins.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-31 09:35:19 -0800
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for ::1 at 2015-12-31 09:35:19 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-31 09:35:19 -0800
+
+
+Started GET "/assets/jquery.turbolinks.self-176b9819f30444d441e820bbccd3264fe57753aeafd54dec732b0dbc77129a2a.js?body=1" for ::1 at 2015-12-31 09:35:19 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-31 09:35:19 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-31 09:35:19 -0800
+
+
+Started GET "/assets/addresses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-31 09:35:19 -0800
+
+
+Started GET "/assets/cart.self-efec194c50647bf422163e3ae8f95b6dd0b538a64ea4ba2234da6f02de611cc2.js?body=1" for ::1 at 2015-12-31 09:35:19 -0800
+
+
+Started GET "/assets/hamburger.self-389fddc2ca44002951500adc5ea8dfbb882e8d6e2792d8ada52f321799e70c49.js?body=1" for ::1 at 2015-12-31 09:35:19 -0800
+
+
+Started GET "/assets/layout.self-431905c730bfa782ba8aff783043fec36d7f97bffcf881df0dd01d3538baaa4b.js?body=1" for ::1 at 2015-12-31 09:35:19 -0800
+
+
+Started GET "/assets/localStorage.self-3d8308f8eb240399394df285a4ec2a4a3f54894968f71cedd68248720286fce4.js?body=1" for ::1 at 2015-12-31 09:35:19 -0800
+
+
+Started GET "/assets/navProfileMobile.self-86f10e059bc2639ddd3a6444e30b5daa52c6b741a304475835575de20ce11f54.js?body=1" for ::1 at 2015-12-31 09:35:19 -0800
+
+
+Started GET "/assets/orders.self-d3ff141f5bce09a9b6e8234490dee5501814ac336e51d9a7af1f56b74ec12570.js?body=1" for ::1 at 2015-12-31 09:35:19 -0800
+
+
+Started GET "/assets/quickview.self-735c319d704907aba6f915021e6afe7b25597b4336c0a519609ef1ff6328a16f.js?body=1" for ::1 at 2015-12-31 09:35:19 -0800
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-12-31 09:35:19 -0800
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-31 09:35:19 -0800
+
+
+Started POST "/charges/new" for ::1 at 2015-12-31 09:38:18 -0800
+Processing by ChargesController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0soW1Q9NM9jcw+XADVXA2MbJL5V1BimAwMrog/1am0QwI8JaujPs8qPXKghPoLW/4w+KPpWfSqNeQ22rAZIp7Q==", "user"=>{"shipping_address"=>"Joji's Palace - 123 456th st El Cerrito CA 94999", "billing_checkbox"=>"0", "billing_address"=>"Joji's Palace - 123 456th st El Cerrito CA 94999"}, "commit"=>"Continue"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 97016]]
+  [1m[35mItem Load (0.2ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 21206]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 80750]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 80437]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 97016]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 21206]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 80750]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 80437]]
+  Rendered charges/new.html.erb within layouts/application (0.6ms)
+  Rendered partials/_nav_profile_modal.html.erb (0.1ms)
+  Rendered navigation/_main_nav.html.erb (0.9ms)
+  Rendered partials/_header_errors.html.erb (0.1ms)
+Completed 200 OK in 275ms (Views: 270.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/addresses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-31 09:38:19 -0800
+
+
+Started GET "/assets/base/reset.self-ee751026e628351d140506fb4c1957bf029298d1301db5bd6ddac3fd6abb0a5d.css?body=1" for ::1 at 2015-12-31 09:38:19 -0800
+
+
+Started GET "/assets/base/base.self-b1fd57ca6f92076ec94055938ef4c1cf03bb515deb0627731dffc4737acd46c1.css?body=1" for ::1 at 2015-12-31 09:38:19 -0800
+
+
+Started GET "/assets/components/_arrow__left.self-1343a8c61866e77d155dd21495403cd9e9e3bd9e411aadea784a59b818e6b9b1.css?body=1" for ::1 at 2015-12-31 09:38:19 -0800
+
+
+Started GET "/assets/components/_flexbox_vendors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-31 09:38:19 -0800
+
+
+Started GET "/assets/components/_psuedo_icons.self-e87a2dcdd6f8da864e1bafe3b08b197db049e54bb550e001cdd5d7ef61efba5c.css?body=1" for ::1 at 2015-12-31 09:38:19 -0800
+
+
+Started GET "/assets/layout/charges/create.self-0ec0dcc0b0a1eb22841a92f2744da12fe6583cdc850a5427d7883aa42f9092c9.css?body=1" for ::1 at 2015-12-31 09:38:19 -0800
+
+
+Started GET "/assets/components/_hamburger.self-aafc3be9901611504edc9669ec2e21071093fbb7dbdb39739016cdef2f4d0757.css?body=1" for ::1 at 2015-12-31 09:38:19 -0800
+
+
+Started GET "/assets/components/_close_btn.self-25c54feb31fcf014c233df59211aa1cc9cddaf37fd5402ef117e3b38df29e630.css?body=1" for ::1 at 2015-12-31 09:38:19 -0800
+
+
+Started GET "/assets/components/_hamburger2.self-20d3fcf680dee61adc02811ac32827176fd50da1a292ee03eaf6d793dc46c649.css?body=1" for ::1 at 2015-12-31 09:38:19 -0800
+
+
+Started GET "/assets/layout/charges/new.self-dbc386d5d7414c1f6413618af81d6f2724cca9dc960c728b9d5c725ac2dbb8ac.css?body=1" for ::1 at 2015-12-31 09:38:19 -0800
+
+
+Started GET "/assets/components/_loading.self-c820364a3a9d11cca77ea16325599ead474f548d6ef63ff32cfb0023bde95dcd.css?body=1" for ::1 at 2015-12-31 09:38:19 -0800
+
+
+Started GET "/assets/layout/items/index.self-d620d265d7272bc9ab2cc4cfbbf2c3548c3183d70506abef1df21267af62e425.css?body=1" for ::1 at 2015-12-31 09:38:19 -0800
+
+
+Started GET "/assets/layout/items/admin.self-cf7c1aac518e4c0af596bf2633a26b8dab58352d13568ddc49743e680f335102.css?body=1" for ::1 at 2015-12-31 09:38:19 -0800
+
+
+Started GET "/assets/layout/items/quick_view.self-b9b027948aa9a7870597b2cfb94eafafdad7028de8587fac87d110d43d056d88.css?body=1" for ::1 at 2015-12-31 09:38:19 -0800
+
+
+Started GET "/assets/layout/navigation/profile_modal.self-068778f0d4a8aa44f0d0a1e91251bf37a68432646f6d498424dee552028ea5cd.css?body=1" for ::1 at 2015-12-31 09:38:19 -0800
+
+
+Started GET "/assets/layout/orders/index.self-ae895e4bcd9b2bc69748df8f7967089094f112c0a834d4e87fd355355af56061.css?body=1" for ::1 at 2015-12-31 09:38:19 -0800
+
+
+Started GET "/assets/layout/layout.self-39b18e25103de4c514ed412d535c8d7fef8b366c80d40fd5fd6c3d62acd89279.css?body=1" for ::1 at 2015-12-31 09:38:19 -0800
+
+
+Started GET "/assets/layout/sessions/new.self-87757b10cfb6eccca0582ca33f0261fc3b2a82936625ff5ac61e4c83c0e3b364.css?body=1" for ::1 at 2015-12-31 09:38:19 -0800
+
+
+Started GET "/assets/layout/users/cart/cart_items.self-cfa782ef73120f95919152a36619c29e74b2e99d09773d57efacf7b3a8fed9f4.css?body=1" for ::1 at 2015-12-31 09:38:19 -0800
+
+
+Started GET "/assets/layout/users/cart/cart.self-8115b4ceec3652c44e8af6ce1accb2d09ef483bc46057056034452c73bb7d8ff.css?body=1" for ::1 at 2015-12-31 09:38:19 -0800
+
+
+Started GET "/assets/layout/users/new.self-1b77be1f56391c7544835f73964bfe34dcd052ed1601b055677e61aa0a09ee36.css?body=1" for ::1 at 2015-12-31 09:38:19 -0800
+
+
+Started GET "/assets/layout/users/profile.self-b84257c4ae5d1693f0001a784dd918200a69c7964100c015d6ad85c76d55f35a.css?body=1" for ::1 at 2015-12-31 09:38:19 -0800
+
+
+Started GET "/assets/layout/welcome.self-d640b1fee6c52bba835041cbf9ee3a08686733b2c3dc992394c2682e243b7c2d.css?body=1" for ::1 at 2015-12-31 09:38:19 -0800
+
+
+Started GET "/assets/master.self-cf0a516414e7f287441c5ea504ce16573f5ca0df79818391706bc1d9f7a889f0.css?body=1" for ::1 at 2015-12-31 09:38:19 -0800
+
+
+Started GET "/assets/utilities/_animations.self-0bfff9fbf8761df6b9f8f6d7ab4b22bf64ab0be955cdf58925833c349a70f34c.css?body=1" for ::1 at 2015-12-31 09:38:19 -0800
+
+
+Started GET "/assets/utilities/_config.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-31 09:38:19 -0800
+
+
+Started GET "/assets/utilities/_error.self-75ac0774127f9897ab08ca211040f87314b0be5ee2de93e4c8637d12df843301.css?body=1" for ::1 at 2015-12-31 09:38:19 -0800
+
+
+Started GET "/assets/utilities/_functions.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-31 09:38:19 -0800
+
+
+Started GET "/assets/utilities/_mixins.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-31 09:38:19 -0800
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for ::1 at 2015-12-31 09:38:19 -0800
+
+
+Started GET "/assets/orders.self-2b6e4a0453110fe17f0b72828d313a6f5a75230394836e09ac7aee16481b30f4.js?body=1" for ::1 at 2015-12-31 09:38:19 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-31 09:38:19 -0800
+
+
+Started GET "/assets/jquery.turbolinks.self-176b9819f30444d441e820bbccd3264fe57753aeafd54dec732b0dbc77129a2a.js?body=1" for ::1 at 2015-12-31 09:38:19 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-31 09:38:19 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-31 09:38:19 -0800
+
+
+Started GET "/assets/addresses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-31 09:38:19 -0800
+
+
+Started GET "/assets/cart.self-efec194c50647bf422163e3ae8f95b6dd0b538a64ea4ba2234da6f02de611cc2.js?body=1" for ::1 at 2015-12-31 09:38:19 -0800
+
+
+Started GET "/assets/layout.self-431905c730bfa782ba8aff783043fec36d7f97bffcf881df0dd01d3538baaa4b.js?body=1" for ::1 at 2015-12-31 09:38:19 -0800
+
+
+Started GET "/assets/hamburger.self-389fddc2ca44002951500adc5ea8dfbb882e8d6e2792d8ada52f321799e70c49.js?body=1" for ::1 at 2015-12-31 09:38:19 -0800
+
+
+Started GET "/assets/localStorage.self-3d8308f8eb240399394df285a4ec2a4a3f54894968f71cedd68248720286fce4.js?body=1" for ::1 at 2015-12-31 09:38:19 -0800
+
+
+Started GET "/assets/navProfileMobile.self-86f10e059bc2639ddd3a6444e30b5daa52c6b741a304475835575de20ce11f54.js?body=1" for ::1 at 2015-12-31 09:38:19 -0800
+
+
+Started GET "/assets/quickview.self-735c319d704907aba6f915021e6afe7b25597b4336c0a519609ef1ff6328a16f.js?body=1" for ::1 at 2015-12-31 09:38:19 -0800
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-31 09:38:19 -0800
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-12-31 09:38:19 -0800
+
+
+Started POST "/charges/new" for ::1 at 2015-12-31 09:38:50 -0800
+Processing by ChargesController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0soW1Q9NM9jcw+XADVXA2MbJL5V1BimAwMrog/1am0QwI8JaujPs8qPXKghPoLW/4w+KPpWfSqNeQ22rAZIp7Q==", "user"=>{"shipping_address"=>"Joji's Palace - 123 456th st El Cerrito CA 94999", "billing_checkbox"=>"0", "billing_address"=>"Joji's Palace - 123 456th st El Cerrito CA 94999"}, "commit"=>"Continue"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 97016]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 21206]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 80750]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 80437]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 97016]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 21206]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 80750]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 80437]]
+  Rendered charges/new.html.erb within layouts/application (0.5ms)
+  Rendered partials/_nav_profile_modal.html.erb (0.3ms)
+  Rendered navigation/_main_nav.html.erb (2.2ms)
+  Rendered partials/_header_errors.html.erb (0.1ms)
+Completed 200 OK in 297ms (Views: 292.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/addresses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-31 09:38:50 -0800
+
+
+Started GET "/assets/base/base.self-b1fd57ca6f92076ec94055938ef4c1cf03bb515deb0627731dffc4737acd46c1.css?body=1" for ::1 at 2015-12-31 09:38:50 -0800
+
+
+Started GET "/assets/components/_flexbox_vendors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-31 09:38:50 -0800
+
+
+Started GET "/assets/base/reset.self-ee751026e628351d140506fb4c1957bf029298d1301db5bd6ddac3fd6abb0a5d.css?body=1" for ::1 at 2015-12-31 09:38:50 -0800
+
+
+Started GET "/assets/components/_arrow__left.self-1343a8c61866e77d155dd21495403cd9e9e3bd9e411aadea784a59b818e6b9b1.css?body=1" for ::1 at 2015-12-31 09:38:50 -0800
+
+
+Started GET "/assets/components/_close_btn.self-25c54feb31fcf014c233df59211aa1cc9cddaf37fd5402ef117e3b38df29e630.css?body=1" for ::1 at 2015-12-31 09:38:50 -0800
+
+
+Started GET "/assets/components/_hamburger.self-aafc3be9901611504edc9669ec2e21071093fbb7dbdb39739016cdef2f4d0757.css?body=1" for ::1 at 2015-12-31 09:38:50 -0800
+
+
+Started GET "/assets/components/_hamburger2.self-20d3fcf680dee61adc02811ac32827176fd50da1a292ee03eaf6d793dc46c649.css?body=1" for ::1 at 2015-12-31 09:38:50 -0800
+
+
+Started GET "/assets/components/_loading.self-c820364a3a9d11cca77ea16325599ead474f548d6ef63ff32cfb0023bde95dcd.css?body=1" for ::1 at 2015-12-31 09:38:50 -0800
+
+
+Started GET "/assets/components/_psuedo_icons.self-e87a2dcdd6f8da864e1bafe3b08b197db049e54bb550e001cdd5d7ef61efba5c.css?body=1" for ::1 at 2015-12-31 09:38:50 -0800
+
+
+Started GET "/assets/layout/charges/create.self-0ec0dcc0b0a1eb22841a92f2744da12fe6583cdc850a5427d7883aa42f9092c9.css?body=1" for ::1 at 2015-12-31 09:38:50 -0800
+
+
+Started GET "/assets/layout/charges/new.self-dbc386d5d7414c1f6413618af81d6f2724cca9dc960c728b9d5c725ac2dbb8ac.css?body=1" for ::1 at 2015-12-31 09:38:50 -0800
+
+
+Started GET "/assets/layout/items/admin.self-cf7c1aac518e4c0af596bf2633a26b8dab58352d13568ddc49743e680f335102.css?body=1" for ::1 at 2015-12-31 09:38:50 -0800
+
+
+Started GET "/assets/layout/items/index.self-d620d265d7272bc9ab2cc4cfbbf2c3548c3183d70506abef1df21267af62e425.css?body=1" for ::1 at 2015-12-31 09:38:50 -0800
+
+
+Started GET "/assets/layout/items/quick_view.self-b9b027948aa9a7870597b2cfb94eafafdad7028de8587fac87d110d43d056d88.css?body=1" for ::1 at 2015-12-31 09:38:50 -0800
+
+
+Started GET "/assets/layout/layout.self-39b18e25103de4c514ed412d535c8d7fef8b366c80d40fd5fd6c3d62acd89279.css?body=1" for ::1 at 2015-12-31 09:38:50 -0800
+
+
+Started GET "/assets/layout/navigation/profile_modal.self-068778f0d4a8aa44f0d0a1e91251bf37a68432646f6d498424dee552028ea5cd.css?body=1" for ::1 at 2015-12-31 09:38:50 -0800
+
+
+Started GET "/assets/layout/orders/index.self-ae895e4bcd9b2bc69748df8f7967089094f112c0a834d4e87fd355355af56061.css?body=1" for ::1 at 2015-12-31 09:38:50 -0800
+
+
+Started GET "/assets/layout/sessions/new.self-87757b10cfb6eccca0582ca33f0261fc3b2a82936625ff5ac61e4c83c0e3b364.css?body=1" for ::1 at 2015-12-31 09:38:50 -0800
+
+
+Started GET "/assets/layout/users/cart/cart.self-8115b4ceec3652c44e8af6ce1accb2d09ef483bc46057056034452c73bb7d8ff.css?body=1" for ::1 at 2015-12-31 09:38:50 -0800
+
+
+Started GET "/assets/layout/users/cart/cart_items.self-cfa782ef73120f95919152a36619c29e74b2e99d09773d57efacf7b3a8fed9f4.css?body=1" for ::1 at 2015-12-31 09:38:50 -0800
+
+
+Started GET "/assets/layout/users/new.self-1b77be1f56391c7544835f73964bfe34dcd052ed1601b055677e61aa0a09ee36.css?body=1" for ::1 at 2015-12-31 09:38:50 -0800
+
+
+Started GET "/assets/layout/users/profile.self-b84257c4ae5d1693f0001a784dd918200a69c7964100c015d6ad85c76d55f35a.css?body=1" for ::1 at 2015-12-31 09:38:50 -0800
+
+
+Started GET "/assets/layout/welcome.self-d640b1fee6c52bba835041cbf9ee3a08686733b2c3dc992394c2682e243b7c2d.css?body=1" for ::1 at 2015-12-31 09:38:50 -0800
+
+
+Started GET "/assets/master.self-cf0a516414e7f287441c5ea504ce16573f5ca0df79818391706bc1d9f7a889f0.css?body=1" for ::1 at 2015-12-31 09:38:50 -0800
+
+
+Started GET "/assets/utilities/_animations.self-0bfff9fbf8761df6b9f8f6d7ab4b22bf64ab0be955cdf58925833c349a70f34c.css?body=1" for ::1 at 2015-12-31 09:38:50 -0800
+
+
+Started GET "/assets/utilities/_config.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-31 09:38:50 -0800
+
+
+Started GET "/assets/utilities/_error.self-75ac0774127f9897ab08ca211040f87314b0be5ee2de93e4c8637d12df843301.css?body=1" for ::1 at 2015-12-31 09:38:50 -0800
+
+
+Started GET "/assets/utilities/_functions.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-31 09:38:50 -0800
+
+
+Started GET "/assets/utilities/_mixins.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-31 09:38:50 -0800
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for ::1 at 2015-12-31 09:38:50 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-31 09:38:50 -0800
+
+
+Started GET "/assets/jquery.turbolinks.self-176b9819f30444d441e820bbccd3264fe57753aeafd54dec732b0dbc77129a2a.js?body=1" for ::1 at 2015-12-31 09:38:50 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-31 09:38:50 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-31 09:38:50 -0800
+
+
+Started GET "/assets/addresses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-31 09:38:50 -0800
+
+
+Started GET "/assets/cart.self-efec194c50647bf422163e3ae8f95b6dd0b538a64ea4ba2234da6f02de611cc2.js?body=1" for ::1 at 2015-12-31 09:38:50 -0800
+
+
+Started GET "/assets/hamburger.self-389fddc2ca44002951500adc5ea8dfbb882e8d6e2792d8ada52f321799e70c49.js?body=1" for ::1 at 2015-12-31 09:38:50 -0800
+
+
+Started GET "/assets/layout.self-431905c730bfa782ba8aff783043fec36d7f97bffcf881df0dd01d3538baaa4b.js?body=1" for ::1 at 2015-12-31 09:38:50 -0800
+
+
+Started GET "/assets/localStorage.self-3d8308f8eb240399394df285a4ec2a4a3f54894968f71cedd68248720286fce4.js?body=1" for ::1 at 2015-12-31 09:38:50 -0800
+
+
+Started GET "/assets/navProfileMobile.self-86f10e059bc2639ddd3a6444e30b5daa52c6b741a304475835575de20ce11f54.js?body=1" for ::1 at 2015-12-31 09:38:50 -0800
+
+
+Started GET "/assets/orders.self-be0e826cb31572f1dbaa27b0ad904dc57df88ed75744864ded5aca61dcc629bf.js?body=1" for ::1 at 2015-12-31 09:38:50 -0800
+
+
+Started GET "/assets/quickview.self-735c319d704907aba6f915021e6afe7b25597b4336c0a519609ef1ff6328a16f.js?body=1" for ::1 at 2015-12-31 09:38:50 -0800
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-31 09:38:50 -0800
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-12-31 09:38:50 -0800
+
+
+Started POST "/charges/new" for ::1 at 2015-12-31 09:39:50 -0800
+Processing by ChargesController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0soW1Q9NM9jcw+XADVXA2MbJL5V1BimAwMrog/1am0QwI8JaujPs8qPXKghPoLW/4w+KPpWfSqNeQ22rAZIp7Q==", "user"=>{"shipping_address"=>"Joji's Palace - 123 456th st El Cerrito CA 94999", "billing_checkbox"=>"0", "billing_address"=>"Joji's Palace - 123 456th st El Cerrito CA 94999"}, "commit"=>"Continue"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 97016]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 21206]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 80750]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 80437]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 97016]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 21206]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 80750]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 80437]]
+  Rendered charges/new.html.erb within layouts/application (0.6ms)
+  Rendered partials/_nav_profile_modal.html.erb (0.1ms)
+  Rendered navigation/_main_nav.html.erb (0.9ms)
+  Rendered partials/_header_errors.html.erb (0.1ms)
+Completed 200 OK in 284ms (Views: 278.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/addresses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-31 09:39:50 -0800
+
+
+Started GET "/assets/base/base.self-b1fd57ca6f92076ec94055938ef4c1cf03bb515deb0627731dffc4737acd46c1.css?body=1" for ::1 at 2015-12-31 09:39:50 -0800
+
+
+Started GET "/assets/components/_arrow__left.self-1343a8c61866e77d155dd21495403cd9e9e3bd9e411aadea784a59b818e6b9b1.css?body=1" for ::1 at 2015-12-31 09:39:50 -0800
+
+
+Started GET "/assets/components/_hamburger.self-aafc3be9901611504edc9669ec2e21071093fbb7dbdb39739016cdef2f4d0757.css?body=1" for ::1 at 2015-12-31 09:39:50 -0800
+
+
+Started GET "/assets/components/_close_btn.self-25c54feb31fcf014c233df59211aa1cc9cddaf37fd5402ef117e3b38df29e630.css?body=1" for ::1 at 2015-12-31 09:39:50 -0800
+
+
+Started GET "/assets/base/reset.self-ee751026e628351d140506fb4c1957bf029298d1301db5bd6ddac3fd6abb0a5d.css?body=1" for ::1 at 2015-12-31 09:39:50 -0800
+
+
+Started GET "/assets/components/_flexbox_vendors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-31 09:39:50 -0800
+
+
+Started GET "/assets/components/_loading.self-c820364a3a9d11cca77ea16325599ead474f548d6ef63ff32cfb0023bde95dcd.css?body=1" for ::1 at 2015-12-31 09:39:50 -0800
+
+
+Started GET "/assets/layout/charges/create.self-0ec0dcc0b0a1eb22841a92f2744da12fe6583cdc850a5427d7883aa42f9092c9.css?body=1" for ::1 at 2015-12-31 09:39:50 -0800
+
+
+Started GET "/assets/components/_hamburger2.self-20d3fcf680dee61adc02811ac32827176fd50da1a292ee03eaf6d793dc46c649.css?body=1" for ::1 at 2015-12-31 09:39:50 -0800
+
+
+Started GET "/assets/layout/charges/new.self-dbc386d5d7414c1f6413618af81d6f2724cca9dc960c728b9d5c725ac2dbb8ac.css?body=1" for ::1 at 2015-12-31 09:39:50 -0800
+
+
+Started GET "/assets/components/_psuedo_icons.self-e87a2dcdd6f8da864e1bafe3b08b197db049e54bb550e001cdd5d7ef61efba5c.css?body=1" for ::1 at 2015-12-31 09:39:50 -0800
+
+
+Started GET "/assets/layout/items/admin.self-cf7c1aac518e4c0af596bf2633a26b8dab58352d13568ddc49743e680f335102.css?body=1" for ::1 at 2015-12-31 09:39:50 -0800
+
+
+Started GET "/assets/layout/items/index.self-d620d265d7272bc9ab2cc4cfbbf2c3548c3183d70506abef1df21267af62e425.css?body=1" for ::1 at 2015-12-31 09:39:50 -0800
+
+
+Started GET "/assets/layout/items/quick_view.self-b9b027948aa9a7870597b2cfb94eafafdad7028de8587fac87d110d43d056d88.css?body=1" for ::1 at 2015-12-31 09:39:50 -0800
+
+
+Started GET "/assets/layout/orders/index.self-ae895e4bcd9b2bc69748df8f7967089094f112c0a834d4e87fd355355af56061.css?body=1" for ::1 at 2015-12-31 09:39:50 -0800
+
+
+Started GET "/assets/layout/navigation/profile_modal.self-068778f0d4a8aa44f0d0a1e91251bf37a68432646f6d498424dee552028ea5cd.css?body=1" for ::1 at 2015-12-31 09:39:51 -0800
+
+
+Started GET "/assets/layout/layout.self-39b18e25103de4c514ed412d535c8d7fef8b366c80d40fd5fd6c3d62acd89279.css?body=1" for ::1 at 2015-12-31 09:39:51 -0800
+
+
+Started GET "/assets/layout/sessions/new.self-87757b10cfb6eccca0582ca33f0261fc3b2a82936625ff5ac61e4c83c0e3b364.css?body=1" for ::1 at 2015-12-31 09:39:51 -0800
+
+
+Started GET "/assets/layout/users/cart/cart_items.self-cfa782ef73120f95919152a36619c29e74b2e99d09773d57efacf7b3a8fed9f4.css?body=1" for ::1 at 2015-12-31 09:39:51 -0800
+
+
+Started GET "/assets/layout/users/new.self-1b77be1f56391c7544835f73964bfe34dcd052ed1601b055677e61aa0a09ee36.css?body=1" for ::1 at 2015-12-31 09:39:51 -0800
+
+
+Started GET "/assets/layout/users/cart/cart.self-8115b4ceec3652c44e8af6ce1accb2d09ef483bc46057056034452c73bb7d8ff.css?body=1" for ::1 at 2015-12-31 09:39:51 -0800
+
+
+Started GET "/assets/layout/welcome.self-d640b1fee6c52bba835041cbf9ee3a08686733b2c3dc992394c2682e243b7c2d.css?body=1" for ::1 at 2015-12-31 09:39:51 -0800
+
+
+Started GET "/assets/layout/users/profile.self-b84257c4ae5d1693f0001a784dd918200a69c7964100c015d6ad85c76d55f35a.css?body=1" for ::1 at 2015-12-31 09:39:51 -0800
+
+
+Started GET "/assets/utilities/_animations.self-0bfff9fbf8761df6b9f8f6d7ab4b22bf64ab0be955cdf58925833c349a70f34c.css?body=1" for ::1 at 2015-12-31 09:39:51 -0800
+
+
+Started GET "/assets/master.self-cf0a516414e7f287441c5ea504ce16573f5ca0df79818391706bc1d9f7a889f0.css?body=1" for ::1 at 2015-12-31 09:39:51 -0800
+
+
+Started GET "/assets/utilities/_config.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-31 09:39:51 -0800
+
+
+Started GET "/assets/utilities/_error.self-75ac0774127f9897ab08ca211040f87314b0be5ee2de93e4c8637d12df843301.css?body=1" for ::1 at 2015-12-31 09:39:51 -0800
+
+
+Started GET "/assets/utilities/_functions.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-31 09:39:51 -0800
+
+
+Started GET "/assets/utilities/_mixins.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-31 09:39:51 -0800
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for ::1 at 2015-12-31 09:39:51 -0800
+
+
+Started GET "/assets/addresses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-31 09:39:51 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-31 09:39:51 -0800
+
+
+Started GET "/assets/jquery.turbolinks.self-176b9819f30444d441e820bbccd3264fe57753aeafd54dec732b0dbc77129a2a.js?body=1" for ::1 at 2015-12-31 09:39:51 -0800
+
+
+Started GET "/assets/hamburger.self-389fddc2ca44002951500adc5ea8dfbb882e8d6e2792d8ada52f321799e70c49.js?body=1" for ::1 at 2015-12-31 09:39:51 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-31 09:39:51 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-31 09:39:51 -0800
+
+
+Started GET "/assets/layout.self-431905c730bfa782ba8aff783043fec36d7f97bffcf881df0dd01d3538baaa4b.js?body=1" for ::1 at 2015-12-31 09:39:51 -0800
+
+
+Started GET "/assets/localStorage.self-3d8308f8eb240399394df285a4ec2a4a3f54894968f71cedd68248720286fce4.js?body=1" for ::1 at 2015-12-31 09:39:51 -0800
+
+
+Started GET "/assets/cart.self-efec194c50647bf422163e3ae8f95b6dd0b538a64ea4ba2234da6f02de611cc2.js?body=1" for ::1 at 2015-12-31 09:39:51 -0800
+
+
+Started GET "/assets/orders.self-5346a04ce47a29b9b4da4a680cbc90557c2f6b5725bc0787d747217fd75f638f.js?body=1" for ::1 at 2015-12-31 09:39:51 -0800
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-31 09:39:51 -0800
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-12-31 09:39:51 -0800
+
+
+Started GET "/assets/navProfileMobile.self-86f10e059bc2639ddd3a6444e30b5daa52c6b741a304475835575de20ce11f54.js?body=1" for ::1 at 2015-12-31 09:39:51 -0800
+
+
+Started GET "/assets/quickview.self-735c319d704907aba6f915021e6afe7b25597b4336c0a519609ef1ff6328a16f.js?body=1" for ::1 at 2015-12-31 09:39:51 -0800
+
+
+Started POST "/charges/new" for ::1 at 2015-12-31 09:41:33 -0800
+Processing by ChargesController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0soW1Q9NM9jcw+XADVXA2MbJL5V1BimAwMrog/1am0QwI8JaujPs8qPXKghPoLW/4w+KPpWfSqNeQ22rAZIp7Q==", "user"=>{"shipping_address"=>"Joji's Palace - 123 456th st El Cerrito CA 94999", "billing_checkbox"=>"0", "billing_address"=>"Joji's Palace - 123 456th st El Cerrito CA 94999"}, "commit"=>"Continue"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.2ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 97016]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 21206]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 80750]]
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 80437]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 97016]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 21206]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 80750]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 80437]]
+  Rendered charges/new.html.erb within layouts/application (1.2ms)
+  Rendered partials/_nav_profile_modal.html.erb (0.2ms)
+  Rendered navigation/_main_nav.html.erb (1.5ms)
+  Rendered partials/_header_errors.html.erb (0.1ms)
+Completed 200 OK in 1597ms (Views: 1591.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/addresses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-31 09:41:35 -0800
+
+
+Started GET "/assets/base/reset.self-ee751026e628351d140506fb4c1957bf029298d1301db5bd6ddac3fd6abb0a5d.css?body=1" for ::1 at 2015-12-31 09:41:35 -0800
+
+
+Started GET "/assets/base/base.self-b1fd57ca6f92076ec94055938ef4c1cf03bb515deb0627731dffc4737acd46c1.css?body=1" for ::1 at 2015-12-31 09:41:35 -0800
+
+
+Started GET "/assets/components/_close_btn.self-25c54feb31fcf014c233df59211aa1cc9cddaf37fd5402ef117e3b38df29e630.css?body=1" for ::1 at 2015-12-31 09:41:35 -0800
+
+
+Started GET "/assets/components/_arrow__left.self-1343a8c61866e77d155dd21495403cd9e9e3bd9e411aadea784a59b818e6b9b1.css?body=1" for ::1 at 2015-12-31 09:41:35 -0800
+
+
+Started GET "/assets/components/_hamburger.self-aafc3be9901611504edc9669ec2e21071093fbb7dbdb39739016cdef2f4d0757.css?body=1" for ::1 at 2015-12-31 09:41:35 -0800
+
+
+Started GET "/assets/components/_flexbox_vendors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-31 09:41:35 -0800
+
+
+Started GET "/assets/components/_hamburger2.self-20d3fcf680dee61adc02811ac32827176fd50da1a292ee03eaf6d793dc46c649.css?body=1" for ::1 at 2015-12-31 09:41:35 -0800
+
+
+Started GET "/assets/components/_loading.self-c820364a3a9d11cca77ea16325599ead474f548d6ef63ff32cfb0023bde95dcd.css?body=1" for ::1 at 2015-12-31 09:41:35 -0800
+
+
+Started GET "/assets/components/_psuedo_icons.self-e87a2dcdd6f8da864e1bafe3b08b197db049e54bb550e001cdd5d7ef61efba5c.css?body=1" for ::1 at 2015-12-31 09:41:35 -0800
+
+
+Started GET "/assets/layout/charges/create.self-0ec0dcc0b0a1eb22841a92f2744da12fe6583cdc850a5427d7883aa42f9092c9.css?body=1" for ::1 at 2015-12-31 09:41:35 -0800
+
+
+Started GET "/assets/layout/charges/new.self-9e20c1f9245174828eafbd692b170c86392f4910a4992cb404e607af68f56c40.css?body=1" for ::1 at 2015-12-31 09:41:35 -0800
+
+
+Started GET "/assets/layout/items/admin.self-cf7c1aac518e4c0af596bf2633a26b8dab58352d13568ddc49743e680f335102.css?body=1" for ::1 at 2015-12-31 09:41:35 -0800
+
+
+Started GET "/assets/layout/items/index.self-d620d265d7272bc9ab2cc4cfbbf2c3548c3183d70506abef1df21267af62e425.css?body=1" for ::1 at 2015-12-31 09:41:35 -0800
+
+
+Started GET "/assets/layout/items/quick_view.self-b9b027948aa9a7870597b2cfb94eafafdad7028de8587fac87d110d43d056d88.css?body=1" for ::1 at 2015-12-31 09:41:35 -0800
+
+
+Started GET "/assets/layout/navigation/profile_modal.self-068778f0d4a8aa44f0d0a1e91251bf37a68432646f6d498424dee552028ea5cd.css?body=1" for ::1 at 2015-12-31 09:41:35 -0800
+
+
+Started GET "/assets/layout/layout.self-39b18e25103de4c514ed412d535c8d7fef8b366c80d40fd5fd6c3d62acd89279.css?body=1" for ::1 at 2015-12-31 09:41:35 -0800
+
+
+Started GET "/assets/layout/orders/index.self-ae895e4bcd9b2bc69748df8f7967089094f112c0a834d4e87fd355355af56061.css?body=1" for ::1 at 2015-12-31 09:41:35 -0800
+
+
+Started GET "/assets/layout/sessions/new.self-87757b10cfb6eccca0582ca33f0261fc3b2a82936625ff5ac61e4c83c0e3b364.css?body=1" for ::1 at 2015-12-31 09:41:35 -0800
+
+
+Started GET "/assets/layout/users/cart/cart.self-8115b4ceec3652c44e8af6ce1accb2d09ef483bc46057056034452c73bb7d8ff.css?body=1" for ::1 at 2015-12-31 09:41:35 -0800
+
+
+Started GET "/assets/layout/users/cart/cart_items.self-cfa782ef73120f95919152a36619c29e74b2e99d09773d57efacf7b3a8fed9f4.css?body=1" for ::1 at 2015-12-31 09:41:35 -0800
+
+
+Started GET "/assets/layout/users/new.self-1b77be1f56391c7544835f73964bfe34dcd052ed1601b055677e61aa0a09ee36.css?body=1" for ::1 at 2015-12-31 09:41:35 -0800
+
+
+Started GET "/assets/layout/users/profile.self-b84257c4ae5d1693f0001a784dd918200a69c7964100c015d6ad85c76d55f35a.css?body=1" for ::1 at 2015-12-31 09:41:35 -0800
+
+
+Started GET "/assets/layout/welcome.self-d640b1fee6c52bba835041cbf9ee3a08686733b2c3dc992394c2682e243b7c2d.css?body=1" for ::1 at 2015-12-31 09:41:35 -0800
+
+
+Started GET "/assets/master.self-cf0a516414e7f287441c5ea504ce16573f5ca0df79818391706bc1d9f7a889f0.css?body=1" for ::1 at 2015-12-31 09:41:35 -0800
+
+
+Started GET "/assets/utilities/_animations.self-0bfff9fbf8761df6b9f8f6d7ab4b22bf64ab0be955cdf58925833c349a70f34c.css?body=1" for ::1 at 2015-12-31 09:41:35 -0800
+
+
+Started GET "/assets/utilities/_config.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-31 09:41:35 -0800
+
+
+Started GET "/assets/utilities/_error.self-75ac0774127f9897ab08ca211040f87314b0be5ee2de93e4c8637d12df843301.css?body=1" for ::1 at 2015-12-31 09:41:35 -0800
+
+
+Started GET "/assets/utilities/_functions.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-31 09:41:35 -0800
+
+
+Started GET "/assets/utilities/_mixins.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-31 09:41:35 -0800
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for ::1 at 2015-12-31 09:41:35 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-31 09:41:35 -0800
+
+
+Started GET "/assets/jquery.turbolinks.self-176b9819f30444d441e820bbccd3264fe57753aeafd54dec732b0dbc77129a2a.js?body=1" for ::1 at 2015-12-31 09:41:35 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-31 09:41:35 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-31 09:41:35 -0800
+
+
+Started GET "/assets/addresses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-31 09:41:35 -0800
+
+
+Started GET "/assets/cart.self-efec194c50647bf422163e3ae8f95b6dd0b538a64ea4ba2234da6f02de611cc2.js?body=1" for ::1 at 2015-12-31 09:41:35 -0800
+
+
+Started GET "/assets/hamburger.self-389fddc2ca44002951500adc5ea8dfbb882e8d6e2792d8ada52f321799e70c49.js?body=1" for ::1 at 2015-12-31 09:41:35 -0800
+
+
+Started GET "/assets/layout.self-431905c730bfa782ba8aff783043fec36d7f97bffcf881df0dd01d3538baaa4b.js?body=1" for ::1 at 2015-12-31 09:41:35 -0800
+
+
+Started GET "/assets/localStorage.self-3d8308f8eb240399394df285a4ec2a4a3f54894968f71cedd68248720286fce4.js?body=1" for ::1 at 2015-12-31 09:41:35 -0800
+
+
+Started GET "/assets/navProfileMobile.self-86f10e059bc2639ddd3a6444e30b5daa52c6b741a304475835575de20ce11f54.js?body=1" for ::1 at 2015-12-31 09:41:35 -0800
+
+
+Started GET "/assets/orders.self-5346a04ce47a29b9b4da4a680cbc90557c2f6b5725bc0787d747217fd75f638f.js?body=1" for ::1 at 2015-12-31 09:41:35 -0800
+
+
+Started GET "/assets/quickview.self-735c319d704907aba6f915021e6afe7b25597b4336c0a519609ef1ff6328a16f.js?body=1" for ::1 at 2015-12-31 09:41:35 -0800
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-31 09:41:35 -0800
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-12-31 09:41:35 -0800
+
+
+Started POST "/charges/new" for ::1 at 2015-12-31 09:42:46 -0800
+Processing by ChargesController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0soW1Q9NM9jcw+XADVXA2MbJL5V1BimAwMrog/1am0QwI8JaujPs8qPXKghPoLW/4w+KPpWfSqNeQ22rAZIp7Q==", "user"=>{"shipping_address"=>"Joji's Palace - 123 456th st El Cerrito CA 94999", "billing_checkbox"=>"0", "billing_address"=>"Joji's Palace - 123 456th st El Cerrito CA 94999"}, "commit"=>"Continue"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 97016]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 21206]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 80750]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 80437]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 97016]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 21206]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 80750]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 80437]]
+  Rendered charges/new.html.erb within layouts/application (0.7ms)
+  Rendered partials/_nav_profile_modal.html.erb (0.2ms)
+  Rendered navigation/_main_nav.html.erb (1.4ms)
+  Rendered partials/_header_errors.html.erb (0.1ms)
+Completed 200 OK in 1612ms (Views: 1607.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/base/base.self-b1fd57ca6f92076ec94055938ef4c1cf03bb515deb0627731dffc4737acd46c1.css?body=1" for ::1 at 2015-12-31 09:42:48 -0800
+
+
+Started GET "/assets/components/_arrow__left.self-1343a8c61866e77d155dd21495403cd9e9e3bd9e411aadea784a59b818e6b9b1.css?body=1" for ::1 at 2015-12-31 09:42:48 -0800
+
+
+Started GET "/assets/base/reset.self-ee751026e628351d140506fb4c1957bf029298d1301db5bd6ddac3fd6abb0a5d.css?body=1" for ::1 at 2015-12-31 09:42:48 -0800
+
+
+Started GET "/assets/components/_hamburger.self-aafc3be9901611504edc9669ec2e21071093fbb7dbdb39739016cdef2f4d0757.css?body=1" for ::1 at 2015-12-31 09:42:48 -0800
+
+
+Started GET "/assets/addresses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-31 09:42:48 -0800
+
+
+Started GET "/assets/components/_close_btn.self-25c54feb31fcf014c233df59211aa1cc9cddaf37fd5402ef117e3b38df29e630.css?body=1" for ::1 at 2015-12-31 09:42:48 -0800
+
+
+Started GET "/assets/components/_flexbox_vendors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-31 09:42:48 -0800
+
+
+Started GET "/assets/components/_hamburger2.self-20d3fcf680dee61adc02811ac32827176fd50da1a292ee03eaf6d793dc46c649.css?body=1" for ::1 at 2015-12-31 09:42:48 -0800
+
+
+Started GET "/assets/components/_loading.self-c820364a3a9d11cca77ea16325599ead474f548d6ef63ff32cfb0023bde95dcd.css?body=1" for ::1 at 2015-12-31 09:42:48 -0800
+
+
+Started GET "/assets/layout/items/admin.self-cf7c1aac518e4c0af596bf2633a26b8dab58352d13568ddc49743e680f335102.css?body=1" for ::1 at 2015-12-31 09:42:48 -0800
+
+
+Started GET "/assets/layout/charges/new.self-7f4eefcf50212ed7300ccfdb9b8543ab81cb5ffffbf7b273c55f7f5ed7423524.css?body=1" for ::1 at 2015-12-31 09:42:48 -0800
+
+
+Started GET "/assets/components/_psuedo_icons.self-e87a2dcdd6f8da864e1bafe3b08b197db049e54bb550e001cdd5d7ef61efba5c.css?body=1" for ::1 at 2015-12-31 09:42:48 -0800
+
+
+Started GET "/assets/layout/charges/create.self-0ec0dcc0b0a1eb22841a92f2744da12fe6583cdc850a5427d7883aa42f9092c9.css?body=1" for ::1 at 2015-12-31 09:42:48 -0800
+
+
+Started GET "/assets/layout/items/index.self-d620d265d7272bc9ab2cc4cfbbf2c3548c3183d70506abef1df21267af62e425.css?body=1" for ::1 at 2015-12-31 09:42:48 -0800
+
+
+Started GET "/assets/layout/items/quick_view.self-b9b027948aa9a7870597b2cfb94eafafdad7028de8587fac87d110d43d056d88.css?body=1" for ::1 at 2015-12-31 09:42:48 -0800
+
+
+Started GET "/assets/layout/layout.self-39b18e25103de4c514ed412d535c8d7fef8b366c80d40fd5fd6c3d62acd89279.css?body=1" for ::1 at 2015-12-31 09:42:48 -0800
+
+
+Started GET "/assets/layout/navigation/profile_modal.self-068778f0d4a8aa44f0d0a1e91251bf37a68432646f6d498424dee552028ea5cd.css?body=1" for ::1 at 2015-12-31 09:42:48 -0800
+
+
+Started GET "/assets/layout/orders/index.self-ae895e4bcd9b2bc69748df8f7967089094f112c0a834d4e87fd355355af56061.css?body=1" for ::1 at 2015-12-31 09:42:48 -0800
+
+
+Started GET "/assets/layout/users/cart/cart.self-8115b4ceec3652c44e8af6ce1accb2d09ef483bc46057056034452c73bb7d8ff.css?body=1" for ::1 at 2015-12-31 09:42:48 -0800
+
+
+Started GET "/assets/layout/sessions/new.self-87757b10cfb6eccca0582ca33f0261fc3b2a82936625ff5ac61e4c83c0e3b364.css?body=1" for ::1 at 2015-12-31 09:42:48 -0800
+
+
+Started GET "/assets/layout/users/cart/cart_items.self-cfa782ef73120f95919152a36619c29e74b2e99d09773d57efacf7b3a8fed9f4.css?body=1" for ::1 at 2015-12-31 09:42:48 -0800
+
+
+Started GET "/assets/layout/users/new.self-1b77be1f56391c7544835f73964bfe34dcd052ed1601b055677e61aa0a09ee36.css?body=1" for ::1 at 2015-12-31 09:42:48 -0800
+
+
+Started GET "/assets/layout/users/profile.self-b84257c4ae5d1693f0001a784dd918200a69c7964100c015d6ad85c76d55f35a.css?body=1" for ::1 at 2015-12-31 09:42:48 -0800
+
+
+Started GET "/assets/layout/welcome.self-d640b1fee6c52bba835041cbf9ee3a08686733b2c3dc992394c2682e243b7c2d.css?body=1" for ::1 at 2015-12-31 09:42:48 -0800
+
+
+Started GET "/assets/master.self-cf0a516414e7f287441c5ea504ce16573f5ca0df79818391706bc1d9f7a889f0.css?body=1" for ::1 at 2015-12-31 09:42:48 -0800
+
+
+Started GET "/assets/utilities/_animations.self-0bfff9fbf8761df6b9f8f6d7ab4b22bf64ab0be955cdf58925833c349a70f34c.css?body=1" for ::1 at 2015-12-31 09:42:48 -0800
+
+
+Started GET "/assets/utilities/_config.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-31 09:42:48 -0800
+
+
+Started GET "/assets/utilities/_error.self-75ac0774127f9897ab08ca211040f87314b0be5ee2de93e4c8637d12df843301.css?body=1" for ::1 at 2015-12-31 09:42:48 -0800
+
+
+Started GET "/assets/utilities/_functions.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-31 09:42:48 -0800
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for ::1 at 2015-12-31 09:42:48 -0800
+
+
+Started GET "/assets/utilities/_mixins.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-31 09:42:48 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-31 09:42:48 -0800
+
+
+Started GET "/assets/jquery.turbolinks.self-176b9819f30444d441e820bbccd3264fe57753aeafd54dec732b0dbc77129a2a.js?body=1" for ::1 at 2015-12-31 09:42:48 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-31 09:42:48 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-31 09:42:48 -0800
+
+
+Started GET "/assets/addresses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-31 09:42:48 -0800
+
+
+Started GET "/assets/cart.self-efec194c50647bf422163e3ae8f95b6dd0b538a64ea4ba2234da6f02de611cc2.js?body=1" for ::1 at 2015-12-31 09:42:48 -0800
+
+
+Started GET "/assets/hamburger.self-389fddc2ca44002951500adc5ea8dfbb882e8d6e2792d8ada52f321799e70c49.js?body=1" for ::1 at 2015-12-31 09:42:48 -0800
+
+
+Started GET "/assets/layout.self-431905c730bfa782ba8aff783043fec36d7f97bffcf881df0dd01d3538baaa4b.js?body=1" for ::1 at 2015-12-31 09:42:49 -0800
+
+
+Started GET "/assets/localStorage.self-3d8308f8eb240399394df285a4ec2a4a3f54894968f71cedd68248720286fce4.js?body=1" for ::1 at 2015-12-31 09:42:49 -0800
+
+
+Started GET "/assets/navProfileMobile.self-86f10e059bc2639ddd3a6444e30b5daa52c6b741a304475835575de20ce11f54.js?body=1" for ::1 at 2015-12-31 09:42:49 -0800
+
+
+Started GET "/assets/quickview.self-735c319d704907aba6f915021e6afe7b25597b4336c0a519609ef1ff6328a16f.js?body=1" for ::1 at 2015-12-31 09:42:49 -0800
+
+
+Started GET "/assets/orders.self-5346a04ce47a29b9b4da4a680cbc90557c2f6b5725bc0787d747217fd75f638f.js?body=1" for ::1 at 2015-12-31 09:42:49 -0800
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-12-31 09:42:49 -0800
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-31 09:42:49 -0800
+
+
+Started POST "/charges/new" for ::1 at 2015-12-31 09:43:08 -0800
+Processing by ChargesController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0soW1Q9NM9jcw+XADVXA2MbJL5V1BimAwMrog/1am0QwI8JaujPs8qPXKghPoLW/4w+KPpWfSqNeQ22rAZIp7Q==", "user"=>{"shipping_address"=>"Joji's Palace - 123 456th st El Cerrito CA 94999", "billing_checkbox"=>"0", "billing_address"=>"Joji's Palace - 123 456th st El Cerrito CA 94999"}, "commit"=>"Continue"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.2ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 97016]]
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 21206]]
+  [1m[35mItem Load (0.2ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 80750]]
+  [1m[36mItem Load (0.6ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 80437]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 97016]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 21206]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 80750]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", 80437]]
+  Rendered charges/new.html.erb within layouts/application (0.6ms)
+  Rendered partials/_nav_profile_modal.html.erb (0.1ms)
+  Rendered navigation/_main_nav.html.erb (1.2ms)
+  Rendered partials/_header_errors.html.erb (1.0ms)
+Completed 200 OK in 1668ms (Views: 1658.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/addresses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-31 09:43:09 -0800
+
+
+Started GET "/assets/components/_arrow__left.self-1343a8c61866e77d155dd21495403cd9e9e3bd9e411aadea784a59b818e6b9b1.css?body=1" for ::1 at 2015-12-31 09:43:09 -0800
+
+
+Started GET "/assets/base/base.self-b1fd57ca6f92076ec94055938ef4c1cf03bb515deb0627731dffc4737acd46c1.css?body=1" for ::1 at 2015-12-31 09:43:09 -0800
+
+
+Started GET "/assets/base/reset.self-ee751026e628351d140506fb4c1957bf029298d1301db5bd6ddac3fd6abb0a5d.css?body=1" for ::1 at 2015-12-31 09:43:09 -0800
+
+
+Started GET "/assets/components/_close_btn.self-25c54feb31fcf014c233df59211aa1cc9cddaf37fd5402ef117e3b38df29e630.css?body=1" for ::1 at 2015-12-31 09:43:09 -0800
+
+
+Started GET "/assets/components/_flexbox_vendors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-31 09:43:09 -0800
+
+
+Started GET "/assets/components/_hamburger2.self-20d3fcf680dee61adc02811ac32827176fd50da1a292ee03eaf6d793dc46c649.css?body=1" for ::1 at 2015-12-31 09:43:09 -0800
+
+
+Started GET "/assets/components/_loading.self-c820364a3a9d11cca77ea16325599ead474f548d6ef63ff32cfb0023bde95dcd.css?body=1" for ::1 at 2015-12-31 09:43:09 -0800
+
+
+Started GET "/assets/components/_hamburger.self-aafc3be9901611504edc9669ec2e21071093fbb7dbdb39739016cdef2f4d0757.css?body=1" for ::1 at 2015-12-31 09:43:09 -0800
+
+
+Started GET "/assets/components/_psuedo_icons.self-e87a2dcdd6f8da864e1bafe3b08b197db049e54bb550e001cdd5d7ef61efba5c.css?body=1" for ::1 at 2015-12-31 09:43:09 -0800
+
+
+Started GET "/assets/layout/charges/create.self-0ec0dcc0b0a1eb22841a92f2744da12fe6583cdc850a5427d7883aa42f9092c9.css?body=1" for ::1 at 2015-12-31 09:43:10 -0800
+
+
+Started GET "/assets/layout/items/admin.self-cf7c1aac518e4c0af596bf2633a26b8dab58352d13568ddc49743e680f335102.css?body=1" for ::1 at 2015-12-31 09:43:10 -0800
+
+
+Started GET "/assets/layout/charges/new.self-9034b54befe6777db353445e29b2bc6fa1d8db5a39b8467f40098d6999413a77.css?body=1" for ::1 at 2015-12-31 09:43:10 -0800
+
+
+Started GET "/assets/layout/items/index.self-d620d265d7272bc9ab2cc4cfbbf2c3548c3183d70506abef1df21267af62e425.css?body=1" for ::1 at 2015-12-31 09:43:10 -0800
+
+
+Started GET "/assets/layout/items/quick_view.self-b9b027948aa9a7870597b2cfb94eafafdad7028de8587fac87d110d43d056d88.css?body=1" for ::1 at 2015-12-31 09:43:10 -0800
+
+
+Started GET "/assets/layout/layout.self-39b18e25103de4c514ed412d535c8d7fef8b366c80d40fd5fd6c3d62acd89279.css?body=1" for ::1 at 2015-12-31 09:43:10 -0800
+
+
+Started GET "/assets/layout/navigation/profile_modal.self-068778f0d4a8aa44f0d0a1e91251bf37a68432646f6d498424dee552028ea5cd.css?body=1" for ::1 at 2015-12-31 09:43:10 -0800
+
+
+Started GET "/assets/layout/orders/index.self-ae895e4bcd9b2bc69748df8f7967089094f112c0a834d4e87fd355355af56061.css?body=1" for ::1 at 2015-12-31 09:43:10 -0800
+
+
+Started GET "/assets/layout/sessions/new.self-87757b10cfb6eccca0582ca33f0261fc3b2a82936625ff5ac61e4c83c0e3b364.css?body=1" for ::1 at 2015-12-31 09:43:10 -0800
+
+
+Started GET "/assets/layout/users/cart/cart.self-8115b4ceec3652c44e8af6ce1accb2d09ef483bc46057056034452c73bb7d8ff.css?body=1" for ::1 at 2015-12-31 09:43:10 -0800
+
+
+Started GET "/assets/layout/users/cart/cart_items.self-cfa782ef73120f95919152a36619c29e74b2e99d09773d57efacf7b3a8fed9f4.css?body=1" for ::1 at 2015-12-31 09:43:10 -0800
+
+
+Started GET "/assets/layout/users/new.self-1b77be1f56391c7544835f73964bfe34dcd052ed1601b055677e61aa0a09ee36.css?body=1" for ::1 at 2015-12-31 09:43:10 -0800
+
+
+Started GET "/assets/layout/users/profile.self-b84257c4ae5d1693f0001a784dd918200a69c7964100c015d6ad85c76d55f35a.css?body=1" for ::1 at 2015-12-31 09:43:10 -0800
+
+
+Started GET "/assets/layout/welcome.self-d640b1fee6c52bba835041cbf9ee3a08686733b2c3dc992394c2682e243b7c2d.css?body=1" for ::1 at 2015-12-31 09:43:10 -0800
+
+
+Started GET "/assets/master.self-cf0a516414e7f287441c5ea504ce16573f5ca0df79818391706bc1d9f7a889f0.css?body=1" for ::1 at 2015-12-31 09:43:10 -0800
+
+
+Started GET "/assets/utilities/_animations.self-0bfff9fbf8761df6b9f8f6d7ab4b22bf64ab0be955cdf58925833c349a70f34c.css?body=1" for ::1 at 2015-12-31 09:43:10 -0800
+
+
+Started GET "/assets/utilities/_config.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-31 09:43:10 -0800
+
+
+Started GET "/assets/utilities/_error.self-75ac0774127f9897ab08ca211040f87314b0be5ee2de93e4c8637d12df843301.css?body=1" for ::1 at 2015-12-31 09:43:10 -0800
+
+
+Started GET "/assets/utilities/_functions.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-31 09:43:10 -0800
+
+
+Started GET "/assets/utilities/_mixins.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2015-12-31 09:43:10 -0800
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for ::1 at 2015-12-31 09:43:10 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-31 09:43:10 -0800
+
+
+Started GET "/assets/jquery.turbolinks.self-176b9819f30444d441e820bbccd3264fe57753aeafd54dec732b0dbc77129a2a.js?body=1" for ::1 at 2015-12-31 09:43:10 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-31 09:43:10 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-31 09:43:10 -0800
+
+
+Started GET "/assets/addresses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-31 09:43:10 -0800
+
+
+Started GET "/assets/cart.self-efec194c50647bf422163e3ae8f95b6dd0b538a64ea4ba2234da6f02de611cc2.js?body=1" for ::1 at 2015-12-31 09:43:10 -0800
+
+
+Started GET "/assets/hamburger.self-389fddc2ca44002951500adc5ea8dfbb882e8d6e2792d8ada52f321799e70c49.js?body=1" for ::1 at 2015-12-31 09:43:10 -0800
+
+
+Started GET "/assets/layout.self-431905c730bfa782ba8aff783043fec36d7f97bffcf881df0dd01d3538baaa4b.js?body=1" for ::1 at 2015-12-31 09:43:10 -0800
+
+
+Started GET "/assets/localStorage.self-3d8308f8eb240399394df285a4ec2a4a3f54894968f71cedd68248720286fce4.js?body=1" for ::1 at 2015-12-31 09:43:10 -0800
+
+
+Started GET "/assets/navProfileMobile.self-86f10e059bc2639ddd3a6444e30b5daa52c6b741a304475835575de20ce11f54.js?body=1" for ::1 at 2015-12-31 09:43:10 -0800
+
+
+Started GET "/assets/orders.self-5346a04ce47a29b9b4da4a680cbc90557c2f6b5725bc0787d747217fd75f638f.js?body=1" for ::1 at 2015-12-31 09:43:10 -0800
+
+
+Started GET "/assets/quickview.self-735c319d704907aba6f915021e6afe7b25597b4336c0a519609ef1ff6328a16f.js?body=1" for ::1 at 2015-12-31 09:43:10 -0800
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-31 09:43:10 -0800
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-12-31 09:43:10 -0800

@@ -1,0 +1,23 @@
+@import 'master';
+#thankyou {
+
+  width: 100%;
+  text-align: center;
+
+
+  h1 {
+    $font-size: 40px;
+  }
+
+  p {
+    font-size: 25px;
+    margin-top: 10px;
+  }
+
+  a {
+    @include btn--large($emerald) {
+      width: 60%;
+      margin: 0 auto;
+    }
+  }
+} // end of thankyou
