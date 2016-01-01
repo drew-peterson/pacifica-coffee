@@ -47,6 +47,18 @@ $(function(){
 
 // ===============
 // Clear filter buttons
+$('.filter-container').on('click','.f-clearAll', function(e){
+  e.preventDefault();
+
+  // find all inputs and remove checkbox
+  var input = $(this).parent().find('input[type="checkbox"]')
+  input.prop('checked', false)
+
+  // remove all content from data object
+  data = {};
+  // replace information with original
+  $('.items-container').html(items);
+})
 
 
 

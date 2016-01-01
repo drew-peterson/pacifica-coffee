@@ -41,9 +41,12 @@ class ItemsController < ApplicationController
   end
 
   def index
-
+    # call the filter method and pass only params that include these 3
     @items = Item.filter(params.slice(:caffeine, :roast, :region))
-    @html = view_context.render 'items/index', locals: {items: @items}
+
+    if request.xhr?
+      @html = view_context.render 'items/index', locals: {items: @items}
+    end
 
     respond_to do |format|
       format.html { render :index }
