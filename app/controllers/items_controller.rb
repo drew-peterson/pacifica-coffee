@@ -2,7 +2,7 @@ SALT = 42154
 
 class ItemsController < ApplicationController
   before_action :admin_access, only: :admin
-  before_action :all_items, only: [:index, :admin]
+  before_action :all_items, only: :admin
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def admin
@@ -41,7 +41,7 @@ class ItemsController < ApplicationController
   end
 
   def index
-
+    @items = Item.filter(params.slice(:caffeine, :roast, :region))
   end
 
   def show
@@ -65,13 +65,6 @@ class ItemsController < ApplicationController
       # OR Model.where(:column => ["value", "other_value"]
       # AND + OR Item.where({roast: ['gold', 'dark'], region: ['nw', 'africa']})
 
-      # http://www.justinweiss.com/articles/search-and-filter-rails-models-without-bloating-your-controller/
-
-
-
-
-
-
-
     end
+
 end
