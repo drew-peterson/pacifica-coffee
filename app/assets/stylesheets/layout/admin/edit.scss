@@ -1,0 +1,20 @@
+@import 'master';
+
+#admin-edit-items {
+  width: 100%;
+
+  h1 {
+    font-size: $font--xl;
+    text-align: center;
+    margin-bottom: $sp--med;
+  }
+
+  form {
+    @include form-style;
+  }
+
+
+
+
+
+} // admin-edit-items end
