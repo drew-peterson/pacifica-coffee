@@ -1,24 +1,36 @@
+
 <%= form_for(@item) do |f| %>
-  <%= label_tag :item_name, "Name" %>
+
+  <p> Name </p>
   <%= f.text_field :item_name %>
-<br>
-  <%= label_tag :item_description, "Description" %>
+
+  <p> Description </p>
   <%= f.text_area :item_description %>
-<br>
-  <%= label_tag :item_quantity, "Quantity" %>
+
+  <p> Quantity </p>
   <%= f.number_field :quantity %>
-<br>
-  <%= label_tag :price, "Price" %>
+
+  <p> Price </p>
   <%= f.number_field :price %>
-<br>
-  <%= label_tag :sku, "Sku" %>
+
+  <p> SKU </p>
   <%= f.text_field :sku %>
-<br>
-  <%= label_tag :large_image, "Large Image" %>
+
+  <p>Large Image </p>
   <%= f.text_field :large_image %>
-<br>
-  <%= label_tag :small_image, "Small Image" %>
+
+  <p>Small Image</p>
   <%= f.text_field :small_image %>
-<br>
-  <%= f.submit 'Submit' %>
+
+  <p>Caffeine</p>
+  <%= f.text_field :caffeine %>
+
+  <p>Region</p>
+  <%= f.text_field :region%>
+
+  <p>Roast</p>
+  <%= f.text_field :roast %>
+
+  <%= f.submit 'Submit', class: 'form-submit-btn' %>
 <% end %>
+

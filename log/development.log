@@ -40760,3 +40760,16 @@ Processing by ItemsController#admin as HTML
   Rendered navigation/_main_nav.html.erb (2.4ms)
   Rendered partials/_header_errors.html.erb (1.2ms)
 Completed 200 OK in 220ms (Views: 217.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/items/97016/edit" for ::1 at 2015-12-31 17:17:40 -0800
+Processing by ItemsController#edit as HTML
+  Parameters: {"id"=>"97016"}
+  [1m[35mItem Load (0.2ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 97016]]
+  Rendered items/_form.html.erb (12.7ms)
+  Rendered items/edit.html.erb within layouts/application (14.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered partials/_nav_profile_modal.html.erb (0.3ms)
+  Rendered navigation/_main_nav.html.erb (3.3ms)
+  Rendered partials/_header_errors.html.erb (0.3ms)
+Completed 200 OK in 223ms (Views: 220.3ms | ActiveRecord: 0.5ms)
