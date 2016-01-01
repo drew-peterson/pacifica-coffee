@@ -42,6 +42,20 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.filter(params.slice(:caffeine, :roast, :region))
+
+    puts "X" * 100
+    p "params: #{params}"
+    p "items #{@items}"
+    puts "X" * 100
+
+
+
+    respond_to do |format|
+      format.html { render :index }
+      format.json { render :json => {items: @items }}
+    end
+
+
   end
 
   def show
@@ -65,6 +79,11 @@ class ItemsController < ApplicationController
       # OR Model.where(:column => ["value", "other_value"]
       # AND + OR Item.where({roast: ['gold', 'dark'], region: ['nw', 'africa']})
 
-    end
+    puts "X" * 100
+    puts "Hello from index"
+    p params
+    puts "X" * 100
 
+
+    end
 end
