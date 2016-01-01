@@ -10,6 +10,10 @@
   <% @items.each do |item| %>
     <div class="item-card">
 
+      <%= item.roast %>
+      <%= item.region %>
+      <%= item.caffeine %>
+
       <!-- Quick Add Plus Btn -->
     <%= form_for :user, url: '/users/cart', html: {class: 'quickform'} do |f| %>
       <%= hidden_field_tag('item_id', value = item.id) %>
