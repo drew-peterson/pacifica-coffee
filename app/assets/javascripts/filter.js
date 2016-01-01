@@ -1,7 +1,14 @@
 $(function(){
 
+// ============
+// Variables
+
   var data = {}
   var items = $('.items-container').html(); // grab the items container
+
+
+// ===========
+// checkbox filter
 
   $('.filter-container').on('change', 'input[type="checkbox"]', function(e){
     e.preventDefault();
@@ -10,22 +17,18 @@ $(function(){
     var value = $(this).attr('value'); // ex: blonde
     var name = $(this).attr('name'); // ex: roast
 
-    // remove checked values for same name
+    // remove checked values for same name in html
     var cValue = data[name]
     $('input[value=' + cValue + ']').prop('checked', false);
 
-    // check filter to see if unchecked
+    // check to see if the box is being unchecked
     checkFilter(name, value);
 
-
-
-    console.log(data)
-
+    // if not data in hash then show original html from line 7
     if(data.length <= 0){
-      console.log("data empty")
-      // if not data in hash then show original items
       $('.items-container'.html(items));
 
+    // else hit index with ajax and retrieve filter partial
     }else {
       $.ajax({
         type: 'GET',
@@ -34,15 +37,28 @@ $(function(){
         data: data
       }).done(function(data){
         console.log(data.items.length)
-        // do nothing
+        // replace html with filtered partial
         var html = data.html
-        // replace html with filtered
         $('.items-container').html(html);
       })
     } // end of else
-
   }) // end of change event
 
+
+// ===============
+// Clear filter buttons
+
+
+
+
+
+
+
+
+
+
+//================
+// Helper functions
 
 var checkFilter = function(name, value){
   if(data[name] === value){
