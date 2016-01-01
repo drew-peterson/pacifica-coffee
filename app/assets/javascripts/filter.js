@@ -25,7 +25,9 @@ $(function(){
       data: data
     }).done(function(data){
       // do nothing
-      console.log(data)
+      var html = data.html
+
+      $('.items-container').html(html);
     })
 
   })

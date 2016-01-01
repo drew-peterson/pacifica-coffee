@@ -43,16 +43,12 @@ class ItemsController < ApplicationController
   def index
     @items = Item.filter(params.slice(:caffeine, :roast, :region))
 
-    puts "X" * 100
-    p "params: #{params}"
-    p "items #{@items}"
-    puts "X" * 100
-
+    @html = view_context.render 'items/index', locals: {items: @items}
 
 
     respond_to do |format|
       format.html { render :index }
-      format.json { render :json => {items: @items }}
+      format.json { render :json => {items: @items, html: @html }}
     end
 
 
