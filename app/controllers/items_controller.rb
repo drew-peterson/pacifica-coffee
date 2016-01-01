@@ -41,16 +41,14 @@ class ItemsController < ApplicationController
   end
 
   def index
+
     @items = Item.filter(params.slice(:caffeine, :roast, :region))
-
     @html = view_context.render 'items/index', locals: {items: @items}
-
 
     respond_to do |format|
       format.html { render :index }
-      format.json { render :json => {items: @items, html: @html }}
+      format.json { render :json => {html: @html, items: @items }}
     end
-
 
   end
 

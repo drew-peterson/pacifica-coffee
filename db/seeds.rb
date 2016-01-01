@@ -9,8 +9,8 @@ require 'csv'
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-roast = ['blond', 'dark', 'medium']
-region = ['latin america', 'africa', 'asian pacific']
+roast = ['blonde', 'dark', 'medium']
+region = ['latin_america', 'africa', 'asian_pacific']
 caffeine = ['decaf', 'normal']
 
 
