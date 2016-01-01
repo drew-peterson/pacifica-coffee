@@ -45950,3 +45950,47 @@ Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde
 
 
 Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-12-31 17:59:52 -0800
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."roast" = $1[0m  [["roast", "blonde"]]
+  [1m[35mItem Load (0.7ms)[0m  SELECT "items".* FROM "items"
+  [1m[36mItem Load (0.5ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."roast" = $1[0m  [["roast", "medium"]]
+  [1m[35mItem Load (0.4ms)[0m  SELECT "items".* FROM "items" WHERE "items"."roast" = $1  [["roast", "dark"]]
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."roast" = $1 AND "items"."region" = $2[0m  [["roast", "dark"], ["region", "africa"]]
+  [1m[35mItem Load (0.4ms)[0m  SELECT "items".* FROM "items" WHERE "items"."roast" = $1  [["roast", "dark"]]
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."region" = $1[0m  [["region", "nw"]]
+  [1m[35mItem Load (0.8ms)[0m  SELECT  "items".* FROM "items"  ORDER BY "items"."id" DESC LIMIT 1
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  [1m[35mItem Load (0.8ms)[0m  SELECT  "items".* FROM "items"  ORDER BY "items"."id" DESC LIMIT 1
+  [1m[36mItem Load (0.6ms)[0m  [1mSELECT  "items".* FROM "items"  ORDER BY "items"."id" ASC LIMIT 1[0m
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items" WHERE "items"."region" = $1  [["region", "nw"]]
+  [1m[36mItem Load (2.3ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."name" = 'Drew coffee'[0m
+PG::UndefinedColumn: ERROR:  column items.name does not exist
+LINE 1: SELECT "items".* FROM "items" WHERE "items"."name" = 'Drew c...
+                                            ^
+: SELECT "items".* FROM "items" WHERE "items"."name" = 'Drew coffee'
+  [1m[35mItem Load (0.5ms)[0m  SELECT  "items".* FROM "items"  ORDER BY "items"."id" DESC LIMIT 1
+  [1m[36mItem Load (0.5ms)[0m  [1mSELECT  "items".* FROM "items"  ORDER BY "items"."id" ASC LIMIT 1[0m
+  [1m[35mItem Load (0.7ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."name" = 'drew' LIMIT 1
+PG::UndefinedColumn: ERROR:  column items.name does not exist
+LINE 1: SELECT  "items".* FROM "items" WHERE "items"."name" = 'drew'...
+                                             ^
+: SELECT  "items".* FROM "items" WHERE "items"."name" = 'drew' LIMIT 1
+  [1m[36mItem Load (0.7ms)[0m  [1mSELECT  "items".* FROM "items" WHERE (drew) LIMIT 1[0m
+PG::UndefinedColumn: ERROR:  column "drew" does not exist
+LINE 1: SELECT  "items".* FROM "items" WHERE (drew) LIMIT 1
+                                              ^
+: SELECT  "items".* FROM "items" WHERE (drew) LIMIT 1
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."roast" = $1[0m  [["roast", "dark"]]
+  [1m[35mItem Load (1.0ms)[0m  SELECT "items".* FROM "items" WHERE "items"."name" = 'drew'
+PG::UndefinedColumn: ERROR:  column items.name does not exist
+LINE 1: SELECT "items".* FROM "items" WHERE "items"."name" = 'drew'
+                                            ^
+: SELECT "items".* FROM "items" WHERE "items"."name" = 'drew'
+  [1m[36mItem Load (0.5ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."item_name" = $1 LIMIT 1[0m  [["item_name", "drew"]]
+  [1m[35mItem Load (0.4ms)[0m  SELECT "items".* FROM "items" WHERE "items"."roast" = $1 AND "items"."region" = $2  [["roast", "gold"], ["region", "nw"]]
+  [1m[36mItem Load (0.9ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."roast" IN ('gold', 'dark')[0m
+  [1m[35mItem Load (0.5ms)[0m  SELECT "items".* FROM "items" WHERE "items"."roast" IN ('gold', 'dark') AND "items"."region" IN ('nw', 'africa')
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "items" WHERE "items"."roast" IN ('gold', 'dark') AND "items"."region" IN ('nw', 'africa')[0m
+  [1m[35mItem Load (0.4ms)[0m  SELECT "items".* FROM "items" WHERE "items"."roast" = $1 AND "items"."region" = $2  [["roast", "dark"], ["region", "africa"]]
+  [1m[36mItem Load (0.6ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."roast" IN ('gold', 'dark') AND "items"."region" IN ('nw', 'africa')[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "items" WHERE "items"."roast" IN ('gold', 'dark') AND "items"."region" IN ('nw', 'africa')
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."caffeine" = $1 AND "items"."roast" IN ('gold', 'dark') AND "items"."region" IN ('nw', 'africa')[0m  [["caffeine", ""]]

@@ -41,6 +41,7 @@ class ItemsController < ApplicationController
   end
 
   def index
+
   end
 
   def show
@@ -57,6 +58,20 @@ class ItemsController < ApplicationController
     end
 
     def item_params
-      params.require(:item).permit(:item_name, :item_description, :quantity, :price, :sku, :large_image, :small_image)
+      params.require(:item).permit(:item_name, :item_description, :quantity, :price, :sku, :large_image, :small_image, :region, :caffeine, :roast)
+    end
+
+    def filter_items
+      # OR Model.where(:column => ["value", "other_value"]
+      # AND + OR Item.where({roast: ['gold', 'dark'], region: ['nw', 'africa']})
+
+      # http://www.justinweiss.com/articles/search-and-filter-rails-models-without-bloating-your-controller/
+
+
+
+
+
+
+
     end
 end
