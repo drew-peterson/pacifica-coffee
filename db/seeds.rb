@@ -11,7 +11,7 @@ require 'csv'
 
 roast = ['blonde', 'dark', 'medium']
 region = ['latin_america', 'africa', 'asian_pacific']
-caffeine = ['decaf', 'normal']
+caffeine = ['decaf', 'regular']
 
 
 User.create(first_name: 'Joji', last_name: 'Gordon', user_name: 'joji', password: '1234', phone_number: '911', admin: true)

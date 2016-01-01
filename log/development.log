@@ -71314,3 +71314,923 @@ Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde
 
 
 Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-01-01 13:53:10 -0800
+  [1m[36m (14.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (11.2ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateItems (20151118191227)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (14.7ms)[0m  [1mCREATE TABLE "items" ("id" serial primary key, "item_name" character varying, "sku" character varying, "large_image" character varying, "small_image" character varying, "caffeine" character varying, "roast" character varying, "region" character varying, "quantity" integer, "price" integer, "item_description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151118191227"]]
+  [1m[36m (6.4ms)[0m  [1mCOMMIT[0m
+Migrating to CreateUsers (20151120234929)
+  [1m[35m (6.2ms)[0m  BEGIN
+  [1m[36m (3.2ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "first_name" character varying, "last_name" character varying, "user_name" character varying, "password_digest" character varying, "email" character varying, "phone_number" character varying, "admin" boolean DEFAULT 'f', "cart" text DEFAULT '', "address" text DEFAULT '', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151120234929"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to CreateOrders (20151121183924)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (3.1ms)[0m  [1mCREATE TABLE "orders" ("id" serial primary key, "item_ids_quantities" character varying, "shipping_address" character varying, "billing_address" character varying, "user_id" integer, "shipped" boolean DEFAULT 'f', "requested_return" boolean DEFAULT 'f', "return_received" boolean DEFAULT 'f', "refunded" boolean DEFAULT 'f', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151121183924"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Migrating to CreateAddresses (20151210193550)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (2.8ms)[0m  [1mCREATE TABLE "addresses" ("id" serial primary key, "nickname" character varying, "address" character varying, "city" character varying, "state" character varying, "zip" integer, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151210193550"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (1.8ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'addresses'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.4ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'items'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.4ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'orders'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.5ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "user_name", "password_digest", "phone_number", "admin", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["first_name", "Joji"], ["last_name", "Gordon"], ["user_name", "joji"], ["password_digest", "$2a$10$SCFx2RNquW7S/hUdzaqcOuDTPbXOcrVQqpj3SRaEe3Xmg9LHj1iD2"], ["phone_number", "911"], ["admin", "t"], ["created_at", "2016-01-01 21:54:08.414760"], ["updated_at", "2016-01-01 21:54:08.414760"]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("first_name", "last_name", "user_name", "password_digest", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["first_name", "Daniel"], ["last_name", "Huang"], ["user_name", "daniel"], ["password_digest", "$2a$10$8lFM3sadcVaHBjC9w0ejXO2Oer36XnqMFpoFex6REJpVmFqQoJbCm"], ["phone_number", "911"], ["created_at", "2016-01-01 21:54:08.488200"], ["updated_at", "2016-01-01 21:54:08.488200"]]
+  [1m[36m (1.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "small_image", "roast", "region", "caffeine", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["id", 33731], ["item_name", "Labor of Love"], ["item_description", "My labor of love is putting together the great coffees from non marguis origins at a great price. It's my thanks to use those that labor to keep everything going."], ["quantity", 1], ["price", 15], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/3.png"], ["small_image", "http://goo.gl/bLj6Ou"], ["roast", "dark"], ["region", "asian_pacific"], ["caffeine", "decaf"], ["created_at", "2016-01-01 21:54:08.501954"], ["updated_at", "2016-01-01 21:54:08.501954"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "small_image", "roast", "region", "caffeine", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["id", 98510], ["item_name", "Peru"], ["item_description", "Peru is a delicious, subtle coffee. It's perfect for a morning brew. Its mild flavor means you can brew it very strong to bring out it subtle nature. Note hte sweetness and brigthness of the cup."], ["quantity", 35], ["price", 12], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/8.png"], ["small_image", "http://goo.gl/bLj6Ou"], ["roast", "blonde"], ["region", "latin_america"], ["caffeine", "normal"], ["created_at", "2016-01-01 21:54:08.505217"], ["updated_at", "2016-01-01 21:54:08.505217"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "small_image", "roast", "region", "caffeine", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["id", 16382], ["item_name", "Espresso"], ["item_description", "It's risky making coffee so full flavored thats is intended to be very concentrated. This espressco is crema laced bliss. So full flavored that it is excellent as a brewed coffee as well."], ["quantity", 3], ["price", 15], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/9.png"], ["small_image", "http://goo.gl/bLj6Ou"], ["roast", "blonde"], ["region", "latin_america"], ["caffeine", "normal"], ["created_at", "2016-01-01 21:54:08.508068"], ["updated_at", "2016-01-01 21:54:08.508068"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "small_image", "roast", "region", "caffeine", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["id", 59161], ["item_name", "Timor"], ["item_description", "Bright and Lovely, Timor is a great coffee. this rare and exotic coffee is warm and familar and the best at being so. Drink it all day long. Some parts of the year we cannot get this coffee, its is from a small crop. It is so loved by customers that it is one of our signature coffees just the same."], ["quantity", 32], ["price", 16], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/2.png"], ["small_image", "http://goo.gl/bLj6Ou"], ["roast", "blonde"], ["region", "africa"], ["caffeine", "normal"], ["created_at", "2016-01-01 21:54:08.509883"], ["updated_at", "2016-01-01 21:54:08.509883"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "small_image", "roast", "region", "caffeine", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["id", 87152], ["item_name", "Costa Rica"], ["item_description", "Costa Rican coffee is bright and fresh tasting with a medium body. There is a subtle flavor, like the scent of a tropical breeze, that gives it a unique flavor."], ["quantity", 51], ["price", 10], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/8.png"], ["small_image", "http://goo.gl/bLj6Ou"], ["roast", "dark"], ["region", "asian_pacific"], ["caffeine", "normal"], ["created_at", "2016-01-01 21:54:08.511704"], ["updated_at", "2016-01-01 21:54:08.511704"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "small_image", "roast", "region", "caffeine", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["id", 48375], ["item_name", "Black Rocks Mountain Clouds"], ["item_description", "This classic dark/light blend takes the best flavors from coffees that roast dark and coffees that roast well light. It is sweet with some toastliness and a medium body. In Sweden, where they drink more coffee per person than anywhere; these dark/light blends are very popular."], ["quantity", 68], ["price", 9], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/4.png"], ["small_image", "http://goo.gl/bLj6Ou"], ["roast", "dark"], ["region", "latin_america"], ["caffeine", "normal"], ["created_at", "2016-01-01 21:54:08.513495"], ["updated_at", "2016-01-01 21:54:08.513495"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "small_image", "roast", "region", "caffeine", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["id", 71582], ["item_name", "New Guinea"], ["item_description", "This is a medium to full bodied coffee with a distinct roasted nut flavor."], ["quantity", 14], ["price", 14], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/5.png"], ["small_image", "http://goo.gl/bLj6Ou"], ["roast", "medium"], ["region", "africa"], ["caffeine", "normal"], ["created_at", "2016-01-01 21:54:08.515266"], ["updated_at", "2016-01-01 21:54:08.515266"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "small_image", "roast", "region", "caffeine", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["id", 16008], ["item_name", "Mexican"], ["item_description", "We put a slightly darker roast on this coffee to bring out its fantastic aroma. It has a medium to full body and very clean finish."], ["quantity", 49], ["price", 11], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/5.png"], ["small_image", "http://goo.gl/bLj6Ou"], ["roast", "medium"], ["region", "africa"], ["caffeine", "decaf"], ["created_at", "2016-01-01 21:54:08.516936"], ["updated_at", "2016-01-01 21:54:08.516936"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "small_image", "roast", "region", "caffeine", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["id", 84551], ["item_name", "Decaf Harmony"], ["item_description", "This Swiss Water Process coffee is made from new crop coffees as they become available from all over the world. It's full flavor make some wonder if it's really decaf. It is!"], ["quantity", 37], ["price", 16], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/2.png"], ["small_image", "http://goo.gl/bLj6Ou"], ["roast", "medium"], ["region", "africa"], ["caffeine", "decaf"], ["created_at", "2016-01-01 21:54:08.518679"], ["updated_at", "2016-01-01 21:54:08.518679"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "small_image", "roast", "region", "caffeine", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["id", 51853], ["item_name", "River Mud"], ["item_description", "What if we didn't hold anything back and blended all our thick dark strong coffees? It would sit in the cup like River Mud. The coffee flavor would be full and rich and fresh because it's Pacifica Coffee. The blend enjoys almost a cult following in some circles."], ["quantity", 9], ["price", 16], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/12.png"], ["small_image", "http://goo.gl/bLj6Ou"], ["roast", "blonde"], ["region", "africa"], ["caffeine", "decaf"], ["created_at", "2016-01-01 21:54:08.520386"], ["updated_at", "2016-01-01 21:54:08.520386"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "small_image", "roast", "region", "caffeine", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["id", 14921], ["item_name", "Sumatra"], ["item_description", "The king of full bodied coffees come from Sumatra. Ours is roasted dark to bring out it's earthiness and to compliment the full body. It's a simple description, but there is more to this coffee. We have sold more of it in every one of our 20 years in business than any other variety."], ["quantity", 75], ["price", 11], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/7.png"], ["small_image", "http://goo.gl/bLj6Ou"], ["roast", "medium"], ["region", "latin_america"], ["caffeine", "normal"], ["created_at", "2016-01-01 21:54:08.522153"], ["updated_at", "2016-01-01 21:54:08.522153"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "small_image", "roast", "region", "caffeine", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["id", 95495], ["item_name", "Bolivia"], ["item_description", "Bright tropical blooms and complex aromas grace this fantastic coffee roasted at a full city roast. A very flavorful and approachable coffee."], ["quantity", 10], ["price", 15], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/9.png"], ["small_image", "http://goo.gl/bLj6Ou"], ["roast", "dark"], ["region", "latin_america"], ["caffeine", "normal"], ["created_at", "2016-01-01 21:54:08.523841"], ["updated_at", "2016-01-01 21:54:08.523841"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "small_image", "roast", "region", "caffeine", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["id", 61730], ["item_name", "Ethiopia"], ["item_description", "\"From the botanical origin of coffee comes this fully flavored African coffee. It is floral and has wine like tones. A great coffee experience unlike any other."], ["quantity", 25], ["price", 9], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/2.png"], ["small_image", "http://goo.gl/bLj6Ou"], ["roast", "blonde"], ["region", "africa"], ["caffeine", "normal"], ["created_at", "2016-01-01 21:54:08.525471"], ["updated_at", "2016-01-01 21:54:08.525471"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "small_image", "roast", "region", "caffeine", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["id", 71049], ["item_name", "French Roast"], ["item_description", "French Roast is our darkest roast coffee. Our version is smooth and not ,overly heavy. It has a fine roasty, toasty flavor, just as your would expect."], ["quantity", 66], ["price", 10], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/9.png"], ["small_image", "http://goo.gl/bLj6Ou"], ["roast", "blonde"], ["region", "africa"], ["caffeine", "normal"], ["created_at", "2016-01-01 21:54:08.527197"], ["updated_at", "2016-01-01 21:54:08.527197"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "small_image", "roast", "region", "caffeine", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["id", 79703], ["item_name", "Komodo"], ["item_description", "Komodo is our blend from the home of the dragon. Three different roasts ,of three different coffees produces this earthy coffee with a lot of body and a subtle nut like tone. All three coffees come from the Indonesian Islands."], ["quantity", 73], ["price", 9], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/13.png"], ["small_image", "http://goo.gl/bLj6Ou"], ["roast", "blonde"], ["region", "africa"], ["caffeine", "normal"], ["created_at", "2016-01-01 21:54:08.528885"], ["updated_at", "2016-01-01 21:54:08.528885"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "small_image", "roast", "region", "caffeine", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["id", 62254], ["item_name", "Guatemala"], ["item_description", "This classic Central American coffee has subtle sweet floral tones in its, well balanced cup."], ["quantity", 6], ["price", 16], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/13.png"], ["small_image", "http://goo.gl/bLj6Ou"], ["roast", "dark"], ["region", "asian_pacific"], ["caffeine", "normal"], ["created_at", "2016-01-01 21:54:08.530575"], ["updated_at", "2016-01-01 21:54:08.530575"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "small_image", "roast", "region", "caffeine", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["id", 98759], ["item_name", "Uganda"], ["item_description", "Uganda has a unique subtle fruit aroma with cup flavor of fresh coffee cherries. It is medium bodied and very smooth"], ["quantity", 59], ["price", 11], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/7.png"], ["small_image", "http://goo.gl/bLj6Ou"], ["roast", "dark"], ["region", "asian_pacific"], ["caffeine", "decaf"], ["created_at", "2016-01-01 21:54:08.532233"], ["updated_at", "2016-01-01 21:54:08.532233"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "small_image", "roast", "region", "caffeine", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["id", 11058], ["item_name", "Sicilian"], ["item_description", "This dark Italian style coffee was developed for a first class Italian restaurant. It was such a success, we now offer it to you. The coffee is dark roasted with a fruity aroma and a subtle wine like aftertaste."], ["quantity", 32], ["price", 9], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/3.png"], ["small_image", "http://goo.gl/bLj6Ou"], ["roast", "blonde"], ["region", "latin_america"], ["caffeine", "normal"], ["created_at", "2016-01-01 21:54:08.534245"], ["updated_at", "2016-01-01 21:54:08.534245"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "small_image", "roast", "region", "caffeine", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["id", 51760], ["item_name", "Bali Blue Moon"], ["item_description", "A delicious full bodies coffee with a dark roast. A hint of sweetness and chocolate tones grace this rare coffee."], ["quantity", 7], ["price", 10], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/6.png"], ["small_image", "http://goo.gl/bLj6Ou"], ["roast", "dark"], ["region", "africa"], ["caffeine", "decaf"], ["created_at", "2016-01-01 21:54:08.536490"], ["updated_at", "2016-01-01 21:54:08.536490"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "small_image", "roast", "region", "caffeine", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["id", 29890], ["item_name", "Colombia"], ["item_description", "We look for a bright cup with a touch of sweetness for our Colombian coffee. Either way, it is always one of our greatest coffees."], ["quantity", 55], ["price", 14], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/3.png"], ["small_image", "http://goo.gl/bLj6Ou"], ["roast", "dark"], ["region", "africa"], ["caffeine", "normal"], ["created_at", "2016-01-01 21:54:08.539010"], ["updated_at", "2016-01-01 21:54:08.539010"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "small_image", "roast", "region", "caffeine", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["id", 56181], ["item_name", "Tanzania"], ["item_description", "A very full flavor with a wine like finish. Tanzania has a medium to, dark roast to bring out all of its amazing profile."], ["quantity", 56], ["price", 8], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/5.png"], ["small_image", "http://goo.gl/bLj6Ou"], ["roast", "blonde"], ["region", "asian_pacific"], ["caffeine", "normal"], ["created_at", "2016-01-01 21:54:08.542073"], ["updated_at", "2016-01-01 21:54:08.542073"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "addresses" ("nickname", "address", "city", "state", "zip", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["nickname", "Joji's Palace"], ["address", "123 456th st"], ["city", "El Cerrito"], ["state", "CA"], ["zip", 94999], ["user_id", 1], ["created_at", "2016-01-01 21:54:08.593660"], ["updated_at", "2016-01-01 21:54:08.593660"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "addresses" ("nickname", "address", "city", "state", "zip", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["nickname", "Joji's Loft"], ["address", "654 321st st"], ["city", "Manhattan"], ["state", "NY"], ["zip", 99997], ["user_id", 1], ["created_at", "2016-01-01 21:54:08.596843"], ["updated_at", "2016-01-01 21:54:08.596843"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "addresses" ("nickname", "address", "city", "state", "zip", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["nickname", "Joji's Mansion"], ["address", "789 123rd ave"], ["city", "Beverly Hills"], ["state", "CA"], ["zip", 99999], ["user_id", 1], ["created_at", "2016-01-01 21:54:08.598514"], ["updated_at", "2016-01-01 21:54:08.598514"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/items" for ::1 at 2016-01-01 13:54:17 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (0.5ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/_quick_view.html.erb (1.6ms)
+  Rendered items/_quick_view.html.erb (0.4ms)
+  Rendered items/_quick_view.html.erb (0.4ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.5ms)
+  Rendered items/_index.html.erb (74.9ms)
+  Rendered navigation/_filter_nav.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.4ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.6ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.9ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_index.html.erb (23.8ms)
+  Rendered items/index.html.erb within layouts/application (25.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered partials/_nav_profile_modal.html.erb (0.5ms)
+  Rendered navigation/_main_nav.html.erb (25.5ms)
+  Rendered partials/_header_errors.html.erb (0.6ms)
+Completed 200 OK in 678ms (Views: 583.0ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/assets/addresses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-01 13:54:18 -0800
+
+
+Started GET "/assets/base/base.self-b1fd57ca6f92076ec94055938ef4c1cf03bb515deb0627731dffc4737acd46c1.css?body=1" for ::1 at 2016-01-01 13:54:18 -0800
+
+
+Started GET "/assets/base/reset.self-ee751026e628351d140506fb4c1957bf029298d1301db5bd6ddac3fd6abb0a5d.css?body=1" for ::1 at 2016-01-01 13:54:18 -0800
+
+
+Started GET "/assets/components/_arrow__left.self-1343a8c61866e77d155dd21495403cd9e9e3bd9e411aadea784a59b818e6b9b1.css?body=1" for ::1 at 2016-01-01 13:54:18 -0800
+
+
+Started GET "/assets/components/_close_btn.self-25c54feb31fcf014c233df59211aa1cc9cddaf37fd5402ef117e3b38df29e630.css?body=1" for ::1 at 2016-01-01 13:54:18 -0800
+
+
+Started GET "/assets/components/_flexbox_vendors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-01 13:54:18 -0800
+
+
+Started GET "/assets/components/_hamburger.self-aafc3be9901611504edc9669ec2e21071093fbb7dbdb39739016cdef2f4d0757.css?body=1" for ::1 at 2016-01-01 13:54:18 -0800
+
+
+Started GET "/assets/components/_hamburger2.self-20d3fcf680dee61adc02811ac32827176fd50da1a292ee03eaf6d793dc46c649.css?body=1" for ::1 at 2016-01-01 13:54:18 -0800
+
+
+Started GET "/assets/components/_loading.self-c820364a3a9d11cca77ea16325599ead474f548d6ef63ff32cfb0023bde95dcd.css?body=1" for ::1 at 2016-01-01 13:54:18 -0800
+
+
+Started GET "/assets/components/_psuedo_icons.self-e87a2dcdd6f8da864e1bafe3b08b197db049e54bb550e001cdd5d7ef61efba5c.css?body=1" for ::1 at 2016-01-01 13:54:18 -0800
+
+
+Started GET "/assets/layout/admin/edit.self-3a5870df0c2845483f9bcf6edaac486f22d04b0622aa14a2dafae823a5ec2ef5.css?body=1" for ::1 at 2016-01-01 13:54:18 -0800
+
+
+Started GET "/assets/layout/charges/create.self-09246c42a29123debd1a863ba2491e04dd4030b6c178242909595c39b43e3c6b.css?body=1" for ::1 at 2016-01-01 13:54:18 -0800
+
+
+Started GET "/assets/layout/charges/new.self-9034b54befe6777db353445e29b2bc6fa1d8db5a39b8467f40098d6999413a77.css?body=1" for ::1 at 2016-01-01 13:54:18 -0800
+
+
+Started GET "/assets/layout/items/admin.self-cf7c1aac518e4c0af596bf2633a26b8dab58352d13568ddc49743e680f335102.css?body=1" for ::1 at 2016-01-01 13:54:18 -0800
+
+
+Started GET "/assets/layout/items/index.self-d620d265d7272bc9ab2cc4cfbbf2c3548c3183d70506abef1df21267af62e425.css?body=1" for ::1 at 2016-01-01 13:54:18 -0800
+
+
+Started GET "/assets/layout/items/quick_view.self-b9b027948aa9a7870597b2cfb94eafafdad7028de8587fac87d110d43d056d88.css?body=1" for ::1 at 2016-01-01 13:54:18 -0800
+
+
+Started GET "/assets/layout/layout.self-39b18e25103de4c514ed412d535c8d7fef8b366c80d40fd5fd6c3d62acd89279.css?body=1" for ::1 at 2016-01-01 13:54:18 -0800
+
+
+Started GET "/assets/layout/navigation/profile_modal.self-068778f0d4a8aa44f0d0a1e91251bf37a68432646f6d498424dee552028ea5cd.css?body=1" for ::1 at 2016-01-01 13:54:18 -0800
+
+
+Started GET "/assets/layout/orders/index.self-5e141b22d7e6bf41607e56410554a7ed25b552328f64e765321ac7ee908aa48c.css?body=1" for ::1 at 2016-01-01 13:54:18 -0800
+
+
+Started GET "/assets/layout/sessions/new.self-87757b10cfb6eccca0582ca33f0261fc3b2a82936625ff5ac61e4c83c0e3b364.css?body=1" for ::1 at 2016-01-01 13:54:18 -0800
+
+
+Started GET "/assets/layout/users/cart/cart.self-8115b4ceec3652c44e8af6ce1accb2d09ef483bc46057056034452c73bb7d8ff.css?body=1" for ::1 at 2016-01-01 13:54:18 -0800
+
+
+Started GET "/assets/layout/users/cart/cart_items.self-cfa782ef73120f95919152a36619c29e74b2e99d09773d57efacf7b3a8fed9f4.css?body=1" for ::1 at 2016-01-01 13:54:18 -0800
+
+
+Started GET "/assets/layout/users/new.self-1b77be1f56391c7544835f73964bfe34dcd052ed1601b055677e61aa0a09ee36.css?body=1" for ::1 at 2016-01-01 13:54:18 -0800
+
+
+Started GET "/assets/layout/users/profile.self-b84257c4ae5d1693f0001a784dd918200a69c7964100c015d6ad85c76d55f35a.css?body=1" for ::1 at 2016-01-01 13:54:18 -0800
+
+
+Started GET "/assets/layout/welcome.self-d640b1fee6c52bba835041cbf9ee3a08686733b2c3dc992394c2682e243b7c2d.css?body=1" for ::1 at 2016-01-01 13:54:18 -0800
+
+
+Started GET "/assets/master.self-cf0a516414e7f287441c5ea504ce16573f5ca0df79818391706bc1d9f7a889f0.css?body=1" for ::1 at 2016-01-01 13:54:18 -0800
+
+
+Started GET "/assets/utilities/_animations.self-0bfff9fbf8761df6b9f8f6d7ab4b22bf64ab0be955cdf58925833c349a70f34c.css?body=1" for ::1 at 2016-01-01 13:54:18 -0800
+
+
+Started GET "/assets/utilities/_config.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2016-01-01 13:54:18 -0800
+
+
+Started GET "/assets/utilities/_error.self-75ac0774127f9897ab08ca211040f87314b0be5ee2de93e4c8637d12df843301.css?body=1" for ::1 at 2016-01-01 13:54:18 -0800
+
+
+Started GET "/assets/utilities/_functions.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2016-01-01 13:54:18 -0800
+
+
+Started GET "/assets/utilities/_mixins.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2016-01-01 13:54:18 -0800
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for ::1 at 2016-01-01 13:54:18 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-01 13:54:18 -0800
+
+
+Started GET "/assets/jquery.turbolinks.self-176b9819f30444d441e820bbccd3264fe57753aeafd54dec732b0dbc77129a2a.js?body=1" for ::1 at 2016-01-01 13:54:18 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-01 13:54:18 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-01-01 13:54:18 -0800
+
+
+Started GET "/assets/addresses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-01 13:54:18 -0800
+
+
+Started GET "/assets/cart.self-efec194c50647bf422163e3ae8f95b6dd0b538a64ea4ba2234da6f02de611cc2.js?body=1" for ::1 at 2016-01-01 13:54:19 -0800
+
+
+Started GET "/assets/filter.self-881d15e8cfa9b609aeaf4bc1335b1e91b5fef39966f72a45a3e00d47c5cb92a3.js?body=1" for ::1 at 2016-01-01 13:54:19 -0800
+
+
+Started GET "/assets/hamburger.self-389fddc2ca44002951500adc5ea8dfbb882e8d6e2792d8ada52f321799e70c49.js?body=1" for ::1 at 2016-01-01 13:54:19 -0800
+
+
+Started GET "/assets/layout.self-431905c730bfa782ba8aff783043fec36d7f97bffcf881df0dd01d3538baaa4b.js?body=1" for ::1 at 2016-01-01 13:54:19 -0800
+
+
+Started GET "/assets/localStorage.self-3d8308f8eb240399394df285a4ec2a4a3f54894968f71cedd68248720286fce4.js?body=1" for ::1 at 2016-01-01 13:54:19 -0800
+
+
+Started GET "/assets/navProfileMobile.self-86f10e059bc2639ddd3a6444e30b5daa52c6b741a304475835575de20ce11f54.js?body=1" for ::1 at 2016-01-01 13:54:19 -0800
+
+
+Started GET "/assets/orders.self-0ca91e218ea0de4529a3807843e634aa4812304e8bfe82278dd9a11acda0d29d.js?body=1" for ::1 at 2016-01-01 13:54:19 -0800
+
+
+Started GET "/assets/quickview.self-735c319d704907aba6f915021e6afe7b25597b4336c0a519609ef1ff6328a16f.js?body=1" for ::1 at 2016-01-01 13:54:19 -0800
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-01 13:54:19 -0800
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-01-01 13:54:19 -0800
+
+
+Started GET "/items?region=latin_america" for ::1 at 2016-01-01 13:54:50 -0800
+Processing by ItemsController#index as JSON
+  Parameters: {"region"=>"latin_america"}
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" WHERE "items"."region" = $1  [["region", "latin_america"]]
+  Rendered items/_quick_view.html.erb (1.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_index.html.erb (21.8ms)
+Completed 200 OK in 29ms (Views: 3.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items" for ::1 at 2016-01-01 13:54:58 -0800
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.3ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  Rendered items/_quick_view.html.erb (0.8ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.4ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.5ms)
+  Rendered items/_quick_view.html.erb (0.4ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.5ms)
+  Rendered items/_index.html.erb (68.1ms)
+Completed 200 OK in 141ms (Views: 68.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/items?caffeine=decaf" for ::1 at 2016-01-01 13:55:08 -0800
+Processing by ItemsController#index as JSON
+  Parameters: {"caffeine"=>"decaf"}
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" WHERE "items"."caffeine" = $1  [["caffeine", "decaf"]]
+  Rendered items/_quick_view.html.erb (0.9ms)
+  Rendered items/_quick_view.html.erb (0.4ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.5ms)
+  Rendered items/_index.html.erb (22.5ms)
+Completed 200 OK in 31ms (Views: 3.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items" for ::1 at 2016-01-01 13:55:11 -0800
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  Rendered items/_quick_view.html.erb (0.8ms)
+  Rendered items/_quick_view.html.erb (0.5ms)
+  Rendered items/_quick_view.html.erb (1.1ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.7ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.4ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.8ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.4ms)
+  Rendered items/_quick_view.html.erb (0.4ms)
+  Rendered items/_quick_view.html.erb (0.4ms)
+  Rendered items/_quick_view.html.erb (0.4ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.8ms)
+  Rendered items/_index.html.erb (77.4ms)
+Completed 200 OK in 88ms (Views: 7.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/items?caffeine=regular" for ::1 at 2016-01-01 13:55:13 -0800
+Processing by ItemsController#index as JSON
+  Parameters: {"caffeine"=>"regular"}
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items" WHERE "items"."caffeine" = $1  [["caffeine", "regular"]]
+  Rendered items/_index.html.erb (1.1ms)
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+  [1m[36m (4.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (0.9ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateItems (20151118191227)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (3.4ms)[0m  [1mCREATE TABLE "items" ("id" serial primary key, "item_name" character varying, "sku" character varying, "large_image" character varying, "small_image" character varying, "caffeine" character varying, "roast" character varying, "region" character varying, "quantity" integer, "price" integer, "item_description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151118191227"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to CreateUsers (20151120234929)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (2.5ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "first_name" character varying, "last_name" character varying, "user_name" character varying, "password_digest" character varying, "email" character varying, "phone_number" character varying, "admin" boolean DEFAULT 'f', "cart" text DEFAULT '', "address" text DEFAULT '', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151120234929"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateOrders (20151121183924)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (2.7ms)[0m  [1mCREATE TABLE "orders" ("id" serial primary key, "item_ids_quantities" character varying, "shipping_address" character varying, "billing_address" character varying, "user_id" integer, "shipped" boolean DEFAULT 'f', "requested_return" boolean DEFAULT 'f', "return_received" boolean DEFAULT 'f', "refunded" boolean DEFAULT 'f', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151121183924"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to CreateAddresses (20151210193550)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (2.5ms)[0m  [1mCREATE TABLE "addresses" ("id" serial primary key, "nickname" character varying, "address" character varying, "city" character varying, "state" character varying, "zip" integer, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151210193550"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (3.5ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'addresses'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.6ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'items'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.4ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'orders'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.4ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "user_name", "password_digest", "phone_number", "admin", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["first_name", "Joji"], ["last_name", "Gordon"], ["user_name", "joji"], ["password_digest", "$2a$10$w.Suq0ukHxDup/YDX3eIbe3CFynb5yoGh5R21ngYQlaLzqOmzN1cO"], ["phone_number", "911"], ["admin", "t"], ["created_at", "2016-01-01 21:55:44.312667"], ["updated_at", "2016-01-01 21:55:44.312667"]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("first_name", "last_name", "user_name", "password_digest", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["first_name", "Daniel"], ["last_name", "Huang"], ["user_name", "daniel"], ["password_digest", "$2a$10$GNOwMX6WQJp5G71X5ay/0..ISyPZdQ7HfLyoYMsxp8/KQSZSjDa4y"], ["phone_number", "911"], ["created_at", "2016-01-01 21:55:44.386946"], ["updated_at", "2016-01-01 21:55:44.386946"]]
+  [1m[36m (1.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "small_image", "roast", "region", "caffeine", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["id", 75446], ["item_name", "Labor of Love"], ["item_description", "My labor of love is putting together the great coffees from non marguis origins at a great price. It's my thanks to use those that labor to keep everything going."], ["quantity", 38], ["price", 10], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/4.png"], ["small_image", "http://goo.gl/bLj6Ou"], ["roast", "dark"], ["region", "latin_america"], ["caffeine", "regular"], ["created_at", "2016-01-01 21:55:44.402784"], ["updated_at", "2016-01-01 21:55:44.402784"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "small_image", "roast", "region", "caffeine", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["id", 29954], ["item_name", "Peru"], ["item_description", "Peru is a delicious, subtle coffee. It's perfect for a morning brew. Its mild flavor means you can brew it very strong to bring out it subtle nature. Note hte sweetness and brigthness of the cup."], ["quantity", 79], ["price", 11], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/12.png"], ["small_image", "http://goo.gl/bLj6Ou"], ["roast", "medium"], ["region", "asian_pacific"], ["caffeine", "decaf"], ["created_at", "2016-01-01 21:55:44.405324"], ["updated_at", "2016-01-01 21:55:44.405324"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "small_image", "roast", "region", "caffeine", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["id", 40652], ["item_name", "Espresso"], ["item_description", "It's risky making coffee so full flavored thats is intended to be very concentrated. This espressco is crema laced bliss. So full flavored that it is excellent as a brewed coffee as well."], ["quantity", 57], ["price", 15], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/2.png"], ["small_image", "http://goo.gl/bLj6Ou"], ["roast", "blonde"], ["region", "africa"], ["caffeine", "regular"], ["created_at", "2016-01-01 21:55:44.407128"], ["updated_at", "2016-01-01 21:55:44.407128"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "small_image", "roast", "region", "caffeine", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["id", 10187], ["item_name", "Timor"], ["item_description", "Bright and Lovely, Timor is a great coffee. this rare and exotic coffee is warm and familar and the best at being so. Drink it all day long. Some parts of the year we cannot get this coffee, its is from a small crop. It is so loved by customers that it is one of our signature coffees just the same."], ["quantity", 5], ["price", 16], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/12.png"], ["small_image", "http://goo.gl/bLj6Ou"], ["roast", "medium"], ["region", "asian_pacific"], ["caffeine", "regular"], ["created_at", "2016-01-01 21:55:44.408915"], ["updated_at", "2016-01-01 21:55:44.408915"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "small_image", "roast", "region", "caffeine", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["id", 28289], ["item_name", "Costa Rica"], ["item_description", "Costa Rican coffee is bright and fresh tasting with a medium body. There is a subtle flavor, like the scent of a tropical breeze, that gives it a unique flavor."], ["quantity", 73], ["price", 12], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/2.png"], ["small_image", "http://goo.gl/bLj6Ou"], ["roast", "medium"], ["region", "latin_america"], ["caffeine", "regular"], ["created_at", "2016-01-01 21:55:44.410774"], ["updated_at", "2016-01-01 21:55:44.410774"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "small_image", "roast", "region", "caffeine", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["id", 29951], ["item_name", "Black Rocks Mountain Clouds"], ["item_description", "This classic dark/light blend takes the best flavors from coffees that roast dark and coffees that roast well light. It is sweet with some toastliness and a medium body. In Sweden, where they drink more coffee per person than anywhere; these dark/light blends are very popular."], ["quantity", 39], ["price", 14], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/8.png"], ["small_image", "http://goo.gl/bLj6Ou"], ["roast", "medium"], ["region", "asian_pacific"], ["caffeine", "decaf"], ["created_at", "2016-01-01 21:55:44.412837"], ["updated_at", "2016-01-01 21:55:44.412837"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "small_image", "roast", "region", "caffeine", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["id", 24704], ["item_name", "New Guinea"], ["item_description", "This is a medium to full bodied coffee with a distinct roasted nut flavor."], ["quantity", 28], ["price", 12], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/3.png"], ["small_image", "http://goo.gl/bLj6Ou"], ["roast", "dark"], ["region", "latin_america"], ["caffeine", "decaf"], ["created_at", "2016-01-01 21:55:44.414798"], ["updated_at", "2016-01-01 21:55:44.414798"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "small_image", "roast", "region", "caffeine", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["id", 54035], ["item_name", "Mexican"], ["item_description", "We put a slightly darker roast on this coffee to bring out its fantastic aroma. It has a medium to full body and very clean finish."], ["quantity", 22], ["price", 16], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/12.png"], ["small_image", "http://goo.gl/bLj6Ou"], ["roast", "medium"], ["region", "asian_pacific"], ["caffeine", "regular"], ["created_at", "2016-01-01 21:55:44.416657"], ["updated_at", "2016-01-01 21:55:44.416657"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "small_image", "roast", "region", "caffeine", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["id", 27604], ["item_name", "Decaf Harmony"], ["item_description", "This Swiss Water Process coffee is made from new crop coffees as they become available from all over the world. It's full flavor make some wonder if it's really decaf. It is!"], ["quantity", 95], ["price", 11], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/6.png"], ["small_image", "http://goo.gl/bLj6Ou"], ["roast", "blonde"], ["region", "latin_america"], ["caffeine", "decaf"], ["created_at", "2016-01-01 21:55:44.418421"], ["updated_at", "2016-01-01 21:55:44.418421"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "small_image", "roast", "region", "caffeine", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["id", 62875], ["item_name", "River Mud"], ["item_description", "What if we didn't hold anything back and blended all our thick dark strong coffees? It would sit in the cup like River Mud. The coffee flavor would be full and rich and fresh because it's Pacifica Coffee. The blend enjoys almost a cult following in some circles."], ["quantity", 93], ["price", 14], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/8.png"], ["small_image", "http://goo.gl/bLj6Ou"], ["roast", "medium"], ["region", "asian_pacific"], ["caffeine", "regular"], ["created_at", "2016-01-01 21:55:44.420106"], ["updated_at", "2016-01-01 21:55:44.420106"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "small_image", "roast", "region", "caffeine", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["id", 73462], ["item_name", "Sumatra"], ["item_description", "The king of full bodied coffees come from Sumatra. Ours is roasted dark to bring out it's earthiness and to compliment the full body. It's a simple description, but there is more to this coffee. We have sold more of it in every one of our 20 years in business than any other variety."], ["quantity", 40], ["price", 15], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/7.png"], ["small_image", "http://goo.gl/bLj6Ou"], ["roast", "medium"], ["region", "asian_pacific"], ["caffeine", "decaf"], ["created_at", "2016-01-01 21:55:44.421821"], ["updated_at", "2016-01-01 21:55:44.421821"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "small_image", "roast", "region", "caffeine", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["id", 72099], ["item_name", "Bolivia"], ["item_description", "Bright tropical blooms and complex aromas grace this fantastic coffee roasted at a full city roast. A very flavorful and approachable coffee."], ["quantity", 39], ["price", 12], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/7.png"], ["small_image", "http://goo.gl/bLj6Ou"], ["roast", "blonde"], ["region", "africa"], ["caffeine", "decaf"], ["created_at", "2016-01-01 21:55:44.423522"], ["updated_at", "2016-01-01 21:55:44.423522"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "small_image", "roast", "region", "caffeine", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["id", 68252], ["item_name", "Ethiopia"], ["item_description", "\"From the botanical origin of coffee comes this fully flavored African coffee. It is floral and has wine like tones. A great coffee experience unlike any other."], ["quantity", 60], ["price", 10], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/10.png"], ["small_image", "http://goo.gl/bLj6Ou"], ["roast", "dark"], ["region", "latin_america"], ["caffeine", "regular"], ["created_at", "2016-01-01 21:55:44.425243"], ["updated_at", "2016-01-01 21:55:44.425243"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "small_image", "roast", "region", "caffeine", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["id", 28564], ["item_name", "French Roast"], ["item_description", "French Roast is our darkest roast coffee. Our version is smooth and not ,overly heavy. It has a fine roasty, toasty flavor, just as your would expect."], ["quantity", 60], ["price", 15], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/4.png"], ["small_image", "http://goo.gl/bLj6Ou"], ["roast", "blonde"], ["region", "latin_america"], ["caffeine", "regular"], ["created_at", "2016-01-01 21:55:44.427047"], ["updated_at", "2016-01-01 21:55:44.427047"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "small_image", "roast", "region", "caffeine", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["id", 62135], ["item_name", "Komodo"], ["item_description", "Komodo is our blend from the home of the dragon. Three different roasts ,of three different coffees produces this earthy coffee with a lot of body and a subtle nut like tone. All three coffees come from the Indonesian Islands."], ["quantity", 30], ["price", 8], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/4.png"], ["small_image", "http://goo.gl/bLj6Ou"], ["roast", "medium"], ["region", "africa"], ["caffeine", "regular"], ["created_at", "2016-01-01 21:55:44.428833"], ["updated_at", "2016-01-01 21:55:44.428833"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "small_image", "roast", "region", "caffeine", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["id", 67136], ["item_name", "Guatemala"], ["item_description", "This classic Central American coffee has subtle sweet floral tones in its, well balanced cup."], ["quantity", 80], ["price", 9], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/11.png"], ["small_image", "http://goo.gl/bLj6Ou"], ["roast", "medium"], ["region", "asian_pacific"], ["caffeine", "regular"], ["created_at", "2016-01-01 21:55:44.430598"], ["updated_at", "2016-01-01 21:55:44.430598"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "small_image", "roast", "region", "caffeine", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["id", 38409], ["item_name", "Uganda"], ["item_description", "Uganda has a unique subtle fruit aroma with cup flavor of fresh coffee cherries. It is medium bodied and very smooth"], ["quantity", 36], ["price", 13], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/5.png"], ["small_image", "http://goo.gl/bLj6Ou"], ["roast", "blonde"], ["region", "africa"], ["caffeine", "regular"], ["created_at", "2016-01-01 21:55:44.432309"], ["updated_at", "2016-01-01 21:55:44.432309"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "small_image", "roast", "region", "caffeine", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["id", 65631], ["item_name", "Sicilian"], ["item_description", "This dark Italian style coffee was developed for a first class Italian restaurant. It was such a success, we now offer it to you. The coffee is dark roasted with a fruity aroma and a subtle wine like aftertaste."], ["quantity", 36], ["price", 11], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/13.png"], ["small_image", "http://goo.gl/bLj6Ou"], ["roast", "medium"], ["region", "africa"], ["caffeine", "decaf"], ["created_at", "2016-01-01 21:55:44.434114"], ["updated_at", "2016-01-01 21:55:44.434114"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "small_image", "roast", "region", "caffeine", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["id", 31291], ["item_name", "Bali Blue Moon"], ["item_description", "A delicious full bodies coffee with a dark roast. A hint of sweetness and chocolate tones grace this rare coffee."], ["quantity", 12], ["price", 12], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/11.png"], ["small_image", "http://goo.gl/bLj6Ou"], ["roast", "medium"], ["region", "latin_america"], ["caffeine", "decaf"], ["created_at", "2016-01-01 21:55:44.435973"], ["updated_at", "2016-01-01 21:55:44.435973"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "small_image", "roast", "region", "caffeine", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["id", 24967], ["item_name", "Colombia"], ["item_description", "We look for a bright cup with a touch of sweetness for our Colombian coffee. Either way, it is always one of our greatest coffees."], ["quantity", 49], ["price", 9], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/3.png"], ["small_image", "http://goo.gl/bLj6Ou"], ["roast", "blonde"], ["region", "africa"], ["caffeine", "decaf"], ["created_at", "2016-01-01 21:55:44.437721"], ["updated_at", "2016-01-01 21:55:44.437721"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "items" ("id", "item_name", "item_description", "quantity", "price", "sku", "large_image", "small_image", "roast", "region", "caffeine", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["id", 72727], ["item_name", "Tanzania"], ["item_description", "A very full flavor with a wine like finish. Tanzania has a medium to, dark roast to bring out all of its amazing profile."], ["quantity", 84], ["price", 11], ["sku", "BAH6281"], ["large_image", "http://pigment.github.io/fake-logos/logos/medium/color/2.png"], ["small_image", "http://goo.gl/bLj6Ou"], ["roast", "medium"], ["region", "africa"], ["caffeine", "decaf"], ["created_at", "2016-01-01 21:55:44.439520"], ["updated_at", "2016-01-01 21:55:44.439520"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "addresses" ("nickname", "address", "city", "state", "zip", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["nickname", "Joji's Palace"], ["address", "123 456th st"], ["city", "El Cerrito"], ["state", "CA"], ["zip", 94999], ["user_id", 1], ["created_at", "2016-01-01 21:55:44.449049"], ["updated_at", "2016-01-01 21:55:44.449049"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "addresses" ("nickname", "address", "city", "state", "zip", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["nickname", "Joji's Loft"], ["address", "654 321st st"], ["city", "Manhattan"], ["state", "NY"], ["zip", 99997], ["user_id", 1], ["created_at", "2016-01-01 21:55:44.451520"], ["updated_at", "2016-01-01 21:55:44.451520"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "addresses" ("nickname", "address", "city", "state", "zip", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["nickname", "Joji's Mansion"], ["address", "789 123rd ave"], ["city", "Beverly Hills"], ["state", "CA"], ["zip", 99999], ["user_id", 1], ["created_at", "2016-01-01 21:55:44.453127"], ["updated_at", "2016-01-01 21:55:44.453127"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/items" for ::1 at 2016-01-01 13:55:51 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (0.6ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/_quick_view.html.erb (1.0ms)
+  Rendered items/_quick_view.html.erb (0.8ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.6ms)
+  Rendered items/_quick_view.html.erb (0.5ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_index.html.erb (79.7ms)
+  Rendered navigation/_filter_nav.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.4ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.4ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (1.1ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.6ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_index.html.erb (26.9ms)
+  Rendered items/index.html.erb within layouts/application (28.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered partials/_nav_profile_modal.html.erb (0.5ms)
+  Rendered navigation/_main_nav.html.erb (23.7ms)
+  Rendered partials/_header_errors.html.erb (0.6ms)
+Completed 200 OK in 651ms (Views: 553.7ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/assets/base/base.self-b1fd57ca6f92076ec94055938ef4c1cf03bb515deb0627731dffc4737acd46c1.css?body=1" for ::1 at 2016-01-01 13:55:52 -0800
+
+
+Started GET "/assets/addresses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-01 13:55:52 -0800
+
+
+Started GET "/assets/components/_arrow__left.self-1343a8c61866e77d155dd21495403cd9e9e3bd9e411aadea784a59b818e6b9b1.css?body=1" for ::1 at 2016-01-01 13:55:52 -0800
+
+
+Started GET "/assets/components/_close_btn.self-25c54feb31fcf014c233df59211aa1cc9cddaf37fd5402ef117e3b38df29e630.css?body=1" for ::1 at 2016-01-01 13:55:52 -0800
+
+
+Started GET "/assets/components/_hamburger.self-aafc3be9901611504edc9669ec2e21071093fbb7dbdb39739016cdef2f4d0757.css?body=1" for ::1 at 2016-01-01 13:55:52 -0800
+
+
+Started GET "/assets/base/reset.self-ee751026e628351d140506fb4c1957bf029298d1301db5bd6ddac3fd6abb0a5d.css?body=1" for ::1 at 2016-01-01 13:55:52 -0800
+
+
+Started GET "/assets/components/_flexbox_vendors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-01 13:55:52 -0800
+
+
+Started GET "/assets/components/_hamburger2.self-20d3fcf680dee61adc02811ac32827176fd50da1a292ee03eaf6d793dc46c649.css?body=1" for ::1 at 2016-01-01 13:55:52 -0800
+
+
+Started GET "/assets/components/_loading.self-c820364a3a9d11cca77ea16325599ead474f548d6ef63ff32cfb0023bde95dcd.css?body=1" for ::1 at 2016-01-01 13:55:52 -0800
+
+
+Started GET "/assets/components/_psuedo_icons.self-e87a2dcdd6f8da864e1bafe3b08b197db049e54bb550e001cdd5d7ef61efba5c.css?body=1" for ::1 at 2016-01-01 13:55:52 -0800
+
+
+Started GET "/assets/layout/admin/edit.self-3a5870df0c2845483f9bcf6edaac486f22d04b0622aa14a2dafae823a5ec2ef5.css?body=1" for ::1 at 2016-01-01 13:55:52 -0800
+
+
+Started GET "/assets/layout/charges/create.self-09246c42a29123debd1a863ba2491e04dd4030b6c178242909595c39b43e3c6b.css?body=1" for ::1 at 2016-01-01 13:55:52 -0800
+
+
+Started GET "/assets/layout/charges/new.self-9034b54befe6777db353445e29b2bc6fa1d8db5a39b8467f40098d6999413a77.css?body=1" for ::1 at 2016-01-01 13:55:52 -0800
+
+
+Started GET "/assets/layout/items/admin.self-cf7c1aac518e4c0af596bf2633a26b8dab58352d13568ddc49743e680f335102.css?body=1" for ::1 at 2016-01-01 13:55:52 -0800
+
+
+Started GET "/assets/layout/items/index.self-d620d265d7272bc9ab2cc4cfbbf2c3548c3183d70506abef1df21267af62e425.css?body=1" for ::1 at 2016-01-01 13:55:52 -0800
+
+
+Started GET "/assets/layout/items/quick_view.self-b9b027948aa9a7870597b2cfb94eafafdad7028de8587fac87d110d43d056d88.css?body=1" for ::1 at 2016-01-01 13:55:52 -0800
+
+
+Started GET "/assets/layout/layout.self-39b18e25103de4c514ed412d535c8d7fef8b366c80d40fd5fd6c3d62acd89279.css?body=1" for ::1 at 2016-01-01 13:55:52 -0800
+
+
+Started GET "/assets/layout/navigation/profile_modal.self-068778f0d4a8aa44f0d0a1e91251bf37a68432646f6d498424dee552028ea5cd.css?body=1" for ::1 at 2016-01-01 13:55:52 -0800
+
+
+Started GET "/assets/layout/orders/index.self-5e141b22d7e6bf41607e56410554a7ed25b552328f64e765321ac7ee908aa48c.css?body=1" for ::1 at 2016-01-01 13:55:52 -0800
+
+
+Started GET "/assets/layout/sessions/new.self-87757b10cfb6eccca0582ca33f0261fc3b2a82936625ff5ac61e4c83c0e3b364.css?body=1" for ::1 at 2016-01-01 13:55:52 -0800
+
+
+Started GET "/assets/layout/users/cart/cart.self-8115b4ceec3652c44e8af6ce1accb2d09ef483bc46057056034452c73bb7d8ff.css?body=1" for ::1 at 2016-01-01 13:55:52 -0800
+
+
+Started GET "/assets/layout/users/cart/cart_items.self-cfa782ef73120f95919152a36619c29e74b2e99d09773d57efacf7b3a8fed9f4.css?body=1" for ::1 at 2016-01-01 13:55:52 -0800
+
+
+Started GET "/assets/layout/users/new.self-1b77be1f56391c7544835f73964bfe34dcd052ed1601b055677e61aa0a09ee36.css?body=1" for ::1 at 2016-01-01 13:55:52 -0800
+
+
+Started GET "/assets/layout/users/profile.self-b84257c4ae5d1693f0001a784dd918200a69c7964100c015d6ad85c76d55f35a.css?body=1" for ::1 at 2016-01-01 13:55:52 -0800
+
+
+Started GET "/assets/layout/welcome.self-d640b1fee6c52bba835041cbf9ee3a08686733b2c3dc992394c2682e243b7c2d.css?body=1" for ::1 at 2016-01-01 13:55:53 -0800
+
+
+Started GET "/assets/master.self-cf0a516414e7f287441c5ea504ce16573f5ca0df79818391706bc1d9f7a889f0.css?body=1" for ::1 at 2016-01-01 13:55:53 -0800
+
+
+Started GET "/assets/utilities/_animations.self-0bfff9fbf8761df6b9f8f6d7ab4b22bf64ab0be955cdf58925833c349a70f34c.css?body=1" for ::1 at 2016-01-01 13:55:53 -0800
+
+
+Started GET "/assets/utilities/_config.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2016-01-01 13:55:53 -0800
+
+
+Started GET "/assets/utilities/_error.self-75ac0774127f9897ab08ca211040f87314b0be5ee2de93e4c8637d12df843301.css?body=1" for ::1 at 2016-01-01 13:55:53 -0800
+
+
+Started GET "/assets/utilities/_functions.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2016-01-01 13:55:53 -0800
+
+
+Started GET "/assets/utilities/_mixins.self-88d5b6e913df7f6ba59700a83edcb2ed82b6cabd12d3a23b53892c3b169667b0.css?body=1" for ::1 at 2016-01-01 13:55:53 -0800
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for ::1 at 2016-01-01 13:55:53 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-01 13:55:53 -0800
+
+
+Started GET "/assets/jquery.turbolinks.self-176b9819f30444d441e820bbccd3264fe57753aeafd54dec732b0dbc77129a2a.js?body=1" for ::1 at 2016-01-01 13:55:53 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-01 13:55:53 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-01-01 13:55:53 -0800
+
+
+Started GET "/assets/addresses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-01 13:55:53 -0800
+
+
+Started GET "/assets/cart.self-efec194c50647bf422163e3ae8f95b6dd0b538a64ea4ba2234da6f02de611cc2.js?body=1" for ::1 at 2016-01-01 13:55:53 -0800
+
+
+Started GET "/assets/filter.self-881d15e8cfa9b609aeaf4bc1335b1e91b5fef39966f72a45a3e00d47c5cb92a3.js?body=1" for ::1 at 2016-01-01 13:55:53 -0800
+
+
+Started GET "/assets/hamburger.self-389fddc2ca44002951500adc5ea8dfbb882e8d6e2792d8ada52f321799e70c49.js?body=1" for ::1 at 2016-01-01 13:55:53 -0800
+
+
+Started GET "/assets/layout.self-431905c730bfa782ba8aff783043fec36d7f97bffcf881df0dd01d3538baaa4b.js?body=1" for ::1 at 2016-01-01 13:55:53 -0800
+
+
+Started GET "/assets/localStorage.self-3d8308f8eb240399394df285a4ec2a4a3f54894968f71cedd68248720286fce4.js?body=1" for ::1 at 2016-01-01 13:55:53 -0800
+
+
+Started GET "/assets/navProfileMobile.self-86f10e059bc2639ddd3a6444e30b5daa52c6b741a304475835575de20ce11f54.js?body=1" for ::1 at 2016-01-01 13:55:53 -0800
+
+
+Started GET "/assets/orders.self-0ca91e218ea0de4529a3807843e634aa4812304e8bfe82278dd9a11acda0d29d.js?body=1" for ::1 at 2016-01-01 13:55:53 -0800
+
+
+Started GET "/assets/quickview.self-735c319d704907aba6f915021e6afe7b25597b4336c0a519609ef1ff6328a16f.js?body=1" for ::1 at 2016-01-01 13:55:53 -0800
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-01 13:55:53 -0800
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-01-01 13:55:53 -0800
+
+
+Started GET "/items?caffeine=regular" for ::1 at 2016-01-01 13:55:57 -0800
+Processing by ItemsController#index as JSON
+  Parameters: {"caffeine"=>"regular"}
+  [1m[35mItem Load (0.4ms)[0m  SELECT "items".* FROM "items" WHERE "items"."caffeine" = $1  [["caffeine", "regular"]]
+  Rendered items/_quick_view.html.erb (0.9ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.2ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.4ms)
+  Rendered items/_quick_view.html.erb (0.4ms)
+  Rendered items/_quick_view.html.erb (0.5ms)
+  Rendered items/_index.html.erb (36.1ms)
+Completed 200 OK in 49ms (Views: 7.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/items?caffeine=decaf" for ::1 at 2016-01-01 13:56:00 -0800
+Processing by ItemsController#index as JSON
+  Parameters: {"caffeine"=>"decaf"}
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."caffeine" = $1[0m  [["caffeine", "decaf"]]
+  Rendered items/_quick_view.html.erb (0.8ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.4ms)
+  Rendered items/_quick_view.html.erb (0.9ms)
+  Rendered items/_quick_view.html.erb (0.4ms)
+  Rendered items/_index.html.erb (36.7ms)
+Completed 200 OK in 45ms (Views: 3.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/items?caffeine=decaf&roast=blonde" for ::1 at 2016-01-01 13:56:08 -0800
+Processing by ItemsController#index as JSON
+  Parameters: {"caffeine"=>"decaf", "roast"=>"blonde"}
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" WHERE "items"."caffeine" = $1 AND "items"."roast" = $2  [["caffeine", "decaf"], ["roast", "blonde"]]
+  Rendered items/_quick_view.html.erb (0.4ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_index.html.erb (11.3ms)
+Completed 200 OK in 19ms (Views: 1.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items?caffeine=regular&roast=blonde" for ::1 at 2016-01-01 13:56:11 -0800
+Processing by ItemsController#index as JSON
+  Parameters: {"caffeine"=>"regular", "roast"=>"blonde"}
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."caffeine" = $1 AND "items"."roast" = $2[0m  [["caffeine", "regular"], ["roast", "blonde"]]
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_index.html.erb (10.2ms)
+Completed 200 OK in 15ms (Views: 1.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/items?caffeine=decaf&roast=blonde" for ::1 at 2016-01-01 13:56:15 -0800
+Processing by ItemsController#index as JSON
+  Parameters: {"caffeine"=>"decaf", "roast"=>"blonde"}
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items" WHERE "items"."caffeine" = $1 AND "items"."roast" = $2  [["caffeine", "decaf"], ["roast", "blonde"]]
+  Rendered items/_quick_view.html.erb (0.7ms)
+  Rendered items/_quick_view.html.erb (0.4ms)
+  Rendered items/_quick_view.html.erb (1.0ms)
+  Rendered items/_index.html.erb (16.1ms)
+Completed 200 OK in 21ms (Views: 1.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/items?caffeine=regular&roast=blonde" for ::1 at 2016-01-01 13:56:17 -0800
+Processing by ItemsController#index as JSON
+  Parameters: {"caffeine"=>"regular", "roast"=>"blonde"}
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."caffeine" = $1 AND "items"."roast" = $2[0m  [["caffeine", "regular"], ["roast", "blonde"]]
+  Rendered items/_quick_view.html.erb (0.6ms)
+  Rendered items/_quick_view.html.erb (0.6ms)
+  Rendered items/_quick_view.html.erb (0.6ms)
+  Rendered items/_index.html.erb (13.3ms)
+Completed 200 OK in 18ms (Views: 1.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/items?caffeine=regular&roast=blonde&region=asian_pacific" for ::1 at 2016-01-01 13:56:21 -0800
+Processing by ItemsController#index as JSON
+  Parameters: {"caffeine"=>"regular", "roast"=>"blonde", "region"=>"asian_pacific"}
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items" WHERE "items"."caffeine" = $1 AND "items"."roast" = $2 AND "items"."region" = $3  [["caffeine", "regular"], ["roast", "blonde"], ["region", "asian_pacific"]]
+  Rendered items/_index.html.erb (2.1ms)
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/items?caffeine=regular&roast=blonde" for ::1 at 2016-01-01 13:56:22 -0800
+Processing by ItemsController#index as JSON
+  Parameters: {"caffeine"=>"regular", "roast"=>"blonde"}
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."caffeine" = $1 AND "items"."roast" = $2[0m  [["caffeine", "regular"], ["roast", "blonde"]]
+  Rendered items/_quick_view.html.erb (0.5ms)
+  Rendered items/_quick_view.html.erb (0.5ms)
+  Rendered items/_quick_view.html.erb (0.4ms)
+  Rendered items/_index.html.erb (13.0ms)
+Completed 200 OK in 18ms (Views: 2.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items?caffeine=regular&roast=blonde&region=africa" for ::1 at 2016-01-01 13:56:30 -0800
+Processing by ItemsController#index as JSON
+  Parameters: {"caffeine"=>"regular", "roast"=>"blonde", "region"=>"africa"}
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items" WHERE "items"."caffeine" = $1 AND "items"."roast" = $2 AND "items"."region" = $3  [["caffeine", "regular"], ["roast", "blonde"], ["region", "africa"]]
+  Rendered items/_quick_view.html.erb (0.5ms)
+  Rendered items/_quick_view.html.erb (0.4ms)
+  Rendered items/_index.html.erb (9.3ms)
+Completed 200 OK in 15ms (Views: 1.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/items?caffeine=regular&roast=blonde" for ::1 at 2016-01-01 13:56:32 -0800
+Processing by ItemsController#index as JSON
+  Parameters: {"caffeine"=>"regular", "roast"=>"blonde"}
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."caffeine" = $1 AND "items"."roast" = $2[0m  [["caffeine", "regular"], ["roast", "blonde"]]
+  Rendered items/_quick_view.html.erb (0.3ms)
+  Rendered items/_quick_view.html.erb (0.5ms)
+  Rendered items/_quick_view.html.erb (0.5ms)
+  Rendered items/_index.html.erb (12.0ms)
+Completed 200 OK in 18ms (Views: 2.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/items?caffeine=regular&roast=blonde&region=latin_america" for ::1 at 2016-01-01 13:56:33 -0800
+Processing by ItemsController#index as JSON
+  Parameters: {"caffeine"=>"regular", "roast"=>"blonde", "region"=>"latin_america"}
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" WHERE "items"."caffeine" = $1 AND "items"."roast" = $2 AND "items"."region" = $3  [["caffeine", "regular"], ["roast", "blonde"], ["region", "latin_america"]]
+  Rendered items/_quick_view.html.erb (0.4ms)
+  Rendered items/_index.html.erb (6.3ms)
+Completed 200 OK in 12ms (Views: 0.7ms | ActiveRecord: 0.2ms)
