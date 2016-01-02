@@ -30,23 +30,33 @@ class OrdersController < ApplicationController
   end
 
   def recent
+
     order = Order.last
-    find_items(order.item_ids_quantities)
 
-    prices = []
-    @items.each do |item, qty|
-      prices << item.price * qty.to_i
-    end
+    # if there are any orders
+    if order
+      find_items(order.item_ids_quantities)
 
-    @total = "$#{ prices.inject(:+) }.00"
-    @date = Date.parse("#{order.created_at}")
+      prices = []
+      @items.each do |item, qty|
+        prices << item.price * qty.to_i
+      end
 
-    # multiple locals have to use {items: @items} in html just @items
-    @html = view_context.render 'partials/profile_history_last', locals: {items: @items, date: @date , total: @total}
+      @total = "$#{ prices.inject(:+) }.00"
+      @date = Date.parse("#{order.created_at}")
 
-    respond_to do |format|
-      format.json  { render :json => {html: @html, date: @date, total: @total} } # don't do msg.to_json
-    end
-  end
+      # multiple locals have to use {items: @items} in html just @items
+      @html = view_context.render 'partials/profile_history_last', locals: {items: @items, date: @date , total: @total}
+
+      respond_to do |format|
+        format.json  { render :json => {html: @html, date: @date, total: @total} } # don't do msg.to_json
+      end
+    else
+      respond_to do |format|
+        format.json { render :json => {html: '<p style="font-size: 25px; margin-top: 30px; color: gray;">No Items Purchased </p>'} }
+      end
+    end #end of if
+
+  end # end of recent
 
 end

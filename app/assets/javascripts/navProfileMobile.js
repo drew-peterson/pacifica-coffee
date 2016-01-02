@@ -23,13 +23,11 @@ $(function(){
     // Append opacity div around modal
     profileModal.wrap('<div class="modal-wrap-opacity"></div>');
 
-
-
     // get last order
     $.ajax({
       url: '/orders/recent/last'
     }).done(function(data){
-
+      console.log('done')
       // add last order to html
       var html = data.html
 
@@ -38,6 +36,8 @@ $(function(){
       // append partial to container
       $('.profile-history-container').append(html)
 
+    }).fail(function(){
+      console.log('fail')
     })
 
     // hide nav menu and reset dropdown
