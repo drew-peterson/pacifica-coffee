@@ -13,6 +13,8 @@
 <% elsif flash[:admin_unauthorized] %>
   <p class="error-p error-msg"><%= flash[:admin_unauthorized]%></p>
 
+<% elsif flash[:no_user_found] %>
+  <p class="error-p error-msg"><%= flash[:no_user_found] %> </p>
 
   <!--ALERTS
 ####################-->
@@ -31,6 +33,7 @@
 
 <% elsif flash[:address_saved] %>
   <p class="error-p alert-msg"><%= flash[:address_saved] %> </p>
+
 
 
 <% else %>
