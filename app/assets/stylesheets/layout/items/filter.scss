@@ -2,11 +2,31 @@
 
 .filter-container {
 
+  #m-filterBtn {
+    width: 100%;
+    font-size: 1rem;
+    border: 1px solid darken($light-gray, 10%);
+    transition: background 1s;
+    background: none;
+    cursor: pointer;
+    margin-bottom: 2%;
+
+    @include tablet {
+      display: none;
+    };
+  }
 
   .filter {
-    @include debug;
+    // hide menu by default in mobile view
+    // display: none;
+
     @include tablet {
+      @include debug;
       display: block;
+    }
+    // style for label go here
+    input[type='checkbox']{
+      display: none;
     }
   }
 
@@ -14,12 +34,11 @@
     @include debug(blue);
     display: flex;
     flex-direction: column;
-  }
 
-  // style for label go here
-
+  } // end of filter-col
 
   .f-clearAll {
+    display: none;
     @include tablet {
       @include main-btn($light-gray);
       font-size: $font--msm;
@@ -32,5 +51,3 @@
     }
   }
 } // filter-container end
-
-

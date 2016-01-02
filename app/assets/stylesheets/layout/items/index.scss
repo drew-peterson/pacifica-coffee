@@ -5,11 +5,12 @@
   @include tablet {
     display: flex;
 
+    // prime the items to flex: 4;
     .filter-container,
     .items-container {
     flex: 1;
     }
-
+    // make the items container 4 time large the filter
     .items-container {
       flex-direction: row;
       flex-wrap: wrap;
@@ -18,23 +19,6 @@
   }
 }
 
-.mobile-filter-btn {
-  width: 100%;
-  font-size: 1rem;
-  border: 1px solid darken($light-gray, 10%);
-  transition: background 1s;
-  background: none;
-  cursor: pointer;
-  margin-bottom: 2%;
-
-  @include tablet {
-    display: none;
-  };
-}
-
-.filter {
-  display: none;
-}
 
 .items-container {
   display: flex;
