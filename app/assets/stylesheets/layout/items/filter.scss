@@ -29,6 +29,7 @@
 
     @include tablet {
       display: block;
+      margin-right: $sp--sm;
     }
 
     h3 {
