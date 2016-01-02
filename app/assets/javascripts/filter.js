@@ -70,6 +70,21 @@ $('.filter-container').on('click', '#m-filterBtn', function(){
 })
 
 
+// ==============
+// Show filter when width is tablet
+
+  // on resize of window
+    $(window).resize(function(){
+      checkWidthFilter()
+    })
+
+    function checkWidthFilter() {
+      if ($(window).width() > 769) {
+        $('.filter-container .filter').show();
+      }
+    }
+
+
 
 
 
