@@ -2,7 +2,7 @@ SALT = 42154
 
 class ItemsController < ApplicationController
   before_action :admin_access, only: :admin
-  before_action :all_items, only: [:index, :admin]
+  before_action :all_items, only: :admin
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def admin
@@ -41,6 +41,18 @@ class ItemsController < ApplicationController
   end
 
   def index
+    # call the filter method and pass only params that include these 3
+    @items = Item.filter(params.slice(:caffeine, :roast, :region))
+
+    if request.xhr?
+      @html = view_context.render 'items/index', locals: {items: @items}
+    end
+
+    respond_to do |format|
+      format.html { render :index }
+      format.json { render :json => {html: @html, items: @items }}
+    end
+
   end
 
   def show
@@ -57,6 +69,18 @@ class ItemsController < ApplicationController
     end
 
     def item_params
-      params.require(:item).permit(:item_name, :item_description, :quantity, :price, :sku, :large_image, :small_image)
+      params.require(:item).permit(:item_name, :item_description, :quantity, :price, :sku, :large_image, :small_image, :region, :caffeine, :roast)
+    end
+
+    def filter_items
+      # OR Model.where(:column => ["value", "other_value"]
+      # AND + OR Item.where({roast: ['gold', 'dark'], region: ['nw', 'africa']})
+
+    puts "X" * 100
+    puts "Hello from index"
+    p params
+    puts "X" * 100
+
+
     end
 end

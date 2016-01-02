@@ -1,0 +1,89 @@
+@import 'master';
+
+.filter-container {
+  margin-bottom: $sp--med;
+
+  #m-filterBtn {
+    width: 100%;
+    font-size: $font--msm;
+    background: $light-gray;
+    color: $text-gray;
+    cursor: pointer;
+    margin-bottom: 2%;
+    border: 2px solid $light-gray;
+
+    transition: all 0.3s ease;
+    &:hover {
+      background: $off-white;
+      color: lighten($text-gray, 20%);
+    }
+    // hide in tablet +
+    @include tablet {
+      display: none;
+    };
+  }
+
+  .filter {
+    // hide menu by default in mobile view
+    display: none;
+
+    @include tablet {
+      display: block;
+      margin-right: $sp--sm;
+    }
+
+    h3 {
+      font-size: $font--msm;
+      padding: $sp--xs 0;
+    }
+
+    // style for label go here
+    input[type='checkbox']{
+      display: none;
+
+      &:checked + label {
+        background: darken($off-white, 20%);
+        color: $off-white;
+      }
+    }
+
+    label {
+      cursor: pointer;
+      padding: $sp--xs;
+      background: $off-white;
+      text-align: center;
+      font-size: $font--msm;
+      color: $text-gray;
+      margin-bottom: $sp--xs;
+
+      transition: all 0.35s ease;
+
+      &:hover {
+        background: darken($off-white, 20%);
+        color: $off-white;
+      }
+
+    }
+
+
+
+
+  }
+
+  .filter-col {
+    display: flex;
+    flex-direction: column;
+
+  } // end of filter-col
+
+  .f-clearAll {
+    // display: none;
+    @include main-btn($text-gray);
+    font-size: $font--msm;
+    color: $off-white;
+    border: none;
+    padding: 0;
+    width: 100%;
+    border: 1px solid $off-white;
+  }
+} // filter-container end

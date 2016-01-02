@@ -1,34 +1,55 @@
+<!-- filter btn to show everything -->
+<button id='m-filterBtn'>Filters</button>
+
 <div class="filter">
-  <h4>Coffee Format</h4>
-  <div>
-    <ul>
-      <li>PlaceHolder</li>
-      <li>PlaceHolder</li>
-      <li>PlaceHolder</li>
-    </ul>
+<!-- specials?  -->
+  <div class="filter-col">
+    <!-- removed for now... -->
   </div>
-<div>
-  <h4>Filter</h4>
-  <h3>Type</h3>
-  <ul>
-    <li><input type="checkbox" />Whole</li>
-    <li><input type="checkbox" />Ground</li>
-  </ul>
+
+
+<!-- =========
+  Caffeine -->
+  <div class="filter-col">
+    <h3>Caffeine</h3>
+
+    <input id='f-decaf' name= 'caffeine' value='decaf' type="checkbox" />
+    <label for="f-decaf">Decaf</label>
+
+    <input id="f-regular" name= 'caffeine' value='regular' type="checkbox" />
+    <label for="f-regular">Regular</label>
+  </div>
+<!-- =========
+  Roast -->
+  <div class="filter-col">
+    <h3>Roast</h3>
+
+    <input id="f-blonde" name="roast" value='blonde' type="checkbox" />
+    <label for="f-blonde">Blonde</label>
+
+    <input id="f-medium" name="roast" value='medium' type="checkbox" />
+    <label for="f-medium">Medium</label>
+
+    <input id="f-dark" name="roast" value= 'dark' type="checkbox" />
+    <label for="f-dark">Dark</label>
 </div>
-<div>
-  <h3>Roast</h3>
-  <ul>
-    <li><input type="checkbox" />Blonde</li>
-    <li><input type="checkbox" />Medium</li>
-    <li><input type="checkbox" />Dark</li>
-  </ul>
-</div>
-<div>
-  <h3>Region</h3>
-  <ul>
-    <li><input type="checkbox" />Latin America</li>
-    <li><input type="checkbox" />Africa</li>
-    <li><input type="checkbox" />Asian Pacific</li>
-  </ul>
- </div>
+
+<!-- =========
+region -->
+
+  <div class="filter-col">
+    <h3>Region</h3>
+      <input id="f-latin_america" name="region" value ='latin_america' type="checkbox" />
+      <label for="f-latin_america">Latin America</label>
+
+      <input id="f-africa" name="region" value = 'africa' type="checkbox" />
+      <label for="f-africa">Africa</label>
+
+      <input id="f-asian_pacific" name="region" value = 'asian_pacific' type="checkbox" />
+      <label for="f-asian_pacific">Asian Pacific</label>
+   </div>
+
+   <!-- Clear all btn -->
+  <button class="f-clearAll">Clear All</button>
+
 </div>

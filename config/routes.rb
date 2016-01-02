@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   # order history
   get '/orders' => 'orders#index'
   get '/orders/:id' => 'orders#show'
-  
+
   # without /last it does not work, it tries to go do #show, unless i place before show... /recent before #show works, after Nope unless recent/last -- this is for jquery ajax
   get '/orders/recent/last' => 'orders#recent'
 
@@ -37,12 +37,11 @@ Rails.application.routes.draw do
 
   # post shipping address to new charge / order confirmation
   post '/charges/new' => 'charges#new'
-  
+
   # for Strip payment
   resources :charges
 
   resources :items
-
 
   # Custom admin view...
   get '/admin' => 'items#admin'

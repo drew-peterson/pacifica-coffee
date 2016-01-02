@@ -9,6 +9,9 @@ require 'csv'
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+roast = ['blonde', 'dark', 'medium']
+region = ['latin_america', 'africa', 'asian_pacific']
+caffeine = ['decaf', 'regular']
 
 
 User.create(first_name: 'Joji', last_name: 'Gordon', user_name: 'joji', password: '1234', phone_number: '911', admin: true)
@@ -24,6 +27,10 @@ CSV.foreach('db/seed.csv', :headers => true) do |obj|
     price: rand(8..16),
     sku: 'BAH6281',
     large_image: Faker::Company.logo,
+    small_image: 'http://goo.gl/bLj6Ou',
+    roast: roast.sample,
+    region: region.sample,
+    caffeine: caffeine.sample
     )
 end
 
