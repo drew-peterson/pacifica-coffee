@@ -1,0 +1,35 @@
+@import 'master';
+
+.filter-container {
+
+
+  .filter {
+    @include debug;
+    @include tablet {
+      display: block;
+    }
+  }
+
+  .filter-col {
+    @include debug(blue);
+    display: flex;
+    flex-direction: column;
+  }
+
+
+
+  .f-clearAll {
+    @include tablet {
+      @include main-btn($light-gray);
+      font-size: $font--msm;
+      margin-top: $sp--sm;
+      color: gray;
+      border: none;
+      padding: 0;
+      width: 80%;
+      border: 1px solid gray;
+    }
+  }
+} // filter-container end
+
+
