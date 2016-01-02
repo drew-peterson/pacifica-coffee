@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+#heroku push said to do so
+ruby '2.0.0p353'
+
 #autoprefixer -- drewp
 gem "autoprefixer-rails"
 #heroku asset pipeline -- drew
