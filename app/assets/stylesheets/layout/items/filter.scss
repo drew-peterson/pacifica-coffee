@@ -1,6 +1,7 @@
 @import 'master';
 
 .filter-container {
+  margin-bottom: $sp--med;
 
   #m-filterBtn {
     width: 100%;
@@ -14,6 +15,7 @@
     transition: all 0.3s ease;
     &:hover {
       background: $off-white;
+      color: lighten($text-gray, 20%);
     }
     // hide in tablet +
     @include tablet {
@@ -26,33 +28,61 @@
     display: none;
 
     @include tablet {
-      @include debug;
       display: block;
     }
+
+    h3 {
+      font-size: $font--msm;
+      padding: $sp--xs 0;
+    }
+
     // style for label go here
     input[type='checkbox']{
       display: none;
+
+      &:checked + label {
+        background: darken($off-white, 20%);
+        color: $off-white;
+      }
     }
+
+    label {
+      cursor: pointer;
+      padding: $sp--xs;
+      background: $off-white;
+      text-align: center;
+      font-size: $font--msm;
+      color: $text-gray;
+      margin-bottom: $sp--xs;
+
+      transition: all 0.35s ease;
+
+      &:hover {
+        background: darken($off-white, 20%);
+        color: $off-white;
+      }
+
+    }
+
+
+
+
   }
 
   .filter-col {
-    @include debug(blue);
     display: flex;
     flex-direction: column;
 
   } // end of filter-col
 
   .f-clearAll {
-    display: none;
-    @include tablet {
-      @include main-btn($light-gray);
-      font-size: $font--msm;
-      margin-top: $sp--sm;
-      color: gray;
-      border: none;
-      padding: 0;
-      width: 80%;
-      border: 1px solid gray;
-    }
+    // display: none;
+    @include main-btn($text-gray);
+    font-size: $font--msm;
+    color: $off-white;
+    border: none;
+    padding: 0;
+    width: 100%;
+    border: 1px solid $off-white;
   }
 } // filter-container end
