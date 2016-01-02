@@ -4,13 +4,18 @@
 
   #m-filterBtn {
     width: 100%;
-    font-size: 1rem;
-    border: 1px solid darken($light-gray, 10%);
-    transition: background 1s;
-    background: none;
+    font-size: $font--msm;
+    background: $light-gray;
+    color: $text-gray;
     cursor: pointer;
     margin-bottom: 2%;
+    border: 2px solid $light-gray;
 
+    transition: all 0.3s ease;
+    &:hover {
+      background: $off-white;
+    }
+    // hide in tablet +
     @include tablet {
       display: none;
     };
@@ -18,7 +23,7 @@
 
   .filter {
     // hide menu by default in mobile view
-    // display: none;
+    display: none;
 
     @include tablet {
       @include debug;
