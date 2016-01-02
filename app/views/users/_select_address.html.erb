@@ -1,11 +1,12 @@
 
-<!-- check to see if user has addresses -->
-<% if @addresses %>
+<% @addresses = Address.where(user_id: current_user.id) %>
 
+<!-- check to see if user has addresses -->
+<% if @addresses.length > 0 %>
+
+  <!-- show the drop downs -->
   <%= form_for :user, url: new_charge_path do |f| %>
 
-    <% @addresses = Address.where(user_id: current_user.id) %>
-  <!-- show the drop downs -->
      <p>Shipping</p>
 
       <%= f.select(:shipping_address) do %>
@@ -14,7 +15,6 @@
         <%= content_tag(:option, address) %>
       <% end %>
     <% end %>
-
 
      <p>Billing</p>
 
@@ -42,9 +42,12 @@
 
   <!-- ===========
   if no address exists add them -->
+
 <% else %>
 
-  <p>Please add a new address </p>
+  <p class="no-addreses">You have no address on record </p>
+  <p> Please add a new address to continue </p>
+
 
 <% end %>
 <!-- end of if -->

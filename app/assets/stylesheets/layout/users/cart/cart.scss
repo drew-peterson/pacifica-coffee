@@ -63,9 +63,6 @@
   margin-bottom: $sp--med;
   padding: $sp--med;
   border: 1px solid $emerald;
-
-  @include tablet {
-  }
 }
 
 // #######################
@@ -131,6 +128,19 @@
       font-size: $font--msm;
       padding: 5px;
       width: 60%;
+    }
+  }
+
+  .no-addreses {
+    margin-top: $sp--med;
+    font-size: $font--med;
+    text-align: center;
+
+    & + p {
+      text-align: center;
+      font-size: $font--msm;
+      margin-top: $sp--sm;
+      font-style: italic;
     }
   }
 }
