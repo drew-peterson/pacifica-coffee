@@ -20,12 +20,15 @@
 <!--
 Navigation
  -->
- <header class="main-header" id="main-header">
+ <!-- hide main navigation on specificied pages -->
+ <% unless @disable_nav%>
 
-  <!-- Main Nav -->
-  <%= render "navigation/main_nav" unless @disable_nav %>
+   <header class="main-header" id="main-header">
+    <!-- Main Nav -->
+    <%= render "navigation/main_nav" %>
+  </header>
 
-</header>
+<% end %>
 
 <!-- Errors on top of page -->
 <div id="errorContainer">
