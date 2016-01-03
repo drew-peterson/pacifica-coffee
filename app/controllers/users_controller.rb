@@ -10,7 +10,6 @@ class UsersController < ApplicationController
   # create new user
   def create
     # check to see if username already exists
-
     if User.find_by(user_name: user_params[:user_name]) == nil
       user = User.new(user_params)
 
@@ -23,8 +22,6 @@ class UsersController < ApplicationController
       flash[:user_taken] = "Sorry that User Name is already taken"
       redirect_to '/signup'
     end
-
-
   end
 
   def add_to_cart

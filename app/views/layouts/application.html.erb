@@ -8,6 +8,10 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 
+  <!--[if lt IE 9]>
+<script src="http://html5shiv-printshiv.googlecode.com/svn/trunk/html5shiv-printshiv.js"></script>
+<![endif]-->
+
   <!-- mobile view -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
@@ -16,7 +20,7 @@
 <!--
 Navigation
  -->
-<header class="main-header" id="main-header">
+ <header class="main-header" id="main-header">
 
   <!-- Main Nav -->
   <%= render "navigation/main_nav" unless @disable_nav %>

@@ -18,15 +18,15 @@
 
     <span class="signup-col signup-col-2">
       <p>User Name</p>
-       <%= f.text_field :user_name, :required => true %>
+       <%= f.text_field :user_name, required: true %>
     </span>
 
     <span class="signup-col signup-col-3">
       <p>Password</p>
-       <%= f.password_field :password, :required => true %>
+       <%= f.password_field :password, required: true, pattern: "(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}", title: "Must be over 8 characters long and contain 1 uppercase letter and 1 number" %>
       <p>Password Confirmation</p>
-       <%= f.password_field :password_confirmation, :required => true %>
-    </span>
+       <%= f.password_field :password_confirmation, required: true, pattern: "(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}", title: "Must be over 8 characters long and contain 1 uppercase letter and 1 number" %>
+  </span>
 
     <%= f.submit 'Submit', class: 'signup-submit-btn form-submit-btn' %>
 
@@ -37,3 +37,5 @@
 </section>
 
 <!-- :required => true, :pattern => -->
+
+<!-- , pattern: "\w{3}", title: 'User Name must not contain any capital letters(A-Z)'  -->
