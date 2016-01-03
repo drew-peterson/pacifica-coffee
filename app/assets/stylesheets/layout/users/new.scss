@@ -18,6 +18,61 @@
 .signup-container {
   @include form-style();
   margin-top: 3rem;
+
+    .signup-col span {
+      @include tablet {
+        position: absolute;
+        height: rem(60px);
+        margin-top: 3px; // too lazy to do properly align span with input
+      }
+    }
+
+
+    // tool tip for wrong password
+    .psw-label {
+        display: block;
+        background: $error-red;
+        color: white;
+        font-size: $font--msm;
+
+        transition: all 1s ease;
+        margin-left: 40px;
+        opacity: 0;
+        visibility: hidden;
+
+      @include tablet {
+        box-shadow: $g--box-shadow;
+        display: inline-block;
+
+        padding: 0 10px;
+        position: relative;
+        height: 60px;
+        line-height: 60px;
+
+
+        // cannot do :: on input
+        &::before {
+          content: '';
+          position: absolute;
+          top: 16px; // 50% of span height - height of triangle
+          left: -14px; // width of triangle
+
+          width: 0;
+          height: 0;
+          border-bottom: 14px solid transparent;
+          border-top: 14px solid transparent;
+          border-right: 14px solid $error-red;
+          font-size: 0;
+          line-height: 0;
+        }
+      }
+    }
+  // transitiona for the label
+  .slide {
+    visibility: visible;
+    margin-left: 20px;
+    opacity: 1;
+  }
 }
 
 
