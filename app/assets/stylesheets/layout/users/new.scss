@@ -20,9 +20,13 @@
   margin-top: 3rem;
 
     .signup-col span {
+      position: relative;
+      display: block;
+
       @include tablet {
         position: absolute;
-        height: rem(60px);
+        display: inline-block;
+        min-height: rem(60px);
         margin-top: 3px; // too lazy to do properly align span with input
       }
     }
@@ -36,12 +40,12 @@
         font-size: $font--msm;
 
         transition: all 1s ease;
-        margin-left: 40px;
         opacity: 0;
         visibility: hidden;
 
       @include tablet {
         box-shadow: $g--box-shadow;
+        margin-left: 40px;
         display: inline-block;
 
         padding: 0 10px;
@@ -70,8 +74,11 @@
   // transitiona for the label
   .slide {
     visibility: visible;
-    margin-left: 20px;
     opacity: 1;
+
+    @include tablet {
+      margin-left: 20px;
+    }
   }
 }
 

@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   # create new user
   def create
     # check to see if username already exists
-    if User.find_by(user_name: user_params[:user_name]) == nil
+    if User.find_by(user_name: user_params[:user_name])== nil
       user = User.new(user_params)
 
       if user.save

@@ -23,13 +23,15 @@
 
     <span class="signup-col signup-col-3">
       <p>Password</p>
-       <%= f.password_field :password, required: true, pattern: "(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}", title: "Must be over 8 characters long and contain 1 uppercase letter and 1 number", class: 'password-psw' %>
+       <%= f.password_field :password, required: true, pattern: "(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$
+", title: "8 characters, 1 Uppercase + Number", class: 'password-psw' %>
        <span>
         <label class="psw-label" for="user_password"> Passwords must match</label>
        </span>
 
       <p>Password Confirmation</p>
-       <%= f.password_field :password_confirmation, required: true, pattern: "(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}", title: "Must be over 8 characters long and contain 1 uppercase letter and 1 number", class: 'confirm-psw' %>
+       <%= f.password_field :password_confirmation, required: true, pattern: "((?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$
+", title: "8 characters, 1 Uppercase + Number", class: 'confirm-psw' %>
        <span>
         <label class="psw-label" for="user_password_confirmation"> Passwords must match</label>
        </span>
