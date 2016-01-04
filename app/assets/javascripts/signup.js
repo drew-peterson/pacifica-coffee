@@ -30,7 +30,7 @@
 
 // rails has all the script tags in the head so thats when the javascript is called and so it doesnt bind to anything.
 // we can have the script tags at the bottom or include the jquery on ready function.
-// run a imbedded script tag in html after the informatino has loaded
+// run a imbedded script tag in html after the informatino has loaded <body onload = functionName()>
 // the javascript onload does not allow mutltiple event handlers?
 
 window.onload = function(){ //not so good alternative to $(function(){})
