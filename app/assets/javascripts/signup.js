@@ -33,7 +33,7 @@
 // run a imbedded script tag in html after the informatino has loaded <body onload = functionName()>
 // the javascript onload does not allow mutltiple event handlers?
 
-window.onload = function() {//not so good alternative to $(function(){})
+document.addEventListener('DOMContentLoaded', function() {//not so good alternative to $(function(){})
 
     var confirmPassword = document.getElementsByClassName('confirm-psw')[0]
     var submit = document.querySelector('.signup-container .signup-submit-btn')
@@ -53,10 +53,13 @@ window.onload = function() {//not so good alternative to $(function(){})
       }
     })
   }
-};
+});
 
   // add and remove classes easier
   // https://github.com/desandro/classie/blob/master/classie.js
+
+  //javascript event bubiling or multiple click events...
+  //http://www.kirupa.com/html5/handling_events_for_many_elements.htm
 
 
 var correctPassword = function(submit, label){
