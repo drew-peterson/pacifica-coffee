@@ -44,7 +44,8 @@ document.addEventListener('DOMContentLoaded', function() {//not so good alternat
   if ( confirmPassword ){
     confirmPassword.addEventListener('keyup', function(e){ // best format
       var password = document.getElementsByClassName('password-psw')[0].value
-      var confirm = this.value
+      var confirm = e.target.value
+      // if i  placed an event handler on parent, event bubbling parent would be e.currentTarget, this is how you do event deletgation, attach event on parent and make sure current !== target among other things...
 
       if( confirm === password ){
         correctPassword(submit, label);
