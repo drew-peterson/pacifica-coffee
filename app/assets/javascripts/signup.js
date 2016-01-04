@@ -33,26 +33,26 @@
 // run a imbedded script tag in html after the informatino has loaded <body onload = functionName()>
 // the javascript onload does not allow mutltiple event handlers?
 
-window.onload = function(){ //not so good alternative to $(function(){})
+window.onload = function() {//not so good alternative to $(function(){})
 
-  var confirmPassword = document.getElementsByClassName('confirm-psw')[0]
-  var submit = document.querySelector('.signup-container .signup-submit-btn')
-  var label = document.querySelectorAll('.psw-label')
+    var confirmPassword = document.getElementsByClassName('confirm-psw')[0]
+    var submit = document.querySelector('.signup-container .signup-submit-btn')
+    var label = document.querySelectorAll('.psw-label')
 
-  confirmPassword.onkeyup = function(e){
+  // this is import, jquery will silently fail, however javascript will not
+  // so only bind if the element is in the dom...
+  if ( confirmPassword ){
+    confirmPassword.addEventListener('keyup', function(e){ // best format
+      var password = document.getElementsByClassName('password-psw')[0].value
+      var confirm = this.value
 
-    var password = document.getElementsByClassName('password-psw')[0].value
-    var confirm = this.value
-
-    if( confirm === password ){
-      correctPassword(submit, label);
-    }else {
-      wrongPassword(submit, label);
-    }
+      if( confirm === password ){
+        correctPassword(submit, label);
+      }else {
+        wrongPassword(submit, label);
+      }
+    })
   }
-
-
-
 };
 
   // add and remove classes easier
