@@ -1,3 +1,4 @@
+
 //**************************
 // Colors
 
@@ -32,11 +33,11 @@ $primary-color: $light-gray;
 $base__font-size : 16px;
 $base__line      : 24px;
 
-$font--sm  : 14px ;
-$font--msm : 20px ;
-$font--med : 25px ;
-$font--lg  : 36px ;
-$font--xl  : 50px ;
+$font--sm  : rem(14px) ;
+$font--msm : rem(20px) ;
+$font--med : rem(25px) ;
+$font--lg  : rem(36px) ;
+$font--xl  : rem(50px) ;
 
 $font      : $font--msm ; // primary font
 
@@ -44,18 +45,24 @@ $font      : $font--msm ; // primary font
 $bd-radius: 0.4rem;
 
 // card border bottom
-$bb--card : 5px solid darken($primary-color, 10%) ;
+$bb--card :rem( 5px) solid darken($primary-color, 10%) ;
 
 // spacing
-$sp--xs  : 7px;
-$sp--sm  : 14px;
-$sp--msm : 20px;
-$sp--med : 25px;
-$sp--lg  : 36px ;
-$sp--xl  : 50px ;
+$sp--xs  :rem( 7px);
+$sp--sm  : rem(14px);
+$sp--msm : rem(20px);
+$sp--med : rem(25px);
+$sp--lg  : rem(35px) ;
+$sp--xl  : rem(50px) ;
 
 
 
 $pop-in: all 0.75s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
 $g--box-shadow: 0 2px 10px 0 rgba(0,0,0,0.16);
+
+
+// convert px to rem
+@function rem($target, $context: $base__font-size) {
+  @return ($target / $context) * 1rem;
+}

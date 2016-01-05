@@ -25,39 +25,54 @@
   flex-direction: column;
   align-items: center;
 
+  @include tablet {
+    flex-direction: row;
+  }
+
   .item-card {
     display: flex;
     flex-direction: column;
 
-    border-radius: $bd-radius;
     width: 95%;
+    height: rem(430px);
+
+    padding: 1% 2%;
+    margin-bottom: 3%;
+
+    text-align: center;
+    border-radius: $bd-radius;
+    background: $el-gray;
+    border-bottom: $bb--card;
 
     @include tablet {
       display: flex;
       flex-direction: column;
 
-      // stretchs too far on large desktops
-      max-width: rem(310px);
-      max-height: rem(410px);
-      width: 32%;
-      margin: 0 1%;
+      max-width: 32%;
       margin-bottom: 2%;
 
-      &:nth-of-type(3n) {
-        margin-right: 0;
+      margin-left: 2%;
+
+      &:nth-child(3n + 1){
+        margin-left: 0;
       }
 
-      &:nth-of-type(3n+1) {
+    } // end of tablet
+
+    @include desktop {
+      max-width: 23.5%;
+
+      // 4th item and every 3 to reset tablet
+      &:nth-child(3n + 4){
+        margin-left: 2%;
+      }
+      // first item and every 4th item
+      &:nth-child(4n + 1) {
         margin-left: 0;
       }
     }
 
-    min-height: rem(406px); // account for large titles
-    text-align: center;
-    padding: 1% 2%;
-    background: $el-gray;
-    margin-bottom: 3%;
-    border-bottom: $bb--card;
+
 
     // ===============
     // item img
@@ -79,7 +94,7 @@
       }
 
       @include desktop {
-        font-size: $font--lg;
+        font-size: 2vw;
       }
     }
     li {

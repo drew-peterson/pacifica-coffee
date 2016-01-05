@@ -1,6 +1,0 @@
-@import 'config';
-// convert px to em
-
-@function rem($target, $context: $base__font-size) {
-  @return ($target / $context) * 1rem;
-}
